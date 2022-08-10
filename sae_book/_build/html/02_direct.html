@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>2. Direct Estimates &#8212; Guidelines to Small Area Estimation for Poverty Mapping</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -40,12 +38,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -65,7 +64,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +87,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -94,14 +108,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="00_welcome.html">
-   Welcome to Guidelines to SAE for Poverty Mapping
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_welcome.html">
+                    Welcome to Guidelines to SAE for Poverty Mapping
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   CHAPTERS
  </span>
@@ -145,91 +160,164 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Created by <a href="https://github.com/ssegoviajuarez"> Sandra Segovia </a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/02_direct.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/02_direct.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Created by <a href="https://github.com/ssegoviajuarez"> Sandra Segovia </a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/02_direct.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/02_direct.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#design-based-estimation">
    2.1. Design-Based Estimation
@@ -293,12 +381,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Direct Estimates</h1>
@@ -378,16 +465,17 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="direct-estimates">
-<span id="direct"></span><h1><span class="section-number">2. </span>Direct Estimates<a class="headerlink" href="#direct-estimates" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="direct-estimates">
+<span id="direct"></span><h1><span class="section-number">2. </span>Direct Estimates<a class="headerlink" href="#direct-estimates" title="Permalink to this headline">#</a></h1>
 <hr style="height:1px;border:none;color:#666;background-color:#666;" /><p>To fully benefit from the Guidelines, it is necessary first to understand the background materials, including a description of the design-based setting, followed by typical direct estimators, along with the advantages and disadvantages of their applications. The goal of <strong>Chapter 2: <a class="reference internal" href="#direct"><span class="std std-ref">Direct Estimates</span></a></strong> is to present background material for the chapters that follow. The chapter begins by describing the design-based setting. Then it gives a description of the typical direct estimators and their advantages and disadvantages in their applications. Finally, some tips to evaluate estimates are provided.</p>
 <p>Direct estimates are generated by taking a sample from the target universe of observations, surveying that sample, then using statistical techniques to generalize the results to the entire population of interest. Sample surveys provide reliable estimates of a target population without observing the entire population. Sample survey data is used to produce direct estimates of totals, means, and other characteristics for the whole population and other domains. Here, “direct” means that only the sample units from the area are used (See <span id="id1">Lohr [<a class="reference internal" href="#id104" title="Sharon L Lohr. Sampling: design and analysis (advanced series). Cengage Learning, 2nd edition, 2010. ISBN 0495105279. URL: http://dni.dali.dartmouth.edu/8vxeqmju4q43/12-bailee-klein-1/read-0495105279-sampling-design-and-analysis-advanced-series.pdf.">2010</a>]</span> or <span id="id2">Cochran [<a class="reference internal" href="06_diagnostics.html#id119" title="William G Cochran. Sampling techniques. John Wiley &amp; Sons, 2007.">2007</a>]</span> for a thorough treatment of sampling theory and direct estimation).</p>
 <p>In areas with a sufficiently large sample size, statistical institutes often report direct estimates by default due to their desirable properties with respect to the sampling design (<span id="id3">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>). Though there are some global norms, defining “sufficiently large,” usually measured by the coefficient of variation, is done by the data producers. In cases where direct estimates are not sufficiently large, the results may still be reported, but the lack of quality is usually flagged for users. In instances where the desired quality is not met, small area estimates are necessary. Hence, small area estimates may be judged by how much they improve the quality of the direct estimates.</p>
-<div class="section" id="design-based-estimation">
-<span id="direct-design-based"></span><h2><span class="section-number">2.1. </span>Design-Based Estimation<a class="headerlink" href="#design-based-estimation" title="Permalink to this headline">¶</a></h2>
+<section id="design-based-estimation">
+<span id="direct-design-based"></span><h2><span class="section-number">2.1. </span>Design-Based Estimation<a class="headerlink" href="#design-based-estimation" title="Permalink to this headline">#</a></h2>
 <p>The traditional way to provide estimates of finite population parameters based on survey data is to rely on design-based (or repeated sampling) estimation methods. However, using a survey to produce direct estimates of adequate precision for particular domains of the population can be economically prohibitive since it may require considerably large sample sizes (<span id="id4">Cochran [<a class="reference internal" href="06_diagnostics.html#id119" title="William G Cochran. Sampling techniques. John Wiley &amp; Sons, 2007.">2007</a>]</span>). Even in the case of limitless resources, huge samples may not be advisable because of a heightened risk of non-sampling or implementation error. The quality of direct design-based estimates is evaluated with respect to their sampling design, that is, with respect to all the possible samples taken from the population under the proposed sampling design (<span id="id5">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>). In this scenario, the values of the variable of interest are considered fixed and they only vary due to the variation induced by the sampling design (<em>ibid</em>).<a class="footnote-reference brackets" href="#id133" id="id6">1</a></p>
 <p>Consider the following notation for the next sections:</p>
 <ul class="simple">
@@ -405,8 +493,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><span class="math notranslate nohighlight">\(\pi_{d,ij}\)</span> is the joint inclusion probability of individuals <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> in the sample from area/domain <span class="math notranslate nohighlight">\(d\)</span>.</p></li>
 </ul>
 <p>With this notation in mind, the following subsection presents the standard direct estimators, including basic direct estimators such as Horvitz-Thompson (HT), Hájek, and estimators requiring auxiliary data like GREG and calibration estimators.</p>
-<div class="section" id="basic-direct-estimators">
-<span id="direct-design-based-basic"></span><h3><span class="section-number">2.1.1. </span>Basic Direct Estimators<a class="headerlink" href="#basic-direct-estimators" title="Permalink to this headline">¶</a></h3>
+<section id="basic-direct-estimators">
+<span id="direct-design-based-basic"></span><h3><span class="section-number">2.1.1. </span>Basic Direct Estimators<a class="headerlink" href="#basic-direct-estimators" title="Permalink to this headline">#</a></h3>
 <p><strong>Horvitz-Thompson (HT)</strong></p>
 <p>The Horvitz-Thompson (HT) estimator of the total of area/domain <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(Y_{d}=\sum_{i=1}^{N_{d}}y_{di}\)</span>, is <span class="math notranslate nohighlight">\(\hat{Y}_{d}=\sum_{i\in s_{d}}\omega_{di}y_{di}\)</span>. This estimator is unbiased under the sampling design.</p>
 <p>To estimate the mean of area/domain <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(\bar{Y}_{d}=N_{d}^{-1}\sum_{i=1}^{N_{d}}y_{di}\)</span>, the HT estimator is <span class="math notranslate nohighlight">\(\hat{\bar{Y}}_{d}=N_{d}^{-1}\sum_{i\in s_{d}}\omega_{di}y_{di}\)</span>. Note that here it is assumed that the true area’s population <span class="math notranslate nohighlight">\(N_{d}\)</span>, is known.</p>
@@ -420,13 +508,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>Variance Estimation in Applications</strong></p>
 <p>Another challenge that may be encountered in applications is that, in many domains/areas <span class="math notranslate nohighlight">\(d\)</span>, there is only a single primary sampling unit (PSU) present in the survey data; hence, the habitual variance estimator cannot be calculated and some approximation of the variance is required.</p>
 <p>Alternatives to approximate the variance of the estimator that depend on the sampling design and the information available to the practitioner include linearization, a balanced repeated replication BRR method with Fay’s method,<a class="footnote-reference brackets" href="#id135" id="id7">2</a> as well as jackknife and bootstrap techniques. <span id="id8">Rao [<a class="reference internal" href="#id128" title="JNK Rao. Variance estimation in sample surveys, chapter 17, pages 427-447. Volume 6. Elsevier B.V, 1988. URL: https://doi.org/10.1016/S0169-7161(88)06019-5.">1988</a>]</span> and <span id="id9">Rust and Rao [<a class="reference internal" href="#id127" title="Keith F Rust and JNK Rao. Variance estimation for complex surveys using replication techniques. Statistical methods in medical research, 5(3):283–310, 1996.">1996</a>]</span> provide a deeper discussion on variance estimation in sample surveys and application examples. Additionally, <span id="id10">Bruch <em>et al.</em> [<a class="reference internal" href="#id126" title="Christian Bruch, Ralf Münnich, and Stefan Zins. Variance estimation for complex surveys. Deliverable D3, 2011.">2011</a>]</span> provide an overview of variance estimation in the presence of complex survey designs.</p>
-</div>
-<div class="section" id="greg-and-calibration-estimators">
-<span id="direct-design-based-greg"></span><h3><span class="section-number">2.1.2. </span>GREG and Calibration Estimators<a class="headerlink" href="#greg-and-calibration-estimators" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="greg-and-calibration-estimators">
+<span id="direct-design-based-greg"></span><h3><span class="section-number">2.1.2. </span>GREG and Calibration Estimators<a class="headerlink" href="#greg-and-calibration-estimators" title="Permalink to this headline">#</a></h3>
 <p>Unlike the basic direct estimators presented above, the Generalized Regression (GREG) and, more generally, calibration estimators, require auxiliary information, such as the population totals or means of auxiliary variables in <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(\bar{X}_{d}=N_{d}^{-1}\sum_{i=1}^{N_{d}}y_{di}\)</span>. If <span class="math notranslate nohighlight">\(\hat{\bar{X}}_{d}\)</span> is the HT estimator of <span class="math notranslate nohighlight">\(\bar{X}_{d}\)</span>, then the GREG estimator of <span class="math notranslate nohighlight">\(\bar{Y}_{d}\)</span> is given by: <span class="math notranslate nohighlight">\(\hat{\bar{Y}}_{d}+(\hat{\bar{X}}_{d}-\bar{X}_{d},)'\hat{\bar{\boldsymbol{B}}}_{d}\)</span>, where <span class="math notranslate nohighlight">\(\hat{\bar{\boldsymbol{B}}}_{d}\)</span> is the weighted least squares estimator of the coefficient vector <span class="math notranslate nohighlight">\(\boldsymbol{\beta}_{d}\)</span> in linear regression of <span class="math notranslate nohighlight">\(y_{di}\)</span> in terms of the vector <span class="math notranslate nohighlight">\(x_{di}\)</span> in area <span class="math notranslate nohighlight">\(d\)</span>. For an exhaustive presentation of GREG estimators, see <span id="id11">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>.</p>
-</div>
-<div class="section" id="pros-and-cons-of-direct-estimators">
-<span id="direct-design-based-pros"></span><h3><span class="section-number">2.1.3. </span>Pros and Cons of Direct Estimators<a class="headerlink" href="#pros-and-cons-of-direct-estimators" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pros-and-cons-of-direct-estimators">
+<span id="direct-design-based-pros"></span><h3><span class="section-number">2.1.3. </span>Pros and Cons of Direct Estimators<a class="headerlink" href="#pros-and-cons-of-direct-estimators" title="Permalink to this headline">#</a></h3>
 <p><strong>Data requirements:</strong></p>
 <ul class="simple">
 <li><p>Sampling weights <span class="math notranslate nohighlight">\(\omega_{di}\)</span> for survey units.</p></li>
@@ -446,9 +534,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Inefficient for small areas. For an area <span class="math notranslate nohighlight">\(d\)</span> with small <span class="math notranslate nohighlight">\(n_{d}\)</span>, traditional area-specific direct estimators do not provide adequate precision.</p></li>
 <li><p>Direct estimates cannot be calculated for non-sampled domains.</p></li>
 </ul>
-</div>
-<div class="section" id="example-direct-estimates-of-poverty-indicators">
-<span id="direct-design-based-example"></span><h3><span class="section-number">2.1.4. </span>Example: Direct Estimates of Poverty Indicators<a class="headerlink" href="#example-direct-estimates-of-poverty-indicators" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="example-direct-estimates-of-poverty-indicators">
+<span id="direct-design-based-example"></span><h3><span class="section-number">2.1.4. </span>Example: Direct Estimates of Poverty Indicators<a class="headerlink" href="#example-direct-estimates-of-poverty-indicators" title="Permalink to this headline">#</a></h3>
 <p>Example based on <span id="id12">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span> and <span id="id13">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>.</p>
 <ul class="simple">
 <li><p>Target population: <span class="math notranslate nohighlight">\(N\)</span> households in a country.</p></li>
@@ -462,10 +550,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Hájek estimator: <span class="math notranslate nohighlight">\(\hat{F}_{\alpha c}=\frac{1}{\hat{N}_{c}}\sum_{h\in s_{c}}\omega_{ch}F_{\alpha ch}\)</span>, where <span class="math notranslate nohighlight">\(\hat{N}_{c}=\sum_{h\in s_{c}}\omega_{ch}\)</span>.</p></li>
 <li><p>Here, <span class="math notranslate nohighlight">\(\omega_{ch}=\pi_{ch}^{-1}\)</span>, where <span class="math notranslate nohighlight">\(\pi_{ch}\)</span> is the inclusion probability of household <span class="math notranslate nohighlight">\(h\)</span> in the sample of cluster/area <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="evaluation-of-estimates">
-<span id="direct-evaluation"></span><h2><span class="section-number">2.2. </span>Evaluation of Estimates<a class="headerlink" href="#evaluation-of-estimates" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="evaluation-of-estimates">
+<span id="direct-evaluation"></span><h2><span class="section-number">2.2. </span>Evaluation of Estimates<a class="headerlink" href="#evaluation-of-estimates" title="Permalink to this headline">#</a></h2>
 <p>Comparison of estimates is based on statistical measures of precision and accuracy. It is stated that estimate <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> has more <strong>precision</strong> than estimate <span class="math notranslate nohighlight">\(\hat{\theta}'\)</span> if the (replicable) values of the estimate <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> are closer to each other than the ones of <span class="math notranslate nohighlight">\(\hat{\theta'}\)</span>, that is to say, if the realizations of <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> have less dispersion. On the other hand, <strong>accuracy</strong> measures the closeness of estimate <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>, i.e. <span class="math notranslate nohighlight">\(E(\hat{\theta})\)</span>, to the true value of the population parameter <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <p>For example, the estimated mean squared error (MSE) is a measure of precision (measured by the variance of the estimate <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>) and accuracy (measured by the square bias of the estimate <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>).</p>
 <p>The particular error measures and “acceptable” error levels depend on National Statistical Office’s guidelines or practitioners/researchers. The most common error measures of an estimator are: standard error, variance, coefficient of variation (CV), and the mean squared error (MSE). The smaller the value for all these measures, the better is the estimator.</p>
@@ -483,25 +571,27 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>Direct estimators have the advantage that they are (approximately) unbiased under the sampling design. When comparing two unbiased estimators, choosing the one with the smallest variance is recommended.<a class="footnote-reference brackets" href="#id140" id="id18">5</a> If one of them is not unbiased, it is recommended to select the one with the smallest MSE (<span id="id19">Molina and García-Portugues [<a class="reference internal" href="06_diagnostics.html#id120" title="Isabel Molina and Eduardo García-Portugues. A First Course on Statistical Inference. Bookdown.org, 2021. Accessed: 2010-06-22. URL: https://bookdown.org/egarpor/inference/.">2021</a>]</span>), as it is preferable to tolerate small amounts of bias if there are large gains in precision (the bias-variance tradeoff). The model-based SAE methods presented in the subsequent chapters introduce some bias under the design while decreasing the MSE. There is, however, a limit to the amount of bias that can be tolerated before the estimators lose utility.</p>
 <p>Why use the coefficient of variation (CV)? The CV of <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>, <span class="math notranslate nohighlight">\(cv(\hat{\theta})=\sqrt{\mathrm{var}(\hat{\theta})}/\theta\)</span>, is a relative measure of error, which makes it unitless and easier to interpret than the MSE. Nevertheless, for the CV to have a correct interpretation, the value of the estimate must be greater than zero. Moreover, when estimating a proportion <span class="math notranslate nohighlight">\(P\)</span> (poverty rates, for example), larger sample sizes are often necessary to keep the error measure below a certain limit than the sample size required when estimating totals (<span id="id20">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>).<a class="footnote-reference brackets" href="#id141" id="id21">6</a> Since the CV increases as the proportion <span class="math notranslate nohighlight">\(P\)</span> decreases, the CV is no longer a measure of the relative error but a measure of how small the proportion <span class="math notranslate nohighlight">\(P\)</span> is. Therefore, calculating the MSE (or its root) for proportions <span class="math notranslate nohighlight">\(P\)</span> is a better option.</p>
-<div class="section" id="example-bias-vs-mse">
-<span id="direct-evaluation-example"></span><h3><span class="section-number">2.2.1. </span>Example: Bias vs MSE<a class="headerlink" href="#example-bias-vs-mse" title="Permalink to this headline">¶</a></h3>
+<section id="example-bias-vs-mse">
+<span id="direct-evaluation-example"></span><h3><span class="section-number">2.2.1. </span>Example: Bias vs MSE<a class="headerlink" href="#example-bias-vs-mse" title="Permalink to this headline">#</a></h3>
 <p><strong><a class="reference internal" href="#alfa"><span class="std std-numref">Fig. 2.1</span></a></strong> shows the design bias (left) and design MSE (right) of direct estimates of FGT0 indicators (poverty rates) compared to unit-level model-based estimators, both presented at the municipal level. It is essential to notice that even though the direct estimate’s bias is approximately equal to 0, its variance (or MSE) in many areas is much greater than the one from the model-based estimators.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/bias_alfa.png"><img alt="_images/bias_alfa.png" src="_images/bias_alfa.png" style="height: 350px;" /></a>
-</div>
-<div class="figure align-default" id="alfa">
+</figure>
+<figure class="align-default" id="alfa">
 <a class="reference internal image-reference" href="_images/mse_alfa.png"><img alt="_images/mse_alfa.png" src="_images/mse_alfa.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text"><em>Bias and MSE of direct estimates of the FGT0 indicators at the municipal level</em></span><a class="headerlink" href="#alfa" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text"><em>Bias and MSE of direct estimates of the FGT0 indicators at the municipal level</em></span><a class="headerlink" href="#alfa" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: Based on 500 samples drawn from the <em>Mexican Intercensal survey</em> which is used as a census of 3.9 million households (see <span id="id22">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>). Figure shows the comparison between design bias, where Hájek direct estimates are approximately unbiased, but have a large MSE. On the other hand, indirect methods such as unit-level SAE, Census EB, sacrifice design bias in pursuit of improved precision.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="appendix">
-<span id="direct-appendix"></span><h2><span class="section-number">2.3. </span>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="definitions">
-<span id="direct-appendix-definitions"></span><h3><span class="section-number">2.3.1. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h3>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="appendix">
+<span id="direct-appendix"></span><h2><span class="section-number">2.3. </span>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">#</a></h2>
+<section id="definitions">
+<span id="direct-appendix-definitions"></span><h3><span class="section-number">2.3.1. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">#</a></h3>
 <p>Definitions are based on <span id="id23">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span> and <span id="id24">Cochran [<a class="reference internal" href="06_diagnostics.html#id119" title="William G Cochran. Sampling techniques. John Wiley &amp; Sons, 2007.">2007</a>]</span>.</p>
 <ul class="simple">
 <li><p><strong>Unit of analysis:</strong> the level at which a measurement is taken. For example, persons, households, farms, and firms.</p></li>
@@ -527,10 +617,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><strong>Informative sampling:</strong> If the sample selection probabilities are related to the outcome values (<span id="id27">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>). This results in a set of base weights reflecting the unequal probability of being sampled. Under informative sampling, in the absence of weights, the values of the outcome variable are not representative of the population (<span id="id28"></span>).</p></li>
 <li><p><strong>Benchmarking:</strong> A practice where the direct estimator is assumed to be reliable and adjustments to the small area estimates are necessary to ensure agreement with the reliable estimator (<span id="id29">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>). For example, the direct estimator could be the national level poverty rate and small area estimates for the areas within the country are adjusted to ensure agreement between the aggregate national poverty rate and the direct estimate of national poverty.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="references">
-<span id="direct-ref"></span><h2><span class="section-number">2.4. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="references">
+<span id="direct-ref"></span><h2><span class="section-number">2.4. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <div class="docutils container" id="id30">
 <dl class="citation">
 <dt class="label" id="id126"><span class="brackets"><a class="fn-backref" href="#id10">BMunnichZ11</a></span></dt>
@@ -568,9 +658,9 @@ const thebe_selector_output = ".output, .cell_output"
 </dd>
 </dl>
 </div>
-</div>
-<div class="section" id="notes">
-<span id="direct-notes"></span><h2><span class="section-number">2.5. </span>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="notes">
+<span id="direct-notes"></span><h2><span class="section-number">2.5. </span>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id133"><span class="brackets"><a class="fn-backref" href="#id6">1</a></span></dt>
@@ -592,8 +682,8 @@ const thebe_selector_output = ".output, .cell_output"
 <dd><p>The CV will tend to be large when the poverty rate for a given area is low since even a small variance will yield a relatively large CV. The only way to remedy such a result is by increasing the sample size.</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -617,9 +707,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="01_intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -635,24 +727,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Paul Corral, Isabel Molina, Alexandru Cojocaru, and Sandra Segovia<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Paul Corral, Isabel Molina, Alexandru Cojocaru, and Sandra Segovia<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>4. Unit-level Models for Small Area Estimation &#8212; Guidelines to Small Area Estimation for Poverty Mapping</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -40,12 +38,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -65,7 +64,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +87,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -94,14 +108,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="00_welcome.html">
-   Welcome to Guidelines to SAE for Poverty Mapping
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_welcome.html">
+                    Welcome to Guidelines to SAE for Poverty Mapping
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   CHAPTERS
  </span>
@@ -145,91 +160,164 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Created by <a href="https://github.com/ssegoviajuarez"> Sandra Segovia </a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/04_unit-level.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/04_unit-level.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Created by <a href="https://github.com/ssegoviajuarez"> Sandra Segovia </a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/04_unit-level.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/04_unit-level.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#preparing-for-unit-level-small-area-estimation">
    4.1. Preparing for Unit-Level Small Area Estimation
@@ -349,12 +437,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Unit-level Models for Small Area Estimation</h1>
@@ -490,55 +577,60 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="unit-level-models-for-small-area-estimation">
-<span id="unit-level"></span><h1><span class="section-number">4. </span>Unit-level Models for Small Area Estimation<a class="headerlink" href="#unit-level-models-for-small-area-estimation" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="unit-level-models-for-small-area-estimation">
+<span id="unit-level"></span><h1><span class="section-number">4. </span>Unit-level Models for Small Area Estimation<a class="headerlink" href="#unit-level-models-for-small-area-estimation" title="Permalink to this headline">#</a></h1>
 <hr style="height:1px;border:none;color:#666;background-color:#666;" /><p>This chapter focuses on unit-level models for small area estimation of poverty, which typically rely on estimating the distribution of the household’s welfare, given a set of auxiliary variables or correlates.<a class="footnote-reference brackets" href="#id249" id="id1">1</a> The methods presented in this chapter use model-based techniques that “borrow strength” from other areas by using a larger data set with auxiliary information – usually the population census. The resulting indirect estimators sacrifice design bias, but often yield more precise estimates in terms of mean-squared errors (MSE). In software implementations of the method described in this chapter, model parameters are used to simulate multiple welfare vectors from the fitted distribution for all households in the census. This is done because the census often lacks a welfare measure for poverty measurement (<span id="id2">Elbers <em>et al.</em> [<a class="reference internal" href="#id150" title="Chris Elbers, Tomoki Fujii, Peter Lanjouw, Berk Ozler, Wesley Yin, and others. Poverty alleviation through geographic targeting: how much does disaggregation help? Journal of Development Economics, 83(1):198–213, 2007.">2007</a>]</span>). From the simulated census vectors, it is possible to obtain poverty rates or any other welfare indicator, for every area, including the non-sampled ones. This chapter serves as a guide for the production of unit-level small area estimates of poverty indicators, focusing on two of the most popular approaches – the one proposed by Elbers, Lanjouw, and Lanjouw (<span id="id3">Elbers <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id52" title="Chris Elbers, Jean O Lanjouw, and Peter Lanjouw. Micro–level estimation of poverty and inequality. Econometrica, 71(1):355–364, 2003.">2003</a>]</span>, ELL), and the Empirical Best (EB) approach by Molina and Rao (<span id="id4">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span>, MR).<a class="footnote-reference brackets" href="#id252" id="id5">2</a> It presents evidence on certain aspects of SAE and recommendations on what may be the preferred approach in some scenarios and offers advice for aspects where perhaps more research is needed.</p>
 <p>The chapter begins by presenting some of the prerequisites that should be satisfied before commencing a SAE exercise. It provides insights that may help practitioners choose a unit-level SAE method that is adequate for their needs. It then presents considerations that practitioners may keep in mind when conducting SAE, such as data transformation and why ELL has fallen out of favor with many practitioners. Additionally, it presents the usual steps towards selecting a model and the production of small area estimates. The sections rely on real world and simulated data, and offer codes which readers may use to replicate some of the analysis; in other instances it pulls evidence from recent research.<a class="footnote-reference brackets" href="#id255" id="id6">3</a></p>
-<div class="section" id="preparing-for-unit-level-small-area-estimation">
-<span id="unit-level-prep"></span><h2><span class="section-number">4.1. </span>Preparing for Unit-Level Small Area Estimation<a class="headerlink" href="#preparing-for-unit-level-small-area-estimation" title="Permalink to this headline">¶</a></h2>
+<section id="preparing-for-unit-level-small-area-estimation">
+<span id="unit-level-prep"></span><h2><span class="section-number">4.1. </span>Preparing for Unit-Level Small Area Estimation<a class="headerlink" href="#preparing-for-unit-level-small-area-estimation" title="Permalink to this headline">#</a></h2>
 <p>The basic ingredients for model-based unit-level small area estimation for poverty are a contemporaneous survey and census – ideally from the same year. Small area estimates rely on household-level data to obtain the conditional distribution of welfare given the observed correlates. This information is then used to generate welfare for all the census units. Thus, if characteristics in the two datasets differ considerably, or if the structure of the conditional distribution has changed between the two data sources, then the estimates could be biased and of little use.</p>
 <p>Obtaining a pool of candidate variables for the analysis requires a thorough review of the survey and census data to ensure comparability. In the census and survey questionnaires, questions should be asked in a similarly, ideally worded in the same manner. Checks should then be conducted on the survey weights to understand how these are constructed. For example, in some countries where there is heavy migratory work, household expansion factors (usually the number of household members) may be adjusted by the number of days the individual is present in the dwelling. Such adjustments should also be possible in the census data; otherwise, the poverty estimates obtained from SAE methods will not be comparable to those obtained directly from the survey. Even if questions are asked in a similar fashion and weights are replicable, differences may still arise. Teams are strongly recommended to compare the mean and distribution the potential pool of covariates across the survey and the census – including whether it is possible to reproduce the direct estimates of poverty produced by the National Statistical Office. Ideally, the mean and distribution of the covariates should be comparable, at least at the aggregation level at which the survey is designed to be representative.</p>
 <p>One of the first decisions that must be made is the level at which estimates must be produced. As noted afterward, this determines the level at which location effects are specified in the model in unit-level models. For reasons that will be apparent in the following sections, the locations in the survey must be matched to the locations in the census. Matching locations will also ensure that when using information from external sources, for example, administrative data or satellite imagery-derived data, these correspond to the correct location. Additionally, the use of hierarchical identifiers for the location variable is recommended (<span id="id7">Zhao [<a class="reference internal" href="#id155" title="Qinghua Zhao. User Manual for Povmap. 2006. URL: http://siteresources. worldbank. org/INTPGI/Resources/342674-1092157888460/Zhao_ ManualPovMap. pdf.">2006</a>]</span>). Under Stata’s <code class="docutils literal notranslate"><span class="pre">sae</span></code> package, these identifiers must be numeric and no longer than 16 digits,<a class="footnote-reference brackets" href="#id256" id="id8">4</a> and should have an equal number of digits for every area. For example, in the hierarchical identifier SSSMMMMPPP, the first 3 digits represent states (S), the next 4 digits represent municipalities (M), and the final 3 digits represent PSUs (P). The use of hierarchical identifiers is necessary for two-fold nested-error models. In the code syntax, the user needs to indicate the number of digits to remove (from the right) to arrive at the larger area’s identifier. For example, to go from PSU to municipality level, it is necessary to remove 3 digits, yielding SSSMMMM.</p>
-<div class="section" id="the-assumed-model">
-<span id="unit-level-prep-assumed"></span><h3><span class="section-number">4.1.1. </span>The Assumed Model<a class="headerlink" href="#the-assumed-model" title="Permalink to this headline">¶</a></h3>
+<section id="the-assumed-model">
+<span id="unit-level-prep-assumed"></span><h3><span class="section-number">4.1.1. </span>The Assumed Model<a class="headerlink" href="#the-assumed-model" title="Permalink to this headline">#</a></h3>
 <p>The model-based small area estimation methods described in this chapter are dependent on an assumed model. The nested-error model used for small area estimation by ELL (<span id="id9">Elbers <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id52" title="Chris Elbers, Jean O Lanjouw, and Peter Lanjouw. Micro–level estimation of poverty and inequality. Econometrica, 71(1):355–364, 2003.">2003</a>]</span>) and MR (<span id="id10">[<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">Molina and Rao, 2010</a>]</span>) was originally proposed by <span id="id11">Battese <em>et al.</em> [<a class="reference internal" href="#id190" title="George E. Battese, Rachel M. Harter, and Wayne A. Fuller. An error-components model for prediction of county crop areas using survey and satellite data. Journal of the American Statistical Association, 83(401):28–36, 1988. URL: http://www.jstor.org/stable/2288915.">1988</a>]</span> to produce county-level corn and soybean crop area estimates for the American state of Iowa. For the estimation of poverty and welfare, the ELL and MR methods assume that the transformed welfare <span class="math notranslate nohighlight">\(y_{ch}\)</span> for each household <span class="math notranslate nohighlight">\(h\)</span> within each location <span class="math notranslate nohighlight">\(c\)</span> in the population is linearly related to a <span class="math notranslate nohighlight">\(1\times K\)</span> vector of characteristics (or correlates) <span class="math notranslate nohighlight">\(x_{ch}\)</span> for that household, according to the nested-error model:</p>
 <div class="math notranslate nohighlight" id="equation-eq-1-1-1">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-eq-1-1-1" title="Permalink to this equation">¶</a></span>\[$y_{ch}=x_{ch}\beta+\eta_{c}+e_{ch},\:h=1,\ldots,N_{c},\,c=1,\ldots,C,\]</div>
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-eq-1-1-1" title="Permalink to this equation">#</a></span>\[$y_{ch}=x_{ch}\beta+\eta_{c}+e_{ch},\:h=1,\ldots,N_{c},\,c=1,\ldots,C,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\eta_{c}\)</span> and <span class="math notranslate nohighlight">\(e_{ch}\)</span> are respectively location and household-specific idiosyncratic errors, assumed to be independent from each other, following:</p>
 <div class="math notranslate nohighlight">
 \[\eta_{c}\stackrel{iid}{\sim}N\left(0,\sigma_{\eta}^{2}\right),\:e_{ch}\stackrel{iid}{\sim}N\left(0,\sigma_{e}^{2}\right)\]</div>
 <p>where the variances <span class="math notranslate nohighlight">\(\sigma_{\eta}^{2}\)</span> and <span class="math notranslate nohighlight">\(\sigma_{e}^{2}\)</span> are unknown. Here, <span class="math notranslate nohighlight">\(C\)</span> is the number of locations in which the population is divided and <span class="math notranslate nohighlight">\(N_{c}\)</span> is the number of households in location <span class="math notranslate nohighlight">\(c\)</span>, for <span class="math notranslate nohighlight">\(c=1,\ldots,C\)</span>. Finally, <span class="math notranslate nohighlight">\(\beta\)</span> is the <span class="math notranslate nohighlight">\(K\times1\)</span> vector of regression coefficients.<a class="footnote-reference brackets" href="#id257" id="id12">5</a></p>
 <p>One of the main assumptions is that errors are normally distributed. The assumption does not necessarily imply that the transformed welfare (the dependent variable) is normally distributed but instead implies that conditional on the observed characteristics the residuals are normally distributed. Under the assumed model, variation in welfare across the population is determined by three components: the variation in household characteristics, the variation in household-specific unobservables, and the variation in location-specific effects. Within any given area, the welfare distribution is determined by the variation in household specific characteristics and household specific errors.</p>
-<div class="figure align-default" id="bias-approx">
+<figure class="align-default" id="bias-approx">
 <a class="reference internal image-reference" href="_images/approximating.png"><img alt="_images/approximating.png" src="_images/approximating.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text"><em>Empirical bias of two different models for unit-level small area estimation</em></span><a class="headerlink" href="#bias-approx" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text"><em>Empirical bias of two different models for unit-level small area estimation</em></span><a class="headerlink" href="#bias-approx" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: Simulation based on 1,000 populations generated as described in this <strong><a class="reference internal" href="05_off-census.html#off-census-appendix-experiment1-validation"><span class="std std-numref">Section 5.5.1.1</span></a></strong>. Each line corresponds to one of the 100 areas of the population. The x-axis represents the percentile on which the poverty line falls on, and the y-axis is the empirical bias. The do-file to replicate these results can be found in <strong><a class="reference internal" href="05_off-census.html#off-census-appendix-experiment2"><span class="std std-numref">Section 5.5.2</span></a></strong>.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>It is important to note that while the method’s goal may be to produce headcount poverty rates or other welfare indicators, these are not explicitly modeled in the sense that the dependent variable is welfare (or transformed welfare) and not the desired indicator (e.g. headcount poverty). The methodology relies on approximating as closely as possible the welfare distribution in each area. A model that approximates the welfare distribution poorly may yield a decent estimate for a given poverty line, yet when judged at a different poverty line the method may completely fail. This can be seen in <strong><a class="reference internal" href="#bias-approx"><span class="std std-numref">Fig. 4.1</span></a></strong>, where the headcount poverty estimates from the model on the left may work relatively well if the poverty threshold were set at the 70th percentile and yield completely biased estimates at most other thresholds. On the other hand, the model on the right approximates the welfare distribution well in all areas and yields poverty estimates with a small bias across all poverty thresholds and areas.</p>
-</div>
-</div>
-<div class="section" id="conducting-your-first-sae-application-with-a-unit-level-model">
-<span id="unit-level-first-sae"></span><h2><span class="section-number">4.2. </span>Conducting Your First SAE Application with a Unit-Level Model<a class="headerlink" href="#conducting-your-first-sae-application-with-a-unit-level-model" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="conducting-your-first-sae-application-with-a-unit-level-model">
+<span id="unit-level-first-sae"></span><h2><span class="section-number">4.2. </span>Conducting Your First SAE Application with a Unit-Level Model<a class="headerlink" href="#conducting-your-first-sae-application-with-a-unit-level-model" title="Permalink to this headline">#</a></h2>
 <p>The focus of this section is on the process of producing small area estimates of monetary indicators using a census and a survey. For the exercise conducted in the following sections it is assumed that the data has already been prepared and all of the checks noted in <strong><a class="reference internal" href="#unit-level-prep"><span class="std std-numref">Section 4.1</span></a></strong> have been conducted. The section provides step-by-step processes for producing small area estimates of poverty using census and survey data. It also draws from existing evidence to make recommendations based on current best practices for conducting SAE applications.</p>
-<div class="section" id="model-choice-considerations">
-<span id="unit-level-first-sae-model"></span><h3><span class="section-number">4.2.1. </span>Model Choice Considerations<a class="headerlink" href="#model-choice-considerations" title="Permalink to this headline">¶</a></h3>
+<section id="model-choice-considerations">
+<span id="unit-level-first-sae-model"></span><h3><span class="section-number">4.2.1. </span>Model Choice Considerations<a class="headerlink" href="#model-choice-considerations" title="Permalink to this headline">#</a></h3>
 <p>Ideally, the particular model to be used should be aligned to the specific SAE goals. One of the main considerations regarding the model to be used is the level at which poverty estimates will be reported. This will determine the level at which the random location effect should be specified (see <strong><a class="reference internal" href="#unit-level-annex"><span class="std std-numref">Section 4.4</span></a></strong> for details). Specifying the random effects at a lower level of aggregation than the level at which estimation is desired (e.g., for clusters nested within the areas of interest) will lead to noisier estimates (<span id="id13">Marhuenda <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id106" title="Yolanda Marhuenda, Isabel Molina, Domingo Morales, and JNK Rao. Poverty mapping in small areas under a twofold nested error regression model. Journal of the Royal Statistical Society: Series A (Statistics in Society), 180(4):1111-1136, 2017. doi:10.1111/rssa.12306.">2017</a>]</span>), albeit with little effect on bias (Corral et al. <span id="id14">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>). The magnitude by which the MSE of the estimates based on a model with cluster effects instead of area effects will increase depends on the ratio between the variances of the random effects associated to the different locations. If the variance of the random effects of the clusters within areas, <span class="math notranslate nohighlight">\(\sigma_{ac}^{2}\)</span>, is larger than that of the area’s random effects, <span class="math notranslate nohighlight">\(\sigma_{a}^{2}\)</span>, then the MSE may not increase by much. On the other hand, when the variance of the area’s random effects is larger, the MSE of the estimates based on a model with only cluster effects worsens considerably. Thus, the random location effect should be at the same level for which estimates will be reported (see <strong><a class="reference internal" href="#empirical-mse-comparison"><span class="std std-numref">Fig. 4.2</span></a></strong>).</p>
 <p>Additionally, under the latest edition of the Stata <code class="docutils literal notranslate"><span class="pre">sae</span></code> package, practitioners can apply two-fold nested-error models (<span id="id15">Marhuenda <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id106" title="Yolanda Marhuenda, Isabel Molina, Domingo Morales, and JNK Rao. Poverty mapping in small areas under a twofold nested error regression model. Journal of the Royal Statistical Society: Series A (Statistics in Society), 180(4):1111-1136, 2017. doi:10.1111/rssa.12306.">2017</a>]</span>), besides the traditional one-fold nested-error model. The drawback of the implemented two-fold nested-error model in the Stata <code class="docutils literal notranslate"><span class="pre">sae</span></code> package is that it does not consider survey weights, nor does it consider heteroskedasticity. The benefit from applying a two-fold nested-error model is that the resulting estimates are optimal at two levels of aggregation, because the MSEs of the estimates at both levels tend to be smaller under the assumed model than when using one-fold nested-error models with only cluster or area effects (see <strong><a class="reference internal" href="#empirical-mse-comparison"><span class="std std-numref">Fig. 4.2</span></a></strong>).</p>
-<div class="figure align-default">
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/MSE_Sa05Sc1.png"><img alt="_images/MSE_Sa05Sc1.png" src="_images/MSE_Sa05Sc1.png" style="height: 350px;" /></a>
-</div>
-<div class="figure align-default" id="empirical-mse-comparison">
+</figure>
+<figure class="align-default" id="empirical-mse-comparison">
 <a class="reference internal image-reference" href="_images/MSE_Sa1Sc05.png"><img alt="_images/MSE_Sa1Sc05.png" src="_images/MSE_Sa1Sc05.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text"><em>Empirical MSE comparison considering only cluster effects and when aggregating the cluster level results to the area level versus specifying the random effects at the reporting level, area.</em></span><a class="headerlink" href="#empirical-mse-comparison" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 4.2 </span><span class="caption-text"><em>Empirical MSE comparison considering only cluster effects and when aggregating the cluster level results to the area level versus specifying the random effects at the reporting level, area.</em></span><a class="headerlink" href="#empirical-mse-comparison" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: Simulation based on populations generated as described in Corral et al. (<span id="id16">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>) section 3. Notice how the empirical MSE of CensusEB one-fold nested-error models, where <span class="math notranslate nohighlight">\(\eta\)</span> is specified at the area level, are closely aligned to those under the two-fold nested-error model with cluster and area effects. On the other hand, CensusEB estimators based on one-fold nested-error models, where <span class="math notranslate nohighlight">\(\eta\)</span> is specified at the cluster level, have a considerably larger empirical MSE.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>Two model fitting approaches are available under Stata’s <code class="docutils literal notranslate"><span class="pre">sae</span></code> package: restricted maximum likelihood (REML) and Generalized Least Squares (GLS), where the variance parameters are estimated using Henderson’s method III (<span id="id17">Henderson [<a class="reference internal" href="#id162" title="Charles R Henderson. Estimation of variance and covariance components. Biometrics, 9(2):226–252, 1953.">1953</a>]</span>, H3). Both approaches yield similar estimated regression coefficients when heteroskedasticity and survey weights are not considered (<span id="id18">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id90" title="Paul Corral, Isabel Molina, and Minh Cong Nguyen. Pull your small area estimates up by the bootstraps. Journal of Statistical Computation and Simulation, 91(16):3304–3357, 2021. URL: https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460, doi:10.1080/00949655.2021.1926460.">2021</a>]</span> – Figure A4). Given the different available models implemented in Stata’s <code class="docutils literal notranslate"><span class="pre">sae</span></code> package, it is important to understand which options are available under each fitting method.</p>
 <ol>
 <li><p>Model fit by REML does not incorporate survey weights nor heteroskedasticity. Uses Stata’s <code class="docutils literal notranslate"><span class="pre">xtmixed</span> </code>command in the background to fit the model.<a class="footnote-reference brackets" href="#id258" id="id19">6</a></p>
@@ -567,90 +659,102 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 <p>The most crucial difference between ELL and EB methods is that ELL estimators are obtained from the distribution of welfare without conditioning on the variable survey sample data, though other differences between the original ELL <span id="id42">Elbers <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id52" title="Chris Elbers, Jean O Lanjouw, and Peter Lanjouw. Micro–level estimation of poverty and inequality. Econometrica, 71(1):355–364, 2003.">2003</a>]</span> and MR (<span id="id43">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span>) exist. For example, though the underlying assumed model is the same, different model-fitting approaches are applied between ELL and MR approaches. Noise estimates of the small area estimators are also obtained differently. The implementation of ELL in <code class="docutils literal notranslate"><span class="pre">PovMap</span> </code>draws from the multiple imputation literature, where minimizing the MSE is not the primary goal, while MR’s method relies on the assumed model’s data generating process to estimate the noise of the small area estimators with a parametric bootstrap introduced by <span id="id44">González-Manteiga <em>et al.</em> [<a class="reference internal" href="05_off-census.html#id116" title="Wenceslao González-Manteiga, Maria J Lombardía, Isabel Molina, Domingo Morales, and Laureano Santamaría. Bootstrap mean squared error of a small-area EBLUP. Journal of Statistical Computation and Simulation, 78(5):443–462, 2008.">2008</a>]</span>.<a class="footnote-reference brackets" href="#id276" id="id45">16</a></p>
 <p>Regardless of the model’s structure (one-fold or two-fold) and the model-fitting approach used (REML or H3 in Stata’s <code class="docutils literal notranslate"><span class="pre">sae</span></code> package), users are advised to obtain Empirical Best (EB) or CensusEB estimates rather than ELL estimates, because EB will yield more accurate and efficient estimates since EB conditions on the survey sample data and makes more efficient use of the information at hand - see <span id="id46">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id90" title="Paul Corral, Isabel Molina, and Minh Cong Nguyen. Pull your small area estimates up by the bootstraps. Journal of Statistical Computation and Simulation, 91(16):3304–3357, 2021. URL: https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460, doi:10.1080/00949655.2021.1926460.">2021</a>]</span> for a detailed comparison, also see <strong><a class="reference internal" href="#unit-level-annex-model"><span class="std std-numref">Section 4.4.1</span></a></strong>.<a class="footnote-reference brackets" href="#id278" id="id47">17</a> The gains from EB can be quite considerable when the assumed model holds (<strong><a class="reference internal" href="#empirical-mse-ceb-ell"><span class="std std-numref">Fig. 4.3</span></a></strong>, left), but simulations based on real-world data, where the validity of the assumed model is in doubt, also show gains (<strong><a class="reference internal" href="#empirical-mse-ceb-ell"><span class="std std-numref">Fig. 4.3</span></a></strong>, right).<a class="footnote-reference brackets" href="#id279" id="id48">18</a> Thus, despite ELL being one of the optional approaches in the Stata <code class="docutils literal notranslate"><span class="pre">sae</span></code> package, it is not recommended because EB estimates will yield more accurate and efficient estimates, see <span id="id49">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id90" title="Paul Corral, Isabel Molina, and Minh Cong Nguyen. Pull your small area estimates up by the bootstraps. Journal of Statistical Computation and Simulation, 91(16):3304–3357, 2021. URL: https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460, doi:10.1080/00949655.2021.1926460.">2021</a>]</span> and <strong><a class="reference internal" href="#unit-level-annex-model"><span class="std std-numref">Section 4.4.1</span></a></strong>.<a class="footnote-reference brackets" href="#id280" id="id50">19</a></p>
-<div class="figure align-default">
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/MSE_model_ell_vs_eb.png"><img alt="_images/MSE_model_ell_vs_eb.png" src="_images/MSE_model_ell_vs_eb.png" style="height: 350px;" /></a>
-</div>
-<div class="figure align-default" id="empirical-mse-ceb-ell">
+</figure>
+<figure class="align-default" id="empirical-mse-ceb-ell">
 <a class="reference internal image-reference" href="_images/MSE_design_ell_vs_eb.png"><img alt="_images/MSE_design_ell_vs_eb.png" src="_images/MSE_design_ell_vs_eb.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text"><em>Empirical MSE comparison between ELL and CensusEB</em></span><a class="headerlink" href="#empirical-mse-ceb-ell" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 4.3 </span><span class="caption-text"><em>Empirical MSE comparison between ELL and CensusEB</em></span><a class="headerlink" href="#empirical-mse-ceb-ell" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: Simulation based on populations generated as described in <span id="id51">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>, section 3 and 4. The simulations illustrate how the empirical MSE of ELL estimates is considerably larger than that of CensusEB under simulated data (left) and also under real world data (right).</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>The use of contextual variables in the unit-level model is also recommended as long as their regression coefficients are significant. ELL (<span id="id52">Elbers <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id64" title="Chris Elbers, Jean Olson Lanjouw, and Peter Lanjouw. Micro-level estimation of welfare. World Bank Policy Research Working Paper, 2002.">2002</a>]</span>) noted the importance of explaining the variation in welfare due to location and recommended the inclusion of location means of household-level characteristics, as well as covariates derived from Geographic Information Systems (GIS). Contextual level variables were also noted by Haslett (<span id="id53"></span>) as being essential in ELL to reduce area-specific bias and standard errors. Since contextual variables can help explain between-area variations, these reduce the portion of unexplained between-area variation and complement household-level information to produce more precise estimates. An example of the value that contextual variables may provide in SAE can be seen in <strong><a class="reference internal" href="#context"><span class="std std-numref">Fig. 4.4</span></a></strong>, obtained in simulations using real world data. Poverty estimates obtained without contextual variables present more bias and a considerably larger MSE, though specific results will depend on the chosen variables and the data at hand.</p>
 <p>As noted, the Stata <code class="docutils literal notranslate"><span class="pre">sae</span></code> package offers practitioners the option to fit ELL, EB or CensusEB estimates. CensusEB estimates are similar to EB, except that households are not linked across Census and survey data. In practice, the sample size of a given area in the survey is typically much smaller than the actual population size. In these cases, the difference between CensusEB and EB is negligible. In <span id="id54">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id90" title="Paul Corral, Isabel Molina, and Minh Cong Nguyen. Pull your small area estimates up by the bootstraps. Journal of Statistical Computation and Simulation, 91(16):3304–3357, 2021. URL: https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460, doi:10.1080/00949655.2021.1926460.">2021</a>]</span> simulation experiments, where the sample by area is 4 percent of the total population, the difference between EB and CensusEB’s empirical MSE is already indiscernible,
 see <strong><a class="reference internal" href="#cebvseb"><span class="std std-numref">Fig. 4.5</span></a></strong>.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/context_diff_bias.png"><img alt="_images/context_diff_bias.png" src="_images/context_diff_bias.png" style="height: 350px;" /></a>
-</div>
-<div class="figure align-default" id="context">
+</figure>
+<figure class="align-default" id="context">
 <a class="reference internal image-reference" href="_images/context_diff_mse.png"><img alt="_images/context_diff_mse.png" src="_images/context_diff_mse.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text"><em>Empirical bias and MSE of Census EB estimators based on a nested-error model with and without contextual variables</em></span><a class="headerlink" href="#context" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 4.4 </span><span class="caption-text"><em>Empirical bias and MSE of Census EB estimators based on a nested-error model with and without contextual variables</em></span><a class="headerlink" href="#context" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: Simulation based on populations generated as described in <span id="id55">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> section 3 and 4. These design-based simulations provide an example of the possible gains in terms of bias and MSE, obtained from adding contextual variables to the nested-error model.</p>
 </div>
-</div>
-<div class="figure align-default" id="cebvseb">
+</figcaption>
+</figure>
+<figure class="align-default" id="cebvseb">
 <a class="reference internal image-reference" href="_images/MSEdiff.png"><img alt="_images/MSEdiff.png" src="_images/MSEdiff.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text"><em>Empirical MSE difference between EB and CensusEB depending on sampling fraction</em></span><a class="headerlink" href="#cebvseb" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 4.5 </span><span class="caption-text"><em>Empirical MSE difference between EB and CensusEB depending on sampling fraction</em></span><a class="headerlink" href="#cebvseb" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: <span id="id56">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id90" title="Paul Corral, Isabel Molina, and Minh Cong Nguyen. Pull your small area estimates up by the bootstraps. Journal of Statistical Computation and Simulation, 91(16):3304–3357, 2021. URL: https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460, doi:10.1080/00949655.2021.1926460.">2021</a>]</span>. Figure illustrates that the difference in empirical MSE of CensusEB and EB will be close to zero as the sample fraction of the population decreases.</p>
 </div>
-</div>
-</div>
-<div class="section" id="data-transformation">
-<span id="unit-level-first-sae-data"></span><h3><span class="section-number">4.2.2. </span>Data Transformation<a class="headerlink" href="#data-transformation" title="Permalink to this headline">¶</a></h3>
+</figcaption>
+</figure>
+</section>
+<section id="data-transformation">
+<span id="unit-level-first-sae-data"></span><h3><span class="section-number">4.2.2. </span>Data Transformation<a class="headerlink" href="#data-transformation" title="Permalink to this headline">#</a></h3>
 <p>Since the EB method of MR (<span id="id57">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span>) assumes that the errors are normally distributed, data transformation to get a distribution close to normal can lead to less biased and less noisy estimates (see <span id="id58">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>; <span id="id59">Rojas-Perilla <em>et al.</em> [<a class="reference internal" href="#id216" title="Natalia Rojas-Perilla, Sören Pannier, Timo Schmid, and Nikos Tzavidis. Data-driven transformations in small area estimation. Journal of the Royal Statistical Society: Series A (Statistics in Society), 183(1):121–148, 2020.">2020</a>]</span>; <span id="id60">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>; and <span id="id61">Tzavidis <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id105" title="Nikos Tzavidis, Li-Chun Zhang, Angela Luna, Timo Schmid, and Natalia Rojas-Perilla. From start to finish: a framework for the production of small area official statistics. Journal of the Royal Statistical Society: Series A (Statistics in Society), 181(4):927–979, 2018.">2018</a>]</span>).<a class="footnote-reference brackets" href="#id281" id="id62">20</a> More generally, variable transformation to make the assumptions underlying the model hold is one of the main aspects of model-based small area estimation (see Technical Annex of this chapter, <strong><a class="reference internal" href="#unit-level-annex-model"><span class="std std-numref">Section 4.4.1</span></a></strong>). Specifically, since the SAE models used often assume normality in the errors, the goal in data transformation is to approximate normally distributed residuals.<a class="footnote-reference brackets" href="#id283" id="id63">21</a></p>
 <p>Most software packages for small area estimation offer the possibility of data transformation. Perhaps the most popular transformation is the natural logarithm, although it is not always ideal as it can produce left skewed distributions for small values of welfare (see <strong><a class="reference internal" href="#lny"><span class="std std-numref">Fig. 4.7</span></a></strong>). Other options include transformation from the Box-Cox family (<span id="id64">Box and Cox [<a class="reference internal" href="#id186" title="GEP Box and DR Cox. An analysis of transformations. Journal of the Royal Statistical Society, Series B, 26:211–252, 1964.">1964</a>]</span>) and the log-shift transformations, which have the advantage that the transformation parameters may be driven by the specific data at hand (<span id="id65">Tzavidis <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id105" title="Nikos Tzavidis, Li-Chun Zhang, Angela Luna, Timo Schmid, and Natalia Rojas-Perilla. From start to finish: a framework for the production of small area official statistics. Journal of the Royal Statistical Society: Series A (Statistics in Society), 181(4):927–979, 2018.">2018</a>]</span>).The Box-Cox family’s transformation parameter, which is the power to be taken, is denoted by <span class="math notranslate nohighlight">\(\lambda\)</span>. When <span class="math notranslate nohighlight">\(\lambda=0\)</span>, it yields the natural logarithm; otherwise, <span class="math notranslate nohighlight">\(\lambda\)</span> is typically data-driven and chosen to minimize skewness in the dependent variable., which is the power to be taken, is denoted by <span class="math notranslate nohighlight">\(\lambda\)</span>. When <span class="math notranslate nohighlight">\(\lambda=0\)</span>, it yields the natural logarithm; otherwise, <span class="math notranslate nohighlight">\(\lambda\)</span> is typically data-driven and chosen to minimize skewness in the dependent variable.<a class="footnote-reference brackets" href="#id286" id="id66">22</a> A log-shift transformation adds a positive shift to the observed welfare values before taking the log to avoid the left skewness caused by taking the log of very small welfare values. Other options, such as the ordered quantile normalization (<span id="id67">Peterson and Cavanaugh [<a class="reference internal" href="#id213" title="Ryan A Peterson and Joseph E Cavanaugh. Ordered quantile normalization: a semiparametric transformation built for the cross-validation era. Journal of Applied Statistics, 47(13-15):2312-2327, 2019. URL: https://www.tandfonline.com/action/showCitFormats?doi=10.1080/02664763.2019.1630372, doi:10.1080/02664763.2019.1630372.">2019</a>]</span>), may generate reliable estimates of headcount poverty, but these transformations are not reversible and therefore they cannot be used to obtain other indicators such as mean welfare, poverty gap, poverty severity among others (<span id="id68">Masaki <em>et al.</em> [<a class="reference internal" href="05_off-census.html#id92" title="Takaaki Masaki, David Newhouse, Ani Rudra Silwal, Adane Bedada, and Ryan Engstrom. Small area estimation of non-monetary poverty with geospatial data. World Bank Policy Research Working Paper, 2020.">2020</a>]</span>; <span id="id69">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>), limiting their applicability. Regardless of the transformation chosen, it is always recommended to check the residuals to determine if these follow the underlying model assumptions.</p>
 <p>When working with real-world data, assumptions are often only approximately met (<span id="id70">Marhuenda <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id106" title="Yolanda Marhuenda, Isabel Molina, Domingo Morales, and JNK Rao. Poverty mapping in small areas under a twofold nested error regression model. Journal of the Royal Statistical Society: Series A (Statistics in Society), 180(4):1111-1136, 2017. doi:10.1111/rssa.12306.">2017</a>]</span>) and effort must be made to find one that approximates the normal distribution best. In simulation studies that seek to validate small area estimation methods based on actual data, data-driven transformations may reduce bias and the noise due to departures from normality (see <span id="id71">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> and <span id="id72">Tzavidis <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id105" title="Nikos Tzavidis, Li-Chun Zhang, Angela Luna, Timo Schmid, and Natalia Rojas-Perilla. From start to finish: a framework for the production of small area official statistics. Journal of the Royal Statistical Society: Series A (Statistics in Society), 181(4):927–979, 2018.">2018</a>]</span> among others). Using the <em>Mexican Intercensal survey of 2015</em> as a 3.9 million household census data, <span id="id73">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> note that the gains from a transformation of the dependent variable that minimizes skewness can be quite considerable. In the validation exercises conducted in that paper, bias and MSEs, are considerably reduced when using a Box-Cox or a log-shift transformation (see <strong><a class="reference internal" href="#trans-compare"><span class="std std-numref">Fig. 4.6</span></a></strong>).</p>
-<div class="figure align-default">
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/trans_diff_bias.png"><img alt="_images/trans_diff_bias.png" src="_images/trans_diff_bias.png" style="height: 350px;" /></a>
-</div>
-<div class="figure align-default" id="trans-compare">
+</figure>
+<figure class="align-default" id="trans-compare">
 <a class="reference internal image-reference" href="_images/trans_diff_mse.png"><img alt="_images/trans_diff_mse.png" src="_images/trans_diff_mse.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.6 </span><span class="caption-text"><em>Empirical Bias and MSE for CensusEB FGT0 estimates under different transformations</em></span><a class="headerlink" href="#trans-compare" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 4.6 </span><span class="caption-text"><em>Empirical Bias and MSE for CensusEB FGT0 estimates under different transformations</em></span><a class="headerlink" href="#trans-compare" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: Based on samples generated as described in <span id="id74">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> section 4. The figure illustrates the potential gains from a correct data transformation. Taking the natural logarithm of the dependent variable in this case is not enough and can lead to considerable deviations from normality and thus may yield larger empirical MSEs and biased predictors.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>Implementation of a suitable data transformation in Stata is straightforward, since Stata offers commands for the Box-Cox and the zero-skewness log (log-shift) transformation.<a class="footnote-reference brackets" href="#id289" id="id75">23</a> The Stata <code class="docutils literal notranslate"><span class="pre">sae</span></code> package (<span id="id76">Nguyen <em>et al.</em> [<a class="reference internal" href="#id151" title="Minh Cong Nguyen, Paul Corral, João Pedro Azevedo, and Qinghua Zhao. Sae: a stata package for unit level small area estimation. World Bank Policy Research Working Paper, 2018.">2018</a>]</span>) also includes these transformations, in addition to the natural logarithm, as options and will apply the transformation for the model. The package will also reverse the transformation to calculate the indicators of interest in each Monte Carlo simulation. Prior to estimating the indicators, practitioners may wish to do model selection (e.g., by lasso or stepwise regression) using an already transformed dependent variable. Once the transformed dependent variable is obtained, practitioners can then conduct histograms and visually inspect the shape of the distribution of the dependent variable (see <strong><a class="reference internal" href="#lny"><span class="std std-numref">Fig. 4.7</span></a></strong>).</p>
-<div class="figure align-default" id="lny">
+<figure class="align-default" id="lny">
 <a class="reference internal image-reference" href="_images/ln_welfare.png"><img alt="_images/ln_welfare.png" src="_images/ln_welfare.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7 </span><span class="caption-text"><em>Natural logarithm of welfare</em></span><a class="headerlink" href="#lny" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 4.7 </span><span class="caption-text"><em>Natural logarithm of welfare</em></span><a class="headerlink" href="#lny" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: <span id="id77">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> . The figure illustrates how, in this case, taking the natural logarithm of welfare leaves a left skewed distribution which may yield biased and noisier estimators.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>Once a satisfactory transformation is obtained, the process of model selection of the covariates can occur. The model selection process consists of selecting the response variable and the most powerful set of covariates such that the assumptions underlying the chosen SAE method hold – primarily linearity and normality of the residuals. The consequences of deviations from the underlying model’s assumptions could lead to invalid inferences (<span id="id78">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>) or not too noisy but biased estimates (<span id="id79">Banerjee <em>et al.</em> [<a class="reference internal" href="05_off-census.html#id133" title="Abhijit V Banerjee, Angus Deaton, Nora Lustig, Kenneth Rogoff, and Edward Hsu. An evaluation of world bank research, 1998-2005. Available at SSRN 2950327, 2006.">2006</a>]</span>). The model selection procedure is further explored in <strong>Chapter 6: <a class="reference internal" href="06_diagnostics.html#diagnostics"><span class="std std-ref">Model Diagnostics</span></a></strong> in <strong><a class="reference internal" href="06_diagnostics.html#diagnostics-selection"><span class="std std-numref">Section 6.2</span></a></strong>.</p>
-</div>
-<div class="section" id="the-alpha-model">
-<span id="unit-level-first-sae-alpha"></span><h3><span class="section-number">4.2.3. </span>The Alpha Model<a class="headerlink" href="#the-alpha-model" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-alpha-model">
+<span id="unit-level-first-sae-alpha"></span><h3><span class="section-number">4.2.3. </span>The Alpha Model<a class="headerlink" href="#the-alpha-model" title="Permalink to this headline">#</a></h3>
 <p>The alpha model proposed by ELL (<span id="id80">Elbers <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id64" title="Chris Elbers, Jean Olson Lanjouw, and Peter Lanjouw. Micro-level estimation of welfare. World Bank Policy Research Working Paper, 2002.">2002</a>]</span>) is a preliminary model for the variance of the idiosyncratic errors used for heteroskedasticity that resembles the one presented by <span id="id81">Harvey [<a class="reference internal" href="#id168" title="Andrew C Harvey. Estimating regression models with multiplicative heteroscedasticity. Econometrica: Journal of the Econometric Society, 44:461–465, 1976. URL: https://www.jstor.org/stable/1913974?casa_token=rLCctNWylroAAAAA:3-S22Hv84lze8TUU-3nyFgDGZsrxkAoCZHwUVKO99Qynn_zXmr8-3kmdqFxdLxRBJT8KiE-xYwfoI5-gzFA9RF3N-KHS3g7na1Soi8WbYp_QBcPfjU7m&amp;seq=1.">1976</a>]</span>.<a class="footnote-reference brackets" href="#id290" id="id82">24</a> Only limited research has been conducted on the impact of the alpha model for heteroskedasticity on the quality of the final small area estimates. In most applications, the adjusted <span class="math notranslate nohighlight">\(R^{2}\)</span> of the alpha model is relatively small, rarely above 0.05.</p>
 <p>Nevertheless, the alpha model may play a considerable role in the bias and noise of the estimates. A simulation experiment based on the same data used for the validations conducted by <span id="id83">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> shows that applying an alpha model to obtain CensusEB estimates might yield considerably less noisy and less biased estimates (see <strong><a class="reference internal" href="#compare-alfa"><span class="std std-numref">Fig. 4.8</span></a></strong>).<a class="footnote-reference brackets" href="#id292" id="id84">25</a> This result may not translate to other data sets, which might not suffer from heteroskedasticity, and thus, using the alpha model should not be considered a universal recommendation. Practitioners should carefully inspect their model’s residuals for signs of heteroskedasticity before deciding to use the alpha model.<a class="footnote-reference brackets" href="#id293" id="id85">26</a></p>
-<div class="figure align-default">
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/bias_alfa1.png"><img alt="_images/bias_alfa1.png" src="_images/bias_alfa1.png" style="height: 350px;" /></a>
-</div>
-<div class="figure align-default" id="compare-alfa">
+</figure>
+<figure class="align-default" id="compare-alfa">
 <a class="reference internal image-reference" href="_images/mse_alfa1.png"><img alt="_images/mse_alfa1.png" src="_images/mse_alfa1.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.8 </span><span class="caption-text"><em>Empirical Bias and MSE for CensusEB FGT0 estimates with and without alpha model</em></span><a class="headerlink" href="#compare-alfa" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 4.8 </span><span class="caption-text"><em>Empirical Bias and MSE for CensusEB FGT0 estimates with and without alpha model</em></span><a class="headerlink" href="#compare-alfa" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: Based on samples of populations generated as described in <span id="id86">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> section 4. The alpha model as specified by ELL (<span id="id87">Elbers <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id64" title="Chris Elbers, Jean Olson Lanjouw, and Peter Lanjouw. Micro-level estimation of welfare. World Bank Policy Research Working Paper, 2002.">2002</a>]</span>) can be applied using the sae Package in Stata. Under the Mexican data used by <span id="id88">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> the alpha model appears to yield positive results in terms of bias and MSE. This should be interpreted with caution as it may not be the case in other scenarios.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>In practice, the implementation of the alpha model may limit modeling options for practitioners since, though available in the <code class="docutils literal notranslate"><span class="pre">PovMap</span></code> software, it is not included in many of the newer software packages for SAE. For example, heteroskadasticity is also considered by <span id="id89">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span>, as well as <span id="id90">Marhuenda <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id106" title="Yolanda Marhuenda, Isabel Molina, Domingo Morales, and JNK Rao. Poverty mapping in small areas under a twofold nested error regression model. Journal of the Royal Statistical Society: Series A (Statistics in Society), 180(4):1111-1136, 2017. doi:10.1111/rssa.12306.">2017</a>]</span>. However, they do not specify the alpha model, and no software package implementation of their methods allows users to specify heteroskedasticity. The Stata <code class="docutils literal notranslate"><span class="pre">sae</span></code> package allows users to model heteroskedasticity for SAE, but only does so when using specific model fitting procedures such as the Henderson method III extension proposed by <span id="id91">Van der Weide [<a class="reference internal" href="#id156" title="Roy Van der Weide. GLS estimation and empirical bayes prediction for linear mixed models with heteroskedasticity and sampling weights: A background study for the POVMAP project. World Bank Policy Research Working Paper, 2014. URL: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2495175.">2014</a>]</span> or the traditional ELL fitting method.<a class="footnote-reference brackets" href="#id294" id="id92">27</a> When choosing to apply the alpha model, the Stata <code class="docutils literal notranslate"><span class="pre">sae</span></code> package has an option that automatically constructs the dependent variable. This dependent variable may be used to facilitate the selection of a suitable model for heteroskedasticity. A removal process of non-significant covariates may also be implemented for the alpha model, as shown in the script of <strong><a class="reference internal" href="#unit-level-appendix-selection"><span class="std std-numref">Section 4.5.1</span></a></strong>.</p>
-</div>
-<div class="section" id="producing-small-area-estimates">
-<span id="unit-level-first-sae-estimates"></span><h3><span class="section-number">4.2.4. </span>Producing Small Area Estimates<a class="headerlink" href="#producing-small-area-estimates" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="producing-small-area-estimates">
+<span id="unit-level-first-sae-estimates"></span><h3><span class="section-number">4.2.4. </span>Producing Small Area Estimates<a class="headerlink" href="#producing-small-area-estimates" title="Permalink to this headline">#</a></h3>
 <p>Once the model selection stage is completed, the next step is to obtain estimates for small areas. Model selection and simulation stages may be separated in different scripts to avoid re-running unnecessary processes in case of errors in only one of the stages.<a class="footnote-reference brackets" href="#id296" id="id93">28</a> Model selection (see Stata script in <strong><a class="reference internal" href="#unit-level-appendix-selection"><span class="std std-numref">Section 4.5.1</span></a></strong>) is discussed in greater detail in <strong>Chapter 6: <a class="reference internal" href="06_diagnostics.html#diagnostics"><span class="std std-ref">Model Diagnostics</span></a></strong> where attention is given to the different steps involved.</p>
 <p>The Monte Carlo simulation process can be seen in the Stata script of <strong><a class="reference internal" href="#unit-level-appendix-simulation"><span class="std std-numref">Section 4.5.2</span></a></strong> and follows the model selection stage. The production of small area estimates requires first importing the census data. In Stata, it is imported into a Mata (Stata’s matrix programming language) data file, which will allow users to work with larger data sets than what is usually possible.<a class="footnote-reference brackets" href="#id297" id="id94">29</a> The user must specify the vectors she wishes to import, including household expansion factors (typically household size) within the census data. The census data should have variable names equal to those in the survey. It is recommended to import only the necessary variables from the census to avoid creating larger data files than needed for the process.</p>
 <p>The SAE process can be broken up into two steps. The first step entails producing the point estimates through Monte Carlo simulation. This step is relatively fast, and the recommended amount of simulations is at least 100. The estimation of the MSE is considerably more time-consuming and will usually take several hours, depending on the size of the census. Thus, it is recommended to first obtain small area estimates without specifying bootstrap simulations for MSE estimation. Once users have done their checks and determined the quality of their point estimates, the MSE can be estimated. It is recommended to use at least 200 bootstrap replications to estimate MSEs.</p>
-</div>
-</div>
-<div class="section" id="pros-and-cons-of-unit-level-models">
-<span id="unit-level-pros"></span><h2><span class="section-number">4.3. </span>Pros and Cons of Unit-Level Models<a class="headerlink" href="#pros-and-cons-of-unit-level-models" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="pros-and-cons-of-unit-level-models">
+<span id="unit-level-pros"></span><h2><span class="section-number">4.3. </span>Pros and Cons of Unit-Level Models<a class="headerlink" href="#pros-and-cons-of-unit-level-models" title="Permalink to this headline">#</a></h2>
 <p>This section presents a convenient list of pros and cons for each method. It also notes the needs for each of the methods. The section borrows heavily and adds to the work presented in <span id="id95">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>.</p>
-<div class="section" id="ell">
-<span id="unit-level-pros-ell"></span><h3><span class="section-number">4.3.1. </span>ELL<a class="headerlink" href="#ell" title="Permalink to this headline">¶</a></h3>
+<section id="ell">
+<span id="unit-level-pros-ell"></span><h3><span class="section-number">4.3.1. </span>ELL<a class="headerlink" href="#ell" title="Permalink to this headline">#</a></h3>
 <p>Model requirements:</p>
 <ol class="simple">
 <li><p>Microdata from a household survey and census at the household level, with variables measured and questions asked similarly.</p></li>
@@ -677,9 +781,9 @@ see <strong><a class="reference internal" href="#cebvseb"><span class="std std-n
 <li><p>Estimates are the outcome of a model and thus, the model needs to be appropriately checked.</p></li>
 <li><p>The traditional ELL model specifies the location effects for the clusters (PSUs), typically nested within the areas where the estimation is desired. Estimations at higher aggregation levels than those at which the location effects are specified can underestimate noise if the area-level variables included in the model fail to explain the between-area heterogeneity.</p></li>
 </ol>
-</div>
-<div class="section" id="empirical-best-and-censuseb">
-<span id="unit-level-pros-eb"></span><h3><span class="section-number">4.3.2. </span>Empirical Best and CensusEB<a class="headerlink" href="#empirical-best-and-censuseb" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="empirical-best-and-censuseb">
+<span id="unit-level-pros-eb"></span><h3><span class="section-number">4.3.2. </span>Empirical Best and CensusEB<a class="headerlink" href="#empirical-best-and-censuseb" title="Permalink to this headline">#</a></h3>
 <p>Model requirements:</p>
 <ol class="simple">
 <li><p>Microdata from a household survey and census at the household level with variables measured and questions asked in a similar manner.</p></li>
@@ -707,9 +811,9 @@ see <strong><a class="reference internal" href="#cebvseb"><span class="std std-n
 </li>
 <li><p>The bootstrap method for MSE estimation is computationally intensive.</p></li>
 </ol>
-</div>
-<div class="section" id="alternative-software-packages-for-unit-level-models-and-extensions">
-<span id="unit-level-pros-alt"></span><h3><span class="section-number">4.3.3. </span>Alternative Software Packages for Unit-Level Models and Extensions<a class="headerlink" href="#alternative-software-packages-for-unit-level-models-and-extensions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="alternative-software-packages-for-unit-level-models-and-extensions">
+<span id="unit-level-pros-alt"></span><h3><span class="section-number">4.3.3. </span>Alternative Software Packages for Unit-Level Models and Extensions<a class="headerlink" href="#alternative-software-packages-for-unit-level-models-and-extensions" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Packages that implement the one-fold nested-error model EB approach from <span id="id98">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span>:</p>
 <ul>
@@ -749,15 +853,15 @@ see <strong><a class="reference internal" href="#cebvseb"><span class="std std-n
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="unit-level-models-technical-annex">
-<span id="unit-level-annex"></span><h2><span class="section-number">4.4. </span>Unit-Level Models – Technical Annex<a class="headerlink" href="#unit-level-models-technical-annex" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="unit-level-annex-model">
-<span id="id114"></span><h3><span class="section-number">4.4.1. </span>The Assumed Model<a class="headerlink" href="#unit-level-annex-model" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="unit-level-models-technical-annex">
+<span id="unit-level-annex"></span><h2><span class="section-number">4.4. </span>Unit-Level Models – Technical Annex<a class="headerlink" href="#unit-level-models-technical-annex" title="Permalink to this headline">#</a></h2>
+<section id="unit-level-annex-model">
+<span id="id114"></span><h3><span class="section-number">4.4.1. </span>The Assumed Model<a class="headerlink" href="#unit-level-annex-model" title="Permalink to this headline">#</a></h3>
 <p>The nested-error model used for small area estimation by ELL (<span id="id115">Elbers <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id52" title="Chris Elbers, Jean O Lanjouw, and Peter Lanjouw. Micro–level estimation of poverty and inequality. Econometrica, 71(1):355–364, 2003.">2003</a>]</span>) and <span id="id116">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span> was originally proposed by <span id="id117">Battese, Harter, and Fuller [<a class="reference internal" href="#id190" title="George E. Battese, Rachel M. Harter, and Wayne A. Fuller. An error-components model for prediction of county crop areas using survey and satellite data. Journal of the American Statistical Association, 83(401):28–36, 1988. URL: http://www.jstor.org/stable/2288915.">1988</a>]</span> to produce county-level corn and soybean crop area estimates for the American state of Iowa. For the estimation of poverty and welfare, the ELL and MR methods assume the transformed welfare <span class="math notranslate nohighlight">\(y_{ch}\)</span> for each household <span class="math notranslate nohighlight">\(h\)</span> in the population within each location <span class="math notranslate nohighlight">\(c\)</span> is linearly related to a <span class="math notranslate nohighlight">\(1\times K\)</span> vector of characteristics (or correlates) <span class="math notranslate nohighlight">\(x_{ch}\)</span> for that household, according to the nested-error model:</p>
 <div class="math notranslate nohighlight" id="equation-eq-1-1">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-eq-1-1" title="Permalink to this equation">¶</a></span>\[y_{ch}=x_{ch}\beta+\eta_{c}+e_{ch},\:h=1,\ldots,N_{c},\,c=1,\ldots,C.\]</div>
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-eq-1-1" title="Permalink to this equation">#</a></span>\[y_{ch}=x_{ch}\beta+\eta_{c}+e_{ch},\:h=1,\ldots,N_{c},\,c=1,\ldots,C.\]</div>
 <p>Here <span class="math notranslate nohighlight">\(\eta_{c}\)</span> and <span class="math notranslate nohighlight">\(e_{ch}\)</span> are respectively location and household-specific idiosyncratic errors, assumed to be independent from each other, satisfying: $<span class="math notranslate nohighlight">\(\eta_{c}\stackrel{iid}{\sim}N\left(0,\sigma_{\eta}^{2}\right),\:e_{ch}\stackrel{iid}{\sim}N\left(0,\sigma_{e}^{2}\right),\)</span>$</p>
 <p>where the variances <span class="math notranslate nohighlight">\(\sigma_{\eta}^{2}\)</span> and <span class="math notranslate nohighlight">\(\sigma_{e}^{2}\)</span> are unknown. Here, <span class="math notranslate nohighlight">\(C\)</span> is the number of locations in which the population is divided and <span class="math notranslate nohighlight">\(N_{c}\)</span> is the number of households in location <span class="math notranslate nohighlight">\(c\)</span>, for <span class="math notranslate nohighlight">\(c=1,\ldots,C\)</span>. Finally, <span class="math notranslate nohighlight">\(\beta\)</span> is the <span class="math notranslate nohighlight">\(K\times1\)</span> vector of coefficients.</p>
 <p>To illustrate the differences between the methods, understanding the model is essential. First, note that the random location effect is the same for all households within a given area. Second, note that the random location effect is not necessarily 0 for a given location, despite the random location effect being drawn from a normal distribution with mean 0. Consequently, for any given realization of the population, the random location effect is unlikely to be equal to 0, but its expected value is 0 across all the possible realizations. To see this, a simulation where the random location effects for 80 areas are drawn from a normal distribution <span class="math notranslate nohighlight">\(\eta_{c}\stackrel{iid}{\sim}N\left(0,0.15^{2}\right)\)</span>, is shown in the Stata code snippet below. This is repeated across 10,000 simulated populations.</p>
@@ -858,13 +962,13 @@ see <strong><a class="reference internal" href="#cebvseb"><span class="std std-n
 <span class="k">list</span> Y_B xb xb_eta<span class="k"> in</span> <span class="m">1</span><span class="o">/</span><span class="m">10</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="monte-carlo-simulation-and-bootstrap-procedures-under-censuseb">
-<span id="unit-level-annex-montecarlo"></span><h3><span class="section-number">4.4.2. </span>Monte Carlo Simulation and Bootstrap Procedures Under CensusEB<a class="headerlink" href="#monte-carlo-simulation-and-bootstrap-procedures-under-censuseb" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="monte-carlo-simulation-and-bootstrap-procedures-under-censuseb">
+<span id="unit-level-annex-montecarlo"></span><h3><span class="section-number">4.4.2. </span>Monte Carlo Simulation and Bootstrap Procedures Under CensusEB<a class="headerlink" href="#monte-carlo-simulation-and-bootstrap-procedures-under-censuseb" title="Permalink to this headline">#</a></h3>
 <p>The best predictor is defined as a conditional expectation. For indicators with a complex shape, the conditional expectation defining the best predictor may not have a closed form. Regardless of the shape, the best predictor can be approximated by Monte Carlo simulation (<span id="id128">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>). ELL and MR’s EB approach clearly differ in the computational procedures used to estimate the indicators of interest and their noise. On the other hand, the original implementation of EB in <code class="docutils literal notranslate"><span class="pre">PovMap</span></code> and the <code class="docutils literal notranslate"><span class="pre">sae</span></code> Stata command used a similar computational approach to ELL. Under ELL and the original EB implementation in <code class="docutils literal notranslate"><span class="pre">PovMap</span></code>, noise and indicator estimates are all obtained with a single computational procedure. <span id="id129">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id90" title="Paul Corral, Isabel Molina, and Minh Cong Nguyen. Pull your small area estimates up by the bootstraps. Journal of Statistical Computation and Simulation, 91(16):3304–3357, 2021. URL: https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460, doi:10.1080/00949655.2021.1926460.">2021</a>]</span> show that the noise estimates of the original ELL (referred to as variance by the authors) underestimate the true MSE of the indicators, despite ELL estimates being much noisier. On the other hand, the parametric bootstrap procedure from <span id="id130">González-Manteiga <em>et al.</em> [<a class="reference internal" href="05_off-census.html#id116" title="Wenceslao González-Manteiga, Maria J Lombardía, Isabel Molina, Domingo Morales, and Laureano Santamaría. Bootstrap mean squared error of a small-area EBLUP. Journal of Statistical Computation and Simulation, 78(5):443–462, 2008.">2008</a>]</span> seems to estimate the noise (MSE) of EB estimators correctly.</p>
 <p>For an in-depth discussion on how ELL and EB computational procedures differ, see <span id="id131">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id90" title="Paul Corral, Isabel Molina, and Minh Cong Nguyen. Pull your small area estimates up by the bootstraps. Journal of Statistical Computation and Simulation, 91(16):3304–3357, 2021. URL: https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460, doi:10.1080/00949655.2021.1926460.">2021</a>]</span>. For easy interpretation, the expositions presented here do not consider survey weights or heteroskedasticity.<a class="footnote-reference brackets" href="#id298" id="id132">30</a></p>
-<div class="section" id="molina-and-rao-s-2010-monte-carlo-simulation-procedure-for-point-estimates">
-<span id="unit-level-annex-montecarlo-molina"></span><h4><span class="section-number">4.4.2.1. </span>Molina and Rao’s (2010) Monte Carlo Simulation Procedure for Point Estimates<a class="headerlink" href="#molina-and-rao-s-2010-monte-carlo-simulation-procedure-for-point-estimates" title="Permalink to this headline">¶</a></h4>
+<section id="molina-and-rao-s-2010-monte-carlo-simulation-procedure-for-point-estimates">
+<span id="unit-level-annex-montecarlo-molina"></span><h4><span class="section-number">4.4.2.1. </span>Molina and Rao’s (2010) Monte Carlo Simulation Procedure for Point Estimates<a class="headerlink" href="#molina-and-rao-s-2010-monte-carlo-simulation-procedure-for-point-estimates" title="Permalink to this headline">#</a></h4>
 <p>The EB method from MR (<span id="id133">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span>) conditions on the survey sample data and thus makes more efficient use of the survey data, which contains the only available (and hence precious) information on the actual welfare. Conditioning on the survey data requires matching households across the survey and census. Matching households was required in the original EB approach introduced in MR (<span id="id134">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span>). However, the census and sample households can not be matched in practice, except in some countries. When linking the two data sources is not possible, this sample may be appended to the population for areas where there is a sample. This is the approach taken in the original EB implementation in the <code class="docutils literal notranslate"><span class="pre">sae</span></code> R package by <span id="id135">Molina and Marhuenda [<a class="reference internal" href="06_diagnostics.html#id68" title="Isabel Molina and Yolanda Marhuenda. Sae: an R package for small area estimation. The R Journal, 7(1):81–98, 2015.">2015</a>]</span>. In order to obtain a Monte Carlo approximation to the EB estimates using this software, estimates are obtained as a weighted average between a simulated census poverty rate for the area and the direct estimate of poverty obtained using the area’s sample. When the sample size relative to the population size for a given area is considerable, for example, 20%, using the sample observations of welfare may yield to a considerable gain in MSE. However, as noted in <strong><a class="reference internal" href="#cebvseb"><span class="std std-numref">Fig. 4.5</span></a></strong> in <strong><a class="reference internal" href="#unit-level-first-sae-model"><span class="std std-numref">Section 4.2.1</span></a></strong> the gain in MSE of EB over CensusEB approximates 0 as the sample size by area shrinks. When the sample is 4% of the population per area, an already quite large sample rarely encountered in real-world scenarios, the difference between the approaches is nearly zero.</p>
 <p>To illustrate how CensusEB estimates are implemented, a 20% sample by area of the data created in <strong><a class="reference internal" href="#unit-level-appendix-selection"><span class="std std-numref">Section 4.5.1</span></a></strong> is used as a survey to which the model <strong>Equation <a class="reference internal" href="#equation-eq-1-1">(4.2)</a></strong> is fit. To obtain point estimates under <span id="id136">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span>, the authors assume that the considered unit-level model is the one that generates the data. Thus, the estimates for <span class="math notranslate nohighlight">\(\beta,\)</span> <span class="math notranslate nohighlight">\(\sigma_{\eta}^{2}\)</span>, and <span class="math notranslate nohighlight">\(\sigma_{e}^{2}\)</span> obtained from the fitted model are kept fixed in the Monte Carlo simulation procedure used to obtain EB point estimates.<a class="footnote-reference brackets" href="#id300" id="id137">31</a> Additionally, the predicted random location effects, <span class="math notranslate nohighlight">\(\hat{\eta}_{c}\)</span>, are also kept fixed as a result of conditioning on the sample observations of welfare.</p>
 <p>The first step consists in fitting the model and obtaining the parameter estimates, <span class="math notranslate nohighlight">\(\hat{\theta}_{0}=\left(\hat{\beta_{0}},\:\hat{\sigma}_{\eta0}^{2},\:\hat{\sigma}_{e0}^{2}\right)\)</span> which are later used to simulate vectors of welfare for all the population of households (a census of welfare).</p>
@@ -935,10 +1039,10 @@ use x1 x2 area hhid using &quot;$mdata\thepopulation.dta&quot;, clear
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;C:\Users\wb548031\AppData\Local\Temp\ipykernel_29096\1325283927.py&quot;, line 1
-    ```stata
-    ^
-SyntaxError: invalid syntax
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Input In [1]
+    merge m:1 area using `mylocs&#39;
+                                ^
+SyntaxError: unterminated string literal (detected at line 11)
 </pre></div>
 </div>
 </div>
@@ -957,9 +1061,9 @@ SyntaxError: invalid syntax
 </pre></div>
 </div>
 <p>Note that this is quite different from the method used for ELL, as implemented in <code class="docutils literal notranslate"><span class="pre">PovMap</span></code> and the Stata <code class="docutils literal notranslate"><span class="pre">sae</span></code> package.<a class="footnote-reference brackets" href="#id302" id="id139">32</a> The steps detailed above are aligned to those applied by the command <code class="docutils literal notranslate"><span class="pre">sae</span> <span class="pre">sim</span> <span class="pre">reml</span> </code>to obtain CensusEB estimates and are very similar to the approach under <code class="docutils literal notranslate"><span class="pre">sae</span> <span class="pre">sim</span> <span class="pre">h3</span></code>.</p>
-</div>
-<div class="section" id="parametric-bootstrap">
-<span id="unit-level-annex-montecarlo-bootstrap"></span><h4><span class="section-number">4.4.2.2. </span>Parametric Bootstrap<a class="headerlink" href="#parametric-bootstrap" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="parametric-bootstrap">
+<span id="unit-level-annex-montecarlo-bootstrap"></span><h4><span class="section-number">4.4.2.2. </span>Parametric Bootstrap<a class="headerlink" href="#parametric-bootstrap" title="Permalink to this headline">#</a></h4>
 <p>The parametric bootstrap used to estimate the MSE of the EB estimates was introduced by <span id="id140">González-Manteiga <em>et al.</em> [<a class="reference internal" href="05_off-census.html#id116" title="Wenceslao González-Manteiga, Maria J Lombardía, Isabel Molina, Domingo Morales, and Laureano Santamaría. Bootstrap mean squared error of a small-area EBLUP. Journal of Statistical Computation and Simulation, 78(5):443–462, 2008.">2008</a>]</span>. It is the approach used by <span id="id141">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span> and the one used in the <code class="docutils literal notranslate"><span class="pre">sae</span></code> R package from <span id="id142">Molina and Marhuenda [<a class="reference internal" href="06_diagnostics.html#id68" title="Isabel Molina and Yolanda Marhuenda. Sae: an R package for small area estimation. The R Journal, 7(1):81–98, 2015.">2015</a>]</span>, as well as in the updated Stata <code class="docutils literal notranslate"><span class="pre">sae</span></code> package.<a class="footnote-reference brackets" href="#id304" id="id143">33</a> The procedure is computationally more demanding than the bootstrap procedure used in <code class="docutils literal notranslate"><span class="pre">PovMap</span> </code>which was inspired by the MI literature. However, the parametric bootstrap procedure from <span id="id144">González-Manteiga <em>et al.</em> [<a class="reference internal" href="05_off-census.html#id116" title="Wenceslao González-Manteiga, Maria J Lombardía, Isabel Molina, Domingo Morales, and Laureano Santamaría. Bootstrap mean squared error of a small-area EBLUP. Journal of Statistical Computation and Simulation, 78(5):443–462, 2008.">2008</a>]</span> tracks the real MSE values.</p>
 <p>The process consists in, first, creating a population vector of welfare (i.e. census) using <span class="math notranslate nohighlight">\(\hat{\theta}_{0}=\left(\hat{\beta_{0}},\:\hat{\sigma}_{\eta0}^{2},\:\hat{\sigma}_{e0}^{2}\right)\)</span>. Note that <span class="math notranslate nohighlight">\(\hat{\theta}_{0}=\left(\hat{\beta_{0}},\:\hat{\sigma}_{\eta0}^{2},\:\hat{\sigma}_{e0}^{2}\right)\)</span> are obtained from the original sample and match those from the ones used in the previous step for computing CensusEB point estimates.</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">//Macros used below</span>
@@ -1094,13 +1198,13 @@ SyntaxError: invalid syntax
 <p class="admonition-title">Note</p>
 <p>The second part above was ommited in guidelines*</p>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="appendix">
-<span id="unit-level-appendix"></span><h2><span class="section-number">4.5. </span>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="model-selection-do-file">
-<span id="unit-level-appendix-selection"></span><h3><span class="section-number">4.5.1. </span>Model Selection Do-File<a class="headerlink" href="#model-selection-do-file" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="appendix">
+<span id="unit-level-appendix"></span><h2><span class="section-number">4.5. </span>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">#</a></h2>
+<section id="model-selection-do-file">
+<span id="unit-level-appendix-selection"></span><h3><span class="section-number">4.5.1. </span>Model Selection Do-File<a class="headerlink" href="#model-selection-do-file" title="Permalink to this headline">#</a></h3>
 <p>This do-file provides an example of the steps that may be followed to select a model for SAE, according to the discussion from <strong><a class="reference internal" href="#unit-level-first-sae"><span class="std std-numref">Section 4.2</span></a></strong>. The steps for model checking follow those illustrated by UCLA’s Statistical Consulting Group (<span id="id145"></span>).</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">clear</span> all <span class="k"></span>
 <span class="k">set more</span> off
@@ -1407,9 +1511,9 @@ sae model h3 bcy <span class="vg">$postalfa</span><span class="k"> if</span> nog
 <span class="k">save</span> <span class="s">&quot;</span><span class="vg">$mdata</span><span class="s">\mysvy.dta&quot;</span>,<span class="k"> replace</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="sae-simulation-stage">
-<span id="unit-level-appendix-simulation"></span><h3><span class="section-number">4.5.2. </span>SAE Simulation Stage<a class="headerlink" href="#sae-simulation-stage" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sae-simulation-stage">
+<span id="unit-level-appendix-simulation"></span><h3><span class="section-number">4.5.2. </span>SAE Simulation Stage<a class="headerlink" href="#sae-simulation-stage" title="Permalink to this headline">#</a></h3>
 <p>This do-file provides an example of the steps commonly followed to produce the final CensusEB small area estimates. It follows the discussion from <strong><a class="reference internal" href="#unit-level-first-sae-estimates"><span class="std std-numref">Section 4.2.4</span></a></strong>.</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">clear</span> all <span class="k"></span>
 <span class="k">set more</span> off
@@ -1476,10 +1580,10 @@ indicators(fgt0 fgt1 fgt2) aggids(<span class="m">0</span> <span class="m">4</sp
 <span class="k">save</span> <span class="s">&quot;</span><span class="vg">$mdata</span><span class="s">\mySAE.dta&quot;</span>,<span class="k"> replace</span> 
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="references">
-<span id="unit-level-ref"></span><h2><span class="section-number">4.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="references">
+<span id="unit-level-ref"></span><h2><span class="section-number">4.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <div class="docutils container" id="id146">
 <dl class="citation">
 <dt class="label" id="id193"><span class="brackets"><a class="fn-backref" href="#id79">BDL+06</a></span></dt>
@@ -1562,9 +1666,9 @@ indicators(fgt0 fgt1 fgt2) aggids(<span class="m">0</span> <span class="m">4</sp
 </dd>
 </dl>
 </div>
-</div>
-<div class="section" id="notes">
-<span id="unit-level-notes"></span><h2><span class="section-number">4.7. </span>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="notes">
+<span id="unit-level-notes"></span><h2><span class="section-number">4.7. </span>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id249"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -1667,8 +1771,8 @@ indicators(fgt0 fgt1 fgt2) aggids(<span class="m">0</span> <span class="m">4</sp
 <dd><p>See <span id="id305">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id90" title="Paul Corral, Isabel Molina, and Minh Cong Nguyen. Pull your small area estimates up by the bootstraps. Journal of Statistical Computation and Simulation, 91(16):3304–3357, 2021. URL: https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460, doi:10.1080/00949655.2021.1926460.">2021</a>]</span> for more details.</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1692,9 +1796,11 @@ indicators(fgt0 fgt1 fgt2) aggids(<span class="m">0</span> <span class="m">4</sp
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="03_area-level.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1710,24 +1816,28 @@ indicators(fgt0 fgt1 fgt2) aggids(<span class="m">0</span> <span class="m">4</sp
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Paul Corral, Isabel Molina, Alexandru Cojocaru, and Sandra Segovia<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Paul Corral, Isabel Molina, Alexandru Cojocaru, and Sandra Segovia<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

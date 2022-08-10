@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>5. Poverty Mapping in Off-Census Years &#8212; Guidelines to Small Area Estimation for Poverty Mapping</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -40,12 +38,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -65,7 +64,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +87,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -94,14 +108,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="00_welcome.html">
-   Welcome to Guidelines to SAE for Poverty Mapping
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_welcome.html">
+                    Welcome to Guidelines to SAE for Poverty Mapping
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   CHAPTERS
  </span>
@@ -145,91 +160,164 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Created by <a href="https://github.com/ssegoviajuarez"> Sandra Segovia </a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/05_off-census.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/05_off-census.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Created by <a href="https://github.com/ssegoviajuarez"> Sandra Segovia </a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/05_off-census.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/05_off-census.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#unit-context-models">
    5.1. Unit-Context Models
@@ -324,12 +412,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Poverty Mapping in Off-Census Years</h1>
@@ -440,148 +527,173 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="poverty-mapping-in-off-census-years">
-<span id="off-census"></span><h1><span class="section-number">5. </span>Poverty Mapping in Off-Census Years<a class="headerlink" href="#poverty-mapping-in-off-census-years" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="poverty-mapping-in-off-census-years">
+<span id="off-census"></span><h1><span class="section-number">5. </span>Poverty Mapping in Off-Census Years<a class="headerlink" href="#poverty-mapping-in-off-census-years" title="Permalink to this headline">#</a></h1>
 <hr style="height:1px;border:none;color:#666;background-color:#666;" /><p>Considerable attention has been given to produce reliable poverty maps in off-census years. An updated poverty map is increasingly becoming an essential resource to improve the targeting of many social protection programs around the world, which was underscored by the rapid onset and widespread impact of the COVID-19 crisis. Even in the best-case scenarios, poverty maps that rely on unit-level small area estimation techniques combining a census and survey can only be obtained once a decade. In off-census years, the typical small area approach applied has been an area-level model, such as a Fay-Herriot or a sub-area-level model, such as the one proposed by <span id="id1">Torabi and Rao [<a class="reference internal" href="#id119" title="Mahmoud Torabi and JNK Rao. On small area estimation under a sub-area level model. Journal of Multivariate Analysis, 127:36–55, 2014.">2014</a>]</span>). Nevertheless, since the perceived gains in precision from area-level models are less than stellar, methods that combine unit- and area-level models have been proposed (see <span id="id2">Nguyen [<a class="reference internal" href="#id149" title="Viet Cuong Nguyen. A method to update poverty maps. The Journal of Development Studies, 48(12):1844-1863, 2012. URL: https://doi.org/10.1080/00220388.2012.682983, arXiv:https://doi.org/10.1080/00220388.2012.682983, doi:10.1080/00220388.2012.682983.">2012</a>]</span>; <span id="id3">Lange <em>et al.</em> [<a class="reference internal" href="#id93" title="Simon Lange, Utz Johann Pape, and Peter Pütz. Small area estimation of poverty under structural change. World Bank Policy Research Working Paper, 2018.">2018</a>]</span>; <span id="id4">Masaki <em>et al.</em> [<a class="reference internal" href="#id92" title="Takaaki Masaki, David Newhouse, Ani Rudra Silwal, Adane Bedada, and Ryan Engstrom. Small area estimation of non-monetary poverty with geospatial data. World Bank Policy Research Working Paper, 2020.">2020</a>]</span>). These models are here called unit-context models and, although appealing, seem to yield considerably biased estimates.</p>
 <p>Beyond the small area estimation literature, the machine learning literature has made several contributions to poverty mapping. Recent research in this area include <span id="id5">Chi <em>et al.</em> [<a class="reference internal" href="#id157" title="Guanghua Chi, Han Fang, Sourav Chatterjee, and Joshua E Blumenstock. Micro-estimates of wealth for all low-and middle-income countries. arXiv preprint arXiv:2104.07761, 2021.">2021</a>]</span> and <span id="id6">Jean <em>et al.</em> [<a class="reference internal" href="#id158" title="Neal Jean, Marshall Burke, Michael Xie, W Matthew Davis, David B Lobell, and Stefano Ermon. Combining satellite imagery and machine learning to predict poverty. Science, 353(6301):790–794, 2016. URL: https://www.science.org/doi/abs/10.1126/science.aaf7894.">2016</a>]</span>. The authors of these two papers created highly disaggregated poverty maps by modeling the direct estimates of an asset index at a very low geographical level (e.g. villages or enumeration areas) using satellite-derived covariates. The authors of those papers rely on machine learning approaches, such as gradient boosting and ridge regression, to obtain estimates for small areas. These models provide point estimates of poverty at a low geographical level, although they do not necessarily provide an adequate estimate of the method’s noise. The methods are attractive since they present the possibility of producing a poverty map even when a contemporaneous or reliable census does not exist.</p>
-<div class="section" id="unit-context-models">
-<span id="off-census-unit-context"></span><h2><span class="section-number">5.1. </span>Unit-Context Models<a class="headerlink" href="#unit-context-models" title="Permalink to this headline">¶</a></h2>
+<section id="unit-context-models">
+<span id="off-census-unit-context"></span><h2><span class="section-number">5.1. </span>Unit-Context Models<a class="headerlink" href="#unit-context-models" title="Permalink to this headline">#</a></h2>
 <p>Unit-context models attempt to model the population’s welfare distribution using only area-level covariates. More specifically, unit-context models combine unit and area-level information to model the transformed household-level welfare (unit) using only area-level covariates (context). Since unit-context models do not require census microdata, they have been proposed as an alternative approach for the case when the available census microdata is too outdated to be considered for use under the conventional model-based methods that include unit-level covariates.<a class="footnote-reference brackets" href="#id189" id="id7">1</a></p>
 <p>Previous applications of unit-context models for small area estimation were proposed by <span id="id8"></span>, who studied the number of trips home students have taken, and by <span id="id9"></span>, who looked at batting averages and toxoplasmosis cases. In these applications, the method appears to work well, although in both studies, the model with aggregate covariates is used to produce estimates of the area means of the dependent variable in the model (no transformation is considered). In the context of poverty, the target poverty indicators are typically complex nonlinear functions of the dependent variables in the model. Hence, properly replicating the full welfare distribution is essential as noted in <strong><a class="reference internal" href="04_unit-level.html#bias-approx"><span class="std std-numref">Fig. 4.1</span></a></strong>. At the area level, this is complicated since household characteristics are not used in the model. Thus very little, if any, of the variation in welfare across households in the area is explained. If simple area means of the welfare variable of interest are the target, then, due to the assumptions embedded into the nested-error models used in <strong>Chapter 4: <a class="reference internal" href="04_unit-level.html#unit-level"><span class="std std-ref">Unit-level Models for Small Area Estimation</span></a></strong>, a transformation (such as log or log-shift) of the welfare variable is used as the dependent variable in the model. Consequently, the area means of the untransformed welfare variable are desired, which are then means of exponentials of the dependent variable. As is illustrated in the next section, when estimating indicators that are nonlinear functions of the dependent variables in the model, unit-context models will likely produce small area estimators of poverty with substantial bias.</p>
 <p><span id="id10">Nguyen [<a class="reference internal" href="#id149" title="Viet Cuong Nguyen. A method to update poverty maps. The Journal of Development Studies, 48(12):1844-1863, 2012. URL: https://doi.org/10.1080/00220388.2012.682983, arXiv:https://doi.org/10.1080/00220388.2012.682983, doi:10.1080/00220388.2012.682983.">2012</a>]</span> first considered unit-context models for poverty estimation in an application for Vietnam. In this application, the dependent variable was the household-level logarithm of per capita expenditure from the Vietnam Household Living Standard Survey from 2006, whereas all covariates are commune-level means obtained from a dated (1999) census. <span id="id11">Nguyen [<a class="reference internal" href="#id149" title="Viet Cuong Nguyen. A method to update poverty maps. The Journal of Development Studies, 48(12):1844-1863, 2012. URL: https://doi.org/10.1080/00220388.2012.682983, arXiv:https://doi.org/10.1080/00220388.2012.682983, doi:10.1080/00220388.2012.682983.">2012</a>]</span> obtains ELL estimates of poverty for small areas under that model and compares the performance with typical ELL poverty estimates obtained using unit-level covariates from the Vietnam Household Living Standard Survey from 2006 and the 2006 Rural Agriculture and Fishery Census. The author finds that provinces and districts hovering around the middle of the distribution suffered considerable re-rankings across methods. However, those at the top and the bottom were relatively stable.</p>
 <p>A similar approach to the one from <span id="id12">Nguyen [<a class="reference internal" href="#id149" title="Viet Cuong Nguyen. A method to update poverty maps. The Journal of Development Studies, 48(12):1844-1863, 2012. URL: https://doi.org/10.1080/00220388.2012.682983, arXiv:https://doi.org/10.1080/00220388.2012.682983, doi:10.1080/00220388.2012.682983.">2012</a>]</span> was presented by <span id="id13">Lange <em>et al.</em> [<a class="reference internal" href="#id93" title="Simon Lange, Utz Johann Pape, and Peter Pütz. Small area estimation of poverty under structural change. World Bank Policy Research Working Paper, 2018.">2018</a>]</span> as an alternative in cases when census and survey data are not from similar periods. However, the same inefficiency issues noted in <strong>Chapter 4: <a class="reference internal" href="04_unit-level.html#unit-level"><span class="std std-ref">Unit-level Models for Small Area Estimation</span></a></strong> regarding ELL estimates would likely persist when considering a model using only area-level covariates. Improvements to the approach were seemingly made by <span id="id14">Masaki <em>et al.</em> [<a class="reference internal" href="#id92" title="Takaaki Masaki, David Newhouse, Ani Rudra Silwal, Adane Bedada, and Ryan Engstrom. Small area estimation of non-monetary poverty with geospatial data. World Bank Policy Research Working Paper, 2020.">2020</a>]</span> by taking measures to address some of the shortcomings of a standard ELL approach and to obtain EB estimators from <span id="id15">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span>. The authors conduct a design-based validation study using census data for Sri Lanka and Tanzania for a wealth index constructed by principal component analysis and suggest that the use of EB improves precision over ELL when implementing unit-context models.</p>
 <p>Although the unit-context approach is attractive in that it does not require a contemporaneous census and can readily accommodate variables extracted from the emerging fields related to geospatial analysis, there are serious concerns about bias in unit-context estimators, as noted in <span id="id16">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> as well as the concerns raised in the following section. The MSE from unit-context models is also likely to be incorrectly estimated since the required parametric bootstrap procedure assumes the underlying model using only area-level characteristics to be correct. In other words, the unit-context model’s assumptions require household-level welfare to not depend on household-specific characteristics, which is unlikely to be the case. Incorrect MSE estimates risk presenting a map with considerable bias as being overly precise. Therefore, based on the currently available evidence, area-level models, like Fay-Herriot (<strong>Chapter 3: <a class="reference internal" href="03_area-level.html#area-level"><span class="std std-ref">Area-level Models for Small Area Estimation</span></a></strong>), are generally preferred over unit-context models (see the following section for more details).</p>
 <p>In cases where neither area- nor unit-level models are advised due to data limitations, no clear consensus has emerged on the best path forward or if one even exists. In evaluating alternatives, practitioners should choose methods which rely on assumptions that are realistic to the circumstances in which the model will be employed, which are approximately unbiased (or its bias does not exceed a certain limit), and for which an accurate method exists to measure the small area estimators’ MSE. In cases where the MSE cannot be adequately estimated, then at least it should be known in which (realistic) scenarios the approach has limited bias. If these conditions cannot be reasonably met, it is preferable to not produce a map than to produce one with potentially biased estimates, or one in which precision is overestimated, or most worrisome, both. In the next section, the limitations of unit-context models are discussed.</p>
-<div class="section" id="limitations-of-unit-context-models">
-<span id="off-census-unit-context-limitations"></span><h3><span class="section-number">5.1.1. </span>Limitations of Unit-Context Models<a class="headerlink" href="#limitations-of-unit-context-models" title="Permalink to this headline">¶</a></h3>
+<section id="limitations-of-unit-context-models">
+<span id="off-census-unit-context-limitations"></span><h3><span class="section-number">5.1.1. </span>Limitations of Unit-Context Models<a class="headerlink" href="#limitations-of-unit-context-models" title="Permalink to this headline">#</a></h3>
 <p>Based on results from a validation study using model- and design-based simulations, <span id="id17">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> conclude unit-context models, like those presented in <span id="id18">Masaki <em>et al.</em> [<a class="reference internal" href="#id92" title="Takaaki Masaki, David Newhouse, Ani Rudra Silwal, Adane Bedada, and Ryan Engstrom. Small area estimation of non-monetary poverty with geospatial data. World Bank Policy Research Working Paper, 2020.">2020</a>]</span>, <span id="id19">Lange <em>et al.</em> [<a class="reference internal" href="#id93" title="Simon Lange, Utz Johann Pape, and Peter Pütz. Small area estimation of poverty under structural change. World Bank Policy Research Working Paper, 2018.">2018</a>]</span> and <span id="id20">Nguyen [<a class="reference internal" href="#id149" title="Viet Cuong Nguyen. A method to update poverty maps. The Journal of Development Studies, 48(12):1844-1863, 2012. URL: https://doi.org/10.1080/00220388.2012.682983, arXiv:https://doi.org/10.1080/00220388.2012.682983, doi:10.1080/00220388.2012.682983.">2012</a>]</span> are not recommended except under exceptional cases due to the high likelihood of bias in estimates.<a class="footnote-reference brackets" href="#id190" id="id21">2</a></p>
 <p><span id="id22">Nguyen [<a class="reference internal" href="#id149" title="Viet Cuong Nguyen. A method to update poverty maps. The Journal of Development Studies, 48(12):1844-1863, 2012. URL: https://doi.org/10.1080/00220388.2012.682983, arXiv:https://doi.org/10.1080/00220388.2012.682983, doi:10.1080/00220388.2012.682983.">2012</a>]</span> application of a unit-context model to estimate poverty in small areas in Vietnam already hints toward potential problems of the unit-context approach. The author compares the results from unit-context models to those obtained via a standard unit-level method, ELL, and finds considerable changes in rankings. <span id="id23">Nguyen [<a class="reference internal" href="#id149" title="Viet Cuong Nguyen. A method to update poverty maps. The Journal of Development Studies, 48(12):1844-1863, 2012. URL: https://doi.org/10.1080/00220388.2012.682983, arXiv:https://doi.org/10.1080/00220388.2012.682983, doi:10.1080/00220388.2012.682983.">2012</a>]</span> finds that differences in rankings are largest for locations around the middle of the distribution.</p>
 <p>Despite the use of EB, the unit-context application by <span id="id24">Masaki <em>et al.</em> [<a class="reference internal" href="#id92" title="Takaaki Masaki, David Newhouse, Ani Rudra Silwal, Adane Bedada, and Ryan Engstrom. Small area estimation of non-monetary poverty with geospatial data. World Bank Policy Research Working Paper, 2020.">2020</a>]</span>, also provides hints of potential methodological problems with the approach. A ratio procedure was used to benchmark the values to ensure alignment between direct estimates at the level of representativeness and the estimates obtained by the approach. The need to benchmark indicates considerable discrepancies between the sum of estimated totals at the lower level and the estimated total at the higher level. The need to benchmark also suggests that the model’s assumptions are not satisfied.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/bias_UC_fgt0.png"><img alt="_images/bias_UC_fgt0.png" src="_images/bias_UC_fgt0.png" style="height: 350px;" /></a>
-</div>
-<div class="figure align-default" id="uc-fgt0">
+</figure>
+<figure class="align-default" id="uc-fgt0">
 <a class="reference internal image-reference" href="_images/MSE_UC_fgt0.png"><img alt="_images/MSE_UC_fgt0.png" src="_images/MSE_UC_fgt0.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.1 </span><span class="caption-text"><em>Empirical Bias and MSE for CensusEB based on a unit-level model and CensusEB based on a unit-context model (UC-CensusEB) and ELL FGT0 estimates from model based simulations</em></span><a class="headerlink" href="#uc-fgt0" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 5.1 </span><span class="caption-text"><em>Empirical Bias and MSE for CensusEB based on a unit-level model and CensusEB based on a unit-context model (UC-CensusEB) and ELL FGT0 estimates from model based simulations</em></span><a class="headerlink" href="#uc-fgt0" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: <span id="id25">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>. The figure is obtained from simulations based on 10,000 populations and samples as specified in <span id="id26">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>. The simulations illustrate that unit context (UC) model may yield FGT0 estimates that are upward biased and with MSEs that could be several orders of magnitude above those of CensusEB estimates, based on the analogous unit-level model, and for some areas may be almost as inefficient as ELL.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>Unit-context models appear to yield upward biased FGT0 estimates in model-based simulations, as presented in <strong><a class="reference internal" href="#uc-fgt0"><span class="std std-numref">Fig. 5.1</span></a></strong> (most areas show bias above 0). Since unit-context models are special cases of the models used in ELL and EB procedures (see <strong><a class="reference internal" href="04_unit-level.html#unit-level-annex-model"><span class="std std-numref">Section 4.4.1</span></a></strong>), but without household-level characteristics, the between-household variation of welfare is not adequately explained by the model. <span id="id27">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> suggest that part of the observed bias comes from this misspecification, with effects similar to omitted variable bias (OVB) (see the appendix in <span id="id28">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>). Despite the bias, the empirical MSE of unit-context models seems to outperform that of ELL estimates (<strong><a class="reference internal" href="#uc-fgt0"><span class="std std-numref">Fig. 5.1</span></a></strong>).</p>
 <p>Like traditional unit-level models, unit-context models also assume normally distributed errors and departures from normality may also produce bias (which might offset or compound the previous bias). This is why in <strong><a class="reference internal" href="04_unit-level.html#unit-level-first-sae-data"><span class="std std-numref">Section 4.2.2</span></a></strong>, a considerable emphasis is placed on data transformation, all with the aim of approximating the normality assumption. Because of the poor model fit and potential deviations from normality, unit-context models also display considerable bias when estimating mean welfare (see <strong><a class="reference internal" href="#uc-mean"><span class="std std-numref">Fig. 5.2</span></a></strong>).</p>
-<div class="figure align-default">
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/bias_UC_mean.png"><img alt="_images/bias_UC_mean.png" src="_images/bias_UC_mean.png" style="height: 350px;" /></a>
-</div>
-<div class="figure align-default" id="uc-mean">
+</figure>
+<figure class="align-default" id="uc-mean">
 <a class="reference internal image-reference" href="_images/MSE_UC_mean.png"><img alt="_images/MSE_UC_mean.png" src="_images/MSE_UC_mean.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.2 </span><span class="caption-text"><em>Empirical Bias and MSE for CensusEB based on a unit-level model and CensusEB based on a unit-context model (UC-CensusEB) and ELL mean welfare estimates from model based simulations</em></span><a class="headerlink" href="#uc-mean" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 5.2 </span><span class="caption-text"><em>Empirical Bias and MSE for CensusEB based on a unit-level model and CensusEB based on a unit-context model (UC-CensusEB) and ELL mean welfare estimates from model based simulations</em></span><a class="headerlink" href="#uc-mean" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: <span id="id29">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>. The figure is obtained from simulations based on 10,000 populations and samples as specified in <span id="id30">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>. The simulations illustrate that unit-context models may yield mean welfare estimates that are considerably biased and with MSEs that could be several orders of magnitude above those of CensusEB estimates based on the analogous unit-level model and for some areas may be as inefficient as ELL.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>In the simulation results displayed in <strong><a class="reference internal" href="#uc-mean"><span class="std std-numref">Fig. 5.2</span></a></strong>, the dependent variable is the natural log of welfare. Nevertheless, what practitioners are often interested in is welfare, and hence need to reverse the log transformation. Since <span class="math notranslate nohighlight">\(\exp\left[E\left(\ln y\right)\right]\neq E\left(y\right)\)</span>. The log linear nested-error model (<span class="math notranslate nohighlight">\(\ln y_{ch}=x_{ch}\beta+\eta_{c}+e_{ch}\)</span>) implies that <span class="math notranslate nohighlight">\(y_{ch}=\exp\left(x_{ch}\beta\right)\exp\left(\eta_{c}\right)\exp\left(e_{ch}\right)\)</span>, then <span class="math notranslate nohighlight">\(E\left(y_{ch}|x_{ch}\right)=\exp\left(x_{ch}\beta\right)E\left[\exp\left(\eta_{c}\right)\right]E\left[\exp\left(e_{ch}\right)\right]\)</span>. Since it is assumed that <span class="math notranslate nohighlight">\(\eta_{c}\sim N\left(0,\sigma_{\eta}^{2}\right)\)</span> and <span class="math notranslate nohighlight">\(e_{ch}\sim N\left(0,\sigma_{e}^{2}\right)\)</span>, then <span class="math notranslate nohighlight">\(E\left[\exp\left(\eta_{c}\right)\right]=\exp\left(0.5\sigma_{\eta}^{2}\right)\)</span> and <span class="math notranslate nohighlight">\(E\left[\exp\left(e_{ch}\right)\right]=\exp\left(0.5\sigma_{e}^{2}\right)\)</span>. Because unit-context models do not include household-level covariates, the resulting estimate of <span class="math notranslate nohighlight">\(\sigma_{e}^{2}\)</span> is likely much greater than the true <span class="math notranslate nohighlight">\(\sigma_{e}^{2}\)</span>. This implies that unit-context models may yield an upward biased prediction of mean household welfare for the area despite the use of EB methods since unbiasedness is assured for the area means of <span class="math notranslate nohighlight">\(\ln y\)</span> but not for those of <span class="math notranslate nohighlight">\(y\)</span> following back transformation.</p>
 <p>To illustrate this last point, a simulation where the modeling and estimates are obtained using the same source is conducted (see Appendix <strong><a class="reference internal" href="#off-census-appendix-experiment1-better-fit"><span class="std std-numref">Section 5.5.1.2</span></a></strong>). This is done to remove the potential source of bias noted in the Appendix of <span id="id31">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>. The empirical bias of the estimators in each of the 40 areas in the census data set are represented in box-plots. First, note that, when estimating the area means of the dependent variable (similar to when no transformation is taken), the biases of the CensusEB estimators based on the unit-context model are not that large (<strong><a class="reference internal" href="#mypop-welfare-bias"><span class="std std-numref">Fig. 5.3</span></a></strong>, left). However, suppose one estimates the means of the untransformed welfare variable (exponential of the model’s dependent variable). In that case, the incorrect estimate of <span class="math notranslate nohighlight">\(\sigma_{\eta}^{2}+\sigma_{e}^{2}\)</span> plays a considerable role, and thus the estimates of mean welfare based on unit-context models are upward biased despite the use of EB methods (<strong><a class="reference internal" href="#mypop-welfare-bias"><span class="std std-numref">Fig. 5.3</span></a></strong>, right). As shown in <strong><a class="reference internal" href="#mypop-welfare-bias"><span class="std std-numref">Fig. 5.3</span></a></strong> (right), the average bias of CensusEB estimators based on unit-context models is considerable. For some areas, the bias may be over 800 times the bias of the CensusEB estimators based on the analogous unit-level models.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/Y_mypop.png"><img alt="_images/Y_mypop.png" src="_images/Y_mypop.png" style="height: 350px;" /></a>
-</div>
-<div class="figure align-default" id="mypop-welfare-bias">
+</figure>
+<figure class="align-default" id="mypop-welfare-bias">
 <a class="reference internal image-reference" href="_images/mean_mypop.png"><img alt="_images/mean_mypop.png" src="_images/mean_mypop.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.3 </span><span class="caption-text"><em>Empirical Bias of CensusEB prediction of the area means of <span class="math notranslate nohighlight">\(ln(y_ais)\)</span>, left, and <span class="math notranslate nohighlight">\(y_ais\)</span>, right, obtained from a unit-level model and from a unit-context model</em></span><a class="headerlink" href="#mypop-welfare-bias" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 5.3 </span><span class="caption-text"><em>Empirical Bias of CensusEB prediction of the area means of <span class="math notranslate nohighlight">\(ln(y_ais)\)</span>, left, and <span class="math notranslate nohighlight">\(y_ais\)</span>, right, obtained from a unit-level model and from a unit-context model</em></span><a class="headerlink" href="#mypop-welfare-bias" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Note: Simulation based on 5,000 populations generated as described in <strong><a class="reference internal" href="#off-census-appendix-experiment1"><span class="std std-numref">Section 5.5.1</span></a></strong>. The model is fit to the whole population and then welfare is simulated for the same population to yield 5,000 EB predictors for each area. Box-plots represent the empirical bias for the 40 areas in the census data. Do-file to replicate simulation can be seen in <strong><a class="reference internal" href="#off-census-appendix-experiment1-validation"><span class="std std-numref">Section 5.5.1.1</span></a></strong>.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>The source of bias discussed, i.e. due to biased estimators of the variance components under unit-context models, is in addition to the bias due to the difference between the sample and census means of the covariates noted in <span id="id32">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>. The latter source of bias is not relevant here as it is related to sampling, and in this case, the entire census is taken as the sample. The bias due to variance components will affect the estimation of mean welfare and headcount poverty. Consequently, estimates of headcount poverty under unit-context models will be biased also because of poor model fit. As shown in <strong><a class="reference internal" href="#mypop-fgt0-bias"><span class="std std-numref">Fig. 5.4</span></a></strong>, the estimates from the unit-context models are upward biased for all areas, which occurs because the full distribution of the population is not accurately replicated under unit-context models.</p>
-<div class="figure align-default" id="mypop-fgt0-bias">
+<figure class="align-default" id="mypop-fgt0-bias">
 <a class="reference internal image-reference" href="_images/fgt0_mypop.png"><img alt="_images/fgt0_mypop.png" src="_images/fgt0_mypop.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.4 </span><span class="caption-text"><em>Empirical Bias of CensusEB predictors of FGT0 under unit-level model and under a unit-context model</em></span><a class="headerlink" href="#mypop-fgt0-bias" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 5.4 </span><span class="caption-text"><em>Empirical Bias of CensusEB predictors of FGT0 under unit-level model and under a unit-context model</em></span><a class="headerlink" href="#mypop-fgt0-bias" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Note: Simulation based on 5,000 populations generated as shown in section. The model is fit on the entire population and then welfare is simulated on the same population to yield 5,000 EB predictors for each area. Box-plot represents the empirical bias for the 40 areas in the census data. Do-file to replicate simulation can be seen in <strong><a class="reference internal" href="#off-census-appendix-experiment1-validation"><span class="std std-numref">Section 5.5.1.1</span></a></strong>.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>A potentially significant difference between the results presented in <strong><a class="reference internal" href="#mypop-welfare-bias"><span class="std std-numref">Fig. 5.3</span></a></strong> and <strong><a class="reference internal" href="#mypop-fgt0-bias"><span class="std std-numref">Fig. 5.4</span></a></strong>, and the applications of <span id="id33">Masaki <em>et al.</em> [<a class="reference internal" href="#id92" title="Takaaki Masaki, David Newhouse, Ani Rudra Silwal, Adane Bedada, and Ryan Engstrom. Small area estimation of non-monetary poverty with geospatial data. World Bank Policy Research Working Paper, 2020.">2020</a>]</span> and <span id="id34">Lange <em>et al.</em> [<a class="reference internal" href="#id93" title="Simon Lange, Utz Johann Pape, and Peter Pütz. Small area estimation of poverty under structural change. World Bank Policy Research Working Paper, 2018.">2018</a>]</span> is the considerably lower <span class="math notranslate nohighlight">\(R^{2}\)</span> of the unit-context models presented here. To address the low <span class="math notranslate nohighlight">\(R^{2}\)</span>, the simulation experiment is repeated using a slightly modified data generating process leading to an increase of the model’s <span class="math notranslate nohighlight">\(R^{2}\)</span> (Technical Annex <strong><a class="reference internal" href="#off-census-appendix-experiment1"><span class="std std-numref">Section 5.5.1</span></a></strong>). This modification leads to an <span class="math notranslate nohighlight">\(R^{2}\)</span> of the unit-context model between 0.15 and 0.20, while for the unit-level model the <span class="math notranslate nohighlight">\(R^{2}\)</span> exceeds 0.60. This adjustment in the data generating process reduces the bias in the estimators of mean welfare based on the unit-context model (<strong><a class="reference internal" href="#mean-bias"><span class="std std-numref">Fig. 5.5</span></a></strong>), but the direction of the bias is different from that of the original simulation (<strong><a class="reference internal" href="#uc-mean"><span class="std std-numref">Fig. 5.2</span></a></strong>). This change of direction of the bias also occurs when estimating poverty rates, and the direction of the bias seems to change with the poverty threshold. Estimators based on unit-context models are upward biased for poverty rates under a threshold of 13. If this threshold is increased to 28, the unit-context estimators of the poverty rate become downward biased for every area (<strong><a class="reference internal" href="#fgt0-bias"><span class="std std-numref">Fig. 5.6</span></a></strong>). These results illustrate a crucial shortcoming of unit-context models: in a given application, a practitioner cannot know which will be the direction and the magnitude of the bias. Unit-context models seldom reproduce the true distribution accurately, and it is difficult to know in which cases they work properly.</p>
-<div class="figure align-default" id="mean-bias">
+<figure class="align-default" id="mean-bias">
 <a class="reference internal image-reference" href="_images/mean_mypop&#64;2.png"><img alt="_images/mean_mypop&#64;2.png" src="_images/mean_mypop&#64;2.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.5 </span><span class="caption-text"><em>Empirical Bias of CensusEB predictors under unit-level model and under a unit-context model</em></span><a class="headerlink" href="#mean-bias" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 5.5 </span><span class="caption-text"><em>Empirical Bias of CensusEB predictors under unit-level model and under a unit-context model</em></span><a class="headerlink" href="#mean-bias" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Note: Simulation based on 5,000 populations generated as shown in <strong><a class="reference internal" href="#off-census-appendix-experiment1"><span class="std std-numref">Section 5.5.1</span></a></strong>. The model is fit on the entire population and then welfare is simulated on the same population to yield 5,000 EB predictors for each area. Box-plot represents the empirical bias for the 40 areas in the census data. Do-file to replicate simulation can be seen in <strong><a class="reference internal" href="#off-census-appendix-experiment1-better-fit"><span class="std std-numref">Section 5.5.1.2</span></a></strong>.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>Building upon the previous simulation, a final simulation is conducted to observe how unit-context models perform under 99 different poverty thresholds. The thresholds correspond to the 99 percentiles of the first population generated in the simulation (detailed in Appendix <strong><a class="reference internal" href="#off-census-appendix-experiment2"><span class="std std-numref">Section 5.5.2</span></a></strong>). In contrast to the previous simulations, a sample from the population is taken here. This is done to compare unit-context estimators to estimators based on an FH model (<strong>Chapter 3: <a class="reference internal" href="03_area-level.html#area-level"><span class="std std-ref">Area-level Models for Small Area Estimation</span></a></strong>).</p>
 <p>As expected, the unit-level CensusEB estimator yields the smallest bias across all areas and poverty lines (<strong><a class="reference internal" href="#natlog-bias"><span class="std std-numref">Fig. 5.7</span></a></strong>). The shape of the bias for unit-context models suggests that it may perform well for some poverty lines, while it will perform poorly for other poverty lines. This agrees with what is noted in <strong><a class="reference internal" href="#fgt0-bias"><span class="std std-numref">Fig. 5.6</span></a></strong>, where the method could work for a given poverty line but show substantial bias at a different poverty threshold. Moreover, for many areas and poverty lines, unit-context models seem to perform worse than FH models, not just with respect to bias but also in terms of empirical MSE (<strong><a class="reference internal" href="#natlog-mse-1"><span class="std std-numref">Fig. 5.8</span></a></strong>).</p>
-<div class="figure align-default" id="fgt0-bias">
+<figure class="align-default" id="fgt0-bias">
 <a class="reference internal image-reference" href="_images/fgt0_mypop&#64;2.png"><img alt="_images/fgt0_mypop&#64;2.png" src="_images/fgt0_mypop&#64;2.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.6 </span><span class="caption-text"><em>Empirical Bias of CensusEB predictors of FGT0 under unit-level model and under a unit-context model</em></span><a class="headerlink" href="#fgt0-bias" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 5.6 </span><span class="caption-text"><em>Empirical Bias of CensusEB predictors of FGT0 under unit-level model and under a unit-context model</em></span><a class="headerlink" href="#fgt0-bias" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Note: Simulation based on 5,000 populations generated as shown in <strong><a class="reference internal" href="#off-census-appendix-experiment1"><span class="std std-numref">Section 5.5.1</span></a></strong>. The model is fit on the entire population and then welfare is simulated on the same population to yield 5,000 EB predictors for each area. Box-plot represents the empirical bias for the 40 areas in the census data. Do-file to replicate simulation can be seen in <strong><a class="reference internal" href="#off-census-appendix-experiment1-better-fit"><span class="std std-numref">Section 5.5.1.2</span></a></strong>.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>The average absolute empirical bias can be used to rank the different methods. Across all 99 poverty lines, unit-context models have the highest average absolute empirical bias (<strong><a class="reference internal" href="#natlog-absbias"><span class="std std-numref">Fig. 5.9</span></a></strong>).<a class="footnote-reference brackets" href="#id192" id="id35">3</a> Additionally, the average empirical MSE (across the 100 areas) for each poverty line is surprisingly close between Fay-Herriot and unit-context models. However, neither dominates the other (<strong><a class="reference internal" href="#natlog-mse"><span class="std std-numref">Fig. 5.10</span></a></strong>), supporting the conclusion that unit-context models should be used with caution and only when unit-level and area-level options are not feasible. If unit-context models are used, all caveats should be made clear to the users of the resulting estimates.</p>
-<div class="figure align-default" id="natlog-bias">
+<figure class="align-default" id="natlog-bias">
 <a class="reference internal image-reference" href="_images/bias_allptiles_natlog.png"><img alt="_images/bias_allptiles_natlog.png" src="_images/bias_allptiles_natlog.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.7 </span><span class="caption-text"><em>Empirical bias of different methods for each area and poverty line</em></span><a class="headerlink" href="#natlog-bias" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 5.7 </span><span class="caption-text"><em>Empirical bias of different methods for each area and poverty line</em></span><a class="headerlink" href="#natlog-bias" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Note: Simulation based on 1,000 populations generated as described in this section. Each line corresponds to one of the 100 areas. The x-axis represents the percentile on which the poverty line falls on, and the y-axis is the empirical bias. In instances where direct estimates have a variance of 0 and hence FH estimates cannot be obtained, the direct estimate is used as the FH estimate for that area. The do-file to replicate these results can be found in <strong><a class="reference internal" href="#off-census-appendix-experiment2-validation"><span class="std std-numref">Section 5.5.2.1</span></a></strong>.</p>
 </div>
-</div>
-<div class="figure align-default" id="natlog-mse-1">
+</figcaption>
+</figure>
+<figure class="align-default" id="natlog-mse-1">
 <a class="reference internal image-reference" href="_images/MSE_allptiles_natlog.png"><img alt="_images/MSE_allptiles_natlog.png" src="_images/MSE_allptiles_natlog.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.8 </span><span class="caption-text"><em>Empirical MSE of different methods for each area and poverty line</em></span><a class="headerlink" href="#natlog-mse-1" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 5.8 </span><span class="caption-text"><em>Empirical MSE of different methods for each area and poverty line</em></span><a class="headerlink" href="#natlog-mse-1" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Note: Simulation based on 1,000 populations generated as described in this section. Each line corresponds to one of the 100 areas. The x-axis represents the percentile on which the poverty line falls on, and the y-axis is the empirical MSE. In instances where direct estimates have a variance of 0 and hence FH estimates cannot be obtained, the direct estimate is used as the FH estimate for that area. The do-file to replicate these results can be found in <strong><a class="reference internal" href="#off-census-appendix-experiment2-validation"><span class="std std-numref">Section 5.5.2.1</span></a></strong>.</p>
 </div>
-</div>
-<div class="figure align-default" id="natlog-absbias">
+</figcaption>
+</figure>
+<figure class="align-default" id="natlog-absbias">
 <a class="reference internal image-reference" href="_images/absolute_bias_all_ptiles.png"><img alt="_images/absolute_bias_all_ptiles.png" src="_images/absolute_bias_all_ptiles.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.9 </span><span class="caption-text"><em>Average absolute empirical bias of different methods for each poverty line</em></span><a class="headerlink" href="#natlog-absbias" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 5.9 </span><span class="caption-text"><em>Average absolute empirical bias of different methods for each poverty line</em></span><a class="headerlink" href="#natlog-absbias" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Note: Simulation based on 1,000 populations generated as described in this section. Each line corresponds to the average across 100 areas of the absolute empirical bias for each method. The x-axis represents the percentile on which the poverty line falls on, and the y-axis is the average absolute empirical bias. In instances where direct estimates have a variance of 0 and hence FH estimates cannot be obtained, the direct estimate is used as the FH estimate for that area. The do-file to replicate these results can be found in <strong><a class="reference internal" href="#off-census-appendix-experiment2-validation"><span class="std std-numref">Section 5.5.2.1</span></a></strong>.</p>
 </div>
-</div>
-<div class="figure align-default" id="natlog-mse">
+</figcaption>
+</figure>
+<figure class="align-default" id="natlog-mse">
 <a class="reference internal image-reference" href="_images/avg_mse_all_ptiles.png"><img alt="_images/avg_mse_all_ptiles.png" src="_images/avg_mse_all_ptiles.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.10 </span><span class="caption-text"><em>Average empirical MSE of different methods for each poverty line</em></span><a class="headerlink" href="#natlog-mse" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 5.10 </span><span class="caption-text"><em>Average empirical MSE of different methods for each poverty line</em></span><a class="headerlink" href="#natlog-mse" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Note: Simulation based on 1,000 populations generated as described in this section. Each line corresponds to the average across 100 areas of the mean squared error for each method. The x-axis represents the percentile on which the poverty line falls on, and the y-axis is the average MSE. In instances where direct estimates have a variance of 0 and hence FH estimates cannot be obtained, the direct estimate is used as the FH estimate for that area. The do-file to replicate these results can be found in <strong><a class="reference internal" href="#off-census-appendix-experiment2-validation"><span class="std std-numref">Section 5.5.2.1</span></a></strong>.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>In addition to bias, there are concerns with an overstatement of precision from a unit-context model. If welfare depends on household-level characteristics (which is expected) the MSE estimates of CensusEB estimators based on unit-context models, obtained using the parametric bootstrap procedure of <span id="id36">González-Manteiga <em>et al.</em> [<a class="reference internal" href="#id116" title="Wenceslao González-Manteiga, Maria J Lombardía, Isabel Molina, Domingo Morales, and Laureano Santamaría. Bootstrap mean squared error of a small-area EBLUP. Journal of Statistical Computation and Simulation, 78(5):443–462, 2008.">2008</a>]</span>, would not be appropriate as it may underestimate the method’s true MSE by a considerable amount. The parametric bootstrap procedure under the unit-context model is done considering that the unit-context model is the true data generating process and thus generates bootstrap populations from that model. However, this assumption is shown to not hold in the simulation experiment, leading to inaccurate MSE estimates (<strong><a class="reference internal" href="#noisy-mse"><span class="std std-numref">Fig. 5.11</span></a></strong>). Consequently, under unit-context models, one can produce biased poverty estimates but may be presented as being very precise.</p>
-<div class="figure align-default" id="noisy-mse">
+<figure class="align-default" id="noisy-mse">
 <a class="reference internal image-reference" href="_images/mse_bias_poor.png"><img alt="_images/mse_bias_poor.png" src="_images/mse_bias_poor.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.11 </span><span class="caption-text"><em>Bias of parametric MSE estimate by method</em></span><a class="headerlink" href="#noisy-mse" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 5.11 </span><span class="caption-text"><em>Bias of parametric MSE estimate by method</em></span><a class="headerlink" href="#noisy-mse" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Note: Simulation based on 1,000 populations generated as described in this section. Under each population, MSE estimates are obtained using the parametric bootstrap procedure of <span id="id37">González-Manteiga <em>et al.</em> [<a class="reference internal" href="#id116" title="Wenceslao González-Manteiga, Maria J Lombardía, Isabel Molina, Domingo Morales, and Laureano Santamaría. Bootstrap mean squared error of a small-area EBLUP. Journal of Statistical Computation and Simulation, 78(5):443–462, 2008.">2008</a>]</span>. The empirical MSE is compared to the estimated MSE to obtain the bias of the MSE estimates of each method.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>Summarizing concerns with unit-context models, given the limitations of unit-context models, even under an ideal scenario where the model is fit to the whole set of population data and EB estimates are obtained also using the population data, unit-context models should be considered only if unit-level and area-level options have been exhausted. While it is possible that in real world applications, there may be bias from multiple sources which offset each other out for a given poverty threshold, there is no way for an analyst to determine if biases are canceling or compounding each other as the direction of the bias is not known <em>a priori</em>. A likely overstatement of precision further complicates this unknown bias. This situation recalls an original concern levied against ELL by <span id="id38">Banerjee <em>et al.</em> [<a class="reference internal" href="#id133" title="Abhijit V Banerjee, Angus Deaton, Nora Lustig, Kenneth Rogoff, and Edward Hsu. An evaluation of world bank research, 1998-2005. Available at SSRN 2950327, 2006.">2006</a>]</span> where the authors state: “What we are most concerned about is the possibility that the Bank is making very attractive poverty maps, whose precision is not known, but which come with statements of precision that we suspect may be seriously misleading. In the worst case scenario, a map that may be worthless is presented as one that is extremely precise” (<span id="id39">Banerjee <em>et al.</em> [<a class="reference internal" href="#id133" title="Abhijit V Banerjee, Angus Deaton, Nora Lustig, Kenneth Rogoff, and Edward Hsu. An evaluation of world bank research, 1998-2005. Available at SSRN 2950327, 2006.">2006</a>]</span>, pg 61).</p>
-</div>
-</div>
-<div class="section" id="gradient-boosting-for-poverty-mapping">
-<span id="off-census-gradient-boosting"></span><h2><span class="section-number">5.2. </span>Gradient Boosting for Poverty Mapping<a class="headerlink" href="#gradient-boosting-for-poverty-mapping" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="gradient-boosting-for-poverty-mapping">
+<span id="off-census-gradient-boosting"></span><h2><span class="section-number">5.2. </span>Gradient Boosting for Poverty Mapping<a class="headerlink" href="#gradient-boosting-for-poverty-mapping" title="Permalink to this headline">#</a></h2>
 <p>With the advent of increased computing power, machine learning approaches have gained popularity in the literature as well as in policy circles. For example, poverty estimates for small areas derived from a gradient boosting application by <span id="id40">Chi <em>et al.</em> [<a class="reference internal" href="#id157" title="Guanghua Chi, Han Fang, Sourav Chatterjee, and Joshua E Blumenstock. Micro-estimates of wealth for all low-and middle-income countries. arXiv preprint arXiv:2104.07761, 2021.">2021</a>]</span> guided the expansion of social protection in Nigeria; specifically, the estimates were used as an input to the Rapid Response Register for the COVID-19 Cash Transfer Project.<a class="footnote-reference brackets" href="#id193" id="id41">4</a></p>
 <p>Gradient boosting methods rely on, first, creating a linear fit (usually a constant term) to the data at hand and then fitting a new model onto the residuals. In contrast to ensemble techniques, the multiple fits are not averaged. Instead, the predicted residuals (scaled by a learning rate) are added to the previous step’s prediction, successively taking small steps using the same or different covariates at each step toward the final prediction. This process repeats until the requested number of predictions are completed, or there is no longer a gain in prediction.<a class="footnote-reference brackets" href="#id195" id="id42">5</a> A complete exposition of the approach is beyond the scope of the Guidelines, and interested readers can refer to <span id="id43"></span> or <span id="id44">Chen and Guestrin [<a class="reference internal" href="#id159" title="Tianqi Chen and Carlos Guestrin. Xgboost: a scalable tree boosting system. In Proceedings of the 22nd acm sigkdd international conference on knowledge discovery and data mining, 785–794. 2016.">2016</a>]</span> for a more nuanced description of the approach.</p>
 <p>A validation approach similar to the one done by <span id="id45">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> is implemented to test how well gradient boosting works in a poverty mapping context. Specifically, 500 samples taken from the census created from the <em>Mexican Intercensal Survey</em> are used to conduct a design-based simulation experiment to validate the method.<a class="footnote-reference brackets" href="#id197" id="id46">6</a> The <em>Mexican Intercensal Survey</em> is uniquely suited for this validation since it includes a measure of income at the household level and is representative at the municipal level and localities with 50,000 or more inhabitants. The survey was modified to obtain a census dataset of 3.9 million households and 1,865 municipalities <span id="id47">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>. Using a sampling approach similar to the one used for Living Standards Measurement Study (LSMS) surveys, 500 samples are drawn from the resulting census.</p>
 <p>In each of the 500 samples, a model is fit. The model’s dependent variable is the direct estimator of the headcount poverty rate at the PSU level (or municipality), and PSU aggregates (or municipality) from the census data are used as covariates. The models are fit using the XGBoost algorithm available in Python and R.<a class="footnote-reference brackets" href="#id199" id="id48">7</a> Introduced by <span id="id49">Chen and Guestrin [<a class="reference internal" href="#id159" title="Tianqi Chen and Carlos Guestrin. Xgboost: a scalable tree boosting system. In Proceedings of the 22nd acm sigkdd international conference on knowledge discovery and data mining, 785–794. 2016.">2016</a>]</span>, XGBoost is a scalable machine learning system for tree boosting and is available as an open-source software library. To make the comparison fair, for each of the 500 samples, a model is selected using lasso regression as detailed in <strong><a class="reference internal" href="06_diagnostics.html#diagnostics-selection"><span class="std std-numref">Section 6.2</span></a></strong> and fit for the considered small area estimation methods. This is different from the approach usually taken under design-based validation, where one model is considered the true model and is used across all samples. The results for the XGBoost and the SAE methods are illustrated in <strong><a class="reference internal" href="#xgboost"><span class="std std-numref">Fig. 5.12</span></a></strong>. The results illustrate that in the case of the Mexican data, XGBoost yields unbiased estimates of poverty. Moreover, the empirical MSE compares favorably with that of CensusEB methods, which are more computational and data-intensive. Additionally, in this Mexican scenario, the gradient boosted estimates are superior to those from the unit-context method discussed in the previous section (labeled U-C CensusEB).</p>
-<div class="figure align-default">
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/design_bias.png"><img alt="_images/design_bias.png" src="_images/design_bias.png" style="height: 350px;" /></a>
-</div>
-<div class="figure align-default" id="xgboost">
+</figure>
+<figure class="align-default" id="xgboost">
 <a class="reference internal image-reference" href="_images/design_mse.png"><img alt="_images/design_mse.png" src="_images/design_mse.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.12 </span><span class="caption-text"><em>Empirical bias and MSE of FGT0 for different methods</em></span><a class="headerlink" href="#xgboost" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 5.12 </span><span class="caption-text"><em>Empirical bias and MSE of FGT0 for different methods</em></span><a class="headerlink" href="#xgboost" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: Data from <span id="id50">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>. The simulations are based on 500 samples taken from the <em>Mexican Intercensal survey</em>, which is treated as a census of 3.9 million households. Under each sample, predictors for each of the methods are obtained and then compared to the true values obtained from the <em>Mexican Intercensal survey</em>. The figure illustrates that in the <em>Mexican Intercensal</em> case, XGBoost yields FGT0 estimates that are very close in performance, in terms of bias and MSE, to those from CensusEB estimators based on a unit-level model. H3-CBEB is the clustered bootstrap EB which is discussed in detail in <span id="id51">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id90" title="Paul Corral, Isabel Molina, and Minh Cong Nguyen. Pull your small area estimates up by the bootstraps. Journal of Statistical Computation and Simulation, 91(16):3304–3357, 2021. URL: https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460, doi:10.1080/00949655.2021.1926460.">2021</a>]</span>, the method was the EB approach implemented in <code class="docutils literal notranslate"><span class="pre">PovMap</span></code> and the original <code class="docutils literal notranslate"><span class="pre">sae</span></code> Stata package.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>Despite the gradient boosting method’s performance, it also carries some caveats. First, though the method performs well with the Mexican data, there is uncertainty as to the degree to which these results can be extrapolated to other contexts.<a class="footnote-reference brackets" href="#id200" id="id52">8</a> Second, there are currently no implemented software options for estimating the method’s MSE.<a class="footnote-reference brackets" href="#id201" id="id53">9</a> Finally, despite XGBoost being based on open-source software, it is still somewhat of a black box and not easily interpretable. Therefore, further research is required to properly assess how well the method works, though early results are encouraging.</p>
-</div>
-<div class="section" id="pros-and-cons-of-methods-for-poverty-mapping-in-off-census-years">
-<span id="off-census-pros"></span><h2><span class="section-number">5.3. </span>Pros and Cons of Methods for Poverty Mapping in Off-Census Years<a class="headerlink" href="#pros-and-cons-of-methods-for-poverty-mapping-in-off-census-years" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pros-and-cons-of-methods-for-poverty-mapping-in-off-census-years">
+<span id="off-census-pros"></span><h2><span class="section-number">5.3. </span>Pros and Cons of Methods for Poverty Mapping in Off-Census Years<a class="headerlink" href="#pros-and-cons-of-methods-for-poverty-mapping-in-off-census-years" title="Permalink to this headline">#</a></h2>
 <p>This section presents a convenient list of pros and cons for each method discussed in this chapter. It also notes the needs for each of the methods. The section is borrows from <span id="id54">Molina [<a class="reference internal" href="#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>.</p>
-<div class="section" id="off-census-pros-unit-context">
-<span id="id55"></span><h3><span class="section-number">5.3.1. </span>Unit-Context Models<a class="headerlink" href="#off-census-pros-unit-context" title="Permalink to this headline">¶</a></h3>
+<section id="off-census-pros-unit-context">
+<span id="id55"></span><h3><span class="section-number">5.3.1. </span>Unit-Context Models<a class="headerlink" href="#off-census-pros-unit-context" title="Permalink to this headline">#</a></h3>
 <p>Model requirements:</p>
 <ol class="simple">
 <li><p>Microdata from a household survey (only the model’s dependent variable) and administrative, satellite-derived data, or any other area or sub-level data.</p>
@@ -604,9 +716,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>The bootstrap method for MSE estimation is computationally intensive.</p></li>
 <li><p>The parametric bootstrap approach from <span id="id58">González-Manteiga <em>et al.</em> [<a class="reference internal" href="#id116" title="Wenceslao González-Manteiga, Maria J Lombardía, Isabel Molina, Domingo Morales, and Laureano Santamaría. Bootstrap mean squared error of a small-area EBLUP. Journal of Statistical Computation and Simulation, 78(5):443–462, 2008.">2008</a>]</span> under the unit-context model is likely to yield an inaccurate measure of MSE. In many instances, the MSE may be considerably underestimated.</p></li>
 </ol>
-</div>
-<div class="section" id="gradient-boosting">
-<span id="off-census-pros-gradient-boosting"></span><h3><span class="section-number">5.3.2. </span>Gradient Boosting<a class="headerlink" href="#gradient-boosting" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="gradient-boosting">
+<span id="off-census-pros-gradient-boosting"></span><h3><span class="section-number">5.3.2. </span>Gradient Boosting<a class="headerlink" href="#gradient-boosting" title="Permalink to this headline">#</a></h3>
 <p>Model requirements:</p>
 <ol class="simple">
 <li><p>Direct estimates of indicators of interest for the areas considered, <span class="math notranslate nohighlight">\(\hat{\tau}_{d}^{DIR}\)</span> (from the survey).</p></li>
@@ -625,12 +737,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>The method requires validation exercises in more scenarios beyond the one conducted in this chapter. There is no guarantee that the method will work as well with covariates with considerably lower predictive power than the ones from the example provided in <strong><a class="reference internal" href="#off-census-gradient-boosting"><span class="std std-numref">Section 5.2</span></a></strong>.</p></li>
 <li><p>The method currently lacks an approach for obtaining noise estimates (MSE). Consequently, it is difficult to assess the precision of the final estimates.</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="unit-context-models-technical-annex">
-<span id="off-census-annex"></span><h2><span class="section-number">5.4. </span>Unit-Context Models – Technical Annex<a class="headerlink" href="#unit-context-models-technical-annex" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="producing-estimators-based-on-unit-context-models">
-<span id="off-census-annex-estimators"></span><h3><span class="section-number">5.4.1. </span>Producing Estimators Based on Unit-Context Models<a class="headerlink" href="#producing-estimators-based-on-unit-context-models" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="unit-context-models-technical-annex">
+<span id="off-census-annex"></span><h2><span class="section-number">5.4. </span>Unit-Context Models – Technical Annex<a class="headerlink" href="#unit-context-models-technical-annex" title="Permalink to this headline">#</a></h2>
+<section id="producing-estimators-based-on-unit-context-models">
+<span id="off-census-annex-estimators"></span><h3><span class="section-number">5.4.1. </span>Producing Estimators Based on Unit-Context Models<a class="headerlink" href="#producing-estimators-based-on-unit-context-models" title="Permalink to this headline">#</a></h3>
 <p>The production of estimators based on unit-context models is similar to those using regular unit-level models, except that unit-level covariates are not used. This implies that the share of welfare variation across households explained by the model’s covariates is expected to be lower and, within many areas, welfare may be poorly explained. Still, unit-context models may be regarded as an approximation to the true underlying data generating process. Actually, they are particular cases of unit-level models (<strong>Equation <a class="reference internal" href="04_unit-level.html#equation-eq-1-1">(4.2)</a></strong>); consequently, normality and linearity assumptions need to be checked similarly with the corresponding covariates. The focus of this section is on the unit-context models as presented in <span id="id60">Masaki <em>et al.</em> [<a class="reference internal" href="#id92" title="Takaaki Masaki, David Newhouse, Ani Rudra Silwal, Adane Bedada, and Ryan Engstrom. Small area estimation of non-monetary poverty with geospatial data. World Bank Policy Research Working Paper, 2020.">2020</a>]</span> and not those from <span id="id61">Lange <em>et al.</em> [<a class="reference internal" href="#id93" title="Simon Lange, Utz Johann Pape, and Peter Pütz. Small area estimation of poverty under structural change. World Bank Policy Research Working Paper, 2018.">2018</a>]</span> and <span id="id62">Nguyen [<a class="reference internal" href="#id149" title="Viet Cuong Nguyen. A method to update poverty maps. The Journal of Development Studies, 48(12):1844-1863, 2012. URL: https://doi.org/10.1080/00220388.2012.682983, arXiv:https://doi.org/10.1080/00220388.2012.682983, doi:10.1080/00220388.2012.682983.">2012</a>]</span>. The reason for this choice is that <span id="id63">Lange <em>et al.</em> [<a class="reference internal" href="#id93" title="Simon Lange, Utz Johann Pape, and Peter Pütz. Small area estimation of poverty under structural change. World Bank Policy Research Working Paper, 2018.">2018</a>]</span> and <span id="id64">Nguyen [<a class="reference internal" href="#id149" title="Viet Cuong Nguyen. A method to update poverty maps. The Journal of Development Studies, 48(12):1844-1863, 2012. URL: https://doi.org/10.1080/00220388.2012.682983, arXiv:https://doi.org/10.1080/00220388.2012.682983, doi:10.1080/00220388.2012.682983.">2012</a>]</span> approach relies on ELL’s method, which suffers from the same issues noted by previous work (see <span id="id65">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span>; <span id="id66">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id90" title="Paul Corral, Isabel Molina, and Minh Cong Nguyen. Pull your small area estimates up by the bootstraps. Journal of Statistical Computation and Simulation, 91(16):3304–3357, 2021. URL: https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460, doi:10.1080/00949655.2021.1926460.">2021</a>]</span>; <span id="id67">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> among others). In addition, <span id="id68">Masaki <em>et al.</em> [<a class="reference internal" href="#id92" title="Takaaki Masaki, David Newhouse, Ani Rudra Silwal, Adane Bedada, and Ryan Engstrom. Small area estimation of non-monetary poverty with geospatial data. World Bank Policy Research Working Paper, 2020.">2020</a>]</span> tested different methods, including EB, and concluded that EB provides a considerable gain in accuracy and efficiency over other methods.</p>
 <p>Unit-context versions (i.e. those with aggregated covariates only) may be specified for either a one-fold nested-error model or a two-fold nested-error model. A possible unit-context model follows:</p>
 <div class="math notranslate nohighlight">
@@ -639,12 +751,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Model selection may be implemented following the approach described in <strong><a class="reference internal" href="06_diagnostics.html#diagnostics-selection"><span class="std std-numref">Section 6.2</span></a></strong>, except that only contextual variables will be among the pool of eligible covariates. Data transformation is also important in unit-context models and is emphasized by <span id="id69">Masaki <em>et al.</em> [<a class="reference internal" href="#id92" title="Takaaki Masaki, David Newhouse, Ani Rudra Silwal, Adane Bedada, and Ryan Engstrom. Small area estimation of non-monetary poverty with geospatial data. World Bank Policy Research Working Paper, 2020.">2020</a>]</span>. In contrast to the data transformation used in <strong><a class="reference internal" href="06_diagnostics.html#diagnostics-selection"><span class="std std-numref">Section 6.2</span></a></strong> recommend transforming the dependent variable with ordered quantile normalization. Nevertheless, this transformation cannot be used for the most common poverty and inequality indicators beyond headcount poverty because the transformation is not reversible. EB point and noise estimates are obtained following a Monte Carlo simulation and parametric bootstrap procedures, respectively, similar to the conventional application of the EB method under a unit-level model and detailed in the technical annex (<strong><a class="reference internal" href="04_unit-level.html#unit-level-annex-montecarlo-molina"><span class="std std-numref">Section 4.4.2.1</span></a></strong> and <strong><a class="reference internal" href="04_unit-level.html#unit-level-annex-montecarlo-bootstrap"><span class="std std-numref">Section 4.4.2.2</span></a></strong>). Finally, <span id="id70">Masaki <em>et al.</em> [<a class="reference internal" href="#id92" title="Takaaki Masaki, David Newhouse, Ani Rudra Silwal, Adane Bedada, and Ryan Engstrom. Small area estimation of non-monetary poverty with geospatial data. World Bank Policy Research Working Paper, 2020.">2020</a>]</span> also recommend adjusting the model-based estimators to match direct estimates, usually to the level where the survey is representative (benchmarking).</p>
 <p>Benchmarking is not recommended unless publication requirements include that estimates of totals at a lower aggregation level add up to the estimated total at a higher level (e.g., the national level). The need to benchmark due to substantial discrepancies between the sum of estimated totals at the lower level and the estimated total at the higher level may indicate that the model assumptions are not satisfied. EB estimators based on a correct model are approximately model-unbiased and optimal in terms of minimizing the MSE for a given area; thus, when adjusted afterwards for benchmarking, so that these match usual estimates at higher aggregation levels, the optimal properties are lost and estimators usually become worse in terms of bias and MSE under the model.<a class="footnote-reference brackets" href="#id202" id="id71">10</a> When benchmarking adjustments are large, as those likely required by estimators derived from unit-context model variants, it is an indication that the model does not hold for the data. Note that a significant bias in the final estimates may lead to considerable re-ranking of locations in terms of poverty estimates. Consequently, a limit on the acceptable bias should usually be determined according to needs. This is particularly important when determining priorities across areas based on small area estimates. If an area’s true poverty rate is 50% and the method yields an estimator of 10% due to an incorrect model, there is a real risk that this area may not be assisted when needed. <span id="id72">Molina [<a class="reference internal" href="#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span> suggests 5 or 10 percent of absolute relative bias as an acceptable threshold.</p>
 <p>An additional problem for unit-context models in many applications is that it may not be possible to match census and survey PSUs. In some cases, it is due to confidentiality reasons and, in others, it is due to different sampling frames. The latter problem will likely affect applications where the census and survey correspond to different years. Fay-Herriot and other area or subarea models that use the same aggregated variables are an alternative approach to unit-context models for the case where the census is outdated, for which the model is not necessarily in question, since these models may be correctly specified. Of course, model checking is also needed.</p>
-</div>
-</div>
-<div class="section" id="appendix">
-<span id="off-census-appendix"></span><h2><span class="section-number">5.5. </span>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="simulation-experiment-1-for-unit-context-models">
-<span id="off-census-appendix-experiment1"></span><h3><span class="section-number">5.5.1. </span>Simulation Experiment 1 for Unit-Context Models<a class="headerlink" href="#simulation-experiment-1-for-unit-context-models" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="appendix">
+<span id="off-census-appendix"></span><h2><span class="section-number">5.5. </span>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">#</a></h2>
+<section id="simulation-experiment-1-for-unit-context-models">
+<span id="off-census-appendix-experiment1"></span><h3><span class="section-number">5.5.1. </span>Simulation Experiment 1 for Unit-Context Models<a class="headerlink" href="#simulation-experiment-1-for-unit-context-models" title="Permalink to this headline">#</a></h3>
 <p>A simulation experiment is conducted with the purpose of illustrating the inherent bias of the resulting CensusEB estimators based on unit-context models due to biased estimators of the model parameters. To remove a source of bias of estimators based on these models, which is due to differences between the sample and census means of covariates as shown in the Appendix of <span id="id73">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>, the model is fit to the whole population data and small area estimates are also calculated based on the same population data. The simulation is inspired on those conducted by <span id="id74">Marhuenda <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id106" title="Yolanda Marhuenda, Isabel Molina, Domingo Morales, and JNK Rao. Poverty mapping in small areas under a twofold nested error regression model. Journal of the Royal Statistical Society: Series A (Statistics in Society), 180(4):1111-1136, 2017. doi:10.1111/rssa.12306.">2017</a>]</span> where the true data generating process is a two-fold nested-error model. This model will better accommodate the usual applications of poverty mapping, where household surveys use two-stage sampling. A two-fold structure also allows for the inclusion of contextual variables that are at the cluster level while the random location effect is specified at the area level, similar as in <span id="id75">Masaki <em>et al.</em> [<a class="reference internal" href="#id92" title="Takaaki Masaki, David Newhouse, Ani Rudra Silwal, Adane Bedada, and Ryan Engstrom. Small area estimation of non-monetary poverty with geospatial data. World Bank Policy Research Working Paper, 2020.">2020</a>]</span>. The creation of the census data set is similar to the one shown in section 3 of <span id="id76">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>.</p>
 <p>A census data set of <span class="math notranslate nohighlight">\(N=20,000\)</span> observations is created, where observations are allocated among <span class="math notranslate nohighlight">\(40\)</span> areas <span class="math notranslate nohighlight">\(\left(a=1,\ldots,A\right)\)</span>. Within each area, observations are uniformly allocated over 10 clusters <span class="math notranslate nohighlight">\(\left(c=1,\ldots,C_{a}\right)\)</span>. Each cluster, <span class="math notranslate nohighlight">\(c\)</span>, consists of <span class="math notranslate nohighlight">\(N_{ac}=50\)</span> observations, and each cluster is labeled from 1 to 10. The assumed model contains both cluster and area effects. Cluster effects are simulated as <span class="math notranslate nohighlight">\(\eta_{ac}\stackrel{iid}{\sim}N\left(0,0.05^{2}\right)\)</span>, area effects as <span class="math notranslate nohighlight">\(\eta_{a}\stackrel{iid}{\sim}N\left(0,0.1\right)\)</span> and household specific residuals as <span class="math notranslate nohighlight">\(e_{ach}\overset{iid}{{\sim}}N\left(0,0.5^{2}\right)\)</span>, where <span class="math notranslate nohighlight">\(h=1,\ldots,N_{ac};\:c=1,\ldots,C_{a};\:a=1,\ldots,A.\)</span> Covariates are simulated as follows:<a class="footnote-reference brackets" href="#id203" id="id77">11</a></p>
 <ol class="simple">
@@ -668,8 +780,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 <p>The average across the 5,000 simulations of the estimation errors for each area represent the empirical biases of the considered area estimators. The Stata script to replicate these simulations can be found in the appendix (<strong><a class="reference internal" href="#off-census-appendix-experiment1-validation"><span class="std std-numref">Section 5.5.1.1</span></a></strong>).</p>
 <p>One could argue that, in this scenario, the <span class="math notranslate nohighlight">\(R^{2}\)</span> of unit-context models is much lower than that one in the applications of <span id="id81">Masaki <em>et al.</em> [<a class="reference internal" href="#id92" title="Takaaki Masaki, David Newhouse, Ani Rudra Silwal, Adane Bedada, and Ryan Engstrom. Small area estimation of non-monetary poverty with geospatial data. World Bank Policy Research Working Paper, 2020.">2020</a>]</span> and of <span id="id82">Lange <em>et al.</em> [<a class="reference internal" href="#id93" title="Simon Lange, Utz Johann Pape, and Peter Pütz. Small area estimation of poverty under structural change. World Bank Policy Research Working Paper, 2018.">2018</a>]</span>. For this reason, the simulation experiment is repeated modifying slightly the data generating process to increase the <span class="math notranslate nohighlight">\(R^{2}\)</span>. Specifically, in this experiment, the covariate <span class="math notranslate nohighlight">\(x_{7}\)</span> is now generated from a random Poisson variable with mean <span class="math notranslate nohighlight">\(\lambda=3\left(\frac{c}{20}-\frac{a}{100}+u\right)\)</span>, where <span class="math notranslate nohighlight">\(u\)</span> is a random uniform value between 0 and 1, and <span class="math notranslate nohighlight">\(\sigma_{e}\)</span> is increased from 0.5 to 0.6. This modification leads to an <span class="math notranslate nohighlight">\(R^{2}\)</span> of the unit-context model between 0.15 and 0.20, while for unit-level models the <span class="math notranslate nohighlight">\(R^{2}\)</span> exceeds 0.60. The Stata script to replicate these simulations can be found in the following <strong><a class="reference internal" href="#off-census-appendix-experiment1-better-fit"><span class="std std-numref">Section 5.5.1.2</span></a></strong>.</p>
-<div class="section" id="unit-context-models-validation">
-<span id="off-census-appendix-experiment1-validation"></span><h4><span class="section-number">5.5.1.1. </span>Unit-Context Models – Validation<a class="headerlink" href="#unit-context-models-validation" title="Permalink to this headline">¶</a></h4>
+<section id="unit-context-models-validation">
+<span id="off-census-appendix-experiment1-validation"></span><h4><span class="section-number">5.5.1.1. </span>Unit-Context Models – Validation<a class="headerlink" href="#unit-context-models-validation" title="Permalink to this headline">#</a></h4>
 <p>The do-file below reproduces the simulation experiment described in <strong><a class="reference internal" href="#off-census-annex"><span class="std std-numref">Section 5.4</span></a></strong>. Note that the model is fit to the whole set of population data and then estimates are also obtained by simulating on to the whole set of population data.</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set more</span> off<span class="k"></span>
 <span class="k">clear</span> all
@@ -933,9 +1045,9 @@ area(area) uniqid(hhid) dataout(<span class="s">&quot;</span><span class="vg">$m
 <span class="k">save</span> <span class="s">&quot;</span><span class="vg">$mdata</span><span class="s">\bias_in_mymodel.dta&quot;</span>,<span class="k"> replace</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="unit-context-models-validation-with-better-model-fit">
-<span id="off-census-appendix-experiment1-better-fit"></span><h4><span class="section-number">5.5.1.2. </span>Unit-Context Models – Validation with Better Model Fit<a class="headerlink" href="#unit-context-models-validation-with-better-model-fit" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="unit-context-models-validation-with-better-model-fit">
+<span id="off-census-appendix-experiment1-better-fit"></span><h4><span class="section-number">5.5.1.2. </span>Unit-Context Models – Validation with Better Model Fit<a class="headerlink" href="#unit-context-models-validation-with-better-model-fit" title="Permalink to this headline">#</a></h4>
 <p>The do-file below reproduces the simulation experiment described in <strong><a class="reference internal" href="#off-census-annex"><span class="std std-numref">Section 5.4</span></a></strong>, but considering unit-context models with a better <span class="math notranslate nohighlight">\(R^{2}\)</span> and producing estimates for 2 different poverty thresholds. Note that the model is fit to the whole set of population data and then estimates are also obtained by simulating on to the whole set of population data.</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set more</span> off<span class="k"></span>
 <span class="k">clear</span> all
@@ -1264,10 +1376,10 @@ area(area) uniqid(hhid) dataout(<span class="s">&quot;</span><span class="vg">$m
 <span class="k">save</span> <span class="s">&quot;</span><span class="vg">$mdata</span><span class="s">\bias_in_mymodel_twolines.dta&quot;</span>,<span class="k"> replace</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="simulation-experiment-2-for-unit-context-models">
-<span id="off-census-appendix-experiment2"></span><h3><span class="section-number">5.5.2. </span>Simulation Experiment 2 for Unit-Context Models<a class="headerlink" href="#simulation-experiment-2-for-unit-context-models" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="simulation-experiment-2-for-unit-context-models">
+<span id="off-census-appendix-experiment2"></span><h3><span class="section-number">5.5.2. </span>Simulation Experiment 2 for Unit-Context Models<a class="headerlink" href="#simulation-experiment-2-for-unit-context-models" title="Permalink to this headline">#</a></h3>
 <p>To further explore the bias of unit-context models and compare its performance to other methods, a final simulation is conducted following the data generation procedure used in <strong><a class="reference internal" href="#off-census-appendix-experiment1-better-fit"><span class="std std-numref">Section 5.5.1.2</span></a></strong>, but with some modifications. Firstly, the population size is <span class="math notranslate nohighlight">\(N=500,000\)</span>, and the observations are allocated among <span class="math notranslate nohighlight">\(A=100\)</span> areas <span class="math notranslate nohighlight">\(\left(a=1,\ldots,A\right)\)</span>. Within each area <span class="math notranslate nohighlight">\(a\)</span>, observations are uniformly allocated over <span class="math notranslate nohighlight">\(C_{a}=20\)</span> clusters <span class="math notranslate nohighlight">\(\left(c=1,\ldots,C_{a}\right)\)</span>. Each cluster <span class="math notranslate nohighlight">\(c\)</span> consists of <span class="math notranslate nohighlight">\(N_{ac}=250\)</span> observations. In this simulation experiment, we take a simple random sample of <span class="math notranslate nohighlight">\(n_{ac}=10\)</span> households per cluster, and this sample is kept fixed across simulations. Using a sample, we can also compare with estimators based on FH model (discussed in <strong>Chapter 3: <a class="reference internal" href="03_area-level.html#area-level"><span class="std std-ref">Area-level Models for Small Area Estimation</span></a></strong>). T he model that generates the population data contains both cluster and area effects. Cluster effects are simulated as <span class="math notranslate nohighlight">\(\eta_{ac}\stackrel{iid}{\sim}N\left(0,0.1\right)\)</span>, area effects as <span class="math notranslate nohighlight">\(\eta_{a}\stackrel{iid}{\sim}N\left(0,0.15^{2}\right)\)</span> and household specific residuals as <span class="math notranslate nohighlight">\(e_{ach}\overset{iid}{{\sim}}N\left(0,0.5^{2}\right)\)</span>, where <span class="math notranslate nohighlight">\(h=1,\ldots,N_{ac}\)</span>, <span class="math notranslate nohighlight">\(c=1,\ldots,C_{a}\)</span>, <span class="math notranslate nohighlight">\(a=1,\ldots,A\)</span>. Finally, <span class="math notranslate nohighlight">\(x_{7}\)</span> is generated from a random Poisson variable with mean <span class="math notranslate nohighlight">\(\lambda=3\left(\frac{c}{20}-\frac{a}{100}+u\right)\)</span>, where <span class="math notranslate nohighlight">\(u\)</span> is a random uniform value between 0 and 1. In this experiment, we take a grid of 99 poverty thresholds, corresponding to the 99 percentiles of the very first population generated. In total, 1,000 populations are generated. In each of the 1,000 populations, the following quantities are computed in every area for each of the 99 poverty lines:</p>
 <ol class="simple">
 <li><p>True poverty indicators <span class="math notranslate nohighlight">\(\tau_{a}\)</span>, using the “census”.</p></li>
@@ -1276,8 +1388,8 @@ area(area) uniqid(hhid) dataout(<span class="s">&quot;</span><span class="vg">$m
 <li><p>Area-level FH estimators <span class="math notranslate nohighlight">\(\hat{\tau}_{a}^{FH_{a}}\)</span> based on the model described in <strong><a class="reference internal" href="03_area-level.html#area-level-annex"><span class="std std-numref">Section 3.4</span></a></strong>. In this case, a separate model is needed for each of the 99 different poverty lines. Hence, the <span class="math notranslate nohighlight">\(R^{2}\)</span> depends on the poverty line, but it ranges from 0.15 to 0.70.</p></li>
 </ol>
 <p>The average difference between the true poverty indicator and the estimate across the 1,000 simulations represent the empirical bias for each area. The Stata script to replicate these simulations can be found in the appendix (<strong><a class="reference internal" href="#off-census-appendix-experiment2-validation"><span class="std std-numref">Section 5.5.2.1</span></a></strong>).<a class="footnote-reference brackets" href="#id207" id="id85">12</a></p>
-<div class="section" id="unit-context-models-validation-across-all-poverty-lines">
-<span id="off-census-appendix-experiment2-validation"></span><h4><span class="section-number">5.5.2.1. </span>Unit-Context Models – Validation Across All Poverty Lines<a class="headerlink" href="#unit-context-models-validation-across-all-poverty-lines" title="Permalink to this headline">¶</a></h4>
+<section id="unit-context-models-validation-across-all-poverty-lines">
+<span id="off-census-appendix-experiment2-validation"></span><h4><span class="section-number">5.5.2.1. </span>Unit-Context Models – Validation Across All Poverty Lines<a class="headerlink" href="#unit-context-models-validation-across-all-poverty-lines" title="Permalink to this headline">#</a></h4>
 <p>The Stata code below produces the simulations described in <strong><a class="reference internal" href="#off-census-annex"><span class="std std-numref">Section 5.4</span></a></strong>. Here, a sample is drawn from the population and then, estimates are obtained for 99 different poverty lines. Each poverty line corresponds to a percentile of the very first generated population.</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">set more</span> off<span class="k"></span>
 <span class="k">clear</span> all
@@ -1606,11 +1718,11 @@ area(area) uniqid(hhid) dataout(<span class="s">&quot;</span><span class="vg">$m
 <span class="k">save</span> <span class="s">&quot;</span><span class="vg">$mdata</span><span class="s">\bias_in_mymodel_twolines.dta&quot;</span>,<span class="k"> replace</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="references">
-<span id="off-census-ref"></span><h2><span class="section-number">5.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="references">
+<span id="off-census-ref"></span><h2><span class="section-number">5.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <div class="docutils container" id="id86">
 <dl class="citation">
 <dt class="label" id="id133"><span class="brackets">BDL+06</span><span class="fn-backref">(<a href="#id38">1</a>,<a href="#id39">2</a>)</span></dt>
@@ -1660,9 +1772,9 @@ area(area) uniqid(hhid) dataout(<span class="s">&quot;</span><span class="vg">$m
 </dd>
 </dl>
 </div>
-</div>
-<div class="section" id="notes">
-<span id="off-census-notes"></span><h2><span class="section-number">5.7. </span>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="notes">
+<span id="off-census-notes"></span><h2><span class="section-number">5.7. </span>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id189"><span class="brackets"><a class="fn-backref" href="#id7">1</a></span></dt>
@@ -1702,8 +1814,8 @@ area(area) uniqid(hhid) dataout(<span class="s">&quot;</span><span class="vg">$m
 <dd><p>Depending on the computing power, this may take longer than 2 days to run.</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1727,9 +1839,11 @@ area(area) uniqid(hhid) dataout(<span class="s">&quot;</span><span class="vg">$m
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="04_unit-level.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1745,24 +1859,28 @@ area(area) uniqid(hhid) dataout(<span class="s">&quot;</span><span class="vg">$m
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Paul Corral, Isabel Molina, Alexandru Cojocaru, and Sandra Segovia<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Paul Corral, Isabel Molina, Alexandru Cojocaru, and Sandra Segovia<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

@@ -550,24 +550,24 @@
 
 
 ```stata
-(/Set, seed, for, replicability)
+//Set seed for replicability
 set seed 9374
 
-(/Bring, in, the, population)
+//Bring in the population
 use x1 x2 area hhid using "$mdata\thepopulation.dta", clear
-	(/obtain, linear, fit, -, e(b), is, still, in, memory)
+	//obtain linear fit - e(b) is still in memory
 	predict xb, xb
 	
-	(/Include, eta, and, var_eta)
+	//Include eta and var_eta
 	merge m:1 area using `mylocs'
 		drop if _m==2
 		drop _m
-	(/to, ensure, replicability)
+	//to ensure replicability	
 	sort hhid
 ```
 
 ```stata
-	(/generate, 100, vectors, of, welfare, in, the, population)
+	//generate 100 vectors of welfare in the population
 	forval z=1/100{
 	    //Take the exponential to obtain welfare
 	    gen double Y_`z' = exp(rnormal(xb + eta, sqrt(`sigma_e2'+var_eta)))

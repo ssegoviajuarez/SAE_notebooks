@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>6. Model Diagnostics &#8212; Guidelines to Small Area Estimation for Poverty Mapping</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,21 +20,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -40,12 +38,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -65,7 +64,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +87,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -94,14 +108,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="00_welcome.html">
-   Welcome to Guidelines to SAE for Poverty Mapping
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_welcome.html">
+                    Welcome to Guidelines to SAE for Poverty Mapping
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   CHAPTERS
  </span>
@@ -145,91 +160,164 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Created by <a href="https://github.com/ssegoviajuarez"> Sandra Segovia </a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/06_diagnostics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/06_diagnostics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Created by <a href="https://github.com/ssegoviajuarez"> Sandra Segovia </a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/06_diagnostics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/06_diagnostics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-nested-error-model">
    6.1. The nested-error model
@@ -317,12 +405,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Model Diagnostics</h1>
@@ -426,34 +513,35 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="model-diagnostics">
-<span id="diagnostics"></span><h1><span class="section-number">6. </span>Model Diagnostics<a class="headerlink" href="#model-diagnostics" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="model-diagnostics">
+<span id="diagnostics"></span><h1><span class="section-number">6. </span>Model Diagnostics<a class="headerlink" href="#model-diagnostics" title="Permalink to this headline">#</a></h1>
 <hr style="height:1px;border:none;color:#666;background-color:#666;" /><p>Small area estimation models used in <strong>Chapter 3: <a class="reference internal" href="03_area-level.html#area-level"><span class="std std-ref">Area-level Models for Small Area Estimation</span></a></strong> and <strong>Chapter 4: <a class="reference internal" href="04_unit-level.html#unit-level"><span class="std std-ref">Unit-level Models for Small Area Estimation</span></a></strong> are particular cases of linear mixed models.<a class="footnote-reference brackets" href="#id147" id="id1">1</a> Under model-based SAE, using either unit-level (<strong>Chapter 3: <a class="reference internal" href="03_area-level.html#area-level"><span class="std std-ref">Area-level Models for Small Area Estimation</span></a></strong>) or area-level (<strong>Chapter 3: <a class="reference internal" href="03_area-level.html#area-level"><span class="std std-ref">Area-level Models for Small Area Estimation</span></a></strong>) models, a series of useful model diagnostics can help verify model assumptions and assess model fit. These checks also include residual analysis to detect deviations from the assumed model and detection of influential observations <span id="id2">Rao and Molina [<a class="reference internal" href="#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>. Performing thorough and rigorous model diagnostics as part of the SAE exercise is crucial to ensure the validity of small area estimates.</p>
 <p>This chapter describes the underlying model considered in <strong><a class="reference internal" href="#diagnostics-nested-error"><span class="std std-numref">Section 6.1</span></a></strong>. Then it provides brief recommendations for model and variable selection in <strong><a class="reference internal" href="#diagnostics-selection"><span class="std std-numref">Section 6.2</span></a></strong> and concludes with regression diagnosis in <strong><a class="reference internal" href="#diagnostics-regression"><span class="std std-numref">Section 6.3</span></a></strong>.</p>
-<div class="section" id="the-nested-error-model">
-<span id="diagnostics-nested-error"></span><h2><span class="section-number">6.1. </span>The nested-error model<a class="headerlink" href="#the-nested-error-model" title="Permalink to this headline">¶</a></h2>
+<section id="the-nested-error-model">
+<span id="diagnostics-nested-error"></span><h2><span class="section-number">6.1. </span>The nested-error model<a class="headerlink" href="#the-nested-error-model" title="Permalink to this headline">#</a></h2>
 <p>The model used for small area estimation of poverty and welfare, such as the ones proposed by <span id="id3">Elbers, Lanjouw, and Lanjouw [<a class="reference internal" href="#id52" title="Chris Elbers, Jean O Lanjouw, and Peter Lanjouw. Micro–level estimation of poverty and inequality. Econometrica, 71(1):355–364, 2003.">2003</a>]</span> and <span id="id4">Molina and Rao [<a class="reference internal" href="#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span>, assume that the transformed welfare <span class="math notranslate nohighlight">\(y_{ch}\)</span>, for each household <span class="math notranslate nohighlight">\(h\)</span> within each location <span class="math notranslate nohighlight">\(c\)</span> in the population is linearly related to a <span class="math notranslate nohighlight">\(1\times K\)</span> vector of characteristics (or correlates) <span class="math notranslate nohighlight">\(x_{ch}\)</span> for that household, according to the nested-error model:</p>
 <div class="math notranslate nohighlight" id="equation-eq-1-1-1-1">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-eq-1-1-1-1" title="Permalink to this equation">¶</a></span>\[y_{ch}=x_{ch}\beta+\eta_{c}+e_{ch},\:h=1,\ldots,N_{c},\,c=1,\ldots,C,\]</div>
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-eq-1-1-1-1" title="Permalink to this equation">#</a></span>\[y_{ch}=x_{ch}\beta+\eta_{c}+e_{ch},\:h=1,\ldots,N_{c},\,c=1,\ldots,C,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\eta_{c}\)</span> and <span class="math notranslate nohighlight">\(e_{ch}\)</span> are respectively location and household-specific idiosyncratic errors, assumed to be independent from each other, following:</p>
 <div class="math notranslate nohighlight">
 \[\eta_{c}\stackrel{iid}{\sim}N\left(0,\sigma_{\eta}^{2}\right),\:e_{ch}\stackrel{iid}{\sim}N\left(0,\sigma_{e}^{2}\right),\]</div>
 <p>where the variances <span class="math notranslate nohighlight">\(\sigma_{\eta}^{2}\)</span> and <span class="math notranslate nohighlight">\(\sigma_{e}^{2}\)</span> are unknown. Here, <span class="math notranslate nohighlight">\(C\)</span> is the number of locations in which the population is divided and <span class="math notranslate nohighlight">\(N_{c}\)</span> is the number of households in location <span class="math notranslate nohighlight">\(c\)</span>, for <span class="math notranslate nohighlight">\(c=1,\ldots,C\)</span>. Finally, <span class="math notranslate nohighlight">\(\beta\)</span> is the <span class="math notranslate nohighlight">\(K\times1\)</span> vector of coefficients.</p>
 <p>As illustrated in <strong>Chapter 4: <a class="reference internal" href="04_unit-level.html#unit-level"><span class="std std-ref">Unit-level Models for Small Area Estimation</span></a></strong>, the assumption of normality plays a considerable in EB methods. Deviations from this assumption may lead to biased and noisier estimates, as shown in <span id="id5">Corral <em>et al.</em> [<a class="reference internal" href="#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>. Isolated deviations from the model (outliers) and influential observations or even outlying locations may also exist. Thus, the following sections provide some insights towards selecting a suitable model, as well as checks that may be done to ensure that the chosen model for SAE is adequate.</p>
-</div>
-<div class="section" id="model-and-variable-selection">
-<span id="diagnostics-selection"></span><h2><span class="section-number">6.2. </span>Model and variable selection<a class="headerlink" href="#model-and-variable-selection" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="model-and-variable-selection">
+<span id="diagnostics-selection"></span><h2><span class="section-number">6.2. </span>Model and variable selection<a class="headerlink" href="#model-and-variable-selection" title="Permalink to this headline">#</a></h2>
 <p>The objective of model selection is to determine the relevant covariates out of a pool of candidate model variables such that the resulting SAE model generates the most precise estimates possible, noting that it must be possible to measure this precision accurately. Classic approaches to model selection include lasso or stepwise regression. Other literature on the subject includes the fence method, described in <span id="id6">Pfeffermann [<a class="reference internal" href="#id137" title="Danny Pfeffermann. New important developments in small area estimation. Statistical Science, 28(1):40–68, 2013.">2013</a>]</span>, which involves selecting a model out of a subgroup of correct models that fulfill specific criteria. <span id="id7">Rao and Molina [<a class="reference internal" href="#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span> also elaborate on other methods such as Akaike Information Criteria (AIC) type methods, which rely on the marginal restricted log likelihood based on normality of the random effects and the errors. For variable selection under area-level models, particularly Fay-Herriot models, <span id="id8">Lahiri and Suntornchost [<a class="reference internal" href="#id143" title="Partha Lahiri and Jiraphan Suntornchost. Variable selection for linear mixed models with applications in small area estimation. Sankhya B, 77(2):312–320, 2015.">2015</a>]</span> propose a method where the approximation error converges to zero in probability for large sample sizes.<a class="footnote-reference brackets" href="#id148" id="id9">2</a></p>
 <p>Since the aim is to arrive at the “true” model, removing all non-significant covariates from the model is recommended as these may introduce noise. It is important not to confuse the estimated noise and the true noise of a given small area estimate. The most common uncertainty measure for an area-specific prediction is the MSE (<span id="id10">Tzavidis <em>et al.</em> [<a class="reference internal" href="#id105" title="Nikos Tzavidis, Li-Chun Zhang, Angela Luna, Timo Schmid, and Natalia Rojas-Perilla. From start to finish: a framework for the production of small area official statistics. Journal of the Royal Statistical Society: Series A (Statistics in Society), 181(4):927–979, 2018.">2018</a>]</span>). In applications of SAE, such as those illustrated for unit-level models, an estimate of the MSE for the small area estimator is obtained through a parametric bootstrap procedure (see <strong><a class="reference internal" href="04_unit-level.html#unit-level-annex-montecarlo-bootstrap"><span class="std std-numref">Section 4.4.2.2</span></a></strong>). This method differs considerably from the method used in the ELL method, where a single computational algorithm is used to obtain predictors and assess uncertainty. <span id="id11">Corral <em>et al.</em> [<a class="reference internal" href="#id90" title="Paul Corral, Isabel Molina, and Minh Cong Nguyen. Pull your small area estimates up by the bootstraps. Journal of Statistical Computation and Simulation, 91(16):3304–3357, 2021. URL: https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460, doi:10.1080/00949655.2021.1926460.">2021</a>]</span>, through model-based simulations, present evidence of the fact that the single computational algorithm to estimate noise used in ELL could underestimate the actual MSE of the method.<a class="footnote-reference brackets" href="#id149" id="id12">3</a></p>
 <p>The script example provided in <strong><a class="reference internal" href="04_unit-level.html#unit-level-appendix-selection"><span class="std std-numref">Section 4.5.1</span></a></strong> uses a lasso approach for model selection that initially includes all suitable covariates and uses 10 fold cross-validation with a shrinkage parameter <span class="math notranslate nohighlight">\(\lambda\)</span> that is within one standard error of the one that minimizes the cross-validated average prediction squared error. The lasso approach employed here does not consider the nested-error structure of the model; that is, it is done with the corresponding linear model without the random area effects. Practitioners who are comfortable with R may rely on the <code class="docutils literal notranslate"><span class="pre">glmmlasso</span></code> R package, which may be used for model selection in the model with the assumed nested-error structure (see <span id="id13"></span> and <span id="id14"></span>).</p>
 <p>The lasso selection process yields a selected set of covariates, although some of the included covariates may be non-significant. Consequently, the next step is to remove all the non-significant covariates sequentially. The process starts by removing the most non-significant covariates, one by one. When a covariate is removed, the significance of other covariates may change; thus, after removing each covariate, the model is fit again to determine which covariate to remove next until the remaining ones are all significant. Note that the process used here ignores the magnitude of the coefficients and thus could be further improved.</p>
 <p>Finally, it is recommended to remove highly collinear covariates. Once these are removed, the following steps are to identify outliers and influential observations, which may lead to considerably different estimated model parameters, see the next section. For the Fay-Herriot model of <strong>Chapter 3: <a class="reference internal" href="03_area-level.html#area-level"><span class="std std-ref">Area-level Models for Small Area Estimation</span></a></strong> a different approach than the one detailed here was taken. In the implemented approach for area-level models, the model started with all possible covariates and began removing covariates, starting with the least significant ones. The removal was done considering the random effects (see <strong><a class="reference internal" href="03_area-level.html#area-level-first-sae"><span class="std std-numref">Section 3.2</span></a></strong>).</p>
-</div>
-<div class="section" id="regression-diagnostics">
-<span id="diagnostics-regression"></span><h2><span class="section-number">6.3. </span>Regression diagnostics<a class="headerlink" href="#regression-diagnostics" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="regression-diagnostics">
+<span id="diagnostics-regression"></span><h2><span class="section-number">6.3. </span>Regression diagnostics<a class="headerlink" href="#regression-diagnostics" title="Permalink to this headline">#</a></h2>
 <p>After the fitting process, checking whether the assumptions from the underlying model are satisfied is recommended. Regression diagnostics for Linear Mixed Models (LMM)<a class="footnote-reference brackets" href="#id152" id="id15">4</a> are more difficult to interpret than those of the standard linear models, since these models include random effects, which lead to a different covariance structure. Moreover, tools for diagnostics of linear mixed models are less common in software packages, including Stata. Thus, practitioners either must code their own diagnostics or rely on diagnostics often used for linear regression. The model assumptions to keep in mind are: <a class="footnote-reference brackets" href="#id153" id="id16">5</a></p>
 <ol class="simple">
 <li><p>Linearity: the dependent variable <span class="math notranslate nohighlight">\(y_{ch}\)</span> is a linear function of the selected vector of covariates <span class="math notranslate nohighlight">\(x_{ch}\)</span>.</p></li>
@@ -463,12 +551,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 <p>Other issues to consider are the detection of influential observations and outliers and, as discussed above, multicollinearity. Although these are not part of the assumptions, their presence may affect the precision of estimates of model parameters and, in turn, model predictions.</p>
 <p>The following subsections include some formal and informal ways to check if the assumptions of the underlying model are satisfied. The process starts by eliminating covariates with high multicollinearity, followed by influence analysis and, finally, residual analysis which encompasses most assumptions.<a class="footnote-reference brackets" href="#id154" id="id18">6</a> Model diagnostics based on residuals and influence measures for special cases of the general linear mixed model can be found in <span id="id19">Rao and Molina [<a class="reference internal" href="#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>.</p>
-<div class="section" id="multicollinearity">
-<span id="diagnostics-regresion-coll"></span><h3><span class="section-number">6.3.1. </span>Multicollinearity<a class="headerlink" href="#multicollinearity" title="Permalink to this headline">¶</a></h3>
+<section id="multicollinearity">
+<span id="diagnostics-regresion-coll"></span><h3><span class="section-number">6.3.1. </span>Multicollinearity<a class="headerlink" href="#multicollinearity" title="Permalink to this headline">#</a></h3>
 <p>Collinearity reduces the accuracy of estimates of regression coefficients, leading to larger standard errors of the coefficients. Under the multiple imputation (MI) inspired bootstrap methods, such as the one often used in the ELL method (see <strong>Chapter 4: <a class="reference internal" href="04_unit-level.html#unit-level"><span class="std std-ref">Unit-level Models for Small Area Estimation</span></a></strong>), larger standard errors in the coefficients typically led to larger estimates of noise for the estimators of the indicators of interest. Thus, care was taken to avoid collinearity and multicollinearity. A simple way to detect collinearity is via a correlation matrix, where large absolute correlation coefficients may suggest collinearity problems (<span id="id20">James <em>et al.</em> [<a class="reference internal" href="#id138" title="Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani. An introduction to statistical learning. Volume 112. Springer, 2013. ISBN 978-1-0716-1418-1. URL: https://link.springer.com/book/10.1007/978-1-0716-1418-1?noAccess=true.">2013</a>]</span>). However, collinearity may occur between more than a pair of variables leading to multicollinearity, which cannot be detected under the pairwise correlation matrix (<em>ibid</em>).</p>
 <p>Under the presence of multicollinearity, the inspection of the correlation matrix is no longer sufficient, and one must instead compute the variance inflation factors (VIFs) (<span id="id21">James <em>et al.</em> [<a class="reference internal" href="#id138" title="Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani. An introduction to statistical learning. Volume 112. Springer, 2013. ISBN 978-1-0716-1418-1. URL: https://link.springer.com/book/10.1007/978-1-0716-1418-1?noAccess=true.">2013</a>]</span>). The smallest possible value for a VIF is 1. There are multiple rules of thumb as to what is an acceptable VIF. According to <span id="id22">James <em>et al.</em> [<a class="reference internal" href="#id138" title="Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani. An introduction to statistical learning. Volume 112. Springer, 2013. ISBN 978-1-0716-1418-1. URL: https://link.springer.com/book/10.1007/978-1-0716-1418-1?noAccess=true.">2013</a>]</span>, values exceeding 5 or 10 may require action. After the model is fit, the command <code class="docutils literal notranslate"><span class="pre">estat</span> <span class="pre">vif</span></code> may be used to check the variance inflation factor for the covariates included in the model.</p>
-<div class="section" id="example-1">
-<h4><span class="section-number">6.3.1.1. </span>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h4>
+<section id="example-1">
+<h4><span class="section-number">6.3.1.1. </span>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">#</a></h4>
 <p>Variance inflation factor values above 10 might require special attention since the variable in question could be a linear combination of other independent variables. In the example below, a special Mata function,<a class="footnote-reference brackets" href="#id155" id="id23">7</a> <code class="docutils literal notranslate"><span class="pre">_f_stepvif()</span></code>, is used to remove covariates with a VIF above a specified threshold; in this case, the chosen value is 3.<a class="footnote-reference brackets" href="#id156" id="id24">8</a> The function expects the covariate list as its first argument, followed by the sample weights, and finally, the threshold. After the removal of high VIF covariates, the resulting covariate list is returned in a Stata local macro called <code class="docutils literal notranslate"><span class="pre">vifvar</span></code>.</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">*===============================================================================</span>
 <span class="c1">// Collinearity</span>
@@ -498,15 +586,15 @@ const thebe_selector_output = ".output, .cell_output"
 	sae model h3 y <span class="vg">$postvif</span> [aw=Whh], area(HID_mun) 
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="influence-analysis">
-<span id="diagnostics-regresion-influence"></span><h3><span class="section-number">6.3.2. </span>Influence analysis<a class="headerlink" href="#influence-analysis" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="influence-analysis">
+<span id="diagnostics-regresion-influence"></span><h3><span class="section-number">6.3.2. </span>Influence analysis<a class="headerlink" href="#influence-analysis" title="Permalink to this headline">#</a></h3>
 <p>Influence analysis is used to detect observations that may have considerable impact on the estimates of the parameters and, consequently, model predictions. These observations include outliers (observations with a large residual, i.e., an observation poorly predicted by the model) and influential observations (the omission of which considerably changes the point estimates of <span class="math notranslate nohighlight">\(\beta\)</span>). These observations can be identified by measuring how far the observation’s value for a predictor variable is from the mean or by the size of their studentized residual. Influence analysis is recommended prior to calculating any small area estimate, as these observations may impact the bias and noise of the final small area estimates.</p>
 <p>Cook’s distance (<span id="id25">Cook [<a class="reference internal" href="#id139" title="R Dennis Cook. Detection of influential observation in linear regression. Technometrics, 19(1):15–18, 1977.">1977</a>]</span>), also known as Cook’s D, measures the effect on the estimated coefficients when an observation is left out or deleted (<span id="id26">Rao and Molina [<a class="reference internal" href="#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>). Under ordinary least squares regression, Cook’s distance can be obtained in Stata with the <code class="docutils literal notranslate"><span class="pre">cooksd</span></code> option after the <code class="docutils literal notranslate"><span class="pre">predict</span></code> command. Nevertheless, under regular OLS, Cook’s distance focuses solely on isolated observations, whereas, under the nested-error model used for SAE shown in <strong>Equation <a class="reference internal" href="#equation-eq-1-1-1-1">(6.1)</a></strong>, the analysis of the influence of particular locations may be more relevant. The Stata package <code class="docutils literal notranslate"><span class="pre">mlt</span></code> by <span id="id27">Möhring and Schmidt-Catran [<a class="reference internal" href="#id136" title="Katja Möhring and Alexander Schmidt-Catran. Mlt: stata module to provide multilevel tools. 2013. URL: https://econpapers.repec.org/software/bocbocode/s457577.htm.">2013</a>]</span> may be used to assess the influence on the estimated parameters of particular locations or groups.<a class="footnote-reference brackets" href="#id157" id="id28">9</a> The <code class="docutils literal notranslate"><span class="pre">mlt</span></code> command estimates Cook’s D empirically, making it computationally intensive. The rule of thumb for classifying influential locations is absolute Cook’s D values greater than <span class="math notranslate nohighlight">\(4/C,\)</span> where <span class="math notranslate nohighlight">\(C\)</span> is the number of locations into which the population is divided. The <code class="docutils literal notranslate"><span class="pre">mlt</span></code> command will also calculate DFBETAs, which measure the influence of a single location on the coefficient of each covariate. It represents the standardized difference between the coefficient with and without the given location (<span id="id29">Möhring and Schmidt-Catran [<a class="reference internal" href="#id136" title="Katja Möhring and Alexander Schmidt-Catran. Mlt: stata module to provide multilevel tools. 2013. URL: https://econpapers.repec.org/software/bocbocode/s457577.htm.">2013</a>]</span>). The rule of thumb for classifying locations as influential is a DFBETA absolute value above <span class="math notranslate nohighlight">\(2/\sqrt{C}\)</span>, although this should be applied with caution.</p>
 <p>Leverage measures the influence on the fitted values of a given observation. Unfortunately, data packages that can obtain leverage under the assumed model are not available. <span id="id30">Cameron and Trivedi [<a class="reference internal" href="#id128" title="A Colin Cameron and Pravin K Trivedi. Microeconometrics: methods and applications. Cambridge university press, 2005. ISBN 978-0-521-84805-3.">2005</a>]</span> present an alternative toward handling influential observations under OLS by using the post estimation command <code class="docutils literal notranslate"><span class="pre">dfits</span></code>, which shows the difference in fits (predictions) with and without the unusual observation. The command combines outliers and leverage into a single statistic. A rule of thumb to identify these observations is if <span class="math notranslate nohighlight">\(|dfits|&gt;2\sqrt{k/n}\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> is the number of covariates and <span class="math notranslate nohighlight">\(n\)</span> is the number of observations. Nevertheless, the removal of observations always entails loss of information (which may be fair) and thus much care should be taken before deciding on removal, and should be done only when, after inspecting the offender, it is determined to be mistaken.</p>
-<div class="section" id="example-2">
-<h4><span class="section-number">6.3.2.1. </span>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h4>
+<section id="example-2">
+<h4><span class="section-number">6.3.2.1. </span>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">#</a></h4>
 <p>After fitting the model and calculating residuals, problematic observations are identified using several rules of thumb: <span class="math notranslate nohighlight">\(Cooks'd&gt;4/n\)</span> , <span class="math notranslate nohighlight">\(leverage&gt;(2k+2)/n\)</span> and <span class="math notranslate nohighlight">\(abs(rstu)&gt;2\)</span> .</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">// Step 1</span>
 
@@ -552,13 +640,15 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>A graphical representation of the squared normalized residual versus leverage (<code class="docutils literal notranslate"><span class="pre">lvr2plot)</span></code>, before and after the elimination of influential observations, is an easy way to identify potentially influential observations and outliers (<strong><a class="reference internal" href="#fig1-1-md"><span class="std std-numref">Fig. 6.1</span></a></strong>). The two reference lines are the means of the leverage and the squared normalized residual. Many points are outside these two reference points and should be scrutinized before deciding to remove them.</p>
-<div class="figure align-default" id="fig1-1-md">
+<figure class="align-default" id="fig1-1-md">
 <a class="reference internal image-reference" href="_images/lvr2plot.png"><img alt="_images/lvr2plot.png" src="_images/lvr2plot.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6.1 </span><span class="caption-text"><em>Squared normalized residual vs leverage</em></span><a class="headerlink" href="#fig1-1-md" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 6.1 </span><span class="caption-text"><em>Squared normalized residual vs leverage</em></span><a class="headerlink" href="#fig1-1-md" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: own elaboration from code in Appendix <strong><a class="reference internal" href="#diagnostics-appendix-regression"><span class="std std-numref">Section 6.4.2</span></a></strong>. The red lines are references to the mean leverage on the Y axis and the mean squared normalized residual on the X axis. Observations that are far away from these reference points should be inspected more closely.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">// Graphic method &lt; after &gt;</span>
 
 <span class="k">    reg</span> y <span class="vg">$postvif</span> [aw=Whh]<span class="k"> if</span> nogo<span class="o">==</span><span class="m">0</span>
@@ -575,13 +665,13 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="k">    graph</span> export <span class="s">&quot;</span><span class="vg">$figs</span><span class="s">\lvr2plot_after.png&quot;</span>,<span class="k"> as</span>(png)<span class="k"> replace</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="residual-analysis">
-<span id="diagnostics-regresion-residual"></span><h3><span class="section-number">6.3.3. </span>Residual analysis<a class="headerlink" href="#residual-analysis" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="residual-analysis">
+<span id="diagnostics-regresion-residual"></span><h3><span class="section-number">6.3.3. </span>Residual analysis<a class="headerlink" href="#residual-analysis" title="Permalink to this headline">#</a></h3>
 <p>Most techniques for residual analysis rely on visual inspection of the graphed residuals. Residuals should be checked for linearity, normality, and constant variance in case homoskedasticity is assumed.</p>
-<div class="section" id="linearity">
-<span id="diagnostics-regresion-residual-linearity"></span><h4><span class="section-number">6.3.3.1. </span>Linearity<a class="headerlink" href="#linearity" title="Permalink to this headline">¶</a></h4>
+<section id="linearity">
+<span id="diagnostics-regresion-residual-linearity"></span><h4><span class="section-number">6.3.3.1. </span>Linearity<a class="headerlink" href="#linearity" title="Permalink to this headline">#</a></h4>
 <p>The nested-error model used in SAE (<strong>Equation <a class="reference internal" href="#equation-eq-1-1-1-1">(6.1)</a></strong>) assumes that the outcome variable <span class="math notranslate nohighlight">\(y\)</span> is a linear function of the covariates.<a class="footnote-reference brackets" href="#id158" id="id31">10</a> If a single covariate is used, a scatter plot of the residual versus the covariate is enough to see if a linear relationship exists. When several covariates are used, checking for linearity is somewhat more complex.</p>
 <p>To assess linearity in a simple regression, use <code class="docutils literal notranslate"><span class="pre">scatter</span></code> to produce a plot of <span class="math notranslate nohighlight">\(y\)</span> versus <span class="math notranslate nohighlight">\(x\)</span>, <code class="docutils literal notranslate"><span class="pre">lfit</span></code> to fit a regression line, and <code class="docutils literal notranslate"><span class="pre">lowess</span></code> to show a smoothed fit.</p>
 <p><code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">reg</span> <span class="pre">depvar</span> <span class="pre">indepvar</span></code></p>
@@ -600,41 +690,45 @@ const thebe_selector_output = ".output, .cell_output"
 <p><code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">kdensity</span> <span class="pre">indepvar,</span> <span class="pre">normal</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">gen</span> <span class="pre">logvar=log(indepvar)</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">kdensity</span> <span class="pre">logvar,</span> <span class="pre">normal</span></code></p>
-</div>
-<div class="section" id="tests-for-normality-of-residuals-and-random-effects">
-<span id="diagnostics-regresion-residual-tests"></span><h4><span class="section-number">6.3.3.2. </span>Tests for normality of residuals and random effects<a class="headerlink" href="#tests-for-normality-of-residuals-and-random-effects" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="tests-for-normality-of-residuals-and-random-effects">
+<span id="diagnostics-regresion-residual-tests"></span><h4><span class="section-number">6.3.3.2. </span>Tests for normality of residuals and random effects<a class="headerlink" href="#tests-for-normality-of-residuals-and-random-effects" title="Permalink to this headline">#</a></h4>
 <p>Model errors and random effects are assumed to be normally distributed under the nested-error model used for SAE. Deviations from normality may lead to considerable bias in the final small area estimates. Scatter plots of residuals against fitted values and normal Q-Q plots of residuals provide a natural way to identify outliers or influential observations that might affect the precision of the estimates. <span id="id32">West <em>et al.</em> [<a class="reference internal" href="#id132" title="Brady T West, Kathleen B Welch, and Andrzej T Galecki. Linear mixed models: a practical guide using statistical software. Chapman and Hall/CRC, 2nd edition, 2014. URL: https://www.taylorfrancis.com/books/mono/10.1201/b17198/linear-mixed-models-brady-west-kathleen-welch-andrzej-galecki, doi:10.1201/b17198.">2014</a>]</span> mention that the random effects vector is assumed to follow a multivariate normal distribution. Thus, the information from the observations sharing the same random effect is used to predict (instead of estimating) the values of that random effect in the model.</p>
 <p>The usual predictors of the random effects under linear mixed models are known as Empirical Best Linear Unbiased Predictors (EBLUPs), since they are the most precise linear unbiased predictors. They use the weighted least squares estimates of <span class="math notranslate nohighlight">\(\beta\)</span>, and the variance parameters are replaced by suitable estimates (<span id="id33">Robinson and others [<a class="reference internal" href="#id127" title="George K Robinson and others. That blup is a good thing: the estimation of random effects. Statistical science, 6(1):15–32, 1991.">1991</a>]</span>). <span id="id34">Rao and Molina [<a class="reference internal" href="#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span> provide a comprehensive formal derivation of the EBLUPs, and applications beyond small area estimation can be found in <span id="id35">West <em>et al.</em> [<a class="reference internal" href="#id132" title="Brady T West, Kathleen B Welch, and Andrzej T Galecki. Linear mixed models: a practical guide using statistical software. Chapman and Hall/CRC, 2nd edition, 2014. URL: https://www.taylorfrancis.com/books/mono/10.1201/b17198/linear-mixed-models-brady-west-kathleen-welch-andrzej-galecki, doi:10.1201/b17198.">2014</a>]</span>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">xtmixed</span></code> or <code class="docutils literal notranslate"><span class="pre">mixed</span></code> command may be used to check the validity of a linear mixed model in Stata. Deviations from normality can be observed in a normal Q-Q plot of residuals (<strong><a class="reference internal" href="#fig-1-1-3"><span class="std std-numref">Fig. 6.2</span></a></strong>), which displays sample quantiles of unit-level residuals against the theoretical quantiles of a normal distribution plot:</p>
 <p><code class="docutils literal notranslate"><span class="pre">mixed</span> <span class="pre">depvar</span> <span class="pre">indepvars</span> <span class="pre">||</span> <span class="pre">area:,</span> <span class="pre">reml</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">predict</span> <span class="pre">res,</span> <span class="pre">residual</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">qnorm</span> <span class="pre">res</span></code></p>
-<div class="figure align-default" id="fig-1-1-3">
+<figure class="align-default" id="fig-1-1-3">
 <a class="reference internal image-reference" href="_images/qnorm_mixed.png"><img alt="_images/qnorm_mixed.png" src="_images/qnorm_mixed.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6.2 </span><span class="caption-text"><em>Sample quantiles of residuals against theoretical quantiles of a Normal distribution</em></span><a class="headerlink" href="#fig-1-1-3" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 6.2 </span><span class="caption-text"><em>Sample quantiles of residuals against theoretical quantiles of a Normal distribution</em></span><a class="headerlink" href="#fig-1-1-3" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: own elaboration from code in Appendix <strong><a class="reference internal" href="#diagnostics-appendix-regression"><span class="std std-numref">Section 6.4.2</span></a></strong>. Deviations from normality can be observed in the figure particularly at the bottom. <span id="id36">Marhuenda <em>et al.</em> [<a class="reference internal" href="#id106" title="Yolanda Marhuenda, Isabel Molina, Domingo Morales, and JNK Rao. Poverty mapping in small areas under a twofold nested error regression model. Journal of the Royal Statistical Society: Series A (Statistics in Society), 180(4):1111-1136, 2017. doi:10.1111/rssa.12306.">2017</a>]</span> notes that, in applications using real data, the exact fit to a distribution is hardly met; it is recommended that practitioners apply several transformations to the dependent variable and select the one that provides the best approximation to the nested-error model’s assumptions.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>It is also important to check the assumptions regarding the distribution of the random effects. This may be done after fitting the linear mixed model and obtaining the predicted random effects (<strong><a class="reference internal" href="#fig-1-1-3-1"><span class="std std-numref">Fig. 6.3</span></a></strong>):</p>
 <p><code class="docutils literal notranslate"><span class="pre">predict</span> <span class="pre">eta,</span> <span class="pre">reffects</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">bysort</span> <span class="pre">area:</span> <span class="pre">gen</span> <span class="pre">first</span> <span class="pre">=</span> <span class="pre">_n</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">qnorm</span> <span class="pre">eta</span> <span class="pre">if</span> <span class="pre">first==1</span></code></p>
-<div class="figure align-default" id="fig-1-1-3-1">
+<figure class="align-default" id="fig-1-1-3-1">
 <a class="reference internal image-reference" href="_images/qnorm_mixed_1.png"><img alt="_images/qnorm_mixed_1.png" src="_images/qnorm_mixed_1.png" style="height: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6.3 </span><span class="caption-text"><em>Sample quantiles of predicted random effects against theoretical quantiles of a Normal distribution</em></span><a class="headerlink" href="#fig-1-1-3-1" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text"><em>Sample quantiles of predicted random effects against theoretical quantiles of a Normal distribution</em></span><a class="headerlink" href="#fig-1-1-3-1" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Source: own elaboration.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>The plots of empirical quantiles compared to theoretical quantiles of the normal distribution (normal Q-Q plots) are helpful to detect deviations from normality. Transformations of the dependent variable are often taken to ensure that empirical quantiles are better aligned to the theoretical ones. As <span id="id37">Marhuenda <em>et al.</em> [<a class="reference internal" href="#id106" title="Yolanda Marhuenda, Isabel Molina, Domingo Morales, and JNK Rao. Poverty mapping in small areas under a twofold nested error regression model. Journal of the Royal Statistical Society: Series A (Statistics in Society), 180(4):1111-1136, 2017. doi:10.1111/rssa.12306.">2017</a>]</span> note, in real life applications, the exact fit to a distribution is hardly met.</p>
-</div>
-</div>
-</div>
-<div class="section" id="appendix">
-<span id="diagnostics-appendix"></span><h2><span class="section-number">6.4. </span>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="useful-definitions-and-concepts">
-<span id="diagnostics-appendix-definitions"></span><h3><span class="section-number">6.4.1. </span>Useful definitions and concepts<a class="headerlink" href="#useful-definitions-and-concepts" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="appendix">
+<span id="diagnostics-appendix"></span><h2><span class="section-number">6.4. </span>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">#</a></h2>
+<section id="useful-definitions-and-concepts">
+<span id="diagnostics-appendix-definitions"></span><h3><span class="section-number">6.4.1. </span>Useful definitions and concepts<a class="headerlink" href="#useful-definitions-and-concepts" title="Permalink to this headline">#</a></h3>
 <p>Definitions are based on <span id="id38">Molina and Marhuenda [<a class="reference internal" href="#id68" title="Isabel Molina and Yolanda Marhuenda. Sae: an R package for small area estimation. The R Journal, 7(1):81–98, 2015.">2015</a>]</span>, <span id="id39">Ghosh and Rao [<a class="reference internal" href="#id108" title="Malay Ghosh and JNK Rao. Small area estimation: an appraisal. Statistical science, 9(1):55–76, 1994.">1994</a>]</span>, <span id="id40">Rao and Molina [<a class="reference internal" href="#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>, and <span id="id41">Cochran [<a class="reference internal" href="#id119" title="William G Cochran. Sampling techniques. John Wiley &amp; Sons, 2007.">2007</a>]</span>.</p>
 <ul class="simple">
 <li><p><strong>Small area:</strong> a domain (area) is regarded as small if the domain-specific sample size is not large enough to support direct estimates of adequate precision. That is to say, a small area is any domain of interest for which direct estimates of adequate precision cannot be produced.</p></li>
@@ -655,9 +749,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><strong>Coefficient of variation (CV) of <span class="math notranslate nohighlight">\(\vartheta\)</span>:</strong> <span class="math notranslate nohighlight">\(cv(\hat{\vartheta})=s(\hat{\vartheta})/\vartheta\)</span> is the associated standard error of the estimate over the true value of <span class="math notranslate nohighlight">\(\vartheta\)</span>. It is also known as the relative standard deviation (RSD). The estimated CV is then <span class="math notranslate nohighlight">\(\hat{cv}(\hat{\vartheta})=s(\hat{\vartheta})/\hat{\vartheta}\)</span>.</p></li>
 <li><p><strong>Consistency:</strong> when increasing the sample size <span class="math notranslate nohighlight">\(n\)</span>, the probability that the estimator differs from the true value <span class="math notranslate nohighlight">\(\vartheta_{c}\)</span> by more than <span class="math notranslate nohighlight">\(\varepsilon\)</span> vanishes for every <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>.</p></li>
 </ul>
-</div>
-<div class="section" id="regression-diagnostics-do-file">
-<span id="diagnostics-appendix-regression"></span><h3><span class="section-number">6.4.2. </span>Regression diagnostics do-file<a class="headerlink" href="#regression-diagnostics-do-file" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="regression-diagnostics-do-file">
+<span id="diagnostics-appendix-regression"></span><h3><span class="section-number">6.4.2. </span>Regression diagnostics do-file<a class="headerlink" href="#regression-diagnostics-do-file" title="Permalink to this headline">#</a></h3>
 <p>The following Stata do-file provides an example of how regression diagnostics are often incorporated in the model selection process for small area estimation. Note that the checks are not exhaustive and only serve as a guide for the practitioner.</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">clear</span> all <span class="k"></span>
 <span class="k">set more</span> off
@@ -1118,10 +1212,10 @@ sp_groupfunction,<span class="k"> mean</span>( fgt0_bias_rel_abs fgt1_bias_rel_a
 export excel using <span class="s">&quot;</span><span class="vg">$XL</span><span class="s">&quot;</span>, sheet(result) sheetreplace first(var)
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="references">
-<span id="diagnostics-ref"></span><h2><span class="section-number">6.5. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="references">
+<span id="diagnostics-ref"></span><h2><span class="section-number">6.5. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <div class="docutils container" id="id44">
 <dl class="citation">
 <dt class="label" id="id128"><span class="brackets"><a class="fn-backref" href="#id30">CT05</a></span></dt>
@@ -1186,9 +1280,9 @@ export excel using <span class="s">&quot;</span><span class="vg">$XL</span><span
 </dd>
 </dl>
 </div>
-</div>
-<div class="section" id="notes">
-<span id="diagnostics-notes"></span><h2><span class="section-number">6.6. </span>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="notes">
+<span id="diagnostics-notes"></span><h2><span class="section-number">6.6. </span>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id147"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -1222,8 +1316,8 @@ export excel using <span class="s">&quot;</span><span class="vg">$XL</span><span
 <dd><p>Much of the information in this section is borrowed from <span id="id159"></span>; <a class="reference external" href="https://stats.idre.ucla.edu/stata/webbooks/reg/chapter2/stata-webbooksregressionwith-statachapter-2-regression-diagnostics/">https://stats.idre.ucla.edu/stata/webbooks/reg/chapter2/stata-webbooksregressionwith-statachapter-2-regression-diagnostics/</a></p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1247,9 +1341,11 @@ export excel using <span class="s">&quot;</span><span class="vg">$XL</span><span
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="05_off-census.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1265,24 +1361,28 @@ export excel using <span class="s">&quot;</span><span class="vg">$XL</span><span
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Paul Corral, Isabel Molina, Alexandru Cojocaru, and Sandra Segovia<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Paul Corral, Isabel Molina, Alexandru Cojocaru, and Sandra Segovia<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
