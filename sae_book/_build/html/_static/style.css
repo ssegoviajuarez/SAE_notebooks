@@ -1,0 +1,23 @@
+p {
+  text-align: justify;
+}
+
+h1 {
+  margin-top: 0.7em;
+}
+
+hr {
+  margin-bottom: 1.6em;
+}
+
+td p {
+  text-align: left;
+}
+
+.caption {
+  text-align: center;
+}
+
+.caption.collapsible-parent {
+  text-align: left;
+}

@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Small Area Estimation for Poverty Mapping &#8212; Guidelines to Small Area Estimation for Poverty Mapping</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Direct Estimates" href="02_direct.html" />
+    <link rel="prev" title="Welcome to Guidelines to SAE for Poverty Mapping" href="00_welcome.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Guidelines to Small Area Estimation for Poverty Mapping</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00_welcome.html">
+   Welcome to Guidelines to SAE for Poverty Mapping
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  CHAPTERS
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Small Area Estimation for Poverty Mapping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_direct.html">
+   2. Direct Estimates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_area-level.html">
+   3. Area-level Models for Small Area Estimation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_unit-level.html">
+   4. Unit-level Models for Small Area Estimation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_off-census.html">
+   5. Poverty Mapping in Off-Census Years
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_diagnostics.html">
+   6. Model Diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_conclusion.html">
+   7. Concluding Remarks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Created by <a href="https://github.com/ssegoviajuarez"> Sandra Segovia </a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/01_intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/01_intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-brief-background-to-small-area-estimation">
+   1.1. A Brief Background to Small Area Estimation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about-the-guidelines">
+   1.2. About the Guidelines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   1.3. References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes">
+   1.4. Notes
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Small Area Estimation for Poverty Mapping</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-brief-background-to-small-area-estimation">
+   1.1. A Brief Background to Small Area Estimation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about-the-guidelines">
+   1.2. About the Guidelines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   1.3. References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes">
+   1.4. Notes
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="small-area-estimation-for-poverty-mapping">
+<span id="intro"></span><h1><span class="section-number">1. </span>Small Area Estimation for Poverty Mapping<a class="headerlink" href="#small-area-estimation-for-poverty-mapping" title="Permalink to this headline">¶</a></h1>
+<hr style="height:1px;border:none;color:#666;background-color:#666;" /><p>The eradication of poverty, which was the first of the Millennium Development Goals (MDG) established by the United Nations and followed by the Sustainable Development Goals (SDG), requires knowing where the poor are located. Traditionally, household surveys are considered the best source of information on the living standards of a country’s population. Data from these surveys typically provide a sufficiently accurate direct estimate of household expenditures or income and thus estimates of poverty at the national level and larger international regions. However, when one starts to disaggregate data by local areas or population subgroups, the quality of these direct estimates diminishes. Consequently, National Statistical Offices (NSOs) cannot provide reliable wellbeing statistical figures at a local level. For example, the Module of Socioeconomic Conditions of the Mexican National Survey of Household Income and Expenditure (ENIGH in Spanish) is designed to produce estimates of poverty and inequality at the national level and for the 32 federate entities (31 states and Mexico City) with disaggregation by rural and urban zones, every two years, but there is a mandate to produce estimates by municipality every five years, and the ENIGH alone cannot provide estimates for all municipalities with adequate precision. This makes monitoring progress toward the Sustainable Development Goals more difficult.</p>
+<p>Beyond the SDGs, poverty estimates at a local level are crucial for poverty reduction. Policymakers interested in poverty reduction and alleviation will often have a limited budget, and information on poverty at a local level can potentially improve targeting. The need for cost-effective disaggregated statistics makes it necessary to use indirect techniques for poverty estimation at a local level. To better understand the spatial distribution of poverty within countries, the World Bank has been producing poverty estimates at increasingly higher resolutions (poverty maps) since before the turn of the 21st century. A poverty map is the illustration of poverty rates on a map and is used to highlight the spatial distribution of poverty and inequality across a given country. Poverty mapping relies on Small Area Estimation (SAE) methods which are statistical tools that can be deployed to produce statistics for small areas with much better quality than those obtained directly from a sample survey.<a class="footnote-reference brackets" href="#id136" id="id1">1</a></p>
+<p>Small area techniques combine auxiliary information from censuses, registers, or other larger surveys to produce disaggregated statistics of sufficient precision where survey data alone is insufficient. The techniques achieve this by specifying some homogeneity relationships across areas; hence, they are based on the idea that “union is strength.” Despite small area estimation being useful for many indicators, the focus here is on small area methods used for poverty and related indicators derived from welfare.</p>
+<p>Ending extreme poverty is one of the World Bank’s twin goals and poverty reduction is how the institution’s efforts are often gauged. Accurate estimates of poverty at a granular level are an essential tool for monitoring poverty reduction and spatial inequalities. The World Bank’s efforts to develop small area estimates of poverty can be traced back to the late 1990s. An initial effort by the institution was implemented by <span id="id2"></span> in an application in Ecuador and is the bedrock of what came after. Much of the research efforts on small area estimation within the World Bank came to a zenith in the early 2000s with the publication of the paper “Micro-level estimation of poverty and inequality” by <span id="id3">Elbers <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id52" title="Chris Elbers, Jean O Lanjouw, and Peter Lanjouw. Micro–level estimation of poverty and inequality. Econometrica, 71(1):355–364, 2003.">2003</a>]</span>. The method came to be known as ELL, and for over a decade-and-a-half, it was the default method used for all poverty mapping conducted by the World Bank. The method’s popularity was spurred by the World Bank’s development of a software application called <code class="docutils literal notranslate"><span class="pre">PovMap</span></code> (<span id="id4">Zhao [<a class="reference internal" href="04_unit-level.html#id155" title="Qinghua Zhao. User Manual for Povmap. 2006. URL: http://siteresources. worldbank. org/INTPGI/Resources/342674-1092157888460/Zhao_ ManualPovMap. pdf.">2006</a>]</span>).<a class="footnote-reference brackets" href="#id137" id="id5">2</a> The software provided a user-friendly interface for practitioners and did not require knowledge of specialized programming languages. The <code class="docutils literal notranslate"><span class="pre">PovMap</span></code> software was followed nearly a decade after by a Stata version called <code class="docutils literal notranslate"><span class="pre">sae</span></code> (<span id="id6">Nguyen <em>et al.</em> [<a class="reference internal" href="04_unit-level.html#id151" title="Minh Cong Nguyen, Paul Corral, João Pedro Azevedo, and Qinghua Zhao. Sae: a stata package for unit level small area estimation. World Bank Policy Research Working Paper, 2018.">2018</a>]</span>).<a class="footnote-reference brackets" href="#id139" id="id7">3</a></p>
+<p><em>The Guidelines to Small Area Estimation for Poverty Mapping</em> (hereafter the Guidelines) come after more than two decades of poverty mapping by the World Bank. These guidelines on small area estimation are meant as a practical guide to enable practitioners working on small area estimation of poverty to make informed choices between the available methods and make them aware of the strengths and limitations of the methodologies at hand. The Guidelines are also presented for practitioners who wish to learn about updates to the software and methods used within the World Bank for small area estimation. The Guidelines are not meant to be an exhaustive presentation of the small area estimation literature, instead, they focus almost exclusively on poverty and are a practical guide for practitioners to assist them in navigating the multiple different small area techniques available.<a class="footnote-reference brackets" href="#id141" id="id8">4</a> The methods include but are not limited to, those proposed by <span id="id9">Elbers <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id52" title="Chris Elbers, Jean O Lanjouw, and Peter Lanjouw. Micro–level estimation of poverty and inequality. Econometrica, 71(1):355–364, 2003.">2003</a>]</span> that generated a lot of the early poverty mapping work at the World Bank, a number of subsequent refinements and improvements to the original ELL methodology, area-level models, and some ongoing research. The Guidelines advise readers on what may be the best approach for different poverty mapping projects and different sets of data constraints by reviewing the relevant literature and conducting simulation exercises that compare across available methodologies. It is expected that the Guidelines will become a valuable resource to practitioners working in the area of poverty mapping.</p>
+<p>Before jumping into the Guidelines, a brief background to small area estimation is provided, as well as a decision tree aimed at practitioners (<strong><a class="reference internal" href="#sae-decision-tree"><span class="std std-numref">Fig. 1.1</span></a></strong>) who seek what may be the best approach given their context. After the brief background, the guidelines present direct estimates in <strong>Chapter 2: <a class="reference internal" href="02_direct.html#direct"><span class="std std-ref">Direct Estimates</span></a></strong>. Area-level models are presented in <strong>Chapter 3: <a class="reference internal" href="03_area-level.html#area-level"><span class="std std-ref">Area-level Models for Small Area Estimation</span></a></strong>, focusing on Fay-Herriot methods (<span id="id10">Fay III and Herriot [<a class="reference internal" href="05_off-census.html#id118" title="Robert E Fay III and Roger A Herriot. Estimates of income for small places: an application of James-Stein procedures to census data. Journal of the American Statistical Association, 74(366a):269–277, 1979.">1979</a>]</span>). Unit-level methods are presented in <strong>Chapter 4: <a class="reference internal" href="04_unit-level.html#unit-level"><span class="std std-ref">Unit-level Models for Small Area Estimation</span></a></strong>, giving special attention to the approach from <span id="id11">Elbers <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id52" title="Chris Elbers, Jean O Lanjouw, and Peter Lanjouw. Micro–level estimation of poverty and inequality. Econometrica, 71(1):355–364, 2003.">2003</a>]</span> as well as that of <span id="id12">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span>. <strong>Chapter 5: <a class="reference internal" href="05_off-census.html#off-census"><span class="std std-ref">Poverty Mapping in Off-Census Years</span></a></strong>, presents proposed alternatives for poverty mapping in off-census years beyond area-level models. Finally, <strong>Chapter 6: <a class="reference internal" href="06_diagnostics.html#diagnostics"><span class="std std-ref">Model Diagnostics</span></a></strong> is devoted to model selection and other considerations. Throughout chapters 2–5 the pros and cons of the chapter’s corresponding approaches are noted.</p>
+<div class="section" id="a-brief-background-to-small-area-estimation">
+<span id="intro-background"></span><h2><span class="section-number">1.1. </span>A Brief Background to Small Area Estimation<a class="headerlink" href="#a-brief-background-to-small-area-estimation" title="Permalink to this headline">¶</a></h2>
+<p>Small area estimates are often used to create a poverty map, but the two terms, Poverty Mapping and Small Area Estimation, should not be used interchangeably. Small area estimation is a set of methods used by National Statistical Offices (NSO) and other organizations to achieve estimates of acceptable quality for publication. As statistical information is disaggregated into smaller population subgroups, it will become noisier and will yield larger Coefficients of Variation (CV), which may exceed the threshold established by the NSO above which they will choose not to publish that specific estimate. Model-based small area estimation techniques incorporate auxiliary information from censuses, registers, geospatial data, or other large surveys, to produce estimates of much better quality, even for areas with very small sample sizes.</p>
+<p>Model-based techniques are popular because they yield good quality estimates even for areas with very small sample sizes. Of course, to achieve this, one needs to make model assumptions, and these assumptions need to be validated using the available data (<span id="id13">Molina <em>et al.</em> [<a class="reference internal" href="03_area-level.html#id139" title="Isabel Molina, Paul Corral, and Minh Cong Nguyen. Model-based methods for poverty mapping: a review. Unpublished manuscript, 2021.">2021</a>]</span>). Moreover, the quality of the model behind the estimates should be thoroughly evaluated and small area estimates should be accompanied by valid measures of their precision (<span id="id14">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>).</p>
+<p>Among small area estimation methodologies, area-level models use only aggregate auxiliary information at the area level. Aggregated data are more readily available because it is typically not subject to confidentiality. These models have other advantages that come with aggregate data, such as lower sensitivity to unit-level outliers. The disadvantage of the area-level method is less detailed information than unit-level models, specifically at the microdata level. Perhaps the most popular area method is the one proposed by <span id="id15">Fay III and Herriot [<a class="reference internal" href="05_off-census.html#id118" title="Robert E Fay III and Roger A Herriot. Estimates of income for small places: an application of James-Stein procedures to census data. Journal of the American Statistical Association, 74(366a):269–277, 1979.">1979</a>]</span> which is discussed in more detail in <strong>Chapter 3: <a class="reference internal" href="03_area-level.html#area-level"><span class="std std-ref">Area-level Models for Small Area Estimation</span></a></strong> of these Guidelines.</p>
+<p>Unit-level models take advantage of detailed unit-record information, when such information is available. The models rely on detailed income/expenditure information from household surveys and a set of household-level characteristics in both a household survey and a population census to simulate household expenditures or incomes for each household in the population census data.<a class="footnote-reference brackets" href="#id143" id="id16">5</a></p>
+<p>The first unit-level model for small area estimation, discussed in more detail in <strong>Chapter 4: <a class="reference internal" href="04_unit-level.html#unit-level"><span class="std std-ref">Unit-level Models for Small Area Estimation</span></a></strong> of these Guidelines, was proposed by <span id="id17">Battese <em>et al.</em> [<a class="reference internal" href="04_unit-level.html#id190" title="George E. Battese, Rachel M. Harter, and Wayne A. Fuller. An error-components model for prediction of county crop areas using survey and satellite data. Journal of the American Statistical Association, 83(401):28–36, 1988. URL: http://www.jstor.org/stable/2288915.">1988</a>]</span> to estimate county crop areas of corn and soybeans. That model, called hereafter the BHF Model, includes, apart from the usual individual errors, random effects for the areas representing the between-area heterogeneity or idiosyncrasy the available auxiliary variables cannot explain. These models might also include area-level (or contextual) variables and thus may incorporate much more information in the estimation process than area-level models. As noted by <span id="id18">Robinson and others [<a class="reference internal" href="06_diagnostics.html#id127" title="George K Robinson and others. That blup is a good thing: the estimation of random effects. Statistical science, 6(1):15–32, 1991.">1991</a>]</span>, models with random effects belong to the general class of mixed models and are commonly used in other fields such as Biostatistics, Engineering, Econometrics, and additional Social Sciences.<a class="footnote-reference brackets" href="#id145" id="id19">6</a></p>
+<p>Model-based small area estimates rely on statistical models to establish a relationship between a dependent variable and a set of covariates. The covariates and the parameters obtained from the fitted model are then used to predict the dependent variable in the auxiliary data. In the context of small area estimates of poverty, under unit-level models, the dependent variable is typically consumption/expenditure or income and relies on properly replicating the welfare distribution. The simulated welfare distribution makes it possible to obtain well-being indicators, such as the FGT class of indicators (<span id="id20">Foster <em>et al.</em> [<a class="reference internal" href="04_unit-level.html#id164" title="James Foster, Joel Greer, and Erik Thorbecke. A class of decomposable poverty measures. Econometrica: Journal of the Econometric Society, 52:761–766, 1984.">1984</a>]</span>). In the case of area-level models, the dependent variable is the direct estimator of the same indicator for the area.</p>
+<p>The ELL method falls under the class of methods based on unit-level models for small area estimation. The method relies on a BHF model specified at the household level and may also include area or sub-area-level (contextual) variables. At the time of publication, it was one of the first times a model relied on using microdata to simulate the welfare distribution, which allowed the calculation of numerous indicators beyond just area aggregates.<a class="footnote-reference brackets" href="#id147" id="id21">7</a> The methodology quickly gained traction within the World Bank, as well as among National Statistical Offices around the world, and has been one of the most applied methods to obtain small area estimates. Since ELL’s publication, however, there have been considerable advances in the literature, including Molina and Rao’s (<span id="id22">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span>) Empirical Best (EB) method.</p>
+<p>When deciding which small area estimation method is preferable, there are many considerations the practitioner should take into account, but ultimately, the method chosen is often driven by the data at hand. When the practitioner has access to census data and a contemporaneous household survey, it is nearly always advisable to apply a unit-level model (<strong>Chapter 4: <a class="reference internal" href="04_unit-level.html#unit-level"><span class="std std-ref">Unit-level Models for Small Area Estimation</span></a></strong>), because they often yield the most significant gains in precision. However, the data requirements for these models are considerable, and these data need to be checked to ensure the two data sources are also comparable beyond the temporal aspect. Potential variables need to be defined similarly in both data sources and must have similar distributions, as differences may lead to biased estimators. When choosing a unit-level model-based procedure, the next decision is often the aggregation level at which estimates will be reported. If there is a need for estimates at two different levels, then two-fold nested-error models may be used; otherwise one-fold nested-error models are adequate.</p>
+<p>When unit-level models are not possible, area-level models may be a viable alternative (<strong>Chapter 3: <a class="reference internal" href="03_area-level.html#area-level"><span class="std std-ref">Area-level Models for Small Area Estimation</span></a></strong>). Area-level models are often easier to implement than unit-level models since data requirements are minimal and may be used when census data and survey data are not contemporaneous or incongruous. Also, area-level models rely on aggregated data, which is often not subject to confidentiality. In addition, if the most recent census is too old for a unit-level model, the recommended approach is to consider an area-level model. The most popular area-level model for small area estimation is the Fay-Herriot (FH) model, introduced by <span id="id23">Fay III and Herriot [<a class="reference internal" href="05_off-census.html#id118" title="Robert E Fay III and Roger A Herriot. Estimates of income for small places: an application of James-Stein procedures to census data. Journal of the American Statistical Association, 74(366a):269–277, 1979.">1979</a>]</span>, to estimate the per capita income of small areas in the United States. The U.S. Census Bureau has used area-level models within the Small Area Income and Poverty Estimates (SAIPE) project to inform the allocation of federal funds to school districts. The Fay-Herriot method, discussed in the area-level model chapter, will often require a separate model for each indicator, implying that area-level covariates are linearly related to the indicator of interest. If there is data at different aggregation levels, it may be possible to implement a two-fold area-level model introduced by <span id="id24">Torabi and Rao [<a class="reference internal" href="05_off-census.html#id119" title="Mahmoud Torabi and JNK Rao. On small area estimation under a sub-area level model. Journal of Multivariate Analysis, 127:36–55, 2014.">2014</a>]</span>, although no software implementation is currently available. Alternatively, it is possible to perform an FH model at the lowest aggregation level, and aggregate these FH estimates to a higher level (see <strong><a class="reference internal" href="03_area-level.html#area-level-annex-aggregation"><span class="std std-numref">Section 3.4.1</span></a></strong>). Although area-level models predate ELL and in principle, should be simpler to execute, they have not been as commonly implemented by World Bank teams.</p>
+<p>In addition to unit- and area-level models, unit-context models have been proposed in the context of SAE for poverty during off-census years (<strong>Chapter 5: <a class="reference internal" href="05_off-census.html#off-census"><span class="std std-ref">Poverty Mapping in Off-Census Years</span></a></strong>). Unit-context models (<strong><a class="reference internal" href="05_off-census.html#off-census-unit-context"><span class="std std-numref">Section 5.1</span></a></strong>) attempt to model the population’s welfare distribution by using only area-level covariates. This method may be attractive because it can rely on easily accessible aggregate data and may benefit from the larger sample size obtained via household-level welfare distribution and thus appears to combine the best features of both area-level and unit-level methodologies. Nevertheless, simulated data and real-world data have shown that unit-context models yield biased poverty estimates and, therefore, based on the literature to date, are discouraged and not considered preferable over estimators based on FH area-level models. Additionally, unit-context models rely on a parametric bootstrap procedure to estimate Mean Square Error (MSE). Given the assumptions of the unit-context model, that household-level welfare distribution does not depend on household-specific characteristics, it is unlikely that the MSE can be accurately estimated following a parametric bootstrap, making it difficult to evaluate the resulting small area estimates properly.</p>
+<div class="figure align-default" id="sae-decision-tree">
+<img alt="_images/SAE_Decision_tree.png" src="_images/SAE_Decision_tree.png" />
+<p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text"><em>SAE Decision tree</em></span><a class="headerlink" href="#sae-decision-tree" title="Permalink to this image">¶</a></p>
+</div>
+<p>Machine learning methods have also been proposed to obtain poverty maps in off-census years or when census data is unavailable. The methods often combine household survey data with ancillary Geo-coded (publicly available and proprietary) data to present local estimates of welfare. These methods have gained popularity among academia and policy circles since the publication of <span id="id25">Jean <em>et al.</em> [<a class="reference internal" href="05_off-census.html#id158" title="Neal Jean, Marshall Burke, Michael Xie, W Matthew Davis, David B Lobell, and Stefano Ermon. Combining satellite imagery and machine learning to predict poverty. Science, 353(6301):790–794, 2016. URL: https://www.science.org/doi/abs/10.1126/science.aaf7894.">2016</a>]</span>. For example, during the COVID-19 pandemic, cash transfers in Nigeria were informed by poverty estimates obtained from a machine learning approach by <span id="id26">Chi <em>et al.</em> [<a class="reference internal" href="05_off-census.html#id157" title="Guanghua Chi, Han Fang, Sourav Chatterjee, and Joshua E Blumenstock. Micro-estimates of wealth for all low-and middle-income countries. arXiv preprint arXiv:2104.07761, 2021.">2021</a>]</span>. However, these methods lack an accurate estimate of the method’s noise and, to date, have not been submitted to a rigorous statistical validation. The Guidelines present a brief look into how these machine learning methods compare to other available small area estimation approaches. Although much work remains to be done regarding machine learning methods, the Guidelines posit that these methods are promising (see <strong><a class="reference internal" href="05_off-census.html#off-census-gradient-boosting"><span class="std std-numref">Section 5.2</span></a></strong>).</p>
+<p>As the reader delves into the Guidelines and cited literature, the complexity of which method to choose becomes apparent. Despite this caveat, a simple decision tree on method availability is presented in <strong><a class="reference internal" href="#sae-decision-tree"><span class="std std-numref">Fig. 1.1</span></a></strong>. This decision tree can be used to assist practitioners in choosing which model is the best route for their context. The decision tree simplifies the process by directing readers to specific chapters in the Guidelines relevant to their particular situation.</p>
+</div>
+<div class="section" id="about-the-guidelines">
+<span id="intro-about"></span><h2><span class="section-number">1.2. </span>About the Guidelines<a class="headerlink" href="#about-the-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>The Guidelines are meant as a practical guide for readers. Stata scripts are provided throughout the chapters. These scripts allow replicating most sections and figures, which hopefully can assist new and more experienced practitioners in their SAE applications. Readers may download the latest Stata (SAE) packages used throughout the Guidelines from:</p>
+<ol class="simple">
+<li><p>Unit-level models: <a class="reference external" href="https://github.com/pcorralrodas/SAE-Stata-Package">https://github.com/pcorralrodas/SAE-Stata-Package</a></p></li>
+<li><p>Area-level models: <a class="reference external" href="https://github.com/jpazvd/fhsae">https://github.com/jpazvd/fhsae</a></p></li>
+</ol>
+<p>Although R offers a wide variety of packages for poverty-related small area estimation these are described in other sources:
+<span id="id27">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>,
+<span id="id28"></span>,
+<span id="id29">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>, and
+<span id="id30"></span>, for example.</p>
+<p>To assist readers throughout the text, simulated data (created following an assumed model), as well as real-world data are used. These data are used for method comparisons. Simulated data follow an assumed model and data generating process and are used for model-based simulations. Scripts are provided in the case of simulated data which can assist readers to replicate many of the analyses in the text. These data assist in illustrating the application of the different methods discussed and are used to make salient the advantages and disadvantages of the methods discussed.<a class="footnote-reference brackets" href="#id149" id="id31">8</a> In addition to simulated data, the Guidelines use the <em>Mexican Intercensal survey</em> for design-based validations where methods are compared using real world-data and the real data generating process is unknown.<a class="footnote-reference brackets" href="#id151" id="id32">9</a></p>
+</div>
+<div class="section" id="references">
+<span id="intro-ref"></span><h2><span class="section-number">1.3. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<div class="docutils container" id="id33">
+<dl class="citation">
+<dt class="label" id="id77"><span class="brackets"><a class="fn-backref" href="#id17">BHF88</a></span></dt>
+<dd><p>George E. Battese, Rachel M. Harter, and Wayne A. Fuller. An error-components model for prediction of county crop areas using survey and satellite data. <em>Journal of the American Statistical Association</em>, 83(401):28–36, 1988. URL: <a class="reference external" href="http://www.jstor.org/stable/2288915">http://www.jstor.org/stable/2288915</a>.</p>
+</dd>
+<dt class="label" id="id104"><span class="brackets"><a class="fn-backref" href="#id26">CFCB21</a></span></dt>
+<dd><p>Guanghua Chi, Han Fang, Sourav Chatterjee, and Joshua E Blumenstock. Micro-estimates of wealth for all low-and middle-income countries. <em>arXiv preprint arXiv:2104.07761</em>, 2021.</p>
+</dd>
+<dt class="label" id="id101"><span class="brackets"><a class="fn-backref" href="#id152">CHMM21</a></span></dt>
+<dd><p>Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? <em>Mathematics</em>, 2021. URL: <a class="reference external" href="https://www.mdpi.com/2227-7390/9/21/2780">https://www.mdpi.com/2227-7390/9/21/2780</a>, <a class="reference external" href="https://doi.org/10.3390/math9212780">doi:10.3390/math9212780</a>.</p>
+</dd>
+<dt class="label" id="id79"><span class="brackets"><a class="fn-backref" href="#id140">CMN21</a></span></dt>
+<dd><p>Paul Corral, Isabel Molina, and Minh Cong Nguyen. Pull your small area estimates up by the bootstraps. <em>Journal of Statistical Computation and Simulation</em>, 91(16):3304–3357, 2021. URL: <a class="reference external" href="https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460">https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460</a>, <a class="reference external" href="https://doi.org/10.1080/00949655.2021.1926460">doi:10.1080/00949655.2021.1926460</a>.</p>
+</dd>
+<dt class="label" id="id35"><span class="brackets"><a class="fn-backref" href="#id138">Dem02</a></span></dt>
+<dd><p>Gabriel Demombynes. A manual for the poverty and inequality mapper module. <em>University of California, Berkeley and Development Research Group, the World Bank</em>, 2002.</p>
+</dd>
+<dt class="label" id="id41"><span class="brackets">ELL03</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id9">2</a>,<a href="#id11">3</a>)</span></dt>
+<dd><p>Chris Elbers, Jean O Lanjouw, and Peter Lanjouw. Micro–level estimation of poverty and inequality. <em>Econometrica</em>, 71(1):355–364, 2003.</p>
+</dd>
+<dt class="label" id="id65"><span class="brackets">FIH79</span><span class="fn-backref">(<a href="#id10">1</a>,<a href="#id15">2</a>,<a href="#id23">3</a>)</span></dt>
+<dd><p>Robert E Fay III and Roger A Herriot. Estimates of income for small places: an application of James-Stein procedures to census data. <em>Journal of the American Statistical Association</em>, 74(366a):269–277, 1979.</p>
+</dd>
+<dt class="label" id="id51"><span class="brackets"><a class="fn-backref" href="#id20">FGT84</a></span></dt>
+<dd><p>James Foster, Joel Greer, and Erik Thorbecke. A class of decomposable poverty measures. <em>Econometrica: Journal of the Econometric Society</em>, 52:761–766, 1984.</p>
+</dd>
+<dt class="label" id="id105"><span class="brackets"><a class="fn-backref" href="#id25">JBX+16</a></span></dt>
+<dd><p>Neal Jean, Marshall Burke, Michael Xie, W Matthew Davis, David B Lobell, and Stefano Ermon. Combining satellite imagery and machine learning to predict poverty. <em>Science</em>, 353(6301):790–794, 2016. URL: <a class="reference external" href="https://www.science.org/doi/abs/10.1126/science.aaf7894">https://www.science.org/doi/abs/10.1126/science.aaf7894</a>.</p>
+</dd>
+<dt class="label" id="id62"><span class="brackets">Mol19</span><span class="fn-backref">(<a href="#id29">1</a>,<a href="#id144">2</a>)</span></dt>
+<dd><p>Isabel Molina. <em>Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas</em>. CEPAL, 2019. URL: <a class="reference external" href="https://repositorio.cepal.org/handle/11362/44214">https://repositorio.cepal.org/handle/11362/44214</a>.</p>
+</dd>
+<dt class="label" id="id110"><span class="brackets"><a class="fn-backref" href="#id13">MCN21</a></span></dt>
+<dd><p>Isabel Molina, Paul Corral, and Minh Cong Nguyen. Model-based methods for poverty mapping: a review. <em>Unpublished manuscript</em>, 2021.</p>
+</dd>
+<dt class="label" id="id56"><span class="brackets">MR10</span><span class="fn-backref">(<a href="#id12">1</a>,<a href="#id22">2</a>)</span></dt>
+<dd><p>Isabel Molina and JNK Rao. Small area estimation of poverty indicators. <em>Canadian Journal of Statistics</em>, 38(3):369–385, 2010.</p>
+</dd>
+<dt class="label" id="id38"><span class="brackets"><a class="fn-backref" href="#id6">NCAZ18</a></span></dt>
+<dd><p>Minh Cong Nguyen, Paul Corral, João Pedro Azevedo, and Qinghua Zhao. Sae: a stata package for unit level small area estimation. <em>World Bank Policy Research Working Paper</em>, 2018.</p>
+</dd>
+<dt class="label" id="id52"><span class="brackets">RM15</span><span class="fn-backref">(<a href="#id14">1</a>,<a href="#id27">2</a>,<a href="#id142">3</a>)</span></dt>
+<dd><p>JNK Rao and Isabel Molina. <em>Small Area Estimation</em>. John Wiley &amp; Sons, 2nd edition, 2015.</p>
+</dd>
+<dt class="label" id="id116"><span class="brackets">R+91</span><span class="fn-backref">(<a href="#id18">1</a>,<a href="#id146">2</a>)</span></dt>
+<dd><p>George K Robinson and others. That blup is a good thing: the estimation of random effects. <em>Statistical science</em>, 6(1):15–32, 1991.</p>
+</dd>
+<dt class="label" id="id66"><span class="brackets"><a class="fn-backref" href="#id24">TR14</a></span></dt>
+<dd><p>Mahmoud Torabi and JNK Rao. On small area estimation under a sub-area level model. <em>Journal of Multivariate Analysis</em>, 127:36–55, 2014.</p>
+</dd>
+<dt class="label" id="id94"><span class="brackets"><a class="fn-backref" href="#id150">TZL+18</a></span></dt>
+<dd><p>Nikos Tzavidis, Li-Chun Zhang, Angela Luna, Timo Schmid, and Natalia Rojas-Perilla. From start to finish: a framework for the production of small area official statistics. <em>Journal of the Royal Statistical Society: Series A (Statistics in Society)</em>, 181(4):927–979, 2018.</p>
+</dd>
+<dt class="label" id="id42"><span class="brackets"><a class="fn-backref" href="#id4">Zha06</a></span></dt>
+<dd><p>Qinghua Zhao. <em>User Manual for Povmap</em>. 2006. URL: <a class="reference external" href="http://siteresources. worldbank. org/INTPGI/Resources/342674-1092157888460/Zhao_ ManualPovMap. pdf">http://siteresources. worldbank. org/INTPGI/Resources/342674-1092157888460/Zhao_ ManualPovMap. pdf</a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="notes">
+<span id="intro-notes"></span><h2><span class="section-number">1.4. </span>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id136"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>There is no universal threshold used to define a small area; every NSO establishes its own limit of what is an acceptable coefficient of variation (CV). Anything above the threshold is unlikely to be published by the NSO. Moreover, there is also no defined sample size that can determine if a group can be considered a small area since this is also dependent on the indicator one wishes to estimate. For poverty, for example, the magnitude of the poverty rate is also related to the necessary sample size for its accurate estimation, with higher proportions requiring smaller sample sizes.</p>
+</dd>
+<dt class="label" id="id137"><span class="brackets"><a class="fn-backref" href="#id5">2</a></span></dt>
+<dd><p><span id="id138">Demombynes [<a class="reference internal" href="#id35" title="Gabriel Demombynes. A manual for the poverty and inequality mapper module. University of California, Berkeley and Development Research Group, the World Bank, 2002.">2002</a>]</span> presents earlier work of a module in SAS of the methodology.</p>
+</dd>
+<dt class="label" id="id139"><span class="brackets"><a class="fn-backref" href="#id7">3</a></span></dt>
+<dd><p>Although <code class="docutils literal notranslate"><span class="pre">sae</span></code> was initially created to replicate many of the features and methods implemented in <code class="docutils literal notranslate"><span class="pre">PovMap</span></code>, the package has undergone many updates. <span id="id140">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id90" title="Paul Corral, Isabel Molina, and Minh Cong Nguyen. Pull your small area estimates up by the bootstraps. Journal of Statistical Computation and Simulation, 91(16):3304–3357, 2021. URL: https://www.tandfonline.com/doi/abs/10.1080/00949655.2021.1926460, doi:10.1080/00949655.2021.1926460.">2021</a>]</span> detail the main updates and the reasons behind these.</p>
+</dd>
+<dt class="label" id="id141"><span class="brackets"><a class="fn-backref" href="#id8">4</a></span></dt>
+<dd><p>For a more thorough discussion on small area estimation, including applications for other indicators of interest, readers should refer to <span id="id142">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>.</p>
+</dd>
+<dt class="label" id="id143"><span class="brackets"><a class="fn-backref" href="#id16">5</a></span></dt>
+<dd><p>Note that simulations are not required when using analytical formulas to obtain poverty estimates. When assuming normality, the expected value of the poverty headcount and gap can be calculated without resorting to Monte Carlo simulations (<span id="id144">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>).</p>
+</dd>
+<dt class="label" id="id145"><span class="brackets"><a class="fn-backref" href="#id19">6</a></span></dt>
+<dd><p>Early applications were in the area of animal and plant breeding to estimate genetic merits (<span id="id146">Robinson and others [<a class="reference internal" href="06_diagnostics.html#id127" title="George K Robinson and others. That blup is a good thing: the estimation of random effects. Statistical science, 6(1):15–32, 1991.">1991</a>]</span>).</p>
+</dd>
+<dt class="label" id="id147"><span class="brackets"><a class="fn-backref" href="#id21">7</a></span></dt>
+<dd><p>ELL follows and builds upon the work of <span id="id148"></span>.</p>
+</dd>
+<dt class="label" id="id149"><span class="brackets"><a class="fn-backref" href="#id31">8</a></span></dt>
+<dd><p>See <span id="id150">Tzavidis <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id105" title="Nikos Tzavidis, Li-Chun Zhang, Angela Luna, Timo Schmid, and Natalia Rojas-Perilla. From start to finish: a framework for the production of small area official statistics. Journal of the Royal Statistical Society: Series A (Statistics in Society), 181(4):927–979, 2018.">2018</a>]</span> for more details.</p>
+</dd>
+<dt class="label" id="id151"><span class="brackets"><a class="fn-backref" href="#id32">9</a></span></dt>
+<dd><p>The <em>Mexican Intercensal survey</em> contains a welfare measure and is modified to mimic a census of 3.9 million households and 1,865 municipalities to allow for a design-based validation. From the created census, 500 survey samples were drawn for validations shown throughout the document (see <span id="id152">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span> for more details on the modifications to the <em>Mexican Intercensal survey</em> and the sampling approach taken).</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="00_welcome.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome to Guidelines to SAE for Poverty Mapping</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02_direct.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Direct Estimates</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Paul Corral, Isabel Molina, Alexandru Cojocaru, and Sandra Segovia<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

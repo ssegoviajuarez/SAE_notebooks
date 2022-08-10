@@ -1,0 +1,658 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Direct Estimates &#8212; Guidelines to Small Area Estimation for Poverty Mapping</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Area-level Models for Small Area Estimation" href="03_area-level.html" />
+    <link rel="prev" title="1. Small Area Estimation for Poverty Mapping" href="01_intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Guidelines to Small Area Estimation for Poverty Mapping</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00_welcome.html">
+   Welcome to Guidelines to SAE for Poverty Mapping
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  CHAPTERS
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_intro.html">
+   1. Small Area Estimation for Poverty Mapping
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Direct Estimates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_area-level.html">
+   3. Area-level Models for Small Area Estimation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_unit-level.html">
+   4. Unit-level Models for Small Area Estimation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_off-census.html">
+   5. Poverty Mapping in Off-Census Years
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_diagnostics.html">
+   6. Model Diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_conclusion.html">
+   7. Concluding Remarks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Created by <a href="https://github.com/ssegoviajuarez"> Sandra Segovia </a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/02_direct.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/02_direct.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#design-based-estimation">
+   2.1. Design-Based Estimation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-direct-estimators">
+     2.1.1. Basic Direct Estimators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#greg-and-calibration-estimators">
+     2.1.2. GREG and Calibration Estimators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pros-and-cons-of-direct-estimators">
+     2.1.3. Pros and Cons of Direct Estimators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-direct-estimates-of-poverty-indicators">
+     2.1.4. Example: Direct Estimates of Poverty Indicators
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluation-of-estimates">
+   2.2. Evaluation of Estimates
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-bias-vs-mse">
+     2.2.1. Example: Bias vs MSE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix">
+   2.3. Appendix
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitions">
+     2.3.1. Definitions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   2.4. References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes">
+   2.5. Notes
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Direct Estimates</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#design-based-estimation">
+   2.1. Design-Based Estimation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-direct-estimators">
+     2.1.1. Basic Direct Estimators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#greg-and-calibration-estimators">
+     2.1.2. GREG and Calibration Estimators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pros-and-cons-of-direct-estimators">
+     2.1.3. Pros and Cons of Direct Estimators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-direct-estimates-of-poverty-indicators">
+     2.1.4. Example: Direct Estimates of Poverty Indicators
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluation-of-estimates">
+   2.2. Evaluation of Estimates
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-bias-vs-mse">
+     2.2.1. Example: Bias vs MSE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix">
+   2.3. Appendix
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitions">
+     2.3.1. Definitions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   2.4. References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes">
+   2.5. Notes
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="direct-estimates">
+<span id="direct"></span><h1><span class="section-number">2. </span>Direct Estimates<a class="headerlink" href="#direct-estimates" title="Permalink to this headline">¶</a></h1>
+<hr style="height:1px;border:none;color:#666;background-color:#666;" /><p>To fully benefit from the Guidelines, it is necessary first to understand the background materials, including a description of the design-based setting, followed by typical direct estimators, along with the advantages and disadvantages of their applications. The goal of <strong>Chapter 2: <a class="reference internal" href="#direct"><span class="std std-ref">Direct Estimates</span></a></strong> is to present background material for the chapters that follow. The chapter begins by describing the design-based setting. Then it gives a description of the typical direct estimators and their advantages and disadvantages in their applications. Finally, some tips to evaluate estimates are provided.</p>
+<p>Direct estimates are generated by taking a sample from the target universe of observations, surveying that sample, then using statistical techniques to generalize the results to the entire population of interest. Sample surveys provide reliable estimates of a target population without observing the entire population. Sample survey data is used to produce direct estimates of totals, means, and other characteristics for the whole population and other domains. Here, “direct” means that only the sample units from the area are used (See <span id="id1">Lohr [<a class="reference internal" href="#id104" title="Sharon L Lohr. Sampling: design and analysis (advanced series). Cengage Learning, 2nd edition, 2010. ISBN 0495105279. URL: http://dni.dali.dartmouth.edu/8vxeqmju4q43/12-bailee-klein-1/read-0495105279-sampling-design-and-analysis-advanced-series.pdf.">2010</a>]</span> or <span id="id2">Cochran [<a class="reference internal" href="06_diagnostics.html#id119" title="William G Cochran. Sampling techniques. John Wiley &amp; Sons, 2007.">2007</a>]</span> for a thorough treatment of sampling theory and direct estimation).</p>
+<p>In areas with a sufficiently large sample size, statistical institutes often report direct estimates by default due to their desirable properties with respect to the sampling design (<span id="id3">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>). Though there are some global norms, defining “sufficiently large,” usually measured by the coefficient of variation, is done by the data producers. In cases where direct estimates are not sufficiently large, the results may still be reported, but the lack of quality is usually flagged for users. In instances where the desired quality is not met, small area estimates are necessary. Hence, small area estimates may be judged by how much they improve the quality of the direct estimates.</p>
+<div class="section" id="design-based-estimation">
+<span id="direct-design-based"></span><h2><span class="section-number">2.1. </span>Design-Based Estimation<a class="headerlink" href="#design-based-estimation" title="Permalink to this headline">¶</a></h2>
+<p>The traditional way to provide estimates of finite population parameters based on survey data is to rely on design-based (or repeated sampling) estimation methods. However, using a survey to produce direct estimates of adequate precision for particular domains of the population can be economically prohibitive since it may require considerably large sample sizes (<span id="id4">Cochran [<a class="reference internal" href="06_diagnostics.html#id119" title="William G Cochran. Sampling techniques. John Wiley &amp; Sons, 2007.">2007</a>]</span>). Even in the case of limitless resources, huge samples may not be advisable because of a heightened risk of non-sampling or implementation error. The quality of direct design-based estimates is evaluated with respect to their sampling design, that is, with respect to all the possible samples taken from the population under the proposed sampling design (<span id="id5">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>). In this scenario, the values of the variable of interest are considered fixed and they only vary due to the variation induced by the sampling design (<em>ibid</em>).<a class="footnote-reference brackets" href="#id133" id="id6">1</a></p>
+<p>Consider the following notation for the next sections:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U\)</span> is the target population, e.g. the set of inhabitants in a country, of size <span class="math notranslate nohighlight">\(N\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(y_{1},\ldots,y_{N}\)</span> are measurements of the study variable at the population units (assumed to be fixed).</p></li>
+<li><p>Target finite population parameter or quantity of interest: <span class="math notranslate nohighlight">\(\delta=h(y_{1},\ldots,y_{N})\)</span>. For example, the population mean <span class="math notranslate nohighlight">\(\bar{Y}=\)</span> <span class="math notranslate nohighlight">\(\frac{1}{N}\)</span><span class="math notranslate nohighlight">\(\sum_{j=1}^{N}\)</span><span class="math notranslate nohighlight">\(y_{j}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(s\)</span> is a random sample of size <span class="math notranslate nohighlight">\(n\)</span> drawn from the population <span class="math notranslate nohighlight">\(U\)</span> according to a given survey design.</p></li>
+<li><p><span class="math notranslate nohighlight">\(r=U-s\)</span> is the set of non-sampled units (size <span class="math notranslate nohighlight">\(N-n\)</span>).</p></li>
+<li><p>There are <span class="math notranslate nohighlight">\(D\)</span> subpopulations/domains/areas, indexed by <span class="math notranslate nohighlight">\(d=1,\ldots,D\)</span>, of sizes <span class="math notranslate nohighlight">\(N_{1},\ldots,N_{D}\)</span>.</p></li>
+<li><p>The mean of a variable <span class="math notranslate nohighlight">\(Y\)</span> in a subpopulation/domain/area <span class="math notranslate nohighlight">\(d\)</span> is given by <span class="math notranslate nohighlight">\(\bar{Y}_{d}=N_{d}^{-1}\sum_{i=1}^{N_{d}}y_{di}\)</span>, where <span class="math notranslate nohighlight">\(y_{di}\)</span> denotes the value of <span class="math notranslate nohighlight">\(Y\)</span> for individual <span class="math notranslate nohighlight">\(i\)</span> in area/domain <span class="math notranslate nohighlight">\(d\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(s_{d}\)</span> is the subsample of size <span class="math notranslate nohighlight">\(n_{d}\)</span> (which may be the empty set) from domain/area <span class="math notranslate nohighlight">\(d\)</span>, where <span class="math notranslate nohighlight">\(\sum_{d=1}^{D}n_{d}=n\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(r_{d}\)</span> is the set of elements outside the sample of area <span class="math notranslate nohighlight">\(d=1,\ldots,D\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\pi_{di}\)</span> is the inclusion probability of individual <span class="math notranslate nohighlight">\(i\)</span> in the sample from area/domain <span class="math notranslate nohighlight">\(d\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_{di}=\pi_{di}^{-1}\)</span> is the sampling weight of individual <span class="math notranslate nohighlight">\(i\)</span> in area/domain <span class="math notranslate nohighlight">\(d\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\pi_{d,ij}\)</span> is the joint inclusion probability of individuals <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> in the sample from area/domain <span class="math notranslate nohighlight">\(d\)</span>.</p></li>
+</ul>
+<p>With this notation in mind, the following subsection presents the standard direct estimators, including basic direct estimators such as Horvitz-Thompson (HT), Hájek, and estimators requiring auxiliary data like GREG and calibration estimators.</p>
+<div class="section" id="basic-direct-estimators">
+<span id="direct-design-based-basic"></span><h3><span class="section-number">2.1.1. </span>Basic Direct Estimators<a class="headerlink" href="#basic-direct-estimators" title="Permalink to this headline">¶</a></h3>
+<p><strong>Horvitz-Thompson (HT)</strong></p>
+<p>The Horvitz-Thompson (HT) estimator of the total of area/domain <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(Y_{d}=\sum_{i=1}^{N_{d}}y_{di}\)</span>, is <span class="math notranslate nohighlight">\(\hat{Y}_{d}=\sum_{i\in s_{d}}\omega_{di}y_{di}\)</span>. This estimator is unbiased under the sampling design.</p>
+<p>To estimate the mean of area/domain <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(\bar{Y}_{d}=N_{d}^{-1}\sum_{i=1}^{N_{d}}y_{di}\)</span>, the HT estimator is <span class="math notranslate nohighlight">\(\hat{\bar{Y}}_{d}=N_{d}^{-1}\sum_{i\in s_{d}}\omega_{di}y_{di}\)</span>. Note that here it is assumed that the true area’s population <span class="math notranslate nohighlight">\(N_{d}\)</span>, is known.</p>
+<p>Assuming positive inclusion probabilities <span class="math notranslate nohighlight">\(\pi_{di}\)</span> and <span class="math notranslate nohighlight">\(\pi_{d,ij}\)</span> for every pair of units <span class="math notranslate nohighlight">\(i,j\)</span> in the area, an unbiased estimate of the variance is given by:</p>
+<div class="math notranslate nohighlight">
+\[\widehat{\mathrm{var}}_{\pi}(\hat{\bar{Y}}_{d})=N_{d}^{-2}\left[\sum_{i\in s_{d}}\frac{y_{di}^{2}}{\pi_{di}^{2}}(1-\pi_{di})+2\sum_{i\in s_{d}}\sum_{j\in s_{d},j&gt;i}\frac{y_{di}y_{dj}}{\pi_{di}\pi_{dj}}\left(\frac{\pi_{d,ij}-\pi_{di}\pi_{dj}}{\pi_{d,ij}})\right)\right]\]</div>
+<p>One typical challenge in applications is that there is not enough information about the sampling design. Without the second-order inclusion probabilities <span class="math notranslate nohighlight">\(\pi_{d,ij}\)</span>, the formula above cannot be applied. Nevertheless, for certain sampling designs, where <span class="math notranslate nohighlight">\(\pi_{dij}\approx\pi_{di}\pi_{dj}\)</span>, for <span class="math notranslate nohighlight">\(j\neq i\)</span>, the second term of the formula approximates zero. Therefore, a simpler variance estimator, which does not depend on the second-order inclusion probabilities <span class="math notranslate nohighlight">\(\pi_{d,ij}\)</span>, would be: <span class="math notranslate nohighlight">\(\widehat{\mathrm{var}}_{\pi}(\hat{\bar{Y}}_{d})=N_{d}^{-2}\sum_{i\in s_{d}}\omega_{di}(w_{di}-1)y_{di}^{2}\)</span>, where <span class="math notranslate nohighlight">\(\omega_{di}=\pi_{di}^{-1}\)</span> is the sampling weight of unit <span class="math notranslate nohighlight">\(i\)</span> in area/domain <span class="math notranslate nohighlight">\(d\)</span>.</p>
+<p><strong>Hájek</strong></p>
+<p>Despite the HT estimator being unbiased under the sampling design, its variance under the design may be quite large. An alternative, although slightly biased, is Hájek’s estimator. This estimator is obtained just by using the sampling weights for the considered area to estimate <span class="math notranslate nohighlight">\(N_{d}\)</span>; consequently, for estimation of <span class="math notranslate nohighlight">\(\bar{Y}_{d}\)</span>, it does not require knowing the population size of area <span class="math notranslate nohighlight">\(d\)</span>. The Hájek estimator uses <span class="math notranslate nohighlight">\(\hat{N}_{d}=\sum_{i\in s_{d}}\omega_{di}\)</span> instead of <span class="math notranslate nohighlight">\(N_{d}\)</span> to estimate the area mean <span class="math notranslate nohighlight">\(\bar{Y}_{d}\)</span>. However, an unbiased estimator of its variance is obtained by replacing <span class="math notranslate nohighlight">\(y_{di}\)</span> by <span class="math notranslate nohighlight">\(e_{di}=y_{di}-\hat{\bar{Y_{d}}}^{HA}\)</span> in the variance estimator of the HT estimator.</p>
+<p>Both HT and Hájek use only area-specific sample data, that is to say, they only use the portion of the survey data for a given area <span class="math notranslate nohighlight">\(d\)</span>.</p>
+<p><strong>Variance Estimation in Applications</strong></p>
+<p>Another challenge that may be encountered in applications is that, in many domains/areas <span class="math notranslate nohighlight">\(d\)</span>, there is only a single primary sampling unit (PSU) present in the survey data; hence, the habitual variance estimator cannot be calculated and some approximation of the variance is required.</p>
+<p>Alternatives to approximate the variance of the estimator that depend on the sampling design and the information available to the practitioner include linearization, a balanced repeated replication BRR method with Fay’s method,<a class="footnote-reference brackets" href="#id135" id="id7">2</a> as well as jackknife and bootstrap techniques. <span id="id8">Rao [<a class="reference internal" href="#id128" title="JNK Rao. Variance estimation in sample surveys, chapter 17, pages 427-447. Volume 6. Elsevier B.V, 1988. URL: https://doi.org/10.1016/S0169-7161(88)06019-5.">1988</a>]</span> and <span id="id9">Rust and Rao [<a class="reference internal" href="#id127" title="Keith F Rust and JNK Rao. Variance estimation for complex surveys using replication techniques. Statistical methods in medical research, 5(3):283–310, 1996.">1996</a>]</span> provide a deeper discussion on variance estimation in sample surveys and application examples. Additionally, <span id="id10">Bruch <em>et al.</em> [<a class="reference internal" href="#id126" title="Christian Bruch, Ralf Münnich, and Stefan Zins. Variance estimation for complex surveys. Deliverable D3, 2011.">2011</a>]</span> provide an overview of variance estimation in the presence of complex survey designs.</p>
+</div>
+<div class="section" id="greg-and-calibration-estimators">
+<span id="direct-design-based-greg"></span><h3><span class="section-number">2.1.2. </span>GREG and Calibration Estimators<a class="headerlink" href="#greg-and-calibration-estimators" title="Permalink to this headline">¶</a></h3>
+<p>Unlike the basic direct estimators presented above, the Generalized Regression (GREG) and, more generally, calibration estimators, require auxiliary information, such as the population totals or means of auxiliary variables in <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(\bar{X}_{d}=N_{d}^{-1}\sum_{i=1}^{N_{d}}y_{di}\)</span>. If <span class="math notranslate nohighlight">\(\hat{\bar{X}}_{d}\)</span> is the HT estimator of <span class="math notranslate nohighlight">\(\bar{X}_{d}\)</span>, then the GREG estimator of <span class="math notranslate nohighlight">\(\bar{Y}_{d}\)</span> is given by: <span class="math notranslate nohighlight">\(\hat{\bar{Y}}_{d}+(\hat{\bar{X}}_{d}-\bar{X}_{d},)'\hat{\bar{\boldsymbol{B}}}_{d}\)</span>, where <span class="math notranslate nohighlight">\(\hat{\bar{\boldsymbol{B}}}_{d}\)</span> is the weighted least squares estimator of the coefficient vector <span class="math notranslate nohighlight">\(\boldsymbol{\beta}_{d}\)</span> in linear regression of <span class="math notranslate nohighlight">\(y_{di}\)</span> in terms of the vector <span class="math notranslate nohighlight">\(x_{di}\)</span> in area <span class="math notranslate nohighlight">\(d\)</span>. For an exhaustive presentation of GREG estimators, see <span id="id11">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>.</p>
+</div>
+<div class="section" id="pros-and-cons-of-direct-estimators">
+<span id="direct-design-based-pros"></span><h3><span class="section-number">2.1.3. </span>Pros and Cons of Direct Estimators<a class="headerlink" href="#pros-and-cons-of-direct-estimators" title="Permalink to this headline">¶</a></h3>
+<p><strong>Data requirements:</strong></p>
+<ul class="simple">
+<li><p>Sampling weights <span class="math notranslate nohighlight">\(\omega_{di}\)</span> for survey units.</p></li>
+<li><p>True population size <span class="math notranslate nohighlight">\(N_{d}\)</span> of area <span class="math notranslate nohighlight">\(d\)</span> for HT estimator of <span class="math notranslate nohighlight">\(\bar{Y}_{d}\)</span>.</p></li>
+</ul>
+<p>Some advantages and disadvantages of direct estimates are the following:</p>
+<p><strong>Pros:</strong></p>
+<ul class="simple">
+<li><p>They make no model assumptions (non-parametric).</p></li>
+<li><p>HT is exactly unbiased under the sampling design for large areas. Hájek and GREG estimators are approximately unbiased under the sampling design for large areas.</p></li>
+<li><p><strong>It is an unbiased estimator under the sampling design</strong> if the expected value (mean) of the estimator across all the possible samples <span class="math notranslate nohighlight">\(s_{d}\)</span> drawn from area <span class="math notranslate nohighlight">\(d\)</span> with the given design is equal to the population parameter. In other words, if its design bias is equal to zero for all the values of the parameter. The estimator <span class="math notranslate nohighlight">\(\hat{\theta}_{d}\)</span> of parameter <span class="math notranslate nohighlight">\(\theta\)</span> is unbiased if and only if <span class="math notranslate nohighlight">\(E_{\pi}(\hat{\theta}_{d})-\theta_{d}=0\)</span>.</p></li>
+<li><p><strong>Consistency:</strong> as the sample size increases, the probability that the estimator <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> differs from the true value <span class="math notranslate nohighlight">\(\theta\)</span> by more than <span class="math notranslate nohighlight">\(\varepsilon\)</span> approximates 0, for every <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>.</p></li>
+<li><p><strong>Additivity (Benchmarking property):</strong> <span class="math notranslate nohighlight">\(\sum_{d=1}^{D}\hat{Y}_{d}=\hat{Y}\)</span>, that is, the direct estimate of the total for a larger area covering several areas coincides with the aggregation of the estimates of the totals for the areas within the larger area.</p></li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul class="simple">
+<li><p>Inefficient for small areas. For an area <span class="math notranslate nohighlight">\(d\)</span> with small <span class="math notranslate nohighlight">\(n_{d}\)</span>, traditional area-specific direct estimators do not provide adequate precision.</p></li>
+<li><p>Direct estimates cannot be calculated for non-sampled domains.</p></li>
+</ul>
+</div>
+<div class="section" id="example-direct-estimates-of-poverty-indicators">
+<span id="direct-design-based-example"></span><h3><span class="section-number">2.1.4. </span>Example: Direct Estimates of Poverty Indicators<a class="headerlink" href="#example-direct-estimates-of-poverty-indicators" title="Permalink to this headline">¶</a></h3>
+<p>Example based on <span id="id12">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span> and <span id="id13">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>.</p>
+<ul class="simple">
+<li><p>Target population: <span class="math notranslate nohighlight">\(N\)</span> households in a country.</p></li>
+<li><p>There are <span class="math notranslate nohighlight">\(C\)</span> different areas/clusters <span class="math notranslate nohighlight">\(c=1,\ldots,C\)</span> of sizes <span class="math notranslate nohighlight">\(N_{1},\ldots,N_{C}\)</span> respectively.</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(y_{ch}\)</span> be total income for each household <span class="math notranslate nohighlight">\(h=1,\ldots,N_{c}\)</span> in area/cluster <span class="math notranslate nohighlight">\(c=1,\ldots,C\)</span>.</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(z\)</span> be a fixed poverty line.</p></li>
+<li><p>FGT indicators are defined as <span class="math notranslate nohighlight">\(F_{\alpha ch}\)</span>=<span class="math notranslate nohighlight">\(\left(\frac{z-y_{ch}}{z}\right)^{\alpha}I(y_{ch}&lt;z),\:h=1,\ldots,N_{c},\:\alpha=0,1,2,\)</span> where the indicator function <span class="math notranslate nohighlight">\(I(\cdot)\)</span> is <span class="math notranslate nohighlight">\(1\)</span> if household <span class="math notranslate nohighlight">\(h\)</span> is under the poverty line <span class="math notranslate nohighlight">\(z\)</span>, and <span class="math notranslate nohighlight">\(0\)</span> otherwise (<span id="id14">Foster <em>et al.</em> [<a class="reference internal" href="04_unit-level.html#id164" title="James Foster, Joel Greer, and Erik Thorbecke. A class of decomposable poverty measures. Econometrica: Journal of the Econometric Society, 52:761–766, 1984.">1984</a>]</span>).</p></li>
+<li><p>Then, for every cluster/area <span class="math notranslate nohighlight">\(c\)</span>, the FGT poverty indicator of order <span class="math notranslate nohighlight">\(\alpha\)</span> for area <span class="math notranslate nohighlight">\(c\)</span> is <strong><span class="math notranslate nohighlight">\(F_{\alpha c}\)</span></strong>= <span class="math notranslate nohighlight">\(\frac{1}{N_{c}}\)</span><span class="math notranslate nohighlight">\(\sum_{h=1}^{N_{c}}\)</span><span class="math notranslate nohighlight">\(F_{\alpha ch}\)</span>.</p></li>
+<li><p>The goal is to estimate the poverty indicator <strong><span class="math notranslate nohighlight">\(F_{\alpha c}\)</span></strong> for every cluster/area <span class="math notranslate nohighlight">\(c\)</span>; take a random sample <span class="math notranslate nohighlight">\(s_{c}\)</span> of size <span class="math notranslate nohighlight">\(n_{c}\)</span> (which might be equal to zero) from cluster/area <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
+<li><p>Horvitz-Thompson estimator: <span class="math notranslate nohighlight">\(\hat{F}_{\alpha c}=\frac{1}{N_{c}}\sum_{h\in s_{c}}\omega_{ch}F_{\alpha ch}\)</span>.</p></li>
+<li><p>Hájek estimator: <span class="math notranslate nohighlight">\(\hat{F}_{\alpha c}=\frac{1}{\hat{N}_{c}}\sum_{h\in s_{c}}\omega_{ch}F_{\alpha ch}\)</span>, where <span class="math notranslate nohighlight">\(\hat{N}_{c}=\sum_{h\in s_{c}}\omega_{ch}\)</span>.</p></li>
+<li><p>Here, <span class="math notranslate nohighlight">\(\omega_{ch}=\pi_{ch}^{-1}\)</span>, where <span class="math notranslate nohighlight">\(\pi_{ch}\)</span> is the inclusion probability of household <span class="math notranslate nohighlight">\(h\)</span> in the sample of cluster/area <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="evaluation-of-estimates">
+<span id="direct-evaluation"></span><h2><span class="section-number">2.2. </span>Evaluation of Estimates<a class="headerlink" href="#evaluation-of-estimates" title="Permalink to this headline">¶</a></h2>
+<p>Comparison of estimates is based on statistical measures of precision and accuracy. It is stated that estimate <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> has more <strong>precision</strong> than estimate <span class="math notranslate nohighlight">\(\hat{\theta}'\)</span> if the (replicable) values of the estimate <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> are closer to each other than the ones of <span class="math notranslate nohighlight">\(\hat{\theta'}\)</span>, that is to say, if the realizations of <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> have less dispersion. On the other hand, <strong>accuracy</strong> measures the closeness of estimate <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>, i.e. <span class="math notranslate nohighlight">\(E(\hat{\theta})\)</span>, to the true value of the population parameter <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>For example, the estimated mean squared error (MSE) is a measure of precision (measured by the variance of the estimate <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>) and accuracy (measured by the square bias of the estimate <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>).</p>
+<p>The particular error measures and “acceptable” error levels depend on National Statistical Office’s guidelines or practitioners/researchers. The most common error measures of an estimator are: standard error, variance, coefficient of variation (CV), and the mean squared error (MSE). The smaller the value for all these measures, the better is the estimator.</p>
+<p>The sections above reviewed direct estimators for means and totals. Direct estimators are obtained similarly for any other target parameter that is additive in the individual observations. Direct estimators are recommended at the national level and for disaggregated levels where direct estimators have a coefficient of variation (CV) below an established threshold for every area <span id="id15">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>. For disaggregations where direct estimators have a CV above the CV threshold or absolute relative bias (ARB) above a given ARB threshold, direct estimates are not recommended (see <strong>Chapter 3: <a class="reference internal" href="03_area-level.html#area-level"><span class="std std-ref">Area-level Models for Small Area Estimation</span></a></strong> and <strong>Chapter 4: <a class="reference internal" href="04_unit-level.html#unit-level"><span class="std std-ref">Unit-level Models for Small Area Estimation</span></a></strong> for the application of indirect estimators). If there are areas where not even the indirect estimators satisfy the former requirements, it is recommended to properly highlight these estimates, indicating that these have low quality.<a class="footnote-reference brackets" href="#id137" id="id16">3</a></p>
+<p>In order to obtain a clear assessment of the precision and accuracy gains of model-based SAE methods over direct estimation, it is helpful to present the following information when reporting poverty estimates:<a class="footnote-reference brackets" href="#id138" id="id17">4</a></p>
+<ul class="simple">
+<li><p>Area code <span class="math notranslate nohighlight">\(d\)</span></p></li>
+<li><p>True population size of area <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(N_{d}\)</span></p></li>
+<li><p>Sample size of area <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(n_{d}\)</span></p></li>
+<li><p>Direct estimate of poverty for area <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(\hat{F}_{\alpha d}\)</span></p></li>
+<li><p>Small area estimate of poverty for area <span class="math notranslate nohighlight">\(d\)</span>, for example, EB <span class="math notranslate nohighlight">\(\hat{F}_{\alpha d}^{EB}\)</span></p></li>
+<li><p>Estimated variance of area <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(\hat{F}_{\alpha d}\)</span></p></li>
+<li><p>Estimated mean squared error (MSE) of <span class="math notranslate nohighlight">\(\hat{F}_{\alpha d}^{EB}\)</span> in area <span class="math notranslate nohighlight">\(d\)</span> <strong>or</strong></p></li>
+<li><p>Coefficient of variation (CV) of both <span class="math notranslate nohighlight">\(\hat{F}_{\alpha d}\)</span> and <span class="math notranslate nohighlight">\(\hat{F}_{\alpha d}^{EB}\)</span> in area <span class="math notranslate nohighlight">\(d\)</span></p></li>
+</ul>
+<p>Direct estimators have the advantage that they are (approximately) unbiased under the sampling design. When comparing two unbiased estimators, choosing the one with the smallest variance is recommended.<a class="footnote-reference brackets" href="#id140" id="id18">5</a> If one of them is not unbiased, it is recommended to select the one with the smallest MSE (<span id="id19">Molina and García-Portugues [<a class="reference internal" href="06_diagnostics.html#id120" title="Isabel Molina and Eduardo García-Portugues. A First Course on Statistical Inference. Bookdown.org, 2021. Accessed: 2010-06-22. URL: https://bookdown.org/egarpor/inference/.">2021</a>]</span>), as it is preferable to tolerate small amounts of bias if there are large gains in precision (the bias-variance tradeoff). The model-based SAE methods presented in the subsequent chapters introduce some bias under the design while decreasing the MSE. There is, however, a limit to the amount of bias that can be tolerated before the estimators lose utility.</p>
+<p>Why use the coefficient of variation (CV)? The CV of <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>, <span class="math notranslate nohighlight">\(cv(\hat{\theta})=\sqrt{\mathrm{var}(\hat{\theta})}/\theta\)</span>, is a relative measure of error, which makes it unitless and easier to interpret than the MSE. Nevertheless, for the CV to have a correct interpretation, the value of the estimate must be greater than zero. Moreover, when estimating a proportion <span class="math notranslate nohighlight">\(P\)</span> (poverty rates, for example), larger sample sizes are often necessary to keep the error measure below a certain limit than the sample size required when estimating totals (<span id="id20">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>).<a class="footnote-reference brackets" href="#id141" id="id21">6</a> Since the CV increases as the proportion <span class="math notranslate nohighlight">\(P\)</span> decreases, the CV is no longer a measure of the relative error but a measure of how small the proportion <span class="math notranslate nohighlight">\(P\)</span> is. Therefore, calculating the MSE (or its root) for proportions <span class="math notranslate nohighlight">\(P\)</span> is a better option.</p>
+<div class="section" id="example-bias-vs-mse">
+<span id="direct-evaluation-example"></span><h3><span class="section-number">2.2.1. </span>Example: Bias vs MSE<a class="headerlink" href="#example-bias-vs-mse" title="Permalink to this headline">¶</a></h3>
+<p><strong><a class="reference internal" href="#alfa"><span class="std std-numref">Fig. 2.1</span></a></strong> shows the design bias (left) and design MSE (right) of direct estimates of FGT0 indicators (poverty rates) compared to unit-level model-based estimators, both presented at the municipal level. It is essential to notice that even though the direct estimate’s bias is approximately equal to 0, its variance (or MSE) in many areas is much greater than the one from the model-based estimators.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/bias_alfa.png"><img alt="_images/bias_alfa.png" src="_images/bias_alfa.png" style="height: 350px;" /></a>
+</div>
+<div class="figure align-default" id="alfa">
+<a class="reference internal image-reference" href="_images/mse_alfa.png"><img alt="_images/mse_alfa.png" src="_images/mse_alfa.png" style="height: 350px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text"><em>Bias and MSE of direct estimates of the FGT0 indicators at the municipal level</em></span><a class="headerlink" href="#alfa" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>Source: Based on 500 samples drawn from the <em>Mexican Intercensal survey</em> which is used as a census of 3.9 million households (see <span id="id22">Corral <em>et al.</em> [<a class="reference internal" href="06_diagnostics.html#id112" title="Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? Mathematics, 2021. URL: https://www.mdpi.com/2227-7390/9/21/2780, doi:10.3390/math9212780.">2021</a>]</span>). Figure shows the comparison between design bias, where Hájek direct estimates are approximately unbiased, but have a large MSE. On the other hand, indirect methods such as unit-level SAE, Census EB, sacrifice design bias in pursuit of improved precision.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="appendix">
+<span id="direct-appendix"></span><h2><span class="section-number">2.3. </span>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="definitions">
+<span id="direct-appendix-definitions"></span><h3><span class="section-number">2.3.1. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h3>
+<p>Definitions are based on <span id="id23">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span> and <span id="id24">Cochran [<a class="reference internal" href="06_diagnostics.html#id119" title="William G Cochran. Sampling techniques. John Wiley &amp; Sons, 2007.">2007</a>]</span>.</p>
+<ul class="simple">
+<li><p><strong>Unit of analysis:</strong> the level at which a measurement is taken. For example, persons, households, farms, and firms.</p></li>
+<li><p><strong>Target population or universe:</strong> The population of interest from which the relevant information is desired. For example, the country’s population in the case where national living standards are the objective.</p></li>
+<li><p><strong>Domain/area:</strong> domain <span class="math notranslate nohighlight">\(d\)</span> may be defined by geographic areas (state, county, school district, health service area) or socio-demographic groups or both (a specific age-sex-race group within a large geographic area) or other subpopulations (e.g., set of firms belonging to a census division by industry group).</p></li>
+<li><p><strong>Finite population paramete</strong>r <span class="math notranslate nohighlight">\(\theta\)</span><strong>:</strong> quantity computed from the <span class="math notranslate nohighlight">\(N\)</span> measurements in the units of analysis in the population. It is often a descriptive measure of a population, such as the mean, variance, rate, or proportion.</p></li>
+<li><p><strong>Estimator</strong> <span class="math notranslate nohighlight">\(\hat{\theta}\)</span><strong>:</strong> function of the sample data that takes values “close” to <span class="math notranslate nohighlight">\(\theta\)</span>.</p></li>
+<li><p><strong>Direct estimator</strong> <span class="math notranslate nohighlight">\(\hat{\theta}_{d}\)</span> <strong>of</strong> <span class="math notranslate nohighlight">\(\theta_{d}\)</span><strong>:</strong> estimator based only on the domain-specific sample data. An estimator of an indicator for area <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(\theta_{d}\)</span>, is <strong>direct</strong> if it is calculated only using data from that domain/area <span class="math notranslate nohighlight">\(d\)</span>, without using data from any other area. These estimators have the advantage of being (at least approximately) unbiased but tend to have low precision in areas with small sample size.</p></li>
+<li><p><strong>Unbiased estimator under the sampling design:</strong> If the estimator’s expected value (mean) across all the possible samples is equal to the population parameter. If its design bias is equal to zero for all the values of the parameter. The estimator <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> of parameter <span class="math notranslate nohighlight">\(\theta\)</span> is design-unbiased if and only if <span class="math notranslate nohighlight">\(E_{\pi}(\hat{\theta})-\theta=0\)</span>.</p></li>
+<li><p><strong>Estimation error:</strong> <span class="math notranslate nohighlight">\(\hat{\theta}-\theta\)</span>, note that the estimation error for a given sample is typically different from zero even if the estimator is unbiased. The design bias is the mean estimation error across all the possible samples: <span class="math notranslate nohighlight">\(Bias_{\pi}(\hat{\theta})=E_{\pi}(\hat{\theta})-\theta=E_{\pi}(\hat{\theta}-\theta)\)</span>.</p></li>
+<li><p><strong>Mean squared (estimation) error (MSE):</strong> <span class="math notranslate nohighlight">\(MSE(\hat{\theta})=E[(\hat{\theta}-\theta)^{2}]\)</span>, note that <span class="math notranslate nohighlight">\(MSE(\hat{\theta})=Bias_{\pi}^{2}(\hat{\theta})+Var_{\pi}(\hat{\theta})\)</span> in the design-based setup, where <span class="math notranslate nohighlight">\(\theta\)</span> is not random. In the model-based setup, it is <span class="math notranslate nohighlight">\(MSE(\hat{\theta})=Bias^{2}(\hat{\theta})+Var(\hat{\theta}-\theta)\)</span>.</p></li>
+<li><p><strong>Standard error (SE) of</strong> <span class="math notranslate nohighlight">\(\hat{\theta}\)</span><strong>:</strong> is the standard deviation of the sampling distribution of the estimator <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> of parameter <span class="math notranslate nohighlight">\(\theta\)</span>.</p></li>
+<li><p><strong>Coefficient of variation (CV)</strong> <strong>of</strong> <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>: <span class="math notranslate nohighlight">\(cv(\hat{\theta})=\sqrt{var(\hat{\theta})}/E(\hat{\theta})\)</span> is the associated standard error of the estimate over the expected value of the estimate (<span class="math notranslate nohighlight">\(E(\hat{\theta})=\theta\)</span> when the estimator is unbiased. The CV is also known as the relative standard deviation (RSD).</p></li>
+<li><p><strong>Absolute Relative Bias (ARB) of</strong> <span class="math notranslate nohighlight">\(\hat{\theta}\)</span><strong>:</strong> <span class="math notranslate nohighlight">\(ARB(\hat{\theta})=|(E(\hat{\theta})-\theta)/E(\hat{\theta})|\)</span>.</p></li>
+<li><p><strong>Consistency of</strong> <span class="math notranslate nohighlight">\(\hat{\theta}\)</span><strong>:</strong> as the sample size increases, the probability that the estimator <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> differs from the true value <span class="math notranslate nohighlight">\(\theta\)</span> in more than <span class="math notranslate nohighlight">\(\varepsilon\)</span> approximates 0, for every <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>.</p></li>
+<li><p><strong>Simple random sampling (SRS):</strong> Sampling approach where a sample is chosen from a larger population at random. First-order inclusion probabilities are equal across elements (<span id="id25"></span>).</p>
+<ul>
+<li><p>With replacement: Elements within the population may be randomly sampled multiple times. In an ordered design sample containing information on the drawing order and the number of times an element is drawn, every ordered sample has the same selection probability (<em>ibid</em>).</p></li>
+<li><p>Without replacement: Elements are selected from a population without replacement. Every sample of a fixed size has an equal probability of being selected (<em>ibid</em>).</p></li>
+</ul>
+</li>
+<li><p><strong>Sampling proportional to size:</strong> Method of sampling from a finite population where size measures for each unit are available. The probability of selecting a unit is proportional to its size. It is often used for multistage sampling (Skinner <span id="id26"></span>).</p></li>
+<li><p><strong>Informative sampling:</strong> If the sample selection probabilities are related to the outcome values (<span id="id27">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>). This results in a set of base weights reflecting the unequal probability of being sampled. Under informative sampling, in the absence of weights, the values of the outcome variable are not representative of the population (<span id="id28"></span>).</p></li>
+<li><p><strong>Benchmarking:</strong> A practice where the direct estimator is assumed to be reliable and adjustments to the small area estimates are necessary to ensure agreement with the reliable estimator (<span id="id29">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>). For example, the direct estimator could be the national level poverty rate and small area estimates for the areas within the country are adjusted to ensure agreement between the aggregate national poverty rate and the direct estimate of national poverty.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="references">
+<span id="direct-ref"></span><h2><span class="section-number">2.4. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<div class="docutils container" id="id30">
+<dl class="citation">
+<dt class="label" id="id126"><span class="brackets"><a class="fn-backref" href="#id10">BMunnichZ11</a></span></dt>
+<dd><p>Christian Bruch, Ralf Münnich, and Stefan Zins. Variance estimation for complex surveys. <em>Deliverable D3</em>, 2011.</p>
+</dd>
+<dt class="label" id="id105"><span class="brackets">Coc07</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>,<a href="#id24">3</a>)</span></dt>
+<dd><p>William G Cochran. <em>Sampling techniques</em>. John Wiley &amp; Sons, 2007.</p>
+</dd>
+<dt class="label" id="id98"><span class="brackets"><a class="fn-backref" href="#id22">CHMM21</a></span></dt>
+<dd><p>Paul Corral, Kristen Himelein, Kevin McGee, and Isabel Molina. A map of the poor or a poor map? <em>Mathematics</em>, 2021. URL: <a class="reference external" href="https://www.mdpi.com/2227-7390/9/21/2780">https://www.mdpi.com/2227-7390/9/21/2780</a>, <a class="reference external" href="https://doi.org/10.3390/math9212780">doi:10.3390/math9212780</a>.</p>
+</dd>
+<dt class="label" id="id48"><span class="brackets"><a class="fn-backref" href="#id14">FGT84</a></span></dt>
+<dd><p>James Foster, Joel Greer, and Erik Thorbecke. A class of decomposable poverty measures. <em>Econometrica: Journal of the Econometric Society</em>, 52:761–766, 1984.</p>
+</dd>
+<dt class="label" id="id104"><span class="brackets"><a class="fn-backref" href="#id1">Loh10</a></span></dt>
+<dd><p>Sharon L Lohr. <em>Sampling: design and analysis (advanced series)</em>. Cengage Learning, 2nd edition, 2010. ISBN 0495105279. URL: <a class="reference external" href="http://dni.dali.dartmouth.edu/8vxeqmju4q43/12-bailee-klein-1/read-0495105279-sampling-design-and-analysis-advanced-series.pdf">http://dni.dali.dartmouth.edu/8vxeqmju4q43/12-bailee-klein-1/read-0495105279-sampling-design-and-analysis-advanced-series.pdf</a>.</p>
+</dd>
+<dt class="label" id="id59"><span class="brackets">Mol19</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id5">2</a>,<a href="#id13">3</a>,<a href="#id15">4</a>,<a href="#id20">5</a>)</span></dt>
+<dd><p>Isabel Molina. <em>Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas</em>. CEPAL, 2019. URL: <a class="reference external" href="https://repositorio.cepal.org/handle/11362/44214">https://repositorio.cepal.org/handle/11362/44214</a>.</p>
+</dd>
+<dt class="label" id="id106"><span class="brackets"><a class="fn-backref" href="#id19">MGarciaP21</a></span></dt>
+<dd><p>Isabel Molina and Eduardo García-Portugues. <em>A First Course on Statistical Inference</em>. Bookdown.org, 2021. Accessed: 2010-06-22. URL: <a class="reference external" href="https://bookdown.org/egarpor/inference/">https://bookdown.org/egarpor/inference/</a>.</p>
+</dd>
+<dt class="label" id="id53"><span class="brackets">MR10</span><span class="fn-backref">(<a href="#id12">1</a>,<a href="#id139">2</a>)</span></dt>
+<dd><p>Isabel Molina and JNK Rao. Small area estimation of poverty indicators. <em>Canadian Journal of Statistics</em>, 38(3):369–385, 2010.</p>
+</dd>
+<dt class="label" id="id128"><span class="brackets"><a class="fn-backref" href="#id8">Rao88</a></span></dt>
+<dd><p>JNK Rao. <em>Variance estimation in sample surveys</em>, chapter 17, pages 427–447. Volume 6. Elsevier B.V, 1988. URL: <a class="reference external" href="https://doi.org/10.1016/S0169-7161(88)06019-5">https://doi.org/10.1016/S0169-7161(88)06019-5</a>.</p>
+</dd>
+<dt class="label" id="id49"><span class="brackets">RM15</span><span class="fn-backref">(<a href="#id11">1</a>,<a href="#id23">2</a>,<a href="#id27">3</a>,<a href="#id29">4</a>,<a href="#id134">5</a>)</span></dt>
+<dd><p>JNK Rao and Isabel Molina. <em>Small Area Estimation</em>. John Wiley &amp; Sons, 2nd edition, 2015.</p>
+</dd>
+<dt class="label" id="id127"><span class="brackets"><a class="fn-backref" href="#id9">RR96</a></span></dt>
+<dd><p>Keith F Rust and JNK Rao. Variance estimation for complex surveys using replication techniques. <em>Statistical methods in medical research</em>, 5(3):283–310, 1996.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="notes">
+<span id="direct-notes"></span><h2><span class="section-number">2.5. </span>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id133"><span class="brackets"><a class="fn-backref" href="#id6">1</a></span></dt>
+<dd><p><span id="id134">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span> note that, it is possible to model population values as random instead of fixed to obtain model-dependent direct estimates. For such estimates, their inferences are based on the probability distribution induced by the model; and will typically not depend on survey weights.</p>
+</dd>
+<dt class="label" id="id135"><span class="brackets"><a class="fn-backref" href="#id7">2</a></span></dt>
+<dd><p>Section 4 of <span id="id136"></span> details the application of the method at the U.S. Census Bureau.</p>
+</dd>
+<dt class="label" id="id137"><span class="brackets"><a class="fn-backref" href="#id16">3</a></span></dt>
+<dd><p>The CV threshold can vary from scenario to scenario; some practitioners and national statistical offices consider that estimates with a CV above 20% are not reliable.</p>
+</dd>
+<dt class="label" id="id138"><span class="brackets"><a class="fn-backref" href="#id17">4</a></span></dt>
+<dd><p>See <span id="id139">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span> for a clear example of poverty indicators report and assessment.</p>
+</dd>
+<dt class="label" id="id140"><span class="brackets"><a class="fn-backref" href="#id18">5</a></span></dt>
+<dd><p>Since <span class="math notranslate nohighlight">\(MSE_{\pi}(\hat{F}_{\alpha d})=Bias_{\pi}^{2}(\hat{F}_{\alpha d})+Var_{\pi}(\hat{F}_{\alpha d})\)</span> and direct estimators are (approximately) unbiased, both MSE and variance are approximately equal. This holds for areas with large sample size <span class="math notranslate nohighlight">\(n_{d}\)</span>, for areas with small sample size, the Hájek estimator is biased.</p>
+</dd>
+<dt class="label" id="id141"><span class="brackets"><a class="fn-backref" href="#id21">6</a></span></dt>
+<dd><p>The CV will tend to be large when the poverty rate for a given area is low since even a small variance will yield a relatively large CV. The only way to remedy such a result is by increasing the sample size.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="01_intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Small Area Estimation for Poverty Mapping</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03_area-level.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Area-level Models for Small Area Estimation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Paul Corral, Isabel Molina, Alexandru Cojocaru, and Sandra Segovia<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

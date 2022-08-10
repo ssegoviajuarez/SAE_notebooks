@@ -1,0 +1,799 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Area-level Models for Small Area Estimation &#8212; Guidelines to Small Area Estimation for Poverty Mapping</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. Unit-level Models for Small Area Estimation" href="04_unit-level.html" />
+    <link rel="prev" title="2. Direct Estimates" href="02_direct.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Guidelines to Small Area Estimation for Poverty Mapping</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00_welcome.html">
+   Welcome to Guidelines to SAE for Poverty Mapping
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  CHAPTERS
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_intro.html">
+   1. Small Area Estimation for Poverty Mapping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_direct.html">
+   2. Direct Estimates
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Area-level Models for Small Area Estimation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_unit-level.html">
+   4. Unit-level Models for Small Area Estimation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_off-census.html">
+   5. Poverty Mapping in Off-Census Years
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_diagnostics.html">
+   6. Model Diagnostics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_conclusion.html">
+   7. Concluding Remarks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Created by <a href="https://github.com/ssegoviajuarez"> Sandra Segovia </a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/03_area-level.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/03_area-level.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   3.1. Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conducting-your-first-sae-application-with-the-fay-herriot-model">
+   3.2. Conducting Your First SAE Application with the Fay-Herriot Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pros-and-cons-of-fay-herriot-models">
+   3.3. Pros and Cons of Fay-Herriot Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alternative-software-packages-for-area-level-models-and-extensions">
+     3.3.1. Alternative Software Packages for Area-Level Models and Extensions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technical-annex">
+   3.4. Technical Annex
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aggregation-to-higher-geographic-areas">
+     3.4.1. Aggregation to Higher Geographic Areas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   3.5. References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes">
+   3.6. Notes
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Area-level Models for Small Area Estimation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   3.1. Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conducting-your-first-sae-application-with-the-fay-herriot-model">
+   3.2. Conducting Your First SAE Application with the Fay-Herriot Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pros-and-cons-of-fay-herriot-models">
+   3.3. Pros and Cons of Fay-Herriot Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alternative-software-packages-for-area-level-models-and-extensions">
+     3.3.1. Alternative Software Packages for Area-Level Models and Extensions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technical-annex">
+   3.4. Technical Annex
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aggregation-to-higher-geographic-areas">
+     3.4.1. Aggregation to Higher Geographic Areas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   3.5. References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes">
+   3.6. Notes
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="area-level-models-for-small-area-estimation">
+<span id="area-level"></span><h1><span class="section-number">3. </span>Area-level Models for Small Area Estimation<a class="headerlink" href="#area-level-models-for-small-area-estimation" title="Permalink to this headline">¶</a></h1>
+<hr style="height:1px;border:none;color:#666;background-color:#666;" /><p>This chapter focuses on the application of the basic area-level models for small area estimation, using Fay and Herriot’s (<span id="id1">Fay III and Herriot [<a class="reference internal" href="05_off-census.html#id118" title="Robert E Fay III and Roger A Herriot. Estimates of income for small places: an application of James-Stein procedures to census data. Journal of the American Statistical Association, 74(366a):269–277, 1979.">1979</a>]</span>) model as an example. Following a brief introduction, the next section provides an example of an application of the Fay-Herriot Model for small area estimation. Then the advantages and disadvantages of the method are discussed. Finally, a technical appendix for the methodology is provided. This section draws heavily from <span id="id2">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span> and <span id="id3">Molina <em>et al.</em> [<a class="reference internal" href="#id139" title="Isabel Molina, Paul Corral, and Minh Cong Nguyen. Model-based methods for poverty mapping: a review. Unpublished manuscript, 2021.">2021</a>]</span>, and readers are advised to consult these texts for further information.</p>
+<div class="section" id="overview">
+<span id="area-level-overview"></span><h2><span class="section-number">3.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>In the context of poverty, methods based on area-level models typically rely on estimating the distribution of the target area-level poverty indicator, given a set of area-level covariates based on two models – a sampling model for direct area estimates of poverty and a linking model where the true indicator is linearly related to a vector of auxiliary variables across all areas (see Technical appendix in this chapter).</p>
+<p>In contrast to unit-level methods, these methods do not require unit record (most commonly household level) census data since they use only auxiliary information aggregated to the area level. Not typically subject to confidentiality concerns, aggregated data are usually more available. Such is often the case with population census data, where aggregated estimates for localities may be readily available while the detailed household-level data are restricted. Beyond censuses, data from other sources, such as administrative records, remote sensing data, and previous census aggregates, may also be available at the level of the areas or can be readily aggregated to that level and may be included as covariates in an area-level model. Aggregated data are also less sensitive to unit-level outliers. However, if there is high heterogeneity within the geographic units at which the area models are estimated, these benefits are balanced by a substantial loss of information when unit record level data are aggregated. Ultimately, whether unit record-level models offer a greater degree of precision depends on the explanatory power of the covariates that can be included in the area-level and unit-level models.</p>
+<p>The most popular area-level model is the Fay-Herriot (FH) model, introduced by <span id="id4">Fay III and Herriot [<a class="reference internal" href="05_off-census.html#id118" title="Robert E Fay III and Roger A Herriot. Estimates of income for small places: an application of James-Stein procedures to census data. Journal of the American Statistical Association, 74(366a):269–277, 1979.">1979</a>]</span> to estimate the mean per capita income in small places in the United States of America (USA). The U.S. Census Bureau has regularly used it within the Small Area Income and Poverty Estimates (SAIPE) project to produce estimates for counties and states of the total number of people in poverty by age groups, household median income, and mean per capita income (see <span id="id5">Bell [<a class="reference internal" href="#id110" title="W Bell. Models for county and state poverty estimates. Preprint, Statistical Research Division, US Census Bureau, 1997.">1997</a>]</span>). The U.S. Department of Education uses these estimates to determine annual allocations of federal funds given to school districts. Several other studies have employed area-level models to obtain poverty estimates in small areas around the world. <span id="id6">Molina and Morales [<a class="reference internal" href="#id113" title="Isabel Molina and Domingo Morales. Small area estimation of poverty indicators. Estadistica e Investigacion Operativa (SEIO), 25(3):218-225, 2009. URL: https://emis.dsd.sztaki.hu/journals/BEIO/files/BEIOVol25Num3_IMolina+DMorales.pdf.">2009</a>]</span> used these models to obtain estimates for Spanish provinces, <span id="id7">Corral and Cojocaru [<a class="reference internal" href="#id100" title="Paul Corral and Alexandru Cojocaru. Moldova poverty map: an application of small area estimation. mimeo. Unpublished manuscript, 2019.">2019</a>]</span> in Moldova, <span id="id8">Casas-Cordero Valencia <em>et al.</em> [<a class="reference internal" href="#id112" title="Carolina Casas-Cordero Valencia, Jenny Encina, and Partha Lahiri. Poverty mapping for the Chilean Comunas. Analysis of Poverty Data by Small Area Estimation, pages 379–404, 2016.">2016</a>]</span> in Chile, as well as <span id="id9">Seitz [<a class="reference internal" href="#id141" title="William Hutchins Seitz. Where they live: district-level measures of poverty, average consumption, and the middle class in central asia. World Bank Policy Research Working Paper, 2019.">2019</a>]</span> which applies the FH model to obtain district-level estimates of poverty in Central Asian countries.</p>
+<p>Extensions of the basic FH model to account for temporal and spatial correlation have also been considered in the poverty mapping context, although not explored in these Guidelines. Interested readers may refer to <span id="id10">Esteban <em>et al.</em> [<a class="reference internal" href="#id122" title="María Dolores Esteban, Domingo Morales, A Pérez, and Laureano Santamaría. Small area estimation of poverty proportions under area-level time models. Computational Statistics &amp; Data Analysis, 56(10):2840–2855, 2012. URL: https://www.sciencedirect.com/science/article/abs/pii/S0167947311003720.">2012</a>]</span> and <span id="id11">Esteban <em>et al.</em> [<a class="reference internal" href="#id121" title="MD Esteban, D Morales, A Pérez, and L Santamaría. Two area-level time models for estimating small area poverty indicators. Journal of the Indian Society of Agricultural Statistics, 66(1):75–89, 2012.">2012</a>]</span>, who used the FH model with temporal correlation first proposed by <span id="id12"></span> to estimate small area poverty indicators. <span id="id13"></span> used a spatial FH model to estimate mean income and poverty rates for the 57 Labor Local Systems of the Tuscany region in Italy for the year 2011. <span id="id14"></span> considered a spatio-temporal model to estimate poverty indicators for Spanish provinces in 2008, making use of survey data from the years 2004-2008.</p>
+</div>
+<div class="section" id="conducting-your-first-sae-application-with-the-fay-herriot-model">
+<span id="area-level-first-sae"></span><h2><span class="section-number">3.2. </span>Conducting Your First SAE Application with the Fay-Herriot Model<a class="headerlink" href="#conducting-your-first-sae-application-with-the-fay-herriot-model" title="Permalink to this headline">¶</a></h2>
+<p>The first step towards obtaining small area estimates based on the FH model is to compute direct estimates. For the purpose of this exercise, a 1 percent SRS sample within municipalities was drawn from the <em>Mexican intracensal survey</em> of 2015 (Encuesta Intercensal). To obtain direct estimates with correctly calculated standard errors from a complex sample, it is necessary to input the structure by specifying the stratification and clustering used. Complex survey designs usually include a minimum of two clusters per stratum to permit the estimation of sampling variance using standard procedures, but as SAE reports results for areas below which the sample was originally designed, there may be areas represented in the sample by just one PSU; in such cases, the usual variance estimates cannot be computed and it may be necessary to obtain an estimate of the sampling variance via alternative methods. This is a clear limitation of the FH method.<a class="footnote-reference brackets" href="#id165" id="id15">1</a> Another limitation of the method is that, in locations with small sample size, everyone may be poor or no one is poor, which leads to an estimated variance of 0. In this case, the FH model is not directly applicable in those locations unless another method is used to predict those variances. The Stata script below describes how to obtain direct estimates of poverty rates <span class="math notranslate nohighlight">\(\hat{\tau}_{d}^{DIR}\)</span> and their sampling variances <span class="math notranslate nohighlight">\(\psi_{d}\)</span> for each location <span class="math notranslate nohighlight">\(d\)</span> in the sample:</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">clear</span> all <span class="k"></span>
+<span class="k">set more</span> off
+
+<span class="cm">/*==============================================================================</span>
+<span class="cm">Do-file prepared for SAE Guidelines</span>
+<span class="cm">- Real world data application</span>
+<span class="cm">- authors Paul Corral </span>
+<span class="cm">*==============================================================================*/</span>
+
+<span class="k">global</span> main     <span class="s">&quot;C:\Users</span><span class="se">\\</span><span class="nv">`c(username)&#39;</span><span class="s">\OneDrive\SAE Guidelines 2021</span><span class="se">\&quot;</span><span class="k"></span>
+<span class="k">global</span> section  <span class="s">&quot;</span><span class="vg">$main</span><span class="s">\2_area_level</span><span class="se">\&quot;</span><span class="k"></span>
+<span class="k">global</span> mdata    <span class="s">&quot;</span><span class="vg">$section</span><span class="s">\1_data</span><span class="se">\&quot;</span><span class="k"></span>
+<span class="k">global</span> survey   <span class="s">&quot;</span><span class="vg">$mdata</span><span class="s">\Survey_1p_mun.dta&quot;</span><span class="k"></span>
+<span class="k">global</span> povline = <span class="m">715</span>
+
+<span class="k">version</span>     <span class="m">15</span><span class="k"></span>
+<span class="k">set</span> matsize <span class="m">8000</span><span class="k"></span>
+<span class="k">set</span> seed    <span class="m">648743</span>
+
+<span class="c1">*===============================================================================</span>
+<span class="c1">// End of preamble</span>
+<span class="c1">*===============================================================================</span>
+<span class="c1">//load in survey data</span>
+<span class="k">use</span> <span class="s">&quot;</span><span class="vg">$survey</span><span class="s">&quot;</span>,<span class="k"> clear</span>
+	<span class="c1">//Population weights and survey setup</span>
+<span class="k">	gen</span> popw = Whh<span class="o">*</span>hhsize
+		
+	<span class="c1">//FGT</span>
+<span class="k">	forval</span> a=<span class="m">0</span><span class="o">/</span><span class="m">2</span>{
+<span class="k">	    gen</span> fgt<span class="nv">`a&#39;</span> = (e_y<span class="o">&lt;</span><span class="vg">${povline}</span>)<span class="o">*</span>(<span class="m">1</span><span class="o">-</span>e_y<span class="o">/</span>(<span class="vg">${povline}</span>))<span class="o">^</span><span class="nv">`a&#39;</span>
+	}
+	
+	<span class="c1">//SVY set, SRS	</span>
+<span class="k">	svyset</span> [pw=popw], strata(HID_mun)
+	<span class="c1">//Get direct estimates</span>
+<span class="k">	qui</span>:svy:<span class="k"> proportion</span> fgt0, over(HID_mun)
+	<span class="c1">//Extract poverty rates and  (1,865 Municipalities) - ordered from </span>
+	<span class="c1">//smallest HID_mun to largest HID_mun</span>
+<span class="k">	mata</span>: fgt0     = st_matrix(<span class="s">&quot;e(b)&quot;</span>)
+<span class="k">	mata</span>: fgt0     = fgt0[<span class="m">1866</span>..<span class="m">2</span><span class="o">*</span><span class="m">1865</span>]&#39;
+<span class="k">	mata</span>: fgt0_var = st_matrix(<span class="s">&quot;e(V)&quot;</span>)
+<span class="k">	mata</span>: fgt0_var = diagonal(fgt0_var)[<span class="m">1866</span>..<span class="m">2</span><span class="o">*</span><span class="m">1865</span>]
+	<span class="c1">//Our survey already has the area level means of interest obtained from</span>
+	<span class="c1">// the census. Leave data at the municipality level.</span>
+<span class="k">	gen</span> num_obs = <span class="m">1</span>
+	groupfunction [aw=popw], rawsum(num_obs)<span class="k"> mean</span>(poor fgt0) first(mun_<span class="o">*</span>)<span class="k"> by</span>(HID_mun)
+<span class="k">	sort</span> HID_mun <span class="c1">//ordered to match proportion output</span>
+	
+	<span class="c1">//Pull proportion&#39;s results</span>
+	getmata dir_fgt0 = fgt0 dir_fgt0_var = fgt0_var
+<span class="k">	replace</span> dir_fgt0_var = .<span class="k"> if</span> dir_fgt0_var<span class="o">==</span><span class="m">0</span>
+<span class="k">	replace</span> dir_fgt0     = .<span class="k"> if</span> <span class="nf">missing</span>(dir_fgt0_var)
+<span class="k">	</span>
+
+<span class="k">save</span> <span class="s">&quot;</span><span class="vg">$mdata</span><span class="s">\direct.dta&quot;</span>,<span class="k"> replace</span>
+</pre></div>
+</div>
+<p>With the direct survey estimates <span class="math notranslate nohighlight">\(\hat{\tau}_{d}^{DIR}\)</span> of the indicators <span class="math notranslate nohighlight">\(\tau_{d}\)</span> in hand, it is possible to produce new estimates of <span class="math notranslate nohighlight">\(\tau_{d}\)</span> based on the fitted model. This model takes as an input, apart from the direct estimates for each location, <span class="math notranslate nohighlight">\(\hat{\tau}_{d}^{DIR}\)</span>, their corresponding (heteroskedastic) sampling variances <span class="math notranslate nohighlight">\(\psi_{d}\)</span>, which are assumed known, and the aggregated values of the covariates <span class="math notranslate nohighlight">\(\mathbf{x}_{d}\)</span>. This information is used to estimate the FH regression coefficients <span class="math notranslate nohighlight">\(\beta\)</span> and the variance of the area effects <span class="math notranslate nohighlight">\(u_{d}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{u}^{2}\)</span>. There are multiple approaches to predict the unknown random effects of the model, <span class="math notranslate nohighlight">\(u_{d}\)</span>, in <strong>Equation <a class="reference internal" href="#equation-eq-fhmodel">(3.1)</a></strong>. Stata’s <code class="docutils literal notranslate"><span class="pre">fhsae</span> </code>package (<span id="id16">Corral <em>et al.</em> [<a class="reference internal" href="#id143" title="Paul Corral, William Seitz, João Pedro Azevedo, and Minh Cong Nguyen. FHSAE: Stata module to fit an area level Fay-Herriot model. Statistical Software Components. 2018. URL: https://econpapers.repec.org/software/bocbocode/s458495.htm.">2018</a>]</span>)<a class="footnote-reference brackets" href="#id166" id="id17">2</a> obtains estimates similar to those provided from the <code class="docutils literal notranslate"><span class="pre">eblupFH()</span></code> function of  <span id="id18">Molina and Marhuenda [<a class="reference internal" href="06_diagnostics.html#id68" title="Isabel Molina and Yolanda Marhuenda. Sae: an R package for small area estimation. The R Journal, 7(1):81–98, 2015.">2015</a>]</span> R <code class="docutils literal notranslate"><span class="pre">sae</span></code> package, while the <code class="docutils literal notranslate"><span class="pre">fayherriot</span></code> package in Stata by <span id="id19">Halbmeier <em>et al.</em> [<a class="reference internal" href="#id144" title="Christoph Halbmeier, Ann-Kristin Kreutzmann, Timo Schmid, and Carsten Schröder. The fayherriot command for estimating small-area indicators. The Stata Journal, 19(3):626–644, 2019.">2019</a>]</span> is an excellent alternative since it offers transformations to the data to ensure the assumptions of the model are met. The available model-fitting methods in the <code class="docutils literal notranslate"><span class="pre">fhsae</span></code> package are maximum likelihood (ML), restricted maximum likelihood (REML), and an approach presented by <span id="id20">Fay III and Herriot [<a class="reference internal" href="05_off-census.html#id118" title="Robert E Fay III and Roger A Herriot. Estimates of income for small places: an application of James-Stein procedures to census data. Journal of the American Statistical Association, 74(366a):269–277, 1979.">1979</a>]</span> based on the method of moments. As noted by <span id="id21">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span>, REML corrects the ML estimate of <span class="math notranslate nohighlight">\(\sigma_{u}^{2}\)</span> by the degrees of freedom due to estimating the regression coefficients, <span class="math notranslate nohighlight">\(\beta\)</span>, and yields a less biased estimator in finite samples; thus REML is used in the example below.</p>
+<p>The final estimate of the target indicator <span class="math notranslate nohighlight">\(\tau_{d}\)</span> is the empirical best linear unbiased (EBLUP) predictor of <span class="math notranslate nohighlight">\(\tau_{d}\)</span> under the FH model. This estimator uses the estimated value <span class="math notranslate nohighlight">\(\hat{\sigma}_{u}^{2}\)</span> of <span class="math notranslate nohighlight">\(\sigma_{u}^{2}\)</span> and can be expressed as a weighted average between the direct estimator and the regression-synthetic estimator <span class="math notranslate nohighlight">\(\mathbf{x}'_{d}\hat{\beta}\)</span> as noted by <span id="id22">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>. The final EBLUP referred to as FH estimator, is given by <span class="math notranslate nohighlight">\(\hat{\tau}_{d}^{FH}=\hat{\gamma}_{d}\hat{\tau}_{d}^{DIR}+\left(1-\hat{\gamma}_{d}\mathbf{x}'_{d}\hat{\beta}\right)\)</span>. In this estimator, the weight attached to the direct estimator <span class="math notranslate nohighlight">\(\hat{\tau}_{d}^{DIR}\)</span> is given by <span class="math notranslate nohighlight">\(\hat{\gamma}_{d}=\frac{\hat{\sigma}_{u}^{2}}{\hat{\sigma}_{u}^{2}+\psi_{d}}\)</span> which lies between 0 and 1 and decreases in the error variance, <span class="math notranslate nohighlight">\(\psi_{d}\)</span>. In locations <span class="math notranslate nohighlight">\(d\)</span> with small sample size and consequently where the direct estimator has a large sampling variance, <span class="math notranslate nohighlight">\(\psi_{d},\)</span> or when the auxiliary information in the model yields good explanatory power, a higher weight is assigned to the corresponding synthetic estimator.</p>
+<p>The script illustrating model selection and small area estimation based on FH is provided below. Although there are options such as stepwise or lasso regression, it is preferable to use methods that consider the random effects (<span id="id23">Lahiri and Suntornchost [<a class="reference internal" href="06_diagnostics.html#id143" title="Partha Lahiri and Jiraphan Suntornchost. Variable selection for linear mixed models with applications in small area estimation. Sankhya B, 77(2):312–320, 2015.">2015</a>]</span>). The method for variable selection used in the script considers the random effects and is similar in spirit to a stepwise regression. Initially, the random effect model is fit including all the covariates. Due to lower computational requirements, the process employs the feasible generalized least squares (FGLS) method from <span id="id24">Chandra <em>et al.</em> [<a class="reference internal" href="#id142" title="Hukum Chandra, UC Sud, and VK Gupta. Small area estimation under area level model using r software. New Delhi: Indian Agricultural Statistics Research Institute, 2013.">2013</a>]</span>. Non-significant covariates are removed from the model sequentially, starting with those with the largest p-values.<a class="footnote-reference brackets" href="#id167" id="id25">3</a> Then, from the remaining covariates, those with a variance inflation factor (VIF) above five are similarly removed. Finally, it is also essential to check that the model’s assumptions hold. In this case, the model residuals are relatively well aligned to the theoretical quantiles of a normal distribution, although some outliers are present (<strong><a class="reference internal" href="#qq-area"><span class="std std-numref">Fig. 3.1</span></a></strong>).</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/qnorm_ed.png"><img alt="_images/qnorm_ed.png" src="_images/qnorm_ed.png" style="height: 350px;" /></a>
+</div>
+<div class="figure align-default" id="qq-area">
+<a class="reference internal image-reference" href="_images/qnorm_ud.png"><img alt="_images/qnorm_ud.png" src="_images/qnorm_ud.png" style="height: 350px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text"><em>Fay-Herriot model residuals (left) and predicted area effects (right)</em></span><a class="headerlink" href="#qq-area" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>Source: Based on a 1% SRS sample by municipality of Mexican Intercensal survey of 2015. The figure on the left presents a normal q-q plot where the empirical quantiles of the standardized residuals from the FH model are plotted against the theoretical quantiles of the normal distribution. The figure on the right plots the empirical quantiles of the predicted area effects against the theoretical quantiles of the normal distribution.</p>
+</div>
+</div>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">clear</span> all <span class="k"></span>
+<span class="k">set more</span> off
+
+<span class="cm">/*==============================================================================</span>
+<span class="cm">Do-file prepared for SAE Guidelines</span>
+<span class="cm">- Real world data application</span>
+<span class="cm">- authors Paul Corral</span>
+<span class="cm">*==============================================================================*/</span>
+
+<span class="k">global</span> main     <span class="s">&quot;C:\Users</span><span class="se">\\</span><span class="nv">`c(username)&#39;</span><span class="s">\OneDrive\SAE Guidelines 2021</span><span class="se">\&quot;</span><span class="k"></span>
+<span class="k">global</span> section  <span class="s">&quot;</span><span class="vg">$main</span><span class="s">\2_area_level</span><span class="se">\&quot;</span><span class="k"></span>
+<span class="k">global</span> mdata    <span class="s">&quot;</span><span class="vg">$section</span><span class="s">\1_data</span><span class="se">\&quot;</span><span class="k"></span>
+<span class="k">global</span> survey <span class="s">&quot;</span><span class="vg">$mdata</span><span class="s">\Survey_1p_mun.dta&quot;</span><span class="k"></span>
+<span class="k">global</span> povline = <span class="m">715</span>
+<span class="c1">//Global with eligible variables</span>
+<span class="k">global</span> thevar mun_hhsize mun_age_hh mun_male_hh mun_piped_water <span class="cs">///</span>
+mun_no_piped_water mun_no_sewage mun_sewage_pub mun_sewage_priv <span class="cs">///</span>
+mun_electricity mun_telephone mun_cellphone mun_internet <span class="cs">///</span>
+mun_computer mun_washmachine mun_fridge mun_television mun_share_under15 <span class="cs">///</span>
+mun_share_elderly mun_share_adult mun_max_tertiary mun_max_secondary <span class="cs">///</span>
+mun_share_female
+
+<span class="k">version</span>     <span class="m">15</span><span class="k"></span>
+<span class="k">set</span> matsize <span class="m">8000</span><span class="k"></span>
+<span class="k">set</span> seed    <span class="m">648743</span>
+
+<span class="c1">*===============================================================================</span>
+<span class="c1">// End of preamble</span>
+<span class="c1">*===============================================================================</span><span class="k"></span>
+<span class="k">use</span> <span class="s">&quot;</span><span class="vg">$mdata</span><span class="s">\direct.dta&quot;</span>,<span class="k"> clear</span>
+
+	<span class="c1">//Fit full model	</span>
+	fhsae dir_fgt0 <span class="vg">$thevar</span>, revar(dir_fgt0_var) method(fh) 
+<span class="k">	</span>
+<span class="k">	local</span> hhvars <span class="vg">$thevar</span>
+	
+	<span class="c1">//Removal of non-significant variables</span>
+<span class="k">	forval</span> z= <span class="m">0.8</span>(<span class="o">-</span><span class="m">0.05</span>)<span class="m">0.0001</span>{
+<span class="k">		qui</span>:fhsae dir_fgt0 <span class="nv">`hhvars&#39;</span>, revar(dir_fgt0_var) method(fh) 
+<span class="k">		mata</span>: bb=st_matrix(<span class="s">&quot;e(b)&quot;</span>)
+<span class="k">		mata</span>:<span class="k"> se</span>=<span class="nf">sqrt</span>(diagonal(st_matrix(<span class="s">&quot;e(V)&quot;</span>)))
+<span class="k">		mata</span>: zvals = bb&#39;:<span class="o">/</span>se
+<span class="k">		mata</span>: st_matrix(<span class="s">&quot;min&quot;</span>,<span class="nf">min</span>(<span class="nf">abs</span>(zvals)))
+<span class="k">		local</span> zv = (<span class="o">-</span>min[<span class="m">1</span>,<span class="m">1</span>])
+<span class="k">		if</span> (<span class="m">2</span><span class="o">*</span><span class="nf">normal</span>(<span class="nv">`zv&#39;</span>)<span class="o">&lt;</span><span class="nv">`z&#39;</span>)<span class="k"> exit</span>	
+<span class="k">		foreach</span> x of<span class="k"> varlist</span> <span class="nv">`hhvars&#39;</span>{
+<span class="k">			local</span> hhvars1
+<span class="k">			qui</span>: fhsae dir_fgt0 <span class="nv">`hhvars&#39;</span>, revar(dir_fgt0_var) method(fh) 
+<span class="k">			qui</span>:<span class="k"> test</span> <span class="nv">`x&#39;</span> 
+<span class="k">			if</span> (<span class="nf">r</span>(p)<span class="o">&gt;</span><span class="nv">`z&#39;</span>){
+<span class="k">				local</span> hhvars1
+<span class="k">				foreach</span> yy of<span class="k"> local</span> hhvars{
+<span class="k">					if</span> (<span class="s">&quot;</span><span class="nv">`yy&#39;</span><span class="s">&quot;</span><span class="o">==</span><span class="s">&quot;</span><span class="nv">`x&#39;</span><span class="s">&quot;</span>)<span class="k"> dis</span> <span class="s">&quot;&quot;</span>
+<span class="k">					else local</span> hhvars1 <span class="nv">`hhvars1&#39;</span> <span class="nv">`yy&#39;</span>
+				}
+			}
+<span class="k">			else local</span> hhvars1 <span class="nv">`hhvars&#39;</span>
+<span class="k">			local</span> hhvars <span class="nv">`hhvars1&#39;</span>		
+		}
+	}	
+
+	<span class="c1">//Global with non-significant variables removed</span>
+<span class="k">	global</span> postsign <span class="nv">`hhvars&#39;</span>
+	<span class="c1">//Final model without non-significant variables</span>
+	fhsae dir_fgt0 <span class="vg">$postsign</span>, revar(dir_fgt0_var) method(fh) 
+	<span class="c1">//Check VIF</span>
+<span class="k">	reg</span> dir_fgt0 <span class="vg">$postsign</span>, r
+<span class="k">	gen</span> touse =<span class="k"> e</span>(sample)
+<span class="k">	gen</span> weight = <span class="m">1</span>
+<span class="k">	mata</span>:<span class="k"> ds</span> = _f_stepvif(<span class="s">&quot;</span><span class="vg">$postsign</span><span class="s">&quot;</span>,<span class="s">&quot;weight&quot;</span>,<span class="m">5</span>,<span class="s">&quot;touse&quot;</span>) 
+<span class="k">	global</span> postvif <span class="nv">`vifvar&#39;</span>
+<span class="k">	</span>
+<span class="k">	local</span> hhvars <span class="vg">$postvif</span>
+	
+	<span class="c1">//One final removal of non-significant covariates</span>
+<span class="k">	forval</span> z= <span class="m">0.8</span>(<span class="o">-</span><span class="m">0.05</span>)<span class="m">0.0001</span>{
+<span class="k">		qui</span>:fhsae dir_fgt0 <span class="nv">`hhvars&#39;</span>, revar(dir_fgt0_var) method(fh) 
+<span class="k">		mata</span>: bb=st_matrix(<span class="s">&quot;e(b)&quot;</span>)
+<span class="k">		mata</span>:<span class="k"> se</span>=<span class="nf">sqrt</span>(diagonal(st_matrix(<span class="s">&quot;e(V)&quot;</span>)))
+<span class="k">		mata</span>: zvals = bb&#39;:<span class="o">/</span>se
+<span class="k">		mata</span>: st_matrix(<span class="s">&quot;min&quot;</span>,<span class="nf">min</span>(<span class="nf">abs</span>(zvals)))
+<span class="k">		local</span> zv = (<span class="o">-</span>min[<span class="m">1</span>,<span class="m">1</span>])
+<span class="k">		if</span> (<span class="m">2</span><span class="o">*</span><span class="nf">normal</span>(<span class="nv">`zv&#39;</span>)<span class="o">&lt;</span><span class="nv">`z&#39;</span>)<span class="k"> exit</span>	
+<span class="k">		foreach</span> x of<span class="k"> varlist</span> <span class="nv">`hhvars&#39;</span>{
+<span class="k">			local</span> hhvars1
+<span class="k">			qui</span>: fhsae dir_fgt0 <span class="nv">`hhvars&#39;</span>, revar(dir_fgt0_var) method(fh) 
+<span class="k">			qui</span>:<span class="k"> test</span> <span class="nv">`x&#39;</span> 
+<span class="k">			if</span> (<span class="nf">r</span>(p)<span class="o">&gt;</span><span class="nv">`z&#39;</span>){
+<span class="k">				local</span> hhvars1
+<span class="k">				foreach</span> yy of<span class="k"> local</span> hhvars{
+<span class="k">					if</span> (<span class="s">&quot;</span><span class="nv">`yy&#39;</span><span class="s">&quot;</span><span class="o">==</span><span class="s">&quot;</span><span class="nv">`x&#39;</span><span class="s">&quot;</span>)<span class="k"> dis</span> <span class="s">&quot;&quot;</span>
+<span class="k">					else local</span> hhvars1 <span class="nv">`hhvars1&#39;</span> <span class="nv">`yy&#39;</span>
+				}
+			}
+<span class="k">			else local</span> hhvars1 <span class="nv">`hhvars&#39;</span>
+<span class="k">			local</span> hhvars <span class="nv">`hhvars1&#39;</span>		
+		}
+	}	
+<span class="k">	</span>
+<span class="k">	global</span> last <span class="nv">`hhvars&#39;</span>
+	
+	<span class="c1">//Obtain SAE-FH-estimates	</span>
+	fhsae dir_fgt0 <span class="vg">$last</span>, revar(dir_fgt0_var) method(reml) fh(fh_fgt0) <span class="cs">///</span>
+	fhse(fh_fgt0_se) fhcv(fh_fgt0_cv)<span class="k"> gamma</span>(fh_fgt0_gamma)<span class="k"> out</span>
+	
+	<span class="c1">//Check normal errors</span>
+<span class="k">	predict</span> xb
+<span class="k">	gen</span> u_d = fh_fgt0 <span class="o">-</span> xb
+<span class="k">		lab var</span> u_d <span class="s">&quot;FH area effects&quot;</span>
+<span class="k">	</span>
+<span class="k">	histogram</span> u_d
+<span class="k">	</span>
+<span class="k">	gen</span> e_d = dir_fgt0 <span class="o">-</span> fh_fgt0
+<span class="k">		lab var</span> e_d <span class="s">&quot;FH errors&quot;</span>
+<span class="k">	</span>
+<span class="k">	histogram</span> e_d
+<span class="k">		</span>
+<span class="k">	</span>
+<span class="k">save</span> <span class="s">&quot;</span><span class="vg">$mdata</span><span class="s">\direct_and_fh.dta&quot;</span>,<span class="k"> replace</span>
+</pre></div>
+</div>
+<p>If no transformation is applied in the model the FH estimates of the poverty rates may be negative for some areas. For those areas, the recommendation is to not use those negative FH estimates.<a class="footnote-reference brackets" href="#id168" id="id26">4</a></p>
+<p>As can be seen from <strong><a class="reference internal" href="#compare-fh"><span class="std std-numref">Fig. 3.2</span></a></strong>, FH estimates are aligned to direct estimates. This figure also illustrates the larger adjustment made to direct estimates in locations where the sampling variance is larger. The resulting FH estimates also have a lower estimated root mean squared error (RMSE) than that of the direct estimates, suggesting an improved efficiency of the model-based estimates (<strong><a class="reference internal" href="#compare-fh"><span class="std std-numref">Fig. 3.2</span></a></strong>, right).</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/scatter_fh_dir.png"><img alt="_images/scatter_fh_dir.png" src="_images/scatter_fh_dir.png" style="height: 350px;" /></a>
+</div>
+<div class="figure align-default" id="compare-fh">
+<a class="reference internal image-reference" href="_images/scatter_fh_dir_se.png"><img alt="_images/scatter_fh_dir_se.png" src="_images/scatter_fh_dir_se.png" style="height: 350px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text"><em>FH poverty estimates compared to direct estimates</em></span><a class="headerlink" href="#compare-fh" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>Source: Based on a 1% SRS sample by municipality of Mexican Intercensal survey of 2015. The figure on the left presents a scatter plot of direct estimates on the X-axis and FH estimates on the Y-axis. The FH approach will often yield estimates that are highly aligned to the direct estimates.</p>
+</div>
+</div>
+<p>The figure on the right illustrates the gains in terms of root mean squared error for the FH estimates (Y-axis) versus the standard error of the direct estimates (X-axis). Gains are often larger for the areas with smaller sample sizes (larger sampling errors of direct estimates), and though most if not all areas typically see some gains in precision.</p>
+</div>
+<div class="section" id="pros-and-cons-of-fay-herriot-models">
+<span id="area-level-pros"></span><h2><span class="section-number">3.3. </span>Pros and Cons of Fay-Herriot Models<a class="headerlink" href="#pros-and-cons-of-fay-herriot-models" title="Permalink to this headline">¶</a></h2>
+<p>The information in this section borrows heavily from <span id="id27">Molina [<a class="reference internal" href="05_off-census.html#id115" title="Isabel Molina. Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas. CEPAL, 2019. URL: https://repositorio.cepal.org/handle/11362/44214.">2019</a>]</span> while adding more information on relevant aspects.</p>
+<p>Model requirements:</p>
+<ol class="simple">
+<li><p>Direct estimates of indicators of interest and its sampling variance for the areas considered, <span class="math notranslate nohighlight">\(\hat{\tau}_{d}^{DIR}\)</span> and <span class="math notranslate nohighlight">\(\hat{\psi}_{d}\)</span> respectively (from the survey).</p></li>
+<li><p>Aggregate data at area level of all necessary covariates for the model for every area considered, <span class="math notranslate nohighlight">\(\mathbf{x}_{d}\)</span>, <span class="math notranslate nohighlight">\(d=1,\ldots,D\)</span>.</p></li>
+</ol>
+<p>Pros:</p>
+<ol class="simple">
+<li><p>Tend to improve the direct estimates in terms of efficiency (MSE).</p></li>
+<li><p>The regression model incorporates unexplained heterogeneity between areas through the area effects.</p></li>
+<li><p>The FH estimator is a weighted average of the direct estimator and the regression synthetic estimator (i.e., obtained by a linear regression). For areas where the sample size is small or where direct estimators have considerable sampling variance, the synthetic estimator will be given a higher weight. Accordingly, the FH estimate will approximate the direct estimate in areas with a sufficient sample .</p></li>
+<li><p>Since the FH estimates make use of the direct estimates, which consider sampling weights with <span class="math notranslate nohighlight">\(\gamma_{d}\)</span> tending to one as the area sample size increases, it is consistent under the sampling design. Hence, provided that the sampling weights are accurate, FH estimates will be less affected by informative sampling (i.e., when the selection of the units for the sample depends on the outcome values - <span id="id28">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>.</p></li>
+<li><p>Since area-level aggregates are used, the final estimates are less affected by outliers.</p></li>
+<li><p>Can provide estimates for non-sampled areas based on the regression-synthetic component.</p></li>
+<li><p>The Prasad-Rao MSE estimates (<span id="id29"></span>) are approximately unbiased. This holds as long as a sufficient number of areas are present and model assumptions are met, with normality for random effects and model errors.</p></li>
+<li><p>It is easy and computationally fast to implement; considerably faster than unit-level models because the number of areas is typically much smaller than the actual sample size in typical unit-level models, and Monte Carlo or bootstrap methods are not necessary.</p></li>
+<li><p>Does not require comparison of auxiliary variables between the different data sources to consider their use in the model.</p></li>
+<li><p>Because aggregate data are used, confidentiality restrictions do not hinder the data acquisition process.</p></li>
+</ol>
+<p>Cons:</p>
+<ol class="simple">
+<li><p>Estimates are based on a model; thus, the model needs to be checked. For non-linear parameters (like poverty), the linear assumption of the model can be problematic.</p></li>
+<li><p>The sampling variances of the direct estimates are assumed to be known, and the error of estimating these is not usually incorporated in the final estimates’ estimated MSE.</p></li>
+<li><p>The Prasad-Rao MSE estimator (<span id="id30"></span>) is approximately unbiased under the model with normality but is not design unbiased for a given area.</p></li>
+<li><p>The model is fit only on sampled areas, which can be a very small number out of the total number of areas using only one observation by area (the direct estimator). As a consequence, model parameter estimators will be much less efficient than those obtained under unit-level models, and hence gains in precision are expected to be lower than those of estimators based on unit-level models.</p></li>
+<li><p>Every indicator requires its own model.</p></li>
+<li><p>Once estimates are obtained, these cannot be further disaggregated unless a new model at that level is constructed.</p></li>
+<li><p>May require benchmarking adjustment to match direct estimates at higher aggregation levels. Although sub-area-level models by <span id="id31">Torabi and Rao [<a class="reference internal" href="05_off-census.html#id119" title="Mahmoud Torabi and JNK Rao. On small area estimation under a sub-area level model. Journal of Multivariate Analysis, 127:36–55, 2014.">2014</a>]</span> could be used to obtain estimates that naturally match at two different aggregation levels (different from the national level), user-friendly software is still not available.</p></li>
+</ol>
+<div class="section" id="alternative-software-packages-for-area-level-models-and-extensions">
+<span id="area-level-pros-alternative"></span><h3><span class="section-number">3.3.1. </span>Alternative Software Packages for Area-Level Models and Extensions<a class="headerlink" href="#alternative-software-packages-for-area-level-models-and-extensions" title="Permalink to this headline">¶</a></h3>
+<p>In this section, the focus has been on Stata’s <code class="docutils literal notranslate"><span class="pre">fhsae</span></code> package. However, there is a wide variety of packages available in R for small area estimation based on the basic FH area-level model and on some extensions of this model proposed in the literature. Below is a list of some of these extensions of the FH model and the corresponding software implementation:<a class="footnote-reference brackets" href="#id169" id="id32">5</a></p>
+<ol class="simple">
+<li><p>The extension of the FH model proposed by <span id="id33"></span> that incorporates temporal correlation is implemented in the<code class="docutils literal notranslate"> <span class="pre">saery</span></code> package in R by <span id="id34"></span>. R’s <code class="docutils literal notranslate"><span class="pre">sae</span></code> package by <span id="id35">Molina and Marhuenda [<a class="reference internal" href="06_diagnostics.html#id68" title="Isabel Molina and Yolanda Marhuenda. Sae: an R package for small area estimation. The R Journal, 7(1):81–98, 2015.">2015</a>]</span> includes a FH model with temporal and spatial correlation. Spatial correlation is also included in R’s <code class="docutils literal notranslate"><span class="pre">emdi</span></code> package (<span id="id36"></span>).</p>
+<ol class="simple">
+<li><p>Robust alternatives to the basic FH model, as well as its extensions, including spatial and temporal correlation, are detailed in <span id="id37"></span> and implemented in R’s <code class="docutils literal notranslate"><span class="pre">saeRobust</span></code> package (<span id="id38"></span>). The robust spatial correlation model is also available in the <code class="docutils literal notranslate"><span class="pre">emdi</span></code> package in R (<span id="id39"></span>).</p></li>
+</ol>
+</li>
+<li><p>In applications with several dependent target indicators, multivariate versions of the FH model may help provide even more efficient estimators. A multivariate version of the FH model was originally proposed by <span id="id40">Fay [<a class="reference internal" href="#id114" title="R. E. Fay. Application of multivariate regression to small domain estimation, pages 91–102. Volume 213. John Wiley &amp; Sons Incorporated, 1987.">1987</a>]</span>, and has been used to improve the estimates of median income of four-person families by using direct estimators of median income for three and five-person families by <span id="id41">Datta <em>et al.</em> [<a class="reference internal" href="#id115" title="Gauri S Datta, RE Fay, and M Ghosh. Hierarchical and empirical multivariate bayes analysis in small area estimation. In Proceedings of bureau of the census 1991 annual research conference, US Department of Commerce, Bureau of the Census, volume 7, 63–79. 1991.">1991</a>]</span> and <span id="id42">Datta <em>et al.</em> [<a class="reference internal" href="#id116" title="GS Datta, Malay Ghosh, Narinder Nangia, and K Natarajan. Estimation of median income of four-person families: a Bayesian approach, pages 129–140. John Wiley &amp; Sons, 1996. URL: https://dialnet.unirioja.es/servlet/articulo?codigo=3418625.">1996</a>]</span>. Multivariate FH models can be fitted with the R package<code class="docutils literal notranslate"> <span class="pre">msae</span></code> (<span id="id43"></span>).</p></li>
+<li><p>The basic FH model assumes that covariates are population aggregates measured without error. For cases where auxiliary variables are measured with error, <span id="id44"></span> offer an extension to the basic FH model to account for the measurement error. Measurement error models can be applied with the R package <code class="docutils literal notranslate"><span class="pre">saeME</span></code> (<span id="id45"></span>). This extension is also available in the R package<code class="docutils literal notranslate"> <span class="pre">emdi</span></code> (<span id="id46"></span>).</p></li>
+<li><p>Hierarchical Bayesian methods have been applied<code class="docutils literal notranslate"> </code>in the <code class="docutils literal notranslate"><span class="pre">hbsae</span></code> R package by <span id="id47">Boonstra [<a class="reference internal" href="04_unit-level.html#id248" title="Harm Jan Boonstra. Package 'hbsae'. R Package Version, 2015.">2015</a>]</span>. The <code class="docutils literal notranslate"><span class="pre">BayesSAE</span></code> R package (Shi <span id="id48"></span>) also includes Bayesian extensions.</p></li>
+<li><p><span id="id49">Halbmeier <em>et al.</em> [<a class="reference internal" href="#id144" title="Christoph Halbmeier, Ann-Kristin Kreutzmann, Timo Schmid, and Carsten Schröder. The fayherriot command for estimating small-area indicators. The Stata Journal, 19(3):626–644, 2019.">2019</a>]</span> introduced the <code class="docutils literal notranslate"><span class="pre">fayherriot</span></code> Stata command, which allows for adjusting non-positive random effect variance estimates, and allows for transformation of the variable of interest to deal with violations of the model’s assumptions. Transformation is also available in the <code class="docutils literal notranslate"><span class="pre">emdi</span></code> package in R (<span id="id50"></span>).</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="technical-annex">
+<span id="area-level-annex"></span><h2><span class="section-number">3.4. </span>Technical Annex<a class="headerlink" href="#technical-annex" title="Permalink to this headline">¶</a></h2>
+<p>The FH model is defined in two stages.<a class="footnote-reference brackets" href="#id172" id="id51">6</a> In the first stage, the true values of the indicators <span class="math notranslate nohighlight">\(\tau_{d}\)</span> for all the areas <span class="math notranslate nohighlight">\(d=1,\ldots,D\)</span>, are linked by establishing a common linear regression model, called the <em>linking model</em>, where the true indicator is linearly related to a vector of area-level covariates <span class="math notranslate nohighlight">\(\mathbf{x}_{d}\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-eq-fhmodel">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-eq-fhmodel" title="Permalink to this equation">¶</a></span>\[\tau_{d}=\mathbf{x}'_{d}\beta+u_{d}\]</div>
+<p>The random errors in this regression model, <span class="math notranslate nohighlight">\(u_{d}\)</span>, are called area effects, because they represent the unexplained between-area heterogeneity. They are assumed to satisfy usual regression assumptions, such as having zero mean and constant variance <span class="math notranslate nohighlight">\(\sigma_{u}^{2}\)</span>, which is typically unknown. Note that the linear regression model <strong>Equation <a class="reference internal" href="#equation-eq-fhmodel">(3.1)</a></strong> cannot be fitted to the data, because true values of the indicators <span class="math notranslate nohighlight">\(\tau_{d}\)</span> are not observed. Direct estimators <span class="math notranslate nohighlight">\(\hat{\tau}_{d}^{DIR}\)</span> of the indicators are available from the survey microdata but are, obviously, subject to survey error, since they are calculated only with the area-specific survey data, which is of small size. Hence, in the second stage, this survey error is modeled by assuming that the direct estimators are centered around the true values of the indicators, as follows:</p>
+<div class="math notranslate nohighlight" id="equation-eq-fhmodel2">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-eq-fhmodel2" title="Permalink to this equation">¶</a></span>\[\hat{\tau}_{d}^{DIR}=\tau_{d}+e_{d}\]</div>
+<p>with heteroscedastic errors, where error variances are <span class="math notranslate nohighlight">\(\mathrm{var\left(\mathit{e_{d}|\tau_{d}}\right)=\psi_{\mathit{d}}}\)</span>, <span class="math notranslate nohighlight">\(d=1,\ldots,D\)</span>, which is called the <em>sampling model</em>. Note that the <span class="math notranslate nohighlight">\(D\)</span> error variances <span class="math notranslate nohighlight">\(\psi_{d}\)</span>, <span class="math notranslate nohighlight">\(d=1,\ldots,D\)</span>, need to be assumed as known even if they are not; otherwise, there would be more unknown parameters than the available observations: <span class="math notranslate nohighlight">\(\hat{\tau}_{d}^{DIR}\)</span>, <span class="math notranslate nohighlight">\(d=1,\ldots,D\)</span>. These error variances are customarily estimated based on the survey microdata from the area of interest and perhaps smoothed afterward since these estimates are highly unstable due to the small area sample sizes.</p>
+<p>The usual small area estimator obtained from this model is based on the <em>best linear unbiased predictor</em> (BLUP), which is defined as the linear function <span class="math notranslate nohighlight">\(\hat{\tau}_{d}=\mathbf{\mathbf{\alpha}'y}\)</span> of the data <span class="math notranslate nohighlight">\(\mathbf{y}=(\hat{\tau}_{1}^{DIR},\ldots,\hat{\tau}_{D}^{DIR})'\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{\boldsymbol{\alpha}}=(\alpha_{1},\ldots,\alpha_{D})'\)</span>, which is unbiased under the model, that is, <span class="math notranslate nohighlight">\(E(\hat{\tau}_{d}-\tau_{d})=0\)</span>, and is optimal (or <em>best</em>) in the sense of minimizing the mean squared error (MSE). The resulting BLUP <span class="math notranslate nohighlight">\(\hat{\tau}_{d}\)</span> of <span class="math notranslate nohighlight">\(\tau_{d}\)</span> can be expressed as a weighted average of the direct estimator <span class="math notranslate nohighlight">\(\hat{\tau}_{d}^{DIR}\)</span> and the regression-synthetic estimator, <span class="math notranslate nohighlight">\(\mathbf{x}'_{d}\hat{\beta}\)</span>, where the weight <span class="math notranslate nohighlight">\(\gamma_{d}=\sigma_{u}^{2}/(\sigma_{u}^{2}+\psi_{d})\)</span> attached to the direct estimator grows as the error variances <span class="math notranslate nohighlight">\(\psi_{d}\)</span> decrease (or the area sample size increases), or the unexplained variation <span class="math notranslate nohighlight">\(\sigma_{u}^{2}\)</span> grows. This means that, in areas with a large sample size or when the auxiliary information is not very powerful, the FH estimates come close to the direct estimators; in the opposite case, they come close to the regression-synthetic estimators. This leads to the BLUP automatically borrowing strength only when it is actually needed and approximating to the conventional survey direct estimators when the area sample size is large or the model is not useful.</p>
+<p>The BLUP does not require normality assumptions on the model errors or area effects, and it is unbiased under the model. The <em>empirical</em> BLUP (EBLUP) is obtained by replacing the unknown area effects’ variance <span class="math notranslate nohighlight">\(\sigma_{u}^{2}\)</span> by an estimator <span class="math notranslate nohighlight">\(\hat{\sigma}_{u}^{2}\)</span> with good properties (i.e. consistent). The EBLUP preserves unbiasedness under symmetric distributions and under certain regularity assumptions on the considered estimator <span class="math notranslate nohighlight">\(\hat{\sigma}_{u}^{2}\)</span> of <span class="math notranslate nohighlight">\(\sigma_{u}^{2}\)</span> (and a translation invariant function of the sample data <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>), which are satisfied by the usual estimators obtained by ML, REML, or Fay-Herriot’s method of moments. However, their exact mean squared error (MSE) does not have a closed form. For this reason, analytical approximations with good properties for <strong>large number of areas</strong> <span class="math notranslate nohighlight">\(D\)</span> have been obtained under normality. Similarly, an analytical estimator of the true MSE that is nearly unbiased for large <span class="math notranslate nohighlight">\(D\)</span> has been obtained under normality. This MSE estimator depends on the actual estimator of <span class="math notranslate nohighlight">\(\sigma_{u}^{2}\)</span> that is applied; for the exact formulas, see <span id="id52">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>, Section 6.2.1. For areas with moderate or large sample sizes and indicators (and corresponding direct estimators) defined in terms of sums over the area units, the normality assumption is minimally ensured by the Central Limit Theorem. However, for areas with small sample sizes or when target indicators are not defined in terms of sums over the area units, the normality assumption should be validated if these customary MSE estimates are considered; otherwise, they should be interpreted with care.</p>
+<p>A problem that may occur when applying FH models is that the estimated model variance <span class="math notranslate nohighlight">\(\sigma_{u}^{2}\)</span> may be non-positive, and then it is customary to set it to zero. In these instances, the weight <span class="math notranslate nohighlight">\(\gamma_{d}\)</span> is equal to 0 for all areas, implying a weight of zero to direct estimates regardless of the area’s sample size. Hence, the EBLUP reduces to the synthetic estimator, which may be considerably different to the direct estimator (<span id="id53">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>). <span id="id54"></span> and <span id="id55"></span> propose adjustments to the maximum likelihood approach to obtain strictly positive estimates. These adjustments are incorporated into the <code class="docutils literal notranslate"><span class="pre">emdi</span></code> package in R (<span id="id56"></span>).</p>
+<p>A clear drawback of the FH model is that the sampling variances of direct estimators, <span class="math notranslate nohighlight">\(\psi_{d}\)</span>, <span class="math notranslate nohighlight">\(d=1,\ldots,D\)</span>, are assumed to be known even if they are actually estimated,<a class="footnote-reference brackets" href="#id175" id="id57">7</a> and usual MSE estimators do not account for the uncertainty due to estimation of these variances. Note also that, if one wishes to estimate several indicators, a different model needs to be constructed for each indicator, even if they are all based on the same welfare variable. This means that one needs to find area-level covariates that are linearly related to each indicator. It seems more reasonable to fit a model for the considered welfare variable at the unit-level and then estimate all the target monetary indicators based on that same model, as is done in the procedures based on unit-level models described in <strong>Chapter 4: <a class="reference internal" href="04_unit-level.html#unit-level"><span class="std std-ref">Unit-level Models for Small Area Estimation</span></a></strong>.</p>
+<p>Moreover, the area-level auxiliary information commonly has the shape of area means or proportions. For indicators with a more complex shape than the simple mean welfare, it might be difficult to find area-level covariates that are linearly related with the complex function of welfare for the area; consequently, the linearity assumption in the FH model might fail, and finding an adequate transformation for linearity to hold might not be easy in some applications. In any case, even if the gains obtained using the FH model depend on the explanatory power of the available covariates, <span id="id58">Molina and Morales [<a class="reference internal" href="#id113" title="Isabel Molina and Domingo Morales. Small area estimation of poverty indicators. Estadistica e Investigacion Operativa (SEIO), 25(3):218-225, 2009. URL: https://emis.dsd.sztaki.hu/journals/BEIO/files/BEIOVol25Num3_IMolina+DMorales.pdf.">2009</a>]</span> observed very mild gains of the EBLUPs of poverty rates and gaps based on the FH model in comparison to those obtained by <span id="id59">Molina and Rao [<a class="reference internal" href="06_diagnostics.html#id67" title="Isabel Molina and JNK Rao. Small area estimation of poverty indicators. Canadian Journal of Statistics, 38(3):369–385, 2010.">2010</a>]</span> using the same data sources, but relying on unit-level models (and using the microdata). When considering indicators, such as the FGT poverty indicators, an additional drawback of the FH model is that due to the small area sample sizes, direct estimators that are equal to zero or one are possible (when no one or everyone is found to be below the poverty line), even if the area sample size is not zero. In those areas, the sampling variances of the direct estimators are also zero and unless a different approach is applied to obtain strictly positive variances, the FH Model is not applicable for those areas. A common approach to correct for this is to remove those areas in the modeling phase and then use a synthetic estimator for that area instead.</p>
+<div class="section" id="aggregation-to-higher-geographic-areas">
+<span id="area-level-annex-aggregation"></span><h3><span class="section-number">3.4.1. </span>Aggregation to Higher Geographic Areas<a class="headerlink" href="#aggregation-to-higher-geographic-areas" title="Permalink to this headline">¶</a></h3>
+<p>Even if the area-level model may be applied to produce poverty estimates at a given level of aggregation, one may also wish to aggregate these estimates to higher aggregation levels (let us call these larger areas “regions”). While the estimate of the poverty rate for a region is simply the population weighted average of the area-level poverty rates contained within the region, obtaining a correct MSE estimate for the estimator of that region requires aggregating the estimates of the MSEs and mean crossed product errors (MCPEs) at the area level, <span class="math notranslate nohighlight">\(d\)</span>, up to the regional level, <span class="math notranslate nohighlight">\(r\)</span>. For a region, <span class="math notranslate nohighlight">\(r\)</span>, containing <span class="math notranslate nohighlight">\(D_{r}\)</span> areas, the poverty rate is then <span class="math notranslate nohighlight">\(\tau_{r}=\frac{1}{N_{r}}\sum_{d=1}^{D_{r}}N_{d}\tau_{d}\)</span>, where <span class="math notranslate nohighlight">\(\tau_{d}\)</span> is the poverty rate in area <span class="math notranslate nohighlight">\(d\)</span>, from region <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(N_{d}\)</span> is the population of domain <span class="math notranslate nohighlight">\(d\)</span> in region <span class="math notranslate nohighlight">\(r\)</span>, and <span class="math notranslate nohighlight">\(N_{r}=\sum_{d=1}^{D_{r}}N_{d}\)</span> the population of the region. Then a model-based estimate of the poverty rate for region <span class="math notranslate nohighlight">\(r\)</span> is <span class="math notranslate nohighlight">\(\hat{\tau}_{r}=\frac{1}{N_{r}}\sum_{d=1}^{D_{r}}N_{d}\hat{\tau}_{d}\)</span>, and the MSE of <span class="math notranslate nohighlight">\(\hat{\tau}_{r}\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[MSE(\hat{\tau}_{r})=\frac{1}{N_{r}^{2}}\sum_{d=1}^{D_{r}}\sum_{l=1}^{D_{r}}N_{d}N_{l}MCPE(\hat{\tau}_{d},\:\hat{\tau}_{l})\]</div>
+<p>where <span class="math notranslate nohighlight">\(MCPE\left(\hat{\tau}_{d},\:\hat{\tau}_{l}\right)=E\left[\left(\hat{\tau}_{d}-\tau_{d}\right)\left(\hat{\tau}_{l}-\tau_{l}\right)\right]\)</span> (<span id="id60">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>, p144). The <code class="docutils literal notranslate"><span class="pre">fhsae</span></code> package in Stata has the option to apply such an approach via its <code class="docutils literal notranslate"><span class="pre">aggarea()</span></code> option. The method is also available in the <code class="docutils literal notranslate"><span class="pre">hbsae</span></code> R package by <span id="id61">Boonstra [<a class="reference internal" href="04_unit-level.html#id248" title="Harm Jan Boonstra. Package 'hbsae'. R Package Version, 2015.">2015</a>]</span>.</p>
+</div>
+</div>
+<div class="section" id="references">
+<span id="area-level-ref"></span><h2><span class="section-number">3.5. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<div class="docutils container" id="id62">
+<dl class="citation">
+<dt class="label" id="id110"><span class="brackets"><a class="fn-backref" href="#id5">Bel97</a></span></dt>
+<dd><p>W Bell. Models for county and state poverty estimates. <em>Preprint, Statistical Research Division, US Census Bureau</em>, 1997.</p>
+</dd>
+<dt class="label" id="id164"><span class="brackets">Boo15</span><span class="fn-backref">(<a href="#id47">1</a>,<a href="#id61">2</a>)</span></dt>
+<dd><p>Harm Jan Boonstra. Package 'hbsae'. <em>R Package Version</em>, 2015.</p>
+</dd>
+<dt class="label" id="id112"><span class="brackets"><a class="fn-backref" href="#id8">CCVEL16</a></span></dt>
+<dd><p>Carolina Casas-Cordero Valencia, Jenny Encina, and Partha Lahiri. Poverty mapping for the Chilean Comunas. <em>Analysis of Poverty Data by Small Area Estimation</em>, pages 379–404, 2016.</p>
+</dd>
+<dt class="label" id="id142"><span class="brackets"><a class="fn-backref" href="#id24">CSG13</a></span></dt>
+<dd><p>Hukum Chandra, UC Sud, and VK Gupta. Small area estimation under area level model using r software. <em>New Delhi: Indian Agricultural Statistics Research Institute</em>, 2013.</p>
+</dd>
+<dt class="label" id="id100"><span class="brackets"><a class="fn-backref" href="#id7">CC19</a></span></dt>
+<dd><p>Paul Corral and Alexandru Cojocaru. Moldova poverty map: an application of small area estimation. mimeo. <em>Unpublished manuscript</em>, 2019.</p>
+</dd>
+<dt class="label" id="id143"><span class="brackets"><a class="fn-backref" href="#id16">CSAN18</a></span></dt>
+<dd><p>Paul Corral, William Seitz, João Pedro Azevedo, and Minh Cong Nguyen. FHSAE: Stata module to fit an area level Fay-Herriot model. Statistical Software Components. 2018. URL: <a class="reference external" href="https://econpapers.repec.org/software/bocbocode/s458495.htm">https://econpapers.repec.org/software/bocbocode/s458495.htm</a>.</p>
+</dd>
+<dt class="label" id="id115"><span class="brackets"><a class="fn-backref" href="#id41">DFG91</a></span></dt>
+<dd><p>Gauri S Datta, RE Fay, and M Ghosh. Hierarchical and empirical multivariate bayes analysis in small area estimation. In <em>Proceedings of bureau of the census 1991 annual research conference, US Department of Commerce, Bureau of the Census</em>, volume 7, 63–79. 1991.</p>
+</dd>
+<dt class="label" id="id116"><span class="brackets"><a class="fn-backref" href="#id42">DGNN96</a></span></dt>
+<dd><p>GS Datta, Malay Ghosh, Narinder Nangia, and K Natarajan. <em>Estimation of median income of four-person families: a Bayesian approach</em>, pages 129–140. John Wiley &amp; Sons, 1996. URL: <a class="reference external" href="https://dialnet.unirioja.es/servlet/articulo?codigo=3418625">https://dialnet.unirioja.es/servlet/articulo?codigo=3418625</a>.</p>
+</dd>
+<dt class="label" id="id122"><span class="brackets"><a class="fn-backref" href="#id10">EMPerezSantamaria12a</a></span></dt>
+<dd><p>María Dolores Esteban, Domingo Morales, A Pérez, and Laureano Santamaría. Small area estimation of poverty proportions under area-level time models. <em>Computational Statistics &amp; Data Analysis</em>, 56(10):2840–2855, 2012. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S0167947311003720">https://www.sciencedirect.com/science/article/abs/pii/S0167947311003720</a>.</p>
+</dd>
+<dt class="label" id="id121"><span class="brackets"><a class="fn-backref" href="#id11">EMPerezSantamaria12b</a></span></dt>
+<dd><p>MD Esteban, D Morales, A Pérez, and L Santamaría. Two area-level time models for estimating small area poverty indicators. <em>Journal of the Indian Society of Agricultural Statistics</em>, 66(1):75–89, 2012.</p>
+</dd>
+<dt class="label" id="id114"><span class="brackets"><a class="fn-backref" href="#id40">Fay87</a></span></dt>
+<dd><p>R. E. Fay. <em>Application of multivariate regression to small domain estimation</em>, pages 91–102. Volume 213. John Wiley &amp; Sons Incorporated, 1987.</p>
+</dd>
+<dt class="label" id="id94"><span class="brackets">FIH79</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id4">2</a>,<a href="#id20">3</a>)</span></dt>
+<dd><p>Robert E Fay III and Roger A Herriot. Estimates of income for small places: an application of James-Stein procedures to census data. <em>Journal of the American Statistical Association</em>, 74(366a):269–277, 1979.</p>
+</dd>
+<dt class="label" id="id144"><span class="brackets">HKSSchroder19</span><span class="fn-backref">(<a href="#id19">1</a>,<a href="#id49">2</a>)</span></dt>
+<dd><p>Christoph Halbmeier, Ann-Kristin Kreutzmann, Timo Schmid, and Carsten Schröder. The fayherriot command for estimating small-area indicators. <em>The Stata Journal</em>, 19(3):626–644, 2019.</p>
+</dd>
+<dt class="label" id="id161"><span class="brackets"><a class="fn-backref" href="#id23">LS15</a></span></dt>
+<dd><p>Partha Lahiri and Jiraphan Suntornchost. Variable selection for linear mixed models with applications in small area estimation. <em>Sankhya B</em>, 77(2):312–320, 2015.</p>
+</dd>
+<dt class="label" id="id91"><span class="brackets">Mol19</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id21">2</a>,<a href="#id27">3</a>)</span></dt>
+<dd><p>Isabel Molina. <em>Desagregación De Datos En Encuestas De Hogares: Metodologías De Estimación En áreas Pequeñas</em>. CEPAL, 2019. URL: <a class="reference external" href="https://repositorio.cepal.org/handle/11362/44214">https://repositorio.cepal.org/handle/11362/44214</a>.</p>
+</dd>
+<dt class="label" id="id139"><span class="brackets">MCN21</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id170">2</a>,<a href="#id173">3</a>)</span></dt>
+<dd><p>Isabel Molina, Paul Corral, and Minh Cong Nguyen. Model-based methods for poverty mapping: a review. <em>Unpublished manuscript</em>, 2021.</p>
+</dd>
+<dt class="label" id="id86"><span class="brackets">MM15</span><span class="fn-backref">(<a href="#id18">1</a>,<a href="#id35">2</a>)</span></dt>
+<dd><p>Isabel Molina and Yolanda Marhuenda. Sae: an R package for small area estimation. <em>The R Journal</em>, 7(1):81–98, 2015.</p>
+</dd>
+<dt class="label" id="id113"><span class="brackets">MM09</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id58">2</a>)</span></dt>
+<dd><p>Isabel Molina and Domingo Morales. Small area estimation of poverty indicators. <em>Estadistica e Investigacion Operativa (SEIO)</em>, 25(3):218–225, 2009. URL: <a class="reference external" href="https://emis.dsd.sztaki.hu/journals/BEIO/files/BEIOVol25Num3_IMolina+DMorales.pdf">https://emis.dsd.sztaki.hu/journals/BEIO/files/BEIOVol25Num3_IMolina+DMorales.pdf</a>.</p>
+</dd>
+<dt class="label" id="id85"><span class="brackets"><a class="fn-backref" href="#id59">MR10</a></span></dt>
+<dd><p>Isabel Molina and JNK Rao. Small area estimation of poverty indicators. <em>Canadian Journal of Statistics</em>, 38(3):369–385, 2010.</p>
+</dd>
+<dt class="label" id="id81"><span class="brackets">RM15</span><span class="fn-backref">(<a href="#id22">1</a>,<a href="#id28">2</a>,<a href="#id52">3</a>,<a href="#id53">4</a>,<a href="#id60">5</a>,<a href="#id174">6</a>)</span></dt>
+<dd><p>JNK Rao and Isabel Molina. <em>Small Area Estimation</em>. John Wiley &amp; Sons, 2nd edition, 2015.</p>
+</dd>
+<dt class="label" id="id141"><span class="brackets"><a class="fn-backref" href="#id9">Sei19</a></span></dt>
+<dd><p>William Hutchins Seitz. Where they live: district-level measures of poverty, average consumption, and the middle class in central asia. <em>World Bank Policy Research Working Paper</em>, 2019.</p>
+</dd>
+<dt class="label" id="id95"><span class="brackets"><a class="fn-backref" href="#id31">TR14</a></span></dt>
+<dd><p>Mahmoud Torabi and JNK Rao. On small area estimation under a sub-area level model. <em>Journal of Multivariate Analysis</em>, 127:36–55, 2014.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="notes">
+<span id="area-level-notes"></span><h2><span class="section-number">3.6. </span>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id165"><span class="brackets"><a class="fn-backref" href="#id15">1</a></span></dt>
+<dd><p>See <strong><a class="reference internal" href="#area-level-annex"><span class="std std-numref">Section 3.4</span></a></strong>.</p>
+</dd>
+<dt class="label" id="id166"><span class="brackets"><a class="fn-backref" href="#id17">2</a></span></dt>
+<dd><p>Downloadable from <a class="reference external" href="https://github.com/pcorralrodas/fhsae">https://github.com/pcorralrodas/fhsae</a>.</p>
+</dd>
+<dt class="label" id="id167"><span class="brackets"><a class="fn-backref" href="#id25">3</a></span></dt>
+<dd><p>The removal of non-significant covariates is done using FGLS to ensure that the method’s covariance matrix is considered.</p>
+</dd>
+<dt class="label" id="id168"><span class="brackets"><a class="fn-backref" href="#id26">4</a></span></dt>
+<dd><p>This decision must be made with care and usually in consultation with colleagues from the relevant statistical agency.</p>
+</dd>
+<dt class="label" id="id169"><span class="brackets"><a class="fn-backref" href="#id32">5</a></span></dt>
+<dd><p>The discussion in this section borrows from <span id="id170">Molina <em>et al.</em> [<a class="reference internal" href="#id139" title="Isabel Molina, Paul Corral, and Minh Cong Nguyen. Model-based methods for poverty mapping: a review. Unpublished manuscript, 2021.">2021</a>]</span>, as well as from <span id="id171"></span>.</p>
+</dd>
+<dt class="label" id="id172"><span class="brackets"><a class="fn-backref" href="#id51">6</a></span></dt>
+<dd><p>This section draws heavily from <span id="id173">Molina <em>et al.</em> [<a class="reference internal" href="#id139" title="Isabel Molina, Paul Corral, and Minh Cong Nguyen. Model-based methods for poverty mapping: a review. Unpublished manuscript, 2021.">2021</a>]</span> as well as <span id="id174">Rao and Molina [<a class="reference internal" href="06_diagnostics.html#id63" title="JNK Rao and Isabel Molina. Small Area Estimation. John Wiley &amp; Sons, 2nd edition, 2015.">2015</a>]</span>.</p>
+</dd>
+<dt class="label" id="id175"><span class="brackets"><a class="fn-backref" href="#id57">7</a></span></dt>
+<dd><p>See <strong>Chapter 2: <a class="reference internal" href="02_direct.html#direct"><span class="std std-ref">Direct Estimates</span></a></strong> for how these can be estimated.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02_direct.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Direct Estimates</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04_unit-level.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Unit-level Models for Small Area Estimation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Paul Corral, Isabel Molina, Alexandru Cojocaru, and Sandra Segovia<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
