@@ -1,0 +1,47 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title:  Guidelines to Small Area Estimation for Poverty Mapping
+author: Paul Corral, Isabel Molina, Alexandru Cojocaru, and Sandra Segovia
+copyright: "2022"  # Copyright year to be placed in the footer
+logo:   figures/logo.png
+exclude_patterns: [bookdown, _build]
+
+
+latex:
+  latex_documents:
+    targetname: book.tex
+
+sphinx:
+#  extra_extensions: [sphinx-prompt]
+  config:
+    bibtex_reference_style: author_year
+
+bibtex_bibfiles:
+  - Biblio.bib
+  
+
+
+#######################################################################################
+# Execution settings
+execute:
+  execute_notebooks         : "force"  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
+
+#######################################################################################
+# Launch button settings
+#launch_buttons:
+#  binderhub_url             : ""  # The URL of the BinderHub (e.g., https://mybinder.org)
+
+#######################################################################################
+# HTML-specific settings
+html:
+ extra_navbar                : Created by <a href="https://github.com/ssegoviajuarez"> Sandra Segovia </a> # Will be displayed underneath the left navbar.
+#  favicon                   : "images/favicon.ico"  # A path to a favicon image
+#  use_edit_page_button      : false  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+#  use_repository_button     : true  # Whether to add a link to your repository button
+#  use_issues_button         : true  # Whether to add an "open an issue" button
+#  extra_navbar              : By <a href="https://www.tomasbeuzen.com/">Tomas Beuzen</a> & <a href="http://tiffanytimbers.com">Tiffany Timbers</a> # Will be displayed underneath the left navbar.
+#  extra_footer              : ""  # Will be displayed underneath the footer.
+#  google_analytics_id       : "UA-157992550-3"  # A GA id that can be used to track book views.
+#  home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
+#  baseurl                   : "https://py-pkgs.org/"  # The base URL where your book will be hosted.

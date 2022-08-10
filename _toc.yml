@@ -1,0 +1,27 @@
+# Table of contents
+
+format: jb-book
+root: 00_welcome
+parts:
+#- caption:  PREFACE
+#  numbered: false
+#  chapters:
+#    - file: 00_preface
+- caption:  CHAPTERS
+  numbered: true
+  chapters:
+    - file: 01_intro
+    - file: 02_direct
+    - file: 03_area-level
+    - file: 04_unit-level
+    - file: 05_off-census
+    - file: 06_diagnostics
+    - file: 07_conclusion
+#- caption:  NOTEBOOKS
+#  numbered: false
+#  chapters:
+#    - file:  notebooks/area-level_notebook
+#    - file:  notebooks/unit-level_notebook
+#    - file:  notebooks/assumed_model
+#    - file:  notebooks/montecarlo
+#    - file:  notebooks/bootstrap
