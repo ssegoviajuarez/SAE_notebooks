@@ -419,241 +419,368 @@ set obs `=`obsnum'/`areasize''
 	qui save `
 ```
 
+# Unit-Context Models -- Validation Across All Poverty Lines
 
-# Introduction
+The Stata code below produces the simulations described in [off-census:annex](#off-census:annex). Here, a sample is drawn from the population and then, estimates are obtained for 99 different poverty lines. Each poverty line corresponds to a percentile of the very first generated population.
 
-__Small area methods__ attempt to solve low representativeness of surveys within areas, or the lack of data for specific areas/subpopulations by incorporating information from outside sources (target datasets). 
+```stata
+set more off
+clear all
 
-__Target datasets:__ population census, large scale administrative records from tax administrations, or geospatial information produced using remote sensing. 
+global main     "C:\Users\\`c(username)'\OneDrive\SAE Guidelines 2021\"
+global section  "$main\3_Unit_level\"
+global mdata    "$section\1_data\"
+global myfigs   "$section\3_figures\"
+/*
+Author: Paul Corral
+Version @2 differs from previous one in that we create a model where 
+UC models have a better fit (R2 ~ 0.18), also welfare is somewhat more skewed
 
-The strength of these target datasets is their granularity on the subpopulations of
-interest.
+We start off by creating a fake data set illustrated in Marhuenda et al. (2017).
+ https://rss.onlinelibrary.wiley.com/doi/pdf/10.1111/rssa.12306
+*/
+/*
+Purpose of file is to test SAE model performance by imputing on to the 
+population instead of a sample. This should remove all other sources of bias.
+*/
 
-
-# Model-based estimation
-
-* Direct estimators are not efficient estimates for areas that
-have not been included in the sample.
-
-* Model-based estimation relies on a parametric model. Borrows strength 
-by using a model.
-
-* The domains are assumed to be part of a superpopulation whose
-characteristics are estimated by the models.
-
-* Estimation using frequentist or Bayesian approaches.
-
-* Inference is under model conditional on the selected sample.
-
-* Rao and Molina (2015) - the availability of these auxiliary data as well 
-as a valid model are essential for obtaining successful small area estimates.
-
-* Poverty is a nonlinear function of welfare, therefore sae methods of linear characteristics are invalid (Molina and Rao, 2010).A proposed solution to this problem is to use Monte Carlo simulation to obtain multiple vectors of
-the measure of interest (Elbers, Lanjouw, and Lanjouw, 2003).
-
-
-## Unit level models
-
-A basis unit level population model assumes that the unit
-$y$-values $y_{ch}$, associated with the units $h$ in the areas $c$, are
-related to auxiliary variables $x_{ch}$ through a one-way nested
-error regression model:
-
-$$\[
-\ln(y_{ch})= x_{ch}'\beta + u_{ch} \\
-\ln(y_{ch})= x_{ch}\beta +\eta_{c} + e_{ch}
-\]$$
-
-where,
-
-$$\[
-h=1,...,N_{c} \\
-c=1,...,C \\
-\eta_{c}\sim\text{iid}N(0, \sigma_{\eta}^2) \\
-e_{ch}\sim\text{iid}N(0, \sigma_{e}^2) \\
-\]$$
-
-
-
-  * Choose households (h) randomly from a cluster (c).
-  * $\eta_c$ is the cluster-specific random effect: the difference between
-  average consumption/income $y$ at cluster $c$ and the average consumption/income
-  $y$ of all the country/sample.
-  * $e_{ch}$ is the household-specific random effect: the deviation of the $h-th$
-  household consumption/income $y$ from the averages of the $c-th$ cluster.
-  * where $\eta_c$ and $e_{ch}$, are assumed to be independent from each other with different data generating processes.
-  * Households within a cluster are usually not independent from one another, to allow for the clustering of households and their interrelatedness: $u_{ch} =\eta_c + e_{ch}$.
-  *Note that the interrelatedness of $\eta_c$ across observations (households) is already a violation of OLS assumptions.
-  
-  Therefore the resulting model we wish to estimate is a linear mixed model ( contains both fixed and random effects).
-
-To achieve valid small area estimates it is necessary that the set of explanatory variables, X, used in the first stage model can also be found in the census data. It is important that the variables are compared beforehand to verify that not only their definitions are in agreement, but also their distributions
-  
-### The ELL methodology
-
-Elbers, Lanjouw, and Lanjouw (2003, henceforth ELL).
-
-ELL focuses on welfare imputation methodology, nevertheless it can be
-applied for other continuous measures aside from welfare.
-
-ELL methodology for decomposing the first stage residuals's variance parameters.
-
-Therefore the resulting model we wish to estimate is a linear mixed model ( contains both fixed and random effects).
-
-The second stage consists in utilizing the parameter estimates from the
-first stage and applying these to census data to obtain small area poverty and inequality measures.
-
-The unit level model in equation (1) is fit by FGLS. This implies that, initially, 
-the residuals are assumed to not be nested as in equation (1) and thus the model
-is fit using ordinary least squares (OLS), after which the appropriate 
-covariance matrix is estimated.
-
-<br>
-
-__Step 1.__ Fit the nested error model (1) to the survey data. This yields the set of the 
-initial parameter estimates from the sampled data:
-
-$$\hat{\theta}_0=( \hat{\beta}_0,\hat{\sigma}_{\eta0}^2,\hat{\sigma}_{e0}^2)$$
-
-where the $0$ subscript is used hereafter to indicate that the estimates come from the original household survey. In the implemented version, the model is fit via FGLS as specified in Nguyen et al. (2018).
-
-<br>
-<details>
-  <summary>__Click to see answer__</summary>
- <style>
-  div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
-  </style>
-<div class = "blue">
-
-  1. Estimating distribution of $\hat{\sigma}_{e0}^2$ (the Alpha model). 
-  
-  Parametric form of heteroskedasticity: $$\sigma_{e0}^2 = \frac{Aexp(Z'_{bh}\alpha) + B}{1 + exp(Z'_{bh}\alpha)}$$
-  In In ELL (2003) this is simplified by setting $B = 0$ and $A = 1.05max(\hat{e}_{ch}^2)$, and thus the simpler form is estimated via OLS (This is the actual model used by PovMap, which we also implement):
-  
-  $$ln\frac{e_{ch}^2}{(A-e_{ch}^2)}= Z'_{bh}\alpha + r_{ch}$$
-  This approach resembles that of Harvey (1976), nevertheless the prediction is bounded.
-  By defining  $exp(Z'_{bh}\alpha)=D$ and using the delta method, the household specific        conditional variance estimator for $e_{ch}$ is:
-  $$\hat{\sigma}_{e0}^2 \approx \frac{AD }{1 + D} + \frac{1}{2}\hat{var}(r) \frac{AD(1+D)}{(1 + D)^3}$$
-  where $\hat{var}(r)$ is the estimated variance from the residuals of the model above.
-  
-  2. Estimating distribution of $\hat{\sigma}_{\eta0}^2$.
-  
-  ELL (2002) proposes 2 methods to obtain the variace of $\hat{\sigma}_{\eta0}^2$.
-  
-    1.1 By simulation
-      
-    
-    1.2 By formula
-    
-    The `sae' command only allows for this using the ELL methodology.
-    
-  
-  
-  3. ELL's GLS estimator \hat{\beta}_0.
-  Once with $\hat{\sigma}_{e,ch}^2$ and $\hat{\sigma}_{\eta}^2$, we can construct
-  the covariance matrix of the error vector $u_{ch}=\eta_c + e_{ch}$ $\hat{\Omega}$ of   dimension $N\times N$. The estimates for the GLS are:
-
-```math
-  \[
-  \hat{\beta}_0 = (X'W\Omega^{-1}X)^{-1}X'W\Omega^{-1}Y
-  \]
-  and
-  \[
-  Var(\hat{\beta}_0) = (X'W\Omega^{-1}X)^{-1}(X'W\Omega^{-1}WX)(X'W\Omega^{-1}X)^{-1}
-  \]
+# Parameters for simulated data set
+```stata
+	version 15
+	set seed 734137
+	global numobs = 20000
+	global areasize  = 500
+	global psusize   = 50
+	
+	//We have 2 location effects below
+	global sigmaeta_psu   = 0.05   
+	global sigmaeta_area  = 0.1
+	//We have household specific errors
+	global sigmaeps   = 0.6
+	//Poverty line fixed at 27.8
+	global pline    = 13
+	global lnpline = ln($pline)
+	global pline1   = 28
+	global lnpline1 = ln($pline1)
+	local lines $pline $pline1
+	//locals
+	local obsnum    = $numobs
+	local areasize  = $areasize
+	local psusize   = $psusize
+	local total_sim = 1
 ```
 
-  where $W$ is a $N\times N$ diagonal matrix of sampling weights. Beause $W\Omega^{-1}$
-  is __usually not symmetric__ due to the difference in sampling weights between observations, the covariance matrix must be adjusted by obtaining the average of the 
-  covariance matrix and its transpose. Check (Haslett et al., 2010). 
- 
- </div>
-</details>
+# Create simulated data
+```stata
+//Start off with # of observations
+set obs `=`obsnum'/`areasize''	
+	gen area = _n
+		lab var area "Area identifier"
+	//expand to create 10 psu per area
+	expand `=`areasize'/`psusize''
+	sort area
+	//PSUs labelled from 1 to 10 within each area
+	gen psu = _n - (area-1)*`=`areasize'/`psusize''
+		lab var psu "PSU identifier"
+	//expand to create 50 observations by psu	
+	expand `psusize'
+	sort area psu
+	//Household id
+	gen hhid = _n
+		lab var hhid "Household identifier"
+		
+	//Covariates, some are corrlated to the area and psu's label
+	gen x1=runiform()<=(0.3+.5*area/(`obsnum'/`areasize') + ///
+	0.2*psu/(`areasize'/`psusize'))
+	gen x2=runiform()<=(0.2)
+	gen x3= runiform()<=(0.1 + .2*area/int(`obsnum'/`areasize'))
+	gen x4= runiform()<=(0.5+0.3*area/int(`obsnum'/`areasize') + ///
+	0.1*psu/int(`areasize'/`psusize'))
+	gen x5= round(max(1,rpoisson(3)*(1-.1*area/int(`obsnum'/`areasize'))),1)
+	gen x6= runiform()<=0.4
+	gen x7=rpoisson(3)*(1*psu/int(`areasize'/`psusize')- 1*area/int(`obsnum'/`areasize')+ 1*uniform())
+	
+	//note that this matches the model from eq. 3 of Corral et al. (2021)
+	gen XB = 3+ .09* x1-.04* x2 - 0.09*x3 + 0.4*x4 - 0.25*x5 + 0.1*x6 + 0.33*x7
+		lab var XB "Linear fit"
+		
+	//Create psu level means...
+	preserve 
+	collapse (mean) x*, by(area psu)
+	rename x* meanpsu_x* 
+	tempfile psumeans 
+	qui save `psumeans'
+	restore 
+	
+	preserve 
+	collapse (mean) x*, by(area)
+	rename x* meanarea_x* 
+	tempfile areameans 
+	qui save `areameans'
+	restore 
 
-  <br>
+	merge n:1 area psu using `psumeans', assert(3) nogen 
+	merge n:1 area using `areameans', assert(3) nogen 
+		
+	//Indicate first area observation
+	bysort area: gen area_1st = 1 if _n==1
+	//Indicate first psu observation
+	bysort area psu: gen psu_1st = 1 if _n==1
+	sort hhid
+	//We need weights for SAE command
+	gen hhsize = 1
+		lab var hhsize "HH size for command"
+		
+	//Create hierarchical identifier
+	gen uno = 100+area
+	gen dos = 100+psu
+	gen double  HID = real(string(uno)+string(dos))
+	
+//Save population's Xs	and linear fit
+save "$mdata\popXT.dta", replace
 
-__Step 2.__ Draw new model parameters  $\theta^*=(\beta^*,\sigma_{\eta}^{2*},\sigma_{e}^{2*})$. Using the former obtained parameters (subscript 0) estimates as true parameters values to  draw from their respective asymptotic distributions as follows:
+*===============================================================================
+//2. Import data for SAE
+*===============================================================================
+unab themeans : mean*
+sae data import, datain("$mdata\popXT.dta") varlist(`themeans' x1 x2 x3 x4 x5 x6 x7 hhsize) ///
+area(area) uniqid(hhid) dataout("$mdata\census")
 
-  2.1 First, regression coefficients are drawn from
-  
-  \[
-  \beta^{*}\sim MVN(\hat{\beta}_0,\hat{vcov}(\hat{\beta}_0)) 
-  \]
-  
-  2.2 The variance of the cluster effects is drawn, according to Demombynes (2008) and   Demombynes et al. (2002), from
-  
-  \[
-  \sigma_{\eta}^{2*}\sim Gamma (\hat{\sigma}_{\eta0}^{2}, \hat{var}(\hat{\sigma}_{\eta0}^{2}))
-  \]
-  
-  2.3 The variance of the household-level errors is drawn, according to Gelman 
-  et al. (2004, pp. 364-365), from
-  
-  \[
-  \sigma_{e}^{2*}\sim\hat{\sigma}_{e0}^{2}\frac{n-K}{\chi_{n-K}^{2*}}
-  \]
-  
-  where $\chi_{n-K}^{2*}$ denotes a random number from a chi-squared distribution with   $n-K$ degrees of freedom. Here, $n$ is the number of observations in the survey     data used to fit the model and $K$ is the number of correlates used in the model.
+*===============================================================================
+//3. Run the simulations
+*===============================================================================
 
-<details>
-  <summary>__Click to see answer__</summary>
-  <p style="color:red">
-  Aqui pongo el model fit via FGLS
-  </p>
-</details>
+/*
+Now, we will run 5,000 simulations where we follow the model's assumpitons.
+under each simulation we will add to XB the psu and area effect, as well
+as the household specific error. 
+Then, under each population we will obtain CensusEB estimates under 
+unit-level CensusEB, and unit-context models. For each 
+population and the EB predictions obtained we will calculate the difference
+between the true poverty rate and the predicted one, and the squared difference.
+After 5000 simulations these are our empirical bias and MSE.
+*/
 
-  <br>
-  
-__Step 3.__ Using the simulated model parameters in step 2, calculate the welfare for every household in the census $y_{ch}^*$ from the model as
-\[
-\ln(y_{ch}^*)= x_{ch}\beta^* +\eta_{c}^* + e_{ch}^*
-\]
+// For each simulation we need to add random location effects and 
+// household errors
+forval z=1/`total_sim'{
+qui{
+	use "$mdata\popXT.dta", clear
+		//random area effects
+		gen double eta_a = rnormal(0,$sigmaeta_area) if area_1st==1
+			replace eta_a = eta_a[_n-1] if missing(eta_a)
+		gen double eta_p = rnormal(0,$sigmaeta_psu)  if psu_1st ==1
+			replace eta_p = eta_p[_n-1] if missing(eta_p)
+		//household errors
+		gen eps = rnormal(0,$sigmaeps)
+		//Generate Y adding the XB and the drawn errors
+		egen double Y  = rsum(XB eta_a eta_p eps)
+		gen double e_y = exp(Y)		
+	tempfile myPop
+	save `myPop'
+	
+	if (`z'==1){
+		reg Y x*
+		predict res, res
+		reg Y  meanpsu_x1 meanpsu_x2 meanpsu_x3 meanpsu_x4 meanpsu_x5 meanpsu_x6 meanpsu_x7
+		predict resA, res
+		
+		twoway (kdensity res) (kdensity resA)
+	}
 
-where the household-specific errors are generated as
-\[
-e_{ch}^*\sim\text{iid}N(0, \sigma_{e}^2*)\\
-\]
+	//Seed stage for simulations, changes after every iteration!
+	local seedstage `c(rngstate)'
+	
+		
+	//Create true values
+	gen fgt0_$pline = (e_y<$pline)*(1-e_y/$pline)^0
+	gen fgt0_$pline1 = (e_y<$pline1)*(1-e_y/$pline1)^0
 
-and the location effects are generated as
-\[
-\eta_{c}^*\sim\text{iid}N(0, \sigma_{\eta}^2*)\\
-\]
+	preserve
+		//true values by area
+		groupfunction [aw=hhsize], mean(fgt* e_y Y) by(area)
+		rename e_y mean
+		tempfile true
+		save `true'
+	restore
+	
+	//Bring in the 20K pop and use it as a survey
+	use `myPop', clear
+	
+	//Do model selection for Area
+	if (`z'==1){
+		lnskew0 y1 = e_y
+		lassoregress y1 mean*,  numfolds(5)
+		local vv = e(varlist_nonzero)
+		global area_lnskew `vv'
+		drop y1
+		
+		bcskew0 y1 = e_y
+		lassoregress y1 mean*,  numfolds(5)
+		local vv = e(varlist_nonzero)
+		global area_bc `vv'
+		drop y1
+		
+		lassoregress Y mean*,  numfolds(5)
+		local vv = e(varlist_nonzero)
+		global area_vars1 `vv'
+		
+	}
+	
+	
+	//Obtain UC SAE, without transforming
+	preserve
+		sae sim h3 e_y $area_lnskew,  area(area)  ///
+		mcrep(50) bsrep(0) matin("$mdata\census") seed(`seedstage') lnskew ///
+		pwcensus(hhsize) indicators(FGT0) aggids(0) uniq(hhid) plines($pline $pline1)
+			rename avg_fgt* uc_fgt*
+			rename Unit area
+			rename Mean uc_mean
+		tempfile h3area
+		save `h3area'
+	restore	
+	
+	preserve
+		sae sim h3 Y $area_vars1,  area(area)  ///
+		mcrep(50) bsrep(0) matin("$mdata\census") seed(`seedstage') lny ///
+		pwcensus(hhsize) indicators(FGT0) aggids(0) uniq(hhid) plines($pline $pline1)
+			rename avg_fgt* ucn_fgt*
+			rename Unit area
+			rename Mean ucn_mean
+		tempfile h3arealn
+		save `h3arealn'
+	restore	
+	
+	preserve
+		sae sim h3 e_y $area_bc,  area(area)  ///
+		mcrep(50) bsrep(0) matin("$mdata\census") seed(`seedstage') bcox ///
+		pwcensus(hhsize) indicators(FGT0) aggids(0) uniq(hhid) plines($pline $pline1)
+			rename avg_fgt* ucb_fgt*
+			rename Unit area
+			rename Mean ucb_mean
+		tempfile h3areabc
+		save `h3areabc'
+	restore	
+	
+	
 
-The vector of simulated welfares $y_{c}^*=(y_{c1}^*,y_{c2}^*,...,y_{cN_{c}}^*)'$
-for every household within location $c$ will be of size $N_{c}$, the number of 
-census housholds in the location.
+	//CensusEB
+	preserve
+		sae sim h3 Y x1 x2 x3 x4 x5 x6 x7,  area(area) lny ///
+		mcrep(50) bsrep(0) matin("$mdata\census") seed(`seedstage') ///
+		pwcensus(hhsize) indicators(FGT0) aggids(0) uniq(hhid) plines($pline $pline1)
+			rename avg_fgt* ceb_fgt*
+			rename Unit area
+			rename Mean ceb_mean
+		tempfile h3eb
+		save `h3eb'
+	restore
+	
+	
+	
 
-<br>
+	//Open true point estimates
+	use `true', clear
+	
+	//Merge in the model based estimates
+	merge 1:1 area using `h3area', keepusing(uc_*)
+		drop _m
+	merge 1:1 area using `h3eb'  , keepusing(ceb_*)
+		drop _m	
+	merge 1:1 area using `h3arealn'  , keepusing(ucn_*)
+		drop _m
+	merge 1:1 area using `h3areabc'  , keepusing(ucb_*)
+		drop _m	
+	
+	
+	
+	//Calculate bias and MSE
+	local j mean
+	foreach i in ceb ucn uc ucb{
+		gen double `i'_bias_`j' = (`i'_`j'-`j')/`total_sim'
+		gen double `i'_mse_`j'  = ((`i'_`j'-`j')^2)/`total_sim'
+	}
+	
+	foreach line of local lines{
+		foreach i in ceb ucn uc ucb{
+			foreach j in fgt0{		
+				gen double `i'_bias_`j'_`line' = (`i'_`j'_`line'-`j'_`line')/`total_sim'
+				gen double `i'_mse_`j'_`line'  = ((`i'_`j'_`line'-`j'_`line')^2)/`total_sim'
+			}
+		}
+	}
+	keep area *_bias_* *_mse_*
 
-__Step 4.__ Repeat steps $2$ and $3$ $M$ times. The standard value has been so far 
-$M = 100$, although in practice a larger number of simulations is required to
-approximate well the distributions and so a larger number should be executed.
+	//For first sim we rename the vector to *T
+	if (`z'==1){		
+		rename *_bias_* *_bias_*T
+		rename *_mse_*  *_mse_*T
+		
+		tempfile Stats
+		save `Stats'
+	}
+	else{ //After the first sim, we add the bias and MSE to *T
+		merge 1:1 area using `Stats'
+			drop _m
+		local j mean
+		foreach i in ceb ucn uc ucb{
+			replace `i'_bias_`j'T = `i'_bias_`j'T + `i'_bias_`j'
+			replace `i'_mse_`j'T  = `i'_mse_`j'T + `i'_mse_`j'
+		}
+		foreach line of local lines{
+			foreach i in ceb ucn uc ucb{
+				foreach j in fgt0{					
+					replace `i'_bias_`j'_`line'T = `i'_bias_`j'_`line'T + `i'_bias_`j'_`line'
+					replace `i'_mse_`j'_`line'T  = `i'_mse_`j'_`line'T + `i'_mse_`j'_`line'
+					
+					drop `i'_bias_`j'_`line' `i'_mse_`j'_`line'				
+				}
+			}
+		}
+		tempfile Stats
+		save `Stats'
+	}
+}
+dis as error "Sim num `z'"	
+}
 
-<br>
 
+save "$mdata\bias_in_mymodel_twolines.dta", replace
 
-__Step 5.__ With all vectors $y_{c}$ , $c = 1,...,C$ of simulated welfare in hand, 
-indicators can be produced. Definebthe indicator of interest for a given 
-simulated vector in location $c$ as $\tau_{C}^{ELL*}=f(y_{c}^*)$.
+```
 
-<br>
+(off-census:ref)=
 
+## References
 
-## Area level models
+{bibliography}
+:filter: docname in docnames
 
+(off-census:notes)=
 
-# Design-based estimation
+## Notes
 
-Design-based (Model-assisted) methods
+[^1]: Another approach for cases where the census is outdated is to fit a unit-level model considering only the covariates with low (or even null) variability along time. This approach reduces (or may even solve) the problem of using an outdated census.
 
-Definition (Rao, 2003): In the context of sample surveys, we refer to a domain
-estimator as *direct* if it is based only on the domain-specic sample data.
-(...)
-Design based estimators make use of survey weights, and the
-associated inferences are based on the robability distribution
-induced by the sampling design with the population values held fix (...).
+[^2]: The method presents advantages over the traditional Fay-Herriot ([Fay 1979](#)) models: 1) it may be an alternative when there are multiple locations with very small samples, for which the sampling variance of the direct estimator (used on the left-hand side of the Fay-Herriot model) becomes 0, and 2) it may be used to obtain multiple indicators from a single model under reversible transformations.
 
+[^3]: The average absolute empirical bias is the average across areas of the area-specific absolute biases.
 
-* Direct estimation
-* Can allow for use of models (model-assisted)
-* Inference is under the randomization distribution
+[^4]: [Vishwanath](https://blogs.worldbank.org/opendata/using-big-data-and-machine-learning-locate-poor-nigeria)
+
+[^5]: The method relies on a squared-error loss function where the sequential fits are added until there is no improvement in the loss function. For a detailed description of gradient boosting, refer to [Natekin 2013](#).
+
+[^6]: [Corral 2021](#) provides a detailed explanation of how this dataset was created.
+
+[^7]: The results shown here were obtained from Python.
+
+[^8]: The quality of the covariates and how well these predict poverty at the modeling level determine the overall quality of the estimates obtained.
+
+[^9]: What is shown in {numref}`xgboost` is the empirical MSE, not an estimate of the MSE.
+
+[^10]: Beyond unit-context models, benchmarking in many instances may be necessary to ensure aggregate estimates are aligned to official published estimates.
+
+[^11]: Covariates are simulated following [Corral 2021](#) who follow the approach from [Molina 2010](#) and [Marhuenda 2017](#), with slight modifications.
+
+[^12]: Depending on the computing power, this may take longer than 2 days to run.
+
