@@ -758,6 +758,15 @@ save "$mdata\bias_in_mymodel_twolines.dta", replace
 
 (off-census:notes)=
 
+(off-census:ref)=
+
+## References
+
+{bibliography}
+:filter: docname in docnames
+
+(off-census:notes)=
+
 ## Notes
 
 [^1]: Another approach for cases where the census is outdated is to fit a unit-level model considering only the covariates with low (or even null) variability along time. This approach reduces (or may even solve) the problem of using an outdated census.
