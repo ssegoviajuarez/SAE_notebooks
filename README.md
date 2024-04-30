@@ -853,7 +853,7 @@ The Stata code below produces the simulations described in [off-census:annex](#o
 
 <details>
 
-<summary><font color='red'>test blue color font</font></summary>
+<summary> <span style="color:red">Text content</span></summary>
 
 ```stata
 set more off
