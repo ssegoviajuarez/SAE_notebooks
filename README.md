@@ -223,7 +223,7 @@ The do-file below reproduces the simulation experiment described in **off-census
 
 <details>
 
-<summary><font color='red'>test blue color font</font></summary>
+<summary> <font color='red'>test blue color font</font> </summary>
 
 ```stata
 set more off
