@@ -223,7 +223,7 @@ The do-file below reproduces the simulation experiment described in **off-census
 
 <details>
 
-<summary>Tips for collapsed sections</summary>
+<summary><font color='red'>test blue color font</font></summary>
 
 ```stata
 set more off
@@ -496,7 +496,7 @@ The do-file below reproduces the simulation experiment described in **off-census
 
 <details>
 
-<summary>Tips for collapsed sections</summary>
+<summary><font color='red'>test blue color font</font></summary>
 
 ```stata
 set more off
@@ -853,7 +853,7 @@ The Stata code below produces the simulations described in [off-census:annex](#o
 
 <details>
 
-<summary>Tips for collapsed sections</summary>
+<summary><font color='red'>test blue color font</font></summary>
 
 ```stata
 set more off
