@@ -40,19 +40,19 @@ $y$-values $y_{ch}$, associated with the units $h$ in the areas $c$, are
 related to auxiliary variables $x_{ch}$ through a one-way nested
 error regression model:
 
-\[
+$$\[
 \ln(y_{ch})= x_{ch}'\beta + u_{ch} \\
 \ln(y_{ch})= x_{ch}\beta +\eta_{c} + e_{ch}
-\]
+\]$$
 
 where,
 
-\[
+$$\[
 h=1,...,N_{c} \\
 c=1,...,C \\
 \eta_{c}\sim\text{iid}N(0, \sigma_{\eta}^2) \\
 e_{ch}\sim\text{iid}N(0, \sigma_{e}^2) \\
-\]
+\]$$
 
 
 
@@ -134,6 +134,7 @@ where the $0$ subscript is used hereafter to indicate that the estimates come fr
   Once with $\hat{\sigma}_{e,ch}^2$ and $\hat{\sigma}_{\eta}^2$, we can construct
   the covariance matrix of the error vector $u_{ch}=\eta_c + e_{ch}$ $\hat{\Omega}$ of   dimension $N\times N$. The estimates for the GLS are:
 
+```math
   \[
   \hat{\beta}_0 = (X'W\Omega^{-1}X)^{-1}X'W\Omega^{-1}Y
   \]
@@ -141,6 +142,8 @@ where the $0$ subscript is used hereafter to indicate that the estimates come fr
   \[
   Var(\hat{\beta}_0) = (X'W\Omega^{-1}X)^{-1}(X'W\Omega^{-1}WX)(X'W\Omega^{-1}X)^{-1}
   \]
+```
+
   where $W$ is a $N\times N$ diagonal matrix of sampling weights. Beause $W\Omega^{-1}$
   is __usually not symmetric__ due to the difference in sampling weights between observations, the covariance matrix must be adjusted by obtaining the average of the 
   covariance matrix and its transpose. Check (Haslett et al., 2010). 
