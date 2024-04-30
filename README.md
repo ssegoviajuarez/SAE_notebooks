@@ -1,23 +1,6 @@
 # SAE_notebooks
 SAE Guidelines Jupyter notebooks
 
-<details>
-
-<summary>Tips for collapsed sections</summary>
-
-### You can add a header
-
-You can add text within a collapsed section. 
-
-You can add an image or a code block, too.
-
-```ruby
-   puts "Hello World"
-```
-
-</details>
-
-
 Considerable attention has been given to produce reliable poverty maps in off-census years. An updated poverty map is increasingly becoming an essential resource to improve the targeting of many social protection programs around the world, which was underscored by the rapid onset and widespread impact of the COVID-19 crisis. Even in the best-case scenarios, poverty maps that rely on unit-level small area estimation techniques combining a census and survey can only be obtained once a decade. In off-census years, the typical small area approach applied has been an area-level model, such as a Fay-Herriot or a sub-area-level model, such as the one proposed by [Torabi et al., 2014](citation#torabi2014small). Nevertheless, since the perceived gains in precision from area-level models are less than stellar, methods that combine unit- and area-level models have been proposed (see [DOI:10.1080/00220388.2012.682983](citation#doi:10.1080/00220388.2012.682983); [Lange et al., 2018](citation#lange2018small); [Masaki et al., 2020](citation#masaki2020small)). These models are here called unit-context models and, although appealing, seem to yield considerably biased estimates.
 
 Beyond the small area estimation literature, the machine learning literature has made several contributions to poverty mapping. Recent research in this area includes [Chi et al., 2021](citation#chi2021micro) and [Jean et al., 2016](citation#jean2016combining). The authors of these two papers created highly disaggregated poverty maps by modeling the direct estimates of an asset index at a very low geographical level (e.g., villages or enumeration areas) using satellite-derived covariates. The authors of those papers rely on machine learning approaches, such as gradient boosting and ridge regression, to obtain estimates for small areas. These models provide point estimates of poverty at a low geographical level, although they do not necessarily provide an adequate estimate of the method's noise. The methods are attractive since they present the possibility of producing a poverty map even when a contemporaneous or reliable census does not exist.
@@ -166,6 +149,25 @@ As already said, to show that estimators based on unit-context models are still 
 The average across the 5,000 simulations of the estimation errors for each area represent the empirical biases of the considered area estimators. The Stata script to replicate these simulations can be found in the appendix ([Unit-Context Models -- Validation](off-census:appendix:experiment1:validation)).
 
 One could argue that, in this scenario, the \(p_7\) of unit-context models is much lower than that one in the applications of [Masaki et al., 2020](cite:t:masaki2020small) and of [Lange et al., 2018](cite:t:lange2018small). For this reason, the simulation experiment is repeated modifying slightly the data generating process to increase the \(p_7\). Specifically, in this experiment, the covariate \(x_{6ach}\) is now generated from a random Poisson variable with mean \(p_7\), where \(p_7\) is a random uniform value between 0 and 1, and \(p_7\) is increased from 0.5 to 0.6. This modification leads to an \(p_7\) of the unit-context model between 0.15 and 0.20, while for unit-level models the \(p_7\) exceeds 0.60. The Stata script to replicate these simulations can be found in the following [Unit-Context Models -- Validation](off-census:appendix:experiment1:better-fit).
+
+
+<details>
+
+<summary>Tips for collapsed sections</summary>
+
+### You can add a header
+
+You can add text within a collapsed section. 
+
+You can add an image or a code block, too.
+
+```ruby
+   puts "Hello World"
+```
+
+
+
+
 
 
 ```stata
@@ -332,11 +334,21 @@ forval z=1/`total_sim'{
 	
 	//Obtain UC SAE
 ```
-
+</details>
 
 # Unit-Context Models -- Validation Across All Poverty Lines
 
 The Stata code below produces the simulations described in [off-census:annex](#off-census:annex). Here, a sample is drawn from the population and then, estimates are obtained for 99 different poverty lines. Each poverty line corresponds to a percentile of the very first generated population.
+
+<details>
+
+<summary>Tips for collapsed sections</summary>
+
+### You can add a header
+
+You can add text within a collapsed section. 
+
+You can add an image or a code block, too.
 
 ```stata
 set more off
@@ -435,10 +447,27 @@ set obs `=`obsnum'/`areasize''
 	tempfile areameans 
 	qui save `
 ```
+</details>
+
 
 # Unit-Context Models -- Validation Across All Poverty Lines
 
 The Stata code below produces the simulations described in [off-census:annex](#off-census:annex). Here, a sample is drawn from the population and then, estimates are obtained for 99 different poverty lines. Each poverty line corresponds to a percentile of the very first generated population.
+
+
+<details>
+
+<summary>Tips for collapsed sections</summary>
+
+### You can add a header
+
+You can add text within a collapsed section. 
+
+You can add an image or a code block, too.
+
+```ruby
+   puts "Hello World"
+```
 
 ```stata
 set more off
@@ -765,6 +794,8 @@ dis as error "Sim num `z'"
 save "$mdata\bias_in_mymodel_twolines.dta", replace
 
 ```
+</details>
+
 
 (off-census:ref)=
 
