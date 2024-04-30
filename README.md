@@ -35,12 +35,7 @@ SAE Guidelines Jupyter notebooks
 
 ## [Unit-Context Models – Technical Annex](#unit-context-models-technical-annex)
 
-
-
-
 ### [Producing Estimators Based on Unit-Context Models](#producing-estimators-based-on-unit-context-models)
-
-### Producing Estimators Based on Unit-Context Models
 
 The production of estimators based on unit-context models is similar to those using regular unit-level models, except that unit-level covariates are not used. This implies that the share of welfare variation across households explained by the model's covariates is expected to be lower and, within many areas, welfare may be poorly explained. Still, unit-context models may be regarded as an approximation to the true underlying data generating process. Actually, they are particular cases of unit-level models (**Equation {eq}`eq:1-1**); consequently, normality and linearity assumptions need to be checked similarly with the corresponding covariates. The focus of this section is on the unit-context models as presented in {cite:t}`masaki2020small` and not those from {cite:t}`lange2018small` and {cite:t}`doi:10.1080/00220388.2012.682983`. The reason for this choice is that {cite:t}`lange2018small` and {cite:t}`doi:10.1080/00220388.2012.682983` approach relies on ELL's method, which suffers from the same issues noted by previous work (see {cite:t}`molina2010small`; {cite:t}`corral2020pull`; {cite:t}`corral2021map` among others). In addition, {cite:t}`masaki2020small` tested different methods, including EB, and concluded that EB provides a considerable gain in accuracy and efficiency over other methods.
 
@@ -59,13 +54,9 @@ Benchmarking is not recommended unless publication requirements include that est
 An additional problem for unit-context models in many applications is that it may not be possible to match census and survey PSUs. In some cases, it is due to confidentiality reasons and, in others, it is due to different sampling frames. The latter problem will likely affect applications where the census and survey correspond to different years. Fay-Herriot and other area or subarea models that use the same aggregated variables are an alternative approach to unit-context models for the case where the census is outdated, for which the model is not necessarily in question, since these models may be correctly specified. Of course, model checking is also needed.
 
 
-
-
 ## [Appendix](#appendix)
 
 ### [Simulation Experiment 1 for Unit-Context Models](#simulation-experiment-1-for-unit-context-models)
-
-### Simulation Experiment 1 for Unit-Context Models
 
 A simulation experiment is conducted with the purpose of illustrating the inherent bias of the resulting CensusEB estimators based on unit-context models due to biased estimators of the model parameters. To remove a source of bias of estimators based on these models, which is due to differences between the sample and census means of covariates as shown in the Appendix of {cite:t}`corral2021map`, the model is fit to the whole population data and small area estimates are also calculated based on the same population data. The simulation is inspired by those conducted by {cite:t}`marhuenda2017poverty` where the true data generating process is a two-fold nested-error model. This model will better accommodate the usual applications of poverty mapping, where household surveys use two-stage sampling. A two-fold structure also allows for the inclusion of contextual variables that are at the cluster level while the random location effect is specified at the area level, similar to {cite:t}`masaki2020small`. The creation of the census data set is similar to the one shown in section 3 of {cite:t}`corral2021map`.
 
@@ -109,10 +100,612 @@ One could argue that, in this scenario, the $R^{2}$ of unit-context models is mu
 
 The do-file below reproduces the simulation experiment described in **off-census:annex**, but considering unit-context models with a better $R^{2}$ and producing estimates for 2 different poverty thresholds. Note that the model is fit to the whole set of population data and then estimates are also obtained by simulating on to the whole set of population data.
 
+<details>
+
+<summary>Tips for collapsed sections</summary>
+
+```stata
+set more off
+clear all
+
+global main     "C:\Users\\`c(username)'\OneDrive\SAE Guidelines 2021\"
+global section  "$main\3_Unit_level\"
+global mdata    "$section\1_data\"
+global myfigs   "$section\3_figures\"
+/*
+Author: Paul Corral
+Do file below is a test for a two fold nested error model. It follows the method 
+illustrated in the paper from Marhuenda et al. (2017) and others in the link 
+below.
+
+We start off by creating a fake data set as illustrated in that same paper.
+ https://rss.onlinelibrary.wiley.com/doi/pdf/10.1111/rssa.12306
+*/
+/*
+Purpose of file is to test SAE model performance by imputing on to the 
+population instead of a sample. This should remove all other sources of bias.
+*/
+
+*===============================================================================
+// Parameters for simulated data set
+*===============================================================================
+	version 15
+	set seed 734137
+	global numobs = 20000
+	global outsample = 50
+	global areasize  = 500
+	global psusize   = 50
+	
+	//We have 2 location effects below
+	global sigmaeta_psu   = 0.05   
+	global sigmaeta_area  = 0.1
+	//We have household specific errors
+	global sigmaeps   = 0.5
+	//Poverty line fixed at 12	
+	global  pline  = 12
+	global lnpline = ln(12)
+	//locals
+	local obsnum    = $numobs
+	local areasize  = $areasize
+	local psusize   = $psusize
+	local total_sim = 5000
+	
+*===============================================================================
+//1.Create simulated data
+*===============================================================================
+//Start off with # of observations
+set obs `=`obsnum'/`areasize''	
+	gen area = _n
+		lab var area "Area identifier"
+	//expand to create 10 psu per area
+	expand `=`areasize'/`psusize''
+	sort area
+	//PSUs labelled from 1 to 10 within each area
+	gen psu = _n - (area-1)*10
+		lab var psu "PSU identifier"
+	//expand to create 50 observations by psu	
+	expand `psusize'
+	sort area psu
+	//Household id
+	gen hhid = _n
+		lab var hhid "Household identifier"
+		
+	//Covariates, some are corrlated to the area and psu's label
+	gen x1=runiform()<=(0.3+.5*area/(`obsnum'/`areasize') + ///
+	0.2*psu/(`areasize'/`psusize'))
+	gen x2=runiform()<=(0.2)
+	gen x3= runiform()<=(0.1 + .2*area/int(`obsnum'/`areasize'))
+	gen x4= runiform()<=(0.5+0.3*area/int(`obsnum'/`areasize') + ///
+	0.1*psu/int(`areasize'/`psusize'))
+	gen x5= round(max(1,rpoisson(3)*(1-.1*area/int(`obsnum'/`areasize'))),1)
+	gen x6= runiform()<=0.4
+	gen x7= runiform()>=(0.2+0.4*area/int(`obsnum'/`areasize') + ///
+	0.1*psu/int(`areasize'/`psusize'))	
+	
+	//note that this matches the model from eq. 3 of Corral et al. (2021)
+	gen XB = 3+ .09* x1-.04* x2 - 0.09*x3 + 0.4*x4 - 0.25*x5 + 0.1*x6 + 0.33*x7
+		lab var XB "Linear fit"
+		
+	//Create psu level means...
+	groupfunction, mean(x*) merge by(area psu) 
+		
+	//Indicate first area observation
+	bysort area: gen area_1st = 1 if _n==1
+	//Indicate first psu observation
+	bysort area psu: gen psu_1st = 1 if _n==1
+	sort hhid
+	//We need weights for SAE command
+	gen hhsize = 1
+		lab var hhsize "HH size for command"
+
+	//Create hierarchical identifier
+	gen uno = 100+area
+	gen dos = 100+psu
+	gen HID = string(uno)+string(dos)
+		
+//Save population's Xs	and linear fit
+save "$mdata\popX.dta", replace
+
+*===============================================================================
+//2. Import data for SAE
+*===============================================================================
+sae data import, datain("$mdata\popX.dta") varlist( mean_x1 mean_x2 mean_x3 ///
+mean_x4 mean_x5 mean_x6 mean_x7 x1 x2 x3 x4 x5 x6 x7 hhsize) ///
+area(area) uniqid(hhid) dataout("$mdata\census")
+
+*===============================================================================
+//3. Run the simulations
+*===============================================================================
+
+
+/*
+Now, we will run 5,000 simulations where we follow the model's assumpitons.
+under each simulation we will add to XB the psu and area effect, as well
+as the household specific error. 
+Then, under each population we will obtain CensusEB estimates under 
+unit-level CensusEB, and unit-context models. For each 
+population and the EB predictions obtained we will calculate the difference
+between the true poverty rate and the predicted one, and the squared difference.
+After 5000 simulations these are our empirical bias and MSE.
+*/
+
+// For each simulation we need to add random location effects and 
+// household errors
+forval z=1/`total_sim'{
+	use "$mdata\popX.dta", clear
+		//random area effects
+		gen double eta_a = rnormal(0,$sigmaeta_area) if area_1st==1
+			replace eta_a = eta_a[_n-1] if missing(eta_a)
+		gen double eta_p = rnormal(0,$sigmaeta_psu)  if psu_1st ==1
+			replace eta_p = eta_p[_n-1] if missing(eta_p)
+		//household errors
+		gen eps = rnormal(0,$sigmaeps)
+		//Generate Y adding the XB and the drawn errors
+		egen double Y  = rsum(XB eta_a eta_p eps)
+			
+	tempfile myPop
+	save `myPop'
+	
+	//Seed stage for simulations, changes after every iteration!
+	local seedstage `c(rngstate)'
+	
+	gen double e_y = exp(Y)		
+	//Create true values
+	forval a = 0/2{
+		gen fgt`a' = (e_y<$pline)*(1-e_y/$pline)^`a'
+	}
+	preserve
+		//true values by area
+		groupfunction [aw=hhsize], mean(fgt* e_y Y) by(area)
+		rename e_y mean
+		tempfile true
+		save `true'
+	restore
+	
+	//Bring in the 20K pop and use it as a survey
+	use `myPop', clear
+	
+	//Obtain UC SAE
+	preserve
+		sae sim h3 Y mean_x1 mean_x2 mean_x3 mean_x4 mean_x5 mean_x6 mean_x7,  area(area)  ///
+		mcrep(50) bsrep(0) matin("$mdata\census") lny seed(`seedstage') ///
+		pwcensus(hhsize) indicators(FGT0 FGT1 FGT2) aggids(0) uniq(hhid) plines($pline)
+			rename avg_fgt* uc_fgt*
+			rename Unit area
+			rename Mean uc_mean
+		tempfile h3area
+		save `h3area'
+	restore
+	
+	//Obtain UC SAE, without transforming
+	preserve
+		sae sim h3 Y mean_x1 mean_x2 mean_x3 mean_x4 mean_x5 mean_x6 mean_x7,  area(area)  ///
+		mcrep(50) bsrep(0) matin("$mdata\census") seed(`seedstage') ///
+		pwcensus(hhsize) indicators(FGT0 FGT1 FGT2) aggids(0) uniq(hhid) plines($lnpline)
+			rename avg_fgt* ucn_fgt*
+			rename Unit area
+			rename Mean ucn_Y
+		tempfile h3arean
+		save `h3arean'
+	restore	
+	
+	//Obtain CensusEB SAE
+	preserve
+		sae sim h3 Y x1 x2 x3 x4 x5 x6 x7,  area(area)  ///
+		mcrep(50) bsrep(0) matin("$mdata\census") lny seed(`seedstage') ///
+		pwcensus(hhsize) indicators(FGT0 FGT1 FGT2) aggids(0) uniq(hhid) plines($pline)
+			rename avg_fgt* ceb_fgt*
+			rename Unit area
+			rename Mean ceb_mean
+		tempfile h3eb
+		save `h3eb'
+	restore
+	
+	//Without transforming...CensusEB
+	preserve
+		sae sim h3 Y x1 x2 x3 x4 x5 x6 x7,  area(area)  ///
+		mcrep(50) bsrep(0) matin("$mdata\census") seed(`seedstage') ///
+		pwcensus(hhsize) indicators(FGT0 FGT1 FGT2) aggids(0) uniq(hhid) plines($lnpline)
+			rename avg_fgt* cebn_fgt*
+			rename Unit area
+			rename Mean cebn_Y
+		tempfile h3ebn
+		save `h3ebn'
+	restore
+	
+	
+	//Open true point estimates
+	use `true', clear
+	
+	//Merge in the model based estimates
+	merge 1:1 area using `h3area', keepusing(uc_*)
+		drop _m
+	merge 1:1 area using `h3eb'  , keepusing(ceb_*)
+		drop _m
+	merge 1:1 area using `h3arean', keepusing(ucn_*)
+		drop _m
+	merge 1:1 area using `h3ebn'  , keepusing(cebn_*)
+		drop _m
+	
+	//Calculate bias and MSE
+	foreach j in fgt0 fgt1 fgt2 mean{
+		foreach i in ceb uc cebn ucn{
+			if ("`j'"=="mean" & ("`i'"=="cebn"|"`i'"=="ucn"))	local j Y
+			gen double `i'_bias_`j' = (`i'_`j'-`j')/`total_sim'
+			gen double `i'_mse_`j'  = ((`i'_`j'-`j')^2)/`total_sim'
+		}
+	}
+	keep area *_bias_* *_mse_*
+	
+	//For first sim we rename the vector to *T
+	if (`z'==1){		
+		rename *_bias_* *_bias_*T
+		rename *_mse_*  *_mse_*T
+		
+		tempfile Stats
+		save `Stats'
+	}
+	else{ //After the first sim, we add the bias and MSE to *T
+		merge 1:1 area using `Stats'
+			drop _m
+		
+		foreach j in fgt0 fgt1 fgt2 mean{
+			foreach i in ceb uc cebn ucn{
+				if ("`j'"=="mean" & ("`i'"=="cebn"|"`i'"=="ucn"))	local j Y			
+				replace `i'_bias_`j'T = `i'_bias_`j'T + `i'_bias_`j'
+				replace `i'_mse_`j'T  = `i'_mse_`j'T + `i'_mse_`j'
+				
+				drop `i'_bias_`j' `i'_mse_`j'				
+			}
+		}
+		tempfile Stats
+		save `Stats'
+	}
+	
+}
+
+save "$mdata\bias_in_mymodel.dta", replace
+```
+</details>
+
 
 #### [Unit-Context Models – Validation with Better Model Fit](#unit-context-models-validation-with-better-model-fit)
 
 The do-file below reproduces the simulation experiment described in **off-census:annex**, but considering unit-context models with a better $R^{2}$ and producing estimates for 2 different poverty thresholds. Note that the model is fit to the whole set of population data and then estimates are also obtained by simulating on to the whole set of population data.
+
+<details>
+
+<summary>Tips for collapsed sections</summary>
+
+```stata
+set more off
+clear all
+
+global main     "C:\Users\\`c(username)'\OneDrive\SAE Guidelines 2021\"
+global section  "$main\3_Unit_level\"
+global mdata    "$section\1_data\"
+global myfigs   "$section\3_figures\"
+/*
+Author: Paul Corral
+Version @2 differs from previous one in that we create a model where 
+UC models have a better fit (R2 ~ 0.18), also welfare is somewhat more skewed
+
+
+We start off by creating a fake data set illustrated in Marhuenda et al. (2017).
+ https://rss.onlinelibrary.wiley.com/doi/pdf/10.1111/rssa.12306
+*/
+/*
+Purpose of file is to test SAE model performance by imputing on to the 
+population instead of a sample. This should remove all other sources of bias.
+*/
+
+*===============================================================================
+// Parameters for simulated data set
+*===============================================================================
+	version 15
+	set seed 734137
+	global numobs = 20000
+	global areasize  = 500
+	global psusize   = 50
+	
+	//We have 2 location effects below
+	global sigmaeta_psu   = 0.05   
+	global sigmaeta_area  = 0.1
+	//We have household specific errors
+	global sigmaeps   = 0.6
+	//Poverty line fixed at 27.8
+	global pline    = 13
+	global lnpline = ln($pline)
+	global pline1   = 28
+	global lnpline1 = ln($pline1)
+	local lines $pline $pline1
+	//locals
+	local obsnum    = $numobs
+	local areasize  = $areasize
+	local psusize   = $psusize
+	local total_sim = 1
+	
+*===============================================================================
+//1.Create simulated data
+*===============================================================================
+//Start off with # of observations
+set obs `=`obsnum'/`areasize''	
+	gen area = _n
+		lab var area "Area identifier"
+	//expand to create 10 psu per area
+	expand `=`areasize'/`psusize''
+	sort area
+	//PSUs labelled from 1 to 10 within each area
+	gen psu = _n - (area-1)*`=`areasize'/`psusize''
+		lab var psu "PSU identifier"
+	//expand to create 50 observations by psu	
+	expand `psusize'
+	sort area psu
+	//Household id
+	gen hhid = _n
+		lab var hhid "Household identifier"
+		
+	//Covariates, some are corrlated to the area and psu's label
+	gen x1=runiform()<=(0.3+.5*area/(`obsnum'/`areasize') + ///
+	0.2*psu/(`areasize'/`psusize'))
+	gen x2=runiform()<=(0.2)
+	gen x3= runiform()<=(0.1 + .2*area/int(`obsnum'/`areasize'))
+	gen x4= runiform()<=(0.5+0.3*area/int(`obsnum'/`areasize') + ///
+	0.1*psu/int(`areasize'/`psusize'))
+	gen x5= round(max(1,rpoisson(3)*(1-.1*area/int(`obsnum'/`areasize'))),1)
+	gen x6= runiform()<=0.4
+	gen x7=rpoisson(3)*(1*psu/int(`areasize'/`psusize')- 1*area/int(`obsnum'/`areasize')+ 1*uniform())
+	
+	//note that this matches the model from eq. 3 of Corral et al. (2021)
+	gen XB = 3+ .09* x1-.04* x2 - 0.09*x3 + 0.4*x4 - 0.25*x5 + 0.1*x6 + 0.33*x7
+		lab var XB "Linear fit"
+		
+	//Create psu level means...
+	preserve 
+	collapse (mean) x*, by(area psu)
+	rename x* meanpsu_x* 
+	tempfile psumeans 
+	qui save `psumeans'
+	restore 
+	
+	preserve 
+	collapse (mean) x*, by(area)
+	rename x* meanarea_x* 
+	tempfile areameans 
+	qui save `areameans'
+	restore 
+
+	merge n:1 area psu using `psumeans', assert(3) nogen 
+	merge n:1 area using `areameans', assert(3) nogen 
+		
+	//Indicate first area observation
+	bysort area: gen area_1st = 1 if _n==1
+	//Indicate first psu observation
+	bysort area psu: gen psu_1st = 1 if _n==1
+	sort hhid
+	//We need weights for SAE command
+	gen hhsize = 1
+		lab var hhsize "HH size for command"
+		
+	//Create hierarchical identifier
+	gen uno = 100+area
+	gen dos = 100+psu
+	gen double  HID = real(string(uno)+string(dos))
+	
+//Save population's Xs	and linear fit
+save "$mdata\popXT.dta", replace
+
+*===============================================================================
+//2. Import data for SAE
+*===============================================================================
+unab themeans : mean*
+sae data import, datain("$mdata\popXT.dta") varlist(`themeans' x1 x2 x3 x4 x5 x6 x7 hhsize) ///
+area(area) uniqid(hhid) dataout("$mdata\census")
+
+*===============================================================================
+//3. Run the simulations
+*===============================================================================
+
+
+/*
+Now, we will run 5,000 simulations where we follow the model's assumpitons.
+under each simulation we will add to XB the psu and area effect, as well
+as the household specific error. 
+Then, under each population we will obtain CensusEB estimates under 
+unit-level CensusEB, and unit-context models. For each 
+population and the EB predictions obtained we will calculate the difference
+between the true poverty rate and the predicted one, and the squared difference.
+After 5000 simulations these are our empirical bias and MSE.
+*/
+
+// For each simulation we need to add random location effects and 
+// household errors
+forval z=1/`total_sim'{
+qui{
+	use "$mdata\popXT.dta", clear
+		//random area effects
+		gen double eta_a = rnormal(0,$sigmaeta_area) if area_1st==1
+			replace eta_a = eta_a[_n-1] if missing(eta_a)
+		gen double eta_p = rnormal(0,$sigmaeta_psu)  if psu_1st ==1
+			replace eta_p = eta_p[_n-1] if missing(eta_p)
+		//household errors
+		gen eps = rnormal(0,$sigmaeps)
+		//Generate Y adding the XB and the drawn errors
+		egen double Y  = rsum(XB eta_a eta_p eps)
+		gen double e_y = exp(Y)		
+	tempfile myPop
+	save `myPop'
+	
+	if (`z'==1){
+		reg Y x*
+		predict res, res
+		reg Y  meanpsu_x1 meanpsu_x2 meanpsu_x3 meanpsu_x4 meanpsu_x5 meanpsu_x6 meanpsu_x7
+		predict resA, res
+		
+		twoway (kdensity res) (kdensity resA)
+	}
+
+	//Seed stage for simulations, changes after every iteration!
+	local seedstage `c(rngstate)'
+	
+		
+	//Create true values
+	gen fgt0_$pline = (e_y<$pline)*(1-e_y/$pline)^0
+	gen fgt0_$pline1 = (e_y<$pline1)*(1-e_y/$pline1)^0
+
+	preserve
+		//true values by area
+		groupfunction [aw=hhsize], mean(fgt* e_y Y) by(area)
+		rename e_y mean
+		tempfile true
+		save `true'
+	restore
+	
+	//Bring in the 20K pop and use it as a survey
+	use `myPop', clear
+	
+	//Do model selection for Area
+	if (`z'==1){
+		lnskew0 y1 = e_y
+		lassoregress y1 mean*,  numfolds(5)
+		local vv = e(varlist_nonzero)
+		global area_lnskew `vv'
+		drop y1
+		
+		bcskew0 y1 = e_y
+		lassoregress y1 mean*,  numfolds(5)
+		local vv = e(varlist_nonzero)
+		global area_bc `vv'
+		drop y1
+		
+		lassoregress Y mean*,  numfolds(5)
+		local vv = e(varlist_nonzero)
+		global area_vars1 `vv'
+		
+	}
+	
+	
+	//Obtain UC SAE, without transforming
+	preserve
+		sae sim h3 e_y $area_lnskew,  area(area)  ///
+		mcrep(50) bsrep(0) matin("$mdata\census") seed(`seedstage') lnskew ///
+		pwcensus(hhsize) indicators(FGT0) aggids(0) uniq(hhid) plines($pline $pline1)
+			rename avg_fgt* uc_fgt*
+			rename Unit area
+			rename Mean uc_mean
+		tempfile h3area
+		save `h3area'
+	restore	
+	
+	preserve
+		sae sim h3 Y $area_vars1,  area(area)  ///
+		mcrep(50) bsrep(0) matin("$mdata\census") seed(`seedstage') lny ///
+		pwcensus(hhsize) indicators(FGT0) aggids(0) uniq(hhid) plines($pline $pline1)
+			rename avg_fgt* ucn_fgt*
+			rename Unit area
+			rename Mean ucn_mean
+		tempfile h3arealn
+		save `h3arealn'
+	restore	
+	
+	preserve
+		sae sim h3 e_y $area_bc,  area(area)  ///
+		mcrep(50) bsrep(0) matin("$mdata\census") seed(`seedstage') bcox ///
+		pwcensus(hhsize) indicators(FGT0) aggids(0) uniq(hhid) plines($pline $pline1)
+			rename avg_fgt* ucb_fgt*
+			rename Unit area
+			rename Mean ucb_mean
+		tempfile h3areabc
+		save `h3areabc'
+	restore	
+	
+	
+
+	//CensusEB
+	preserve
+		sae sim h3 Y x1 x2 x3 x4 x5 x6 x7,  area(area) lny ///
+		mcrep(50) bsrep(0) matin("$mdata\census") seed(`seedstage') ///
+		pwcensus(hhsize) indicators(FGT0) aggids(0) uniq(hhid) plines($pline $pline1)
+			rename avg_fgt* ceb_fgt*
+			rename Unit area
+			rename Mean ceb_mean
+		tempfile h3eb
+		save `h3eb'
+	restore
+	
+	
+	
+
+	//Open true point estimates
+	use `true', clear
+	
+	//Merge in the model based estimates
+	merge 1:1 area using `h3area', keepusing(uc_*)
+		drop _m
+	merge 1:1 area using `h3eb'  , keepusing(ceb_*)
+		drop _m	
+	merge 1:1 area using `h3arealn'  , keepusing(ucn_*)
+		drop _m
+	merge 1:1 area using `h3areabc'  , keepusing(ucb_*)
+		drop _m	
+	
+	
+	
+	//Calculate bias and MSE
+	local j mean
+	foreach i in ceb ucn uc ucb{
+		gen double `i'_bias_`j' = (`i'_`j'-`j')/`total_sim'
+		gen double `i'_mse_`j'  = ((`i'_`j'-`j')^2)/`total_sim'
+	}
+	
+	foreach line of local lines{
+		foreach i in ceb ucn uc ucb{
+			foreach j in fgt0{		
+				gen double `i'_bias_`j'_`line' = (`i'_`j'_`line'-`j'_`line')/`total_sim'
+				gen double `i'_mse_`j'_`line'  = ((`i'_`j'_`line'-`j'_`line')^2)/`total_sim'
+			}
+		}
+	}
+	keep area *_bias_* *_mse_*
+
+	//For first sim we rename the vector to *T
+	if (`z'==1){		
+		rename *_bias_* *_bias_*T
+		rename *_mse_*  *_mse_*T
+		
+		tempfile Stats
+		save `Stats'
+	}
+	else{ //After the first sim, we add the bias and MSE to *T
+		merge 1:1 area using `Stats'
+			drop _m
+		local j mean
+		foreach i in ceb ucn uc ucb{
+			replace `i'_bias_`j'T = `i'_bias_`j'T + `i'_bias_`j'
+			replace `i'_mse_`j'T  = `i'_mse_`j'T + `i'_mse_`j'
+		}
+		foreach line of local lines{
+			foreach i in ceb ucn uc ucb{
+				foreach j in fgt0{					
+					replace `i'_bias_`j'_`line'T = `i'_bias_`j'_`line'T + `i'_bias_`j'_`line'
+					replace `i'_mse_`j'_`line'T  = `i'_mse_`j'_`line'T + `i'_mse_`j'_`line'
+					
+					drop `i'_bias_`j'_`line' `i'_mse_`j'_`line'				
+				}
+			}
+		}
+		tempfile Stats
+		save `Stats'
+	}
+}
+dis as error "Sim num `z'"	
+}
+
+save "$mdata\bias_in_mymodel_twolines.dta", replace
+
+```
+</details>
+
 
 
 ### [Simulation Experiment 2 for Unit-Context Models](#simulation-experiment-2-for-unit-context-models)
@@ -140,12 +733,6 @@ The Stata code below produces the simulations described in [off-census:annex](#o
 <details>
 
 <summary>Tips for collapsed sections</summary>
-
-### You can add a header
-
-You can add text within a collapsed section. 
-
-You can add an image or a code block, too.
 
 ```stata
 set more off
