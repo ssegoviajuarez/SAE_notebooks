@@ -23,7 +23,6 @@ Beyond the small area estimation literature, the machine learning literature has
       - [Unit-Context Models – Validation Across All Poverty Lines](#unit-context-models-validation-across-all-poverty-lines)
 
 
-## Unit-Context Models <a name="unit-context-models"></a>
 ## [Unit-Context Models](#unit-context-models)
 Unit-context models attempt to model the population's welfare distribution using only area-level covariates. More specifically, unit-context models combine unit and area-level information to model the transformed household-level welfare (unit) using only area-level covariates (context). Since unit-context models do not require census microdata, they have been proposed as an alternative approach for the case when the available census microdata is too outdated to be considered for use under the conventional model-based methods that include unit-level covariates.[^1]
 
@@ -38,7 +37,6 @@ Although the unit-context approach is attractive in that it does not require a c
 In cases where neither area- nor unit-level models are advised due to data limitations, no clear consensus has emerged on the best path forward or if one even exists. In evaluating alternatives, practitioners should choose methods which rely on assumptions that are realistic to the circumstances in which the model will be employed, which are approximately unbiased (or its bias does not exceed a certain limit), and for which an accurate method exists to measure the small area estimators' MSE. In cases where the MSE cannot be adequately estimated, then at least it should be known in which (realistic) scenarios the approach has limited bias. If these conditions cannot be reasonably met, it is preferable to not produce a map than to produce one with potentially biased estimates, or one in which precision is overestimated, or most worrisome, both. In the next section, the limitations of unit-context models are discussed.
 
 
-### Limitations of Unit-Context Models
 ### [Limitations of Unit-Context Models](#limitations-of-unit-context-models)
 
 Based on results from a validation study using model- and design-based simulations, [Corral et al., 2021](citation#corral2021map) conclude unit-context models, like those presented in [Masaki et al., 2020](citation#masaki2020small), [Lange et al., 2018](citation#lange2018small), and [DOI:10.1080/00220388.2012.682983](citation#doi:10.1080/00220388.2012.682983), are not recommended except under exceptional cases due to the high likelihood of bias in estimates.[^2]
@@ -67,21 +65,38 @@ Source: [Corral et al., 2021](citation#corral2021map). The figure is obtained fr
 ```
 
 
-
-
-
 ## [Gradient Boosting for Poverty Mapping](#gradient-boosting-for-poverty-mapping)
+
+(off-census:gradient-boosting)=
+## Gradient Boosting for Poverty Mapping
+
+With the advent of increased computing power, machine learning approaches have gained popularity in the literature as well as in policy circles. For example, poverty estimates for small areas derived from a gradient boosting application by {cite:t}`chi2021micro` guided the expansion of social protection in Nigeria; specifically, the estimates were used as an input to the Rapid Response Register for the COVID-19 Cash Transfer Project.[^4]
+
+Gradient boosting methods rely on, first, creating a linear fit (usually a constant term) to the data at hand and then fitting a new model onto the residuals. In contrast to ensemble techniques, the multiple fits are not averaged. Instead, the predicted residuals (scaled by a learning rate) are added to the previous step's prediction, successively taking small steps using the same or different covariates at each step toward the final prediction. This process repeats until the requested number of predictions are completed, or there is no longer a gain in prediction.[^5] A complete exposition of the approach is beyond the scope of the Guidelines, and interested readers can refer to {cite:t}`natekin2013gradient` or {cite:t}`chen2016xgboost` for a more nuanced description of the approach.
+
+A validation approach similar to the one done by {cite:t}`corral2021map` is implemented to test how well gradient boosting works in a poverty mapping context. Specifically, 500 samples taken from the census created from the *Mexican Intercensal Survey* are used to conduct a design-based simulation experiment to validate the method.[^6] The *Mexican Intercensal Survey* is uniquely suited for this validation since it includes a measure of income at the household level and is representative at the municipal level and localities with 50,000 or more inhabitants. The survey was modified to obtain a census dataset of 3.9 million households and 1,865 municipalities {cite:t}`corral2021map`. Using a sampling approach similar to the one used for Living Standards Measurement Study (LSMS) surveys, 500 samples are drawn from the resulting census.
+
+In each of the 500 samples, a model is fit. The model's dependent variable is the direct estimator of the headcount poverty rate at the PSU level (or municipality), and PSU aggregates (or municipality) from the census data are used as covariates. The models are fit using the XGBoost algorithm available in Python and R.[^7] Introduced by {cite:t}`chen2016xgboost`, XGBoost is a scalable machine learning system for tree boosting and is available as an open-source software library. To make the comparison fair, for each of the 500 samples, a model is selected using lasso regression as detailed in **{numref}`diagnostics:selection`** and fit for the considered small area estimation methods. This is different from the approach usually taken under design-based validation, where one model is considered the true model and is used across all samples. The results for the XGBoost and the SAE methods are illustrated in **{numref}`xgboost`**. The results illustrate that in the case of the Mexican data, XGBoost yields unbiased estimates of poverty. Moreover, the empirical MSE compares favorably with that of CensusEB methods, which are more computational and data-intensive. Additionally, in this Mexican scenario, the gradient boosted estimates are superior to those from the unit-context method discussed in the previous section (labeled U-C CensusEB).
+
+```{figure} /figures/04_unit-level/design_bias.png
+---
+height: 350px
+---
+---
+height: 350px
+name: xgboost
+---
+_Empirical bias and MSE of FGT0 for different methods_
+
+Source: Data from {cite:t}`corral2021map`. The simulations are based on 500 samples taken from the *Mexican Intercensal survey*, which is treated as a census of 3.9 million households. Under each sample, predictors for each of the methods are obtained and then compared to the true values obtained from the *Mexican Intercensal survey*. The figure illustrates that in the *Mexican Intercensal* case, XGBoost yields FGT0 estimates that are very close in performance, in terms of bias and MSE, to those from CensusEB estimators based on a unit-level model. H3-CBEB is the clustered bootstrap EB which is discussed in detail in {cite:t}`corral2020pull`, the method was the EB approach implemented in `PovMap` and the original `sae` Stata package.
+
+Despite the gradient boosting method's performance, it also carries some caveats. First, though the method performs well with the Mexican data, there is uncertainty as to the degree to which these results can be extrapolated to other contexts.[^8] Second, there are currently no implemented software options for estimating the method's MSE.[^9] Finally, despite XGBoost being based on open-source software, it is still somewhat of a black box and not easily interpretable
 
 ## [Pros and Cons of Methods for Poverty Mapping in Off-Census Years](#pros-and-cons-of-methods-for-poverty-mapping-in-off-census-years)
 
 ### [Unit-Context Models](#unit-context-models-1)
 
 ### [Gradient Boosting](#gradient-boosting-1)
-
-
-
-
-
 
 
 
