@@ -3,28 +3,19 @@ SAE Guidelines Jupyter notebooks
 
 # Table of Contents
 1. [Unit-Context Models](#unit-context-models)
-2. [Limitations of Unit-Context Models](#limitations-of-unit-context-models)
-3. [Notes](#notes)
-
-# Index
-
-1. [Poverty Mapping in Off-Census Years](#poverty-mapping-in-off-census-years)
-2. [Unit-Context Models](#unit-context-models)
    1. [Limitations of Unit-Context Models](#limitations-of-unit-context-models)
-3. [Gradient Boosting for Poverty Mapping](#gradient-boosting-for-poverty-mapping)
-4. [Pros and Cons of Methods for Poverty Mapping in Off-Census Years](#pros-and-cons-of-methods-for-poverty-mapping-in-off-census-years)
+2. [Gradient Boosting for Poverty Mapping](#gradient-boosting-for-poverty-mapping)
+3. [Pros and Cons of Methods for Poverty Mapping in Off-Census Years](#pros-and-cons-of-methods-for-poverty-mapping-in-off-census-years)
    1. [Unit-Context Models](#unit-context-models-1)
    2. [Gradient Boosting](#gradient-boosting-1)
-5. [Unit-Context Models – Technical Annex](#unit-context-models-technical-annex)
+4. [Unit-Context Models – Technical Annex](#unit-context-models-technical-annex)
    1. [Producing Estimators Based on Unit-Context Models](#producing-estimators-based-on-unit-context-models)
-6. [Appendix](#appendix)
+5. [Appendix](#appendix)
    1. [Simulation Experiment 1 for Unit-Context Models](#simulation-experiment-1-for-unit-context-models)
       1. [Unit-Context Models – Validation](#unit-context-models-validation)
       2. [Unit-Context Models – Validation with Better Model Fit](#unit-context-models-validation-with-better-model-fit)
    2. [Simulation Experiment 2 for Unit-Context Models](#simulation-experiment-2-for-unit-context-models)
       1. [Unit-Context Models – Validation Across All Poverty Lines](#unit-context-models-validation-across-all-poverty-lines)
-
-## [Poverty Mapping in Off-Census Years](#poverty-mapping-in-off-census-years)
 
 ## [Unit-Context Models](#unit-context-models)
 
@@ -53,8 +44,6 @@ SAE Guidelines Jupyter notebooks
 ### [Simulation Experiment 2 for Unit-Context Models](#simulation-experiment-2-for-unit-context-models)
 
 #### [Unit-Context Models – Validation Across All Poverty Lines](#unit-context-models-validation-across-all-poverty-lines)
-
-
 
 
 # Poverty Mapping in Off-Census Years 
