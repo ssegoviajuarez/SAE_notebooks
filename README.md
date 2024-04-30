@@ -150,6 +150,8 @@ The average across the 5,000 simulations of the estimation errors for each area 
 
 One could argue that, in this scenario, the \(p_7\) of unit-context models is much lower than that one in the applications of [Masaki et al., 2020](cite:t:masaki2020small) and of [Lange et al., 2018](cite:t:lange2018small). For this reason, the simulation experiment is repeated modifying slightly the data generating process to increase the \(p_7\). Specifically, in this experiment, the covariate \(x_{6ach}\) is now generated from a random Poisson variable with mean \(p_7\), where \(p_7\) is a random uniform value between 0 and 1, and \(p_7\) is increased from 0.5 to 0.6. This modification leads to an \(p_7\) of the unit-context model between 0.15 and 0.20, while for unit-level models the \(p_7\) exceeds 0.60. The Stata script to replicate these simulations can be found in the following [Unit-Context Models -- Validation](off-census:appendix:experiment1:better-fit).
 
+
+```stata
 set more off
 clear all
 
@@ -312,6 +314,8 @@ forval z=1/`total_sim'{
 	use `myPop', clear
 	
 	//Obtain UC SAE
+```
+
 
 # Unit-Context Models -- Validation Across All Poverty Lines
 
@@ -413,25 +417,7 @@ set obs `=`obsnum'/`areasize''
 	rename x* meanarea_x* 
 	tempfile areameans 
 	qui save `
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 
 
 # Introduction
