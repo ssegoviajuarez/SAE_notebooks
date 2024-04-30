@@ -222,8 +222,7 @@ One could argue that, in this scenario, the $R^{2}$ of unit-context models is mu
 The do-file below reproduces the simulation experiment described in **off-census:annex**, but considering unit-context models with a better $R^{2}$ and producing estimates for 2 different poverty thresholds. Note that the model is fit to the whole set of population data and then estimates are also obtained by simulating on to the whole set of population data.
 
 <details>
-
-<summary> <font color='red'>test blue color font</font> </summary>
+<summary> CLICK HERE to see Stata code </summary>
 
 ```stata
 set more off
@@ -496,7 +495,7 @@ The do-file below reproduces the simulation experiment described in **off-census
 
 <details>
 
-<summary><font color='red'>test blue color font</font></summary>
+<summary> CLICK HERE to see Stata code </summary>
 
 ```stata
 set more off
@@ -853,7 +852,7 @@ The Stata code below produces the simulations described in [off-census:annex](#o
 
 <details>
 
-<summary> <span style="color:red">Text content</span></summary>
+<summary> CLICK HERE to see Stata code </summary>
 
 ```stata
 set more off
