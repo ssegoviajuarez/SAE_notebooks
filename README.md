@@ -67,9 +67,6 @@ Source: [Corral et al., 2021](citation#corral2021map). The figure is obtained fr
 
 ## [Gradient Boosting for Poverty Mapping](#gradient-boosting-for-poverty-mapping)
 
-(off-census:gradient-boosting)=
-## Gradient Boosting for Poverty Mapping
-
 With the advent of increased computing power, machine learning approaches have gained popularity in the literature as well as in policy circles. For example, poverty estimates for small areas derived from a gradient boosting application by {cite:t}`chi2021micro` guided the expansion of social protection in Nigeria; specifically, the estimates were used as an input to the Rapid Response Register for the COVID-19 Cash Transfer Project.[^4]
 
 Gradient boosting methods rely on, first, creating a linear fit (usually a constant term) to the data at hand and then fitting a new model onto the residuals. In contrast to ensemble techniques, the multiple fits are not averaged. Instead, the predicted residuals (scaled by a learning rate) are added to the previous step's prediction, successively taking small steps using the same or different covariates at each step toward the final prediction. This process repeats until the requested number of predictions are completed, or there is no longer a gain in prediction.[^5] A complete exposition of the approach is beyond the scope of the Guidelines, and interested readers can refer to {cite:t}`natekin2013gradient` or {cite:t}`chen2016xgboost` for a more nuanced description of the approach.
@@ -89,21 +86,71 @@ name: xgboost
 _Empirical bias and MSE of FGT0 for different methods_
 
 Source: Data from {cite:t}`corral2021map`. The simulations are based on 500 samples taken from the *Mexican Intercensal survey*, which is treated as a census of 3.9 million households. Under each sample, predictors for each of the methods are obtained and then compared to the true values obtained from the *Mexican Intercensal survey*. The figure illustrates that in the *Mexican Intercensal* case, XGBoost yields FGT0 estimates that are very close in performance, in terms of bias and MSE, to those from CensusEB estimators based on a unit-level model. H3-CBEB is the clustered bootstrap EB which is discussed in detail in {cite:t}`corral2020pull`, the method was the EB approach implemented in `PovMap` and the original `sae` Stata package.
-
+```
 Despite the gradient boosting method's performance, it also carries some caveats. First, though the method performs well with the Mexican data, there is uncertainty as to the degree to which these results can be extrapolated to other contexts.[^8] Second, there are currently no implemented software options for estimating the method's MSE.[^9] Finally, despite XGBoost being based on open-source software, it is still somewhat of a black box and not easily interpretable
 
+
+
+
 ## [Pros and Cons of Methods for Poverty Mapping in Off-Census Years](#pros-and-cons-of-methods-for-poverty-mapping-in-off-census-years)
+This section presents a convenient list of pros and cons for each method discussed in this chapter. It also notes the needs for each of the methods. The section borrows from {cite:t}`molina2019desagregacion`.
+
 
 ### [Unit-Context Models](#unit-context-models-1)
+
+Model requirements:
+
+- Microdata from a household survey (only the model's dependent variable) and administrative, satellite-derived data, or any other area or sub-level data.
+
+- {cite:t}`masaki2020small` recommend using data that is at least one level below the level at which results are to be presented, although the more disaggregated, the better.
+
+- The population size/count at the area level is needed, at least the number of dwellings in the area.
+
+- Areas and sub-areas in the survey and the census should have identifiers that can be linked.
+
+Pros:
+
+- Based on household-level welfare from a survey and area-level data from any point in time. It may be used in off census years, avoiding the use of outdated census data.
+
+- Unlike Fay-Herriot area-level models ({cite:t}`fay1979estimates`), it can be applied for areas with an estimated sampling variance equal to 0.
+
+- May provide estimates for non-sampled areas.
+
+Cons:
+
+- The welfare model is presumably incorrectly specified unless household-level welfare is dependent only on area-level characteristics. Hence, estimates are expected to be biased, and the direction and magnitude of the bias are unknown a priori.
+
+- The bootstrap method for MSE estimation is computationally intensive.
+
+- The parametric bootstrap approach from {cite:t}`gonzalez2008bootstrap` under the unit-context model is likely to yield an inaccurate measure of MSE. In many instances, the MSE may be considerably underestimated.
+
 
 ### [Gradient Boosting](#gradient-boosting-1)
 
 
+Model requirements:
 
+1. Direct estimates of indicators of interest for the areas considered, $\hat{\tau}_{d}^{DIR}$ (from the survey).
 
+2. Aggregate data at the area level of all necessary covariates for the model for every area considered, $\mathbf{x}_{d}$, $d=1,\ldots,D$.
 
+3. Areas in the survey and the census should have identifiers that can be linked across each other.
 
+Pros:
 
+1. Based on direct estimates from a survey and area-level data from any point in time. It may be used in off census years, avoiding the use of outdated census data.
+
+2. Unlike Fay-Herriot area-level models ([cite](fay1979estimates)), it can be applied for areas with an estimated sampling variance equal to 0.
+
+3. The method's dependent variable and the target indicators are the same. In a design-based simulation using the *Mexican Intercensal Survey* the method yields estimates of comparable quality to CensusEB and with better performance than unit-context models.
+
+4. May provide estimates for non-sampled areas.
+
+Cons:
+
+1. The method requires validation exercises in more scenarios beyond the one conducted in this chapter. There is no guarantee that the method will work as well with covariates with considerably lower predictive power than the ones from the example provided in **{numref}`off-census:gradient-boosting`**.
+
+2. The method currently lacks an approach for obtaining noise estimates (MSE). Consequently, it is difficult to assess the precision of the final estimates.
 
 
 
